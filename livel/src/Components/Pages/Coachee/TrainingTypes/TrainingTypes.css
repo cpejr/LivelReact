@@ -1,0 +1,66 @@
+.popUpsContainer{
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2F2F2;
+}
+
+.popUpsContainer > div {
+    margin: 10px;
+}
+
+.trainingsContainer{
+    height: 40%;
+    background-color: #E6E6E6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.mainButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E7DB18;
+    font-size: 150%;
+    color: #632467;
+    text-decoration: none;
+    height: 20%;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.secondaryButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E7DB18;
+    font-size: 83%;
+    color: #632467;
+    text-decoration: none;
+    height: 18%;
+    width: 38%;
+    border-radius: 10px;
+}
+
+.monthReport{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+    background-color: #FFFFFF;
+}
+
+.imgSide{
+    width: 50%;
+    height: 100%;
+    margin: 0px;
+    background-repeat: no-repeat;
+}
+
+.medalSide{
+    width: 50%;
+    height: 100%;
+}

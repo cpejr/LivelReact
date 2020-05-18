@@ -1,0 +1,32 @@
+.TimeScheduleContainer{
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E6E6E6;
+    flex-direction: column;
+}
+
+.TimeScheduleContainer > div{
+    margin: 5%;
+}
+
+.pageTitle{
+    display: flex;
+    color: #632467;
+    align-items: center;
+    font-weight: bold;
+    font-size: 138%;
+
+}
+
+.horario{
+    width: 53%;
+    height: 11%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    font-size: 250%;
+}
