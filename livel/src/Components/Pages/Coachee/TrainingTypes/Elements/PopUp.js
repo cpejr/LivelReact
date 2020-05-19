@@ -32,8 +32,8 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
     },
 
-    openPopUp: {
-        fontSize: '100%',
+    yellowPopUp: {
+        fontSize: '150%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -44,12 +44,26 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: '#FFBA2F',
         borderRadius: '0 40% 0 0',
         border: '0px'
+    },
+
+    purplePopUp: {
+        fontSize: '150%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        height: '56%',
+        fontWeight: '700',
+        color: 'white',
+        backgroundColor: '#632467',
+        borderRadius: '0 40% 0 0',
+        border: '0px'
     }
 
 }));
 
 
-export default function PopUpPeriodizacao(){
+export default function PopUpPeriodizacao(props){
 
     const classes = useStyles();
     const [modalStyle] = useState(getModalStyle);
@@ -74,7 +88,13 @@ export default function PopUpPeriodizacao(){
 
     return(
         <div className={classes.container}>
-            <button type='button' className={classes.openPopUp} onClick={handleOpen}>T</button>
+            {
+                (props.categ==='P') ? 
+                <button type='button' className={classes.yellowPopUp} onClick={handleOpen}>{props.categ}</button>
+                :
+                <button type='button' className={classes.purplePopUp} onClick={handleOpen}>{props.categ}</button>
+            }
+            
             
             <Modal
                 open={open}
