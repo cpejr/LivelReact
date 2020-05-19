@@ -11,7 +11,7 @@
 }
 
 .trainingsContainer{
-    height: 40%;
+    height: 35%;
     background-color: #E6E6E6;
     display: flex;
     flex-direction: column;
@@ -20,11 +20,12 @@
 }
 
 .mainButton {
+    text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #E7DB18;
-    font-size: 150%;
+    font-size: 100%;
     color: #632467;
     text-decoration: none;
     height: 20%;
@@ -33,6 +34,7 @@
 }
 
 .secondaryButton{
+    text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,18 +51,55 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 30%;
+    height: 35%;
     background-color: #FFFFFF;
+    color: #632467;
 }
 
 .imgSide{
-    width: 50%;
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
     height: 100%;
-    margin: 0px;
+}
+
+.trainingCircle{
+    height: 90%;
+    width: 100%;
     background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.circleContent{
+    display: flex;
+    align-items: baseline;
 }
 
 .medalSide{
-    width: 50%;
+    width: 40%;
     height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.Reward {
+    margin-top: 2vh;
+    display: flex;
+    color: #707070;
+    font-size: 70%;
+    align-items: flex-end;
+}
+
+.trophy {
+    margin-left: -5vw;
+    margin-right: 2vw;
+    height: auto;
+    width: 30%;
 }

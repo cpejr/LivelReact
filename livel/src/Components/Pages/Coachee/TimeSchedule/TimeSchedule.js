@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './TimeSchedule.css'
 
 import Header from '../../../Header'
@@ -16,9 +17,12 @@ export default function TimeSchedule(){
             <Header img="/images/user.jpg" name="Arthur Lima" icons={true} />
             <div className="TimeScheduleContainer">
                 <div className="pageTitle">
-                <IconContext.Provider value={{ size: '1.8em'}}>
-                    <MdKeyboardArrowLeft />
-                </IconContext.Provider>
+                <Link to='/trainingTypes'>
+                    <IconContext.Provider value={{ size: '1.8em', color: "#632467"}}>
+                        <MdKeyboardArrowLeft />
+                    </IconContext.Provider>
+                </Link>
+                
                     <div>MARQUE SEU HORÁRIO</div>
                 </div>
                 {

@@ -25,8 +25,18 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(2, 4, 3),
     },
 
-    popUpImg: {
-        height: '60%',
+    openPopUp: {
+        fontSize: '10vw',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '15vw',
+        height: '15vw',
+        fontWeight: '700',
+        backgroundColor: '#632467',
+        color: 'white',
+        borderRadius: '0 40% 0 0',
+        border: '0px'
     }
 
 }));
@@ -57,7 +67,7 @@ export default function PopUpCadeiaExcentrica(){
 
     return(
         <div>
-            <img src="/images/PopUpCadeiaExcentrica.png" className={classes.popUpImg} alt="Cadeia Excentrica" onClick={handleOpen}/>
+            <button type='button' className={classes.openPopUp} onClick={handleOpen}>40</button>
             <Modal
                 open={open}
                 onClose={handleClose}

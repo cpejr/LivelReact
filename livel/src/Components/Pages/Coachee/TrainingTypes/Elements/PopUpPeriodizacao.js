@@ -24,11 +24,19 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(2, 4, 3),
     },
 
-    popUpImg: {
-        height: '60%',
+    openPopUp: {
+        fontSize: '10vw',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '15vw',
+        height: '15vw',
+        fontWeight: '700',
+        color: 'black',
+        backgroundColor: '#FFBA2F',
+        borderRadius: '0 40% 0 0',
+        border: '0px'
     }
-
-
 
 }));
 
@@ -58,7 +66,8 @@ export default function PopUpPeriodizacao(){
 
     return(
         <div>
-            <img src="/images/PopUpPeriodizacao.png" className={classes.popUpImg} alt="Periodizacao" onClick={handleOpen}/>
+            <button type='button' className={classes.openPopUp} onClick={handleOpen}>T</button>
+            
             <Modal
                 open={open}
                 onClose={handleClose}
