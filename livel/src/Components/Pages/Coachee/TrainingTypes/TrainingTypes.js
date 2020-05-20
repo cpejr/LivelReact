@@ -5,9 +5,7 @@ import {Link} from 'react-router-dom'
 import './TrainingTypes.css'
 
 import Header from '../../../Header'
-import PopUpPeriodizacao from './Elements/PopUpPeriodizacao'
-import PopUpCadeiaExcentrica from './Elements/PopUpCadeiaExcentrica'
-import PopUpCadeiaConcentrica from './Elements/PopUpCadeiaConcentrica'
+import PopUp from './Elements/PopUp'
 
 let ALUNO_INFO = {
     AlunoFoto: '/images/user.jpg',
@@ -96,9 +94,7 @@ export default function TrainingTypes(){
         <div style={{height: "100%"}}>
             <Header img={ALUNO_INFO.AlunoFoto} name={ALUNO_INFO.AlunoNome} icons={true} />
             <div className="popUpsContainer">
-                <PopUpPeriodizacao/>
-                <PopUpCadeiaExcentrica/>
-                <PopUpCadeiaConcentrica/>
+                <PopUp TREINO_SEMANA={TREINO_SEMANA}/>
             </div>
             <div className="trainingsContainer">
                 <Link className='mainButton' to='/timeSchedule'>
