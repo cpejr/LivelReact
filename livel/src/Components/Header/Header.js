@@ -1,4 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
+import{FiChevronLeft} from 'react-icons/fi';
 
 import './Header.css'
 
@@ -29,7 +32,12 @@ export default function Header(props){
                 }
 
                 {(props.back!=null) &&
-                    <div></div>
+                    <div>
+                        <Link className="button" to="/trainingTypes" />
+                            <button onClick={goBack} type="button">
+                                <FiChevronLeft size={18} color="#632467" />
+                            </button>
+                    </div>
                 }
 
             </div>
@@ -37,3 +45,9 @@ export default function Header(props){
         </div>
     )
 }
+
+// export function goBack(){
+//     localStorage.clear();
+
+//     // history.push('/');
+// }
