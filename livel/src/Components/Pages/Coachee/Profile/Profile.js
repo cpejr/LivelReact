@@ -13,8 +13,8 @@ export default function Profile(){
     return(
         <div style={{height: "100%"}} >
             <Header img="/images/user.jpg" level={true} back={true} />
-            {/* <div className="TimeScheduleContainer">
-                <div className="pageTitle">
+            <div className="ProfileContainer">
+                {/* <div className="pageTitle">
                 <Link to='/trainingTypes'>
                     <IconContext.Provider value={{ size: '1.8em', color: "#632467"}}>
                         <MdKeyboardArrowLeft />
@@ -33,8 +33,8 @@ export default function Profile(){
                             )
                         }
                     )
-                }
-            </div> */}
+                } */}
+            </div>
         </div>
     )
 

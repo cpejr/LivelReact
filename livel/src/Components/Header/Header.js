@@ -20,10 +20,6 @@ export default function Header(props){
                     <div className="name">{props.name}</div>
                 }
 
-                {(props.level!=null) &&
-                    <img src={props.level} alt="level"/>
-                }
-
                 {(props.icons!=null) &&
                     <div>
                         <img src='/images/icon1.png' alt="icone1" style={{marginRight: '16px'}} />
@@ -31,12 +27,11 @@ export default function Header(props){
                     </div>
                 }
 
-                {(props.back!=null) &&
+                {(props.back!=null) && //rewards and profile
                     <div>
-                        <Link className="button" to="/trainingTypes" />
-                            <button onClick={goBack} type="button">
-                                <FiChevronLeft size={18} color="#632467" />
-                            </button>
+                        <Link className="button"  type="button" to="/trainingTypes">
+                            <FiChevronLeft size={18} color="#632467" />
+                        </Link>
                     </div>
                 }
 
@@ -45,9 +40,3 @@ export default function Header(props){
         </div>
     )
 }
-
-// export function goBack(){
-//     localStorage.clear();
-
-//     // history.push('/');
-// }
