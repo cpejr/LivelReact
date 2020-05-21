@@ -6,3 +6,34 @@
     justify-content: space-evenly;
     align-items: center;
 }
+
+
+/* ---------------------Element Header Profile--------------------- */
+
+.headerContainer{
+    height: 25%
+}
+
+.orangeLine{
+    background-color: #EF7D00;
+    height: 10%
+}
+
+.headerContent{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90%;
+}
+
+.imagemHeader{
+    height: 9vh;
+    width: 9vh;
+    border-radius: 50%;
+    border: 3px solid #EF7D00
+}
+
+.levelEscala{
+    height: 6vh;
+    width: auto;
+}

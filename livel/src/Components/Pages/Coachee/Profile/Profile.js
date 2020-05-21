@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom'
 
 import './Profile.css'
 
-import Header from '../../../Header'
+import HeaderProfile from './Elements/HeaderProfile'
+import Sair from './Elements/Sair'
 
 
 // import PopUp from './Elements/PopUp'
@@ -12,7 +13,7 @@ import Header from '../../../Header'
 export default function Profile(){
     return(
         <div style={{height: "100%"}} >
-            <Header img="/images/user.jpg" level={true} back={true} />
+            <HeaderProfile img="/images/user.jpg" level={true} back={true} />
             <div className="ProfileContainer">
                 {/* <div className="pageTitle">
                 <Link to='/trainingTypes'>
