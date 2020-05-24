@@ -9,6 +9,25 @@ import ExitButton from './Elements/ExitButton'
 
 // import PopUp from './Elements/PopUp'
 
+let ALUNO_INFO = {
+    AlunoFoto: '/images/user.jpg',
+    AlunoNome: 'Arthur Lima'
+}
+
+let TREINO_SEMANA = {
+    Periodizacao: 'T', 
+    CadeiaExcentrica: '40',
+    CadeiaConcentrica: '60'
+}
+
+let ALUNO_TREINOS = {
+    ID_ultimoTreinoTipo: 'Inferior',
+    NumTreinosMes: 9,
+    NumTreinosFaltam: 2,
+    PontosNext: 20,
+    FraseTreino: 'O progresso é impossível sem mudanças.',
+}
+
 
 export default function Profile(){
     return(
