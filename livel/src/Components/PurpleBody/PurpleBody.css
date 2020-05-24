@@ -1,0 +1,14 @@
+.purpleBodyContainer{
+    height: 100%;
+    background-color: #632467;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.livelIcon img{
+    height: 80.78px;
+    width: 110.45px; 
+    margin-top: 60px;
+}

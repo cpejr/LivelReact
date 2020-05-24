@@ -9,13 +9,17 @@ import Profile from './Components/Pages/Coachee/Profile'
 import Login from './Components/Pages/Login/Login'
 import RequestNumber from './Components/Pages/Login/RequestNumber'
 
+
 export default function Routes(){
     return (
         <BrowserRouter>
             <Switch>
                 {/* <Route path="/" exact component={Home} /> */}
                 <Route path="/login" exact component={Login} />
-                {/* <Route path="/signup" exact component={Signup} /> */}
+
+                <Route path="/signup" exact component={SignUp} />
+
+
                 <Route path="/requestNumber" exact component={RequestNumber} />
                 
                 <Route path="/trainingTypes" component={TrainingTypes} />
