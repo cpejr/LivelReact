@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import './Profile.css'
 
 import HeaderProfile from './Elements/HeaderProfile'
-import Sair from './Elements/Sair'
+import ExitButton from './Elements/ExitButton'
 
 
 // import PopUp from './Elements/PopUp'
@@ -36,6 +36,9 @@ export default function Profile(){
                     )
                 } */}
             </div>
+            <Link type="button" to="/trainingTypes">
+                <ExitButton />
+            </Link>
         </div>
     )
 
