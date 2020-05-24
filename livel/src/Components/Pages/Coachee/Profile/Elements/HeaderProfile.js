@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 import{FiChevronLeft} from 'react-icons/fi';
 
-import './Header.css'
+import '../Profile.css'
 
-export default function Header(props){
+export default function HeaderProfile(props){
     return (
-        <div className="HeaderContainer">
+        <div className="headerContainer">
 
             <div className="orangeLine"/>
 
@@ -16,15 +16,8 @@ export default function Header(props){
                     <img src={props.img} alt="imagem" className="imagemHeader" />
                 }
 
-                {(props.name!=null) &&
-                    <div className="name">{props.name}</div>
-                }
-
-                {(props.icons!=null) &&
-                    <div>
-                        <img src='/images/icon1.png' alt="icone1" style={{marginRight: '16px'}} />
-                        <img src='/images/icon2.png' alt="icone1"/>
-                    </div>
+                {(props.level!=null) &&
+                    <img src='/images/Level.png' alt="level"className="levelEscala"/>
                 }
 
                 {(props.back!=null) && //rewards and profile
@@ -39,4 +32,4 @@ export default function Header(props){
 
         </div>
     )
-}
+}    
