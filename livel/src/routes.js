@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import TimeSchedule from './Components/Pages/Coachee/TimeSchedule'
 import TrainingTypes from './Components/Pages/Coachee/TrainingTypes'
+import Profile from './Components/Pages/Coachee/Profile'
+
 
 export default function Routes(){
     return (
@@ -17,7 +19,7 @@ export default function Routes(){
                 {/* <Route path="/midTraining" component={MidTraining} /> */}
                 <Route path="/timeSchedule" component={TimeSchedule} />
                 {/* <Route path="/countdownTraining" component={CountdownTraning} /> */}
-                {/* <Route path="/profile" component={Profile} /> */}
+                <Route path="/profile" component={Profile} />
                 {/* <Route path="/rewards" component={Rewards} /> */}
                 {/* <Route path="/body" component={Body} /> */}
 
