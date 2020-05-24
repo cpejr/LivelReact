@@ -1,9 +1,9 @@
 import React from 'react'
 // import {Link} from 'react-router-dom'
 
-import './SignUp.css'
+import './Login.css'
 
-export default function SignUp(){
+export default function Login(){
     return(
-        <h1>SignUp</h1>
+        <h1>Login</h1>
     )}

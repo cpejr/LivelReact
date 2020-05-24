@@ -4,6 +4,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import TimeSchedule from './Components/Pages/Coachee/TimeSchedule'
 import TrainingTypes from './Components/Pages/Coachee/TrainingTypes'
 import Profile from './Components/Pages/Coachee/Profile'
+import SignUp from './Components/Pages/Login/SignUp'
+import Login from './Components/Pages/Login/Login'
+import Login from './Components/Pages/Login/RequestNumber'
 
 
 export default function Routes(){
@@ -11,9 +14,9 @@ export default function Routes(){
         <BrowserRouter>
             <Switch>
                 {/* <Route path="/" exact component={Home} /> */}
-                {/* <Route path="/login" exact component={Login} /> */}
-                {/* <Route path="/signup" exact component={Signup} /> */}
-                {/* <Route path="/requestNumber" exact component={RequestNumber} /> */}
+                <Route path="/login" exact component={Login} />
+                <Route path="/signup" exact component={Signup} />
+                <Route path="/requestNumber" exact component={RequestNumber} />
                 
                 <Route path="/trainingTypes" component={TrainingTypes} />
                 {/* <Route path="/midTraining" component={MidTraining} /> */}
