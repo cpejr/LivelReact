@@ -1,3 +1,35 @@
-.purpleBodyContainer{
-    height: 100%;
+.Container{
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
+.SignUpForm{
+    position: absolute;
+    background-color: #632467;
+    flex-direction: column;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.buttonEnviar{
+    position: absolute;
+    width: 287.29px ;
+    height: 50px ;
+    background-color: #E7DB18;
+    border-radius: 15%;
+    left: 5px;
+}
+
+.buttonEnviar a{
+    color: #632467;
+    font-size: 18px;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    font-weight: bold;
+
+}
+

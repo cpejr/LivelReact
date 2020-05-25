@@ -1,3 +1,72 @@
 .purpleBodyContainer{
     height: 100%;
 }
+
+.title h1{
+    position: absolute;
+    color: white;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 137px 0 0 -139px;
+    top: 21px;
+}
+
+.requestNumberText a{
+    position: absolute;
+    color: white;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    font-size:14px;
+    margin: 137px 0 0 -139px;
+    top: 57px;
+}
+
+.Container{
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+    form{
+        margin-left: 81px;
+        box-sizing: border-box;
+        margin-top: 105px;
+    }
+        input[type=text], input[type=email], input[type=number]{
+            padding: 10px;
+            margin:10px -50px;
+            border: 0;
+            border-bottom: 2px solid #ffffff; 
+            overflow: hidden;
+            background-color: transparent;
+            width: 100%;
+            border-width:0.1mm;
+        }
+
+        ::placeholder{
+            color: white;
+            font-size: 12px;
+            font-family: sans-serif, Univers LT;
+        }
+
+.buttonEnviar{
+    position: absolute;
+    width: 262.29px;
+    height: 45px;
+    background-color: #E7DB18;
+    left: 28px;
+    bottom: -48px;
+    border-radius:10px;
+}
+
+.buttonEnviar h1{
+    position: absolute;
+    font-size: 18px;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    font-weight: bold;
+    color: #632467;
+    margin-left: 94px;
+}
