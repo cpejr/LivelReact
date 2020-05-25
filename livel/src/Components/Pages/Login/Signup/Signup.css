@@ -1,35 +1,63 @@
+.purpleBodyContainer{
+    height: 100%;
+}
+
+.title h1{
+    position: absolute;
+    color: white;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 137px 0 0 -90px;
+    top: 21px;
+}
+
+
 .Container{
     position: absolute;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
-.SignUpForm{
-    position: absolute;
-    background-color: #632467;
-    flex-direction: column;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    form{
+        margin-left: 81px;
+        box-sizing: border-box;
+        margin-top: 53px;
+    }
+        input[type=text], input[type=email], input[type=number]{
+            padding: 10px;
+            margin:10px -50px;
+            border: 0;
+            border-bottom: 2px solid #ffffff; 
+            overflow: hidden;
+            background-color: transparent;
+            width: 100%;
+            border-width:0.1mm;
+        }
 
+        ::placeholder{
+            color: white;
+            font-size: 12px;
+            font-family: sans-serif, Univers LT;
+        }
 
-.buttonEnviar{
+.buttonCadastrar{
     position: absolute;
-    width: 287.29px ;
-    height: 50px ;
+    width: 262.29px;
+    height: 45px;
     background-color: #E7DB18;
-    border-radius: 15%;
-    left: 5px;
+    left: 28px;
+    bottom: -48px;
+    border-radius:10px;
 }
 
-.buttonEnviar a{
-    color: #632467;
+.buttonCadastrar h1{
+    position: absolute;
     font-size: 18px;
     font-family: sans-serif, Univers LT;
     font-stretch: condensed;
     font-weight: bold;
-
+    color: #632467;
+    margin-left: 73px;
 }
-
