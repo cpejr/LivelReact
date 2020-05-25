@@ -1,8 +1,9 @@
 .purpleBodyContainer{
-    height: 100%;
+    position: relative;
+    align-items: center;
 }
 
-.title h1{
+.title > h1{
     position: absolute;
     color: white;
     font-family: sans-serif, Univers LT;
@@ -13,13 +14,13 @@
     top: 21px;
 }
 
-.requestNumberText a{
+.requestNumberText > a{
     position: absolute;
     color: white;
     font-family: sans-serif, Univers LT;
     font-stretch: condensed;
     font-size:14px;
-    margin: 137px 0 0 -139px;
+    margin: 137px 0 0 -90px;
     top: 57px;
 }
 
@@ -29,23 +30,23 @@
     justify-content: space-between;
     align-items: center;
 }
-    form{
+.Container > form{
         margin-left: 81px;
         box-sizing: border-box;
         margin-top: 105px;
     }
-        input[type=text], input[type=email], input[type=number]{
+.Container > input{
             padding: 10px;
             margin:10px -50px;
             border: 0;
-            border-bottom: 2px solid #ffffff; 
+            border-bottom: 2px solid red; 
             overflow: hidden;
             background-color: transparent;
             width: 100%;
             border-width:0.1mm;
         }
 
-        ::placeholder{
+.Container > placeholder{
             color: white;
             font-size: 12px;
             font-family: sans-serif, Univers LT;
@@ -61,7 +62,7 @@
     border-radius:10px;
 }
 
-.buttonEnviar h1{
+.buttonEnviar > h1{
     position: absolute;
     font-size: 18px;
     font-family: sans-serif, Univers LT;

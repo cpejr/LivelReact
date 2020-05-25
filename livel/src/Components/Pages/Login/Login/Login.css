@@ -1,8 +1,9 @@
 .purpleBodyContainer{
-    height: 100%;
+    position: relative;
+    align-items: center;
 }
 
-.title h1{
+.title > h1{
     position: absolute;
     color: white;
     font-family: sans-serif, Univers LT;
@@ -20,27 +21,28 @@
     justify-content: space-between;
     align-items: center;
 }
-    form{
-        margin-left: 81px;
-        box-sizing: border-box;
-        margin-top: 53px;
+.Container > form{
+    margin-left: 81px;
+    box-sizing: border-box;
+    margin-top: 105px;
+}
+.Container > input{
+        padding: 10px;
+        margin:10px -50px;
+        border: 0;
+        border-bottom: 2px solid white; 
+        overflow: hidden;
+        background-color: transparent;
+        width: 100%;
+        border-width:0.1mm;
     }
-        input[type=text]{
-            padding: 10px;
-            margin:10px -135px;
-            border: 0;
-            border-bottom: 2px solid #ffffff; 
-            overflow: hidden;
-            background-color: transparent;
-            width: 210px;
-            border-width:0.1mm;
-        }
 
-        ::placeholder{
-            color: white;
-            font-size: 12px;
-            font-family: sans-serif, Univers LT;
-        }
+.Container > placeholder{
+        color: white;
+        font-size: 12px;
+        font-family: sans-serif, Univers LT;
+    }
+
 
 .buttonAvancar{
     position: absolute;
@@ -52,7 +54,7 @@
     border-radius:10px;
 }
 
-.buttonAvancar h1{
+.buttonAvancar > h1{
     position: absolute;
     font-size: 18px;
     font-family: sans-serif, Univers LT;
@@ -66,7 +68,7 @@
     margin-top: 330%;
 }
 
-.linkRequestNumber a{
+.linkRequestNumber > a{
     color: white;
     font-family: sans-serif, Univers LT;
     font-size: 12px;
