@@ -70,7 +70,7 @@ export default function RequestNumber(){
                             />
                     </form>
                     <Link type="submit" to="/">
-                        <div className="buttonEnviar"><h1>Enviar</h1></div>
+                        <div className="buttonEnviar"><h1>ENVIAR</h1></div>
                     </Link>
                 </div>
                 <div className="requestNumberText"><a>Preencha os dados abaixo e enviaremos seu número de matrícula para seu e-mail:</a></div>
