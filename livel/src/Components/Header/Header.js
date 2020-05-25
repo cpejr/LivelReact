@@ -1,8 +1,10 @@
 import React from 'react'
+
 import {useHistory} from 'react-router-dom'
 
 import { IconContext } from "react-icons";
 import { IoIosArrowBack } from "react-icons/io";
+
 
 import './Header.css'
 
@@ -38,6 +40,7 @@ export default function Header(props){
                     <IconContext.Provider value={{ size: '3em', color: "#632467" }}>
                         <IoIosArrowBack  onClick={()=>history.push('/trainingTypes')}/>
                     </IconContext.Provider>
+
                 }
 
             </div>
