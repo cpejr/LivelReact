@@ -1,0 +1,28 @@
+.BodyContainer{
+    height: 85%;
+}
+
+.BodyInput{
+    display: flex;
+    align-items: center;
+    height: 70%;
+    width: 100%;
+}
+
+
+.HurtList{
+    width: 30%;
+}
+
+.Body{
+    height: 100%;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.BodyImg{
+    height: 100%;
+    width: auto;
+}
