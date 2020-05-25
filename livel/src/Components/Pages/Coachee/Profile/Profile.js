@@ -32,7 +32,7 @@ let ALUNO_TREINOS = {
 export default function Profile(){
     return(
         <div style={{height: "100%"}} >
-            <HeaderProfile img="/images/user.jpg" level={true} back={true} />
+            <HeaderProfile img="/images/user.jpg" level={5} back={true} />
             <div className="ProfileContainer">
                 {/* <div className="pageTitle">
                 <Link to='/trainingTypes'>
