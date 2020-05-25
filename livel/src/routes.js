@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import TimeSchedule from './Components/Pages/Coachee/TimeSchedule'
-import TrainingTypes from './Components/Pages/Coachee/TrainingTypes'
+import TimeSchedule from './Components/Pages/Coachee/TimeSchedule';
+import TrainingTypes from './Components/Pages/Coachee/TrainingTypes';
 import CountdownTraining from './Components/Pages/Coachee/CountdownTraining';
-import Profile from './Components/Pages/Coachee/Profile'
-import SignUp from './Components/Pages/Login/SignUp'
-import Login from './Components/Pages/Login/Login'
-import RequestNumber from './Components/Pages/Login/RequestNumber'
+import Profile from './Components/Pages/Coachee/Profile';
+import SignUp from './Components/Pages/Login/SignUp';
+import Login from './Components/Pages/Login/Login';
+import RequestNumber from './Components/Pages/Login/RequestNumber';
 
 
 export default function Routes(){
