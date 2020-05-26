@@ -31,8 +31,10 @@ export default function Header(props){
 
                 {(props.icons!=null) &&
                     <div>
-                        <img src='/images/bodyIcon.png' alt="icone1" style={{marginRight: '16px'}} onClick={()=>history.push('/body')}/>
-                        <img src='/images/rewardsIcon.png' alt="icone1" onClick={()=>history.push('/rewards')}/>
+                        <Link className="button"  type="button" to="/rewards">
+                        <img src='/images/icon1.png' alt="icone1" style={{marginRight: '16px'}} />
+                        </Link>
+                        <img src='/images/icon2.png' alt="icone1">
                     </div>
                 }
 
