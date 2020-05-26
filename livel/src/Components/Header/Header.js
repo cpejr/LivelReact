@@ -1,11 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 
-import{FiChevronLeft} from 'react-icons/fi';
+import {useHistory} from 'react-router-dom'
+
+import { IconContext } from "react-icons";
+import { IoIosArrowBack } from "react-icons/io";
+
 
 import './Header.css'
 
 export default function Header(props){
+    let history = useHistory()
+
     return (
         <div className="HeaderContainer">
 
@@ -13,11 +18,15 @@ export default function Header(props){
 
             <div className='headerContent'>
                 {(props.img!=null) &&
-                    <img src={props.img} alt="imagem" className="imagemHeader" />
+                    <img src={props.img} alt="imagem" className="imagemHeader" onClick={()=>history.push('/profile')}/>
                 }
 
                 {(props.name!=null) &&
-                    <div className="name">{props.name}</div>
+                    <div className="name" onClick={()=>history.push('/profile')}>{props.name}</div>
+                }
+
+                {(props.level!=null) &&
+                    <img src={`/images/level/nivel${props.level}.png`} alt="level" className='level' />
                 }
 
                 {(props.icons!=null) &&
@@ -25,16 +34,15 @@ export default function Header(props){
                         <Link className="button"  type="button" to="/rewards">
                         <img src='/images/icon1.png' alt="icone1" style={{marginRight: '16px'}} />
                         </Link>
-                        <img src='/images/icon2.png' alt="icone1"/>
+                        <img src='/images/icon2.png' alt="icone1">
                     </div>
                 }
 
-                {(props.back!=null) && //rewards and profile
-                    <div>
-                        <Link className="button"  type="button" to="/trainingTypes">
-                            <FiChevronLeft size={18} color="#632467" />
-                        </Link>
-                    </div>
+                {(props.back!=null) &&
+                    <IconContext.Provider value={{ size: '3em', color: "#632467" }}>
+                        <IoIosArrowBack  onClick={()=>history.push('/trainingTypes')}/>
+                    </IconContext.Provider>
+
                 }
 
             </div>
