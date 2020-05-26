@@ -17,7 +17,7 @@ export default function HeaderProfile(props){
                 }
 
                 {(props.level!=null) &&
-                    <img src='/images/Level.png' alt="level"className="levelEscala"/>
+                    <img src={`/images/level/nivel${props.level}.png`} alt="level" className='levelEscala' />
                 }
 
                 {(props.back!=null) && //rewards and profile

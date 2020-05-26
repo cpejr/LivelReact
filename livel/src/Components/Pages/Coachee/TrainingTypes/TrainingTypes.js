@@ -34,9 +34,20 @@ export default function TrainingTypes(){
         message: `Faltam ${ALUNO_TREINOS.NumTreinosFaltam} treinos para você ganhar ${ALUNO_TREINOS.PontosNext} pontos`
     });
 
-    const [training, setTraining] = useState({
-        prioridade: 'Inferior',
-        anterior: 'Superior'
+    const [training, setTraining] = useState(()=>{
+        if (ALUNO_TREINOS.ID_ultimoTreinoTipo === 'Superior') {
+            return{
+                prioridade: 'Inferior',
+                anterior: 'Superior'
+            }
+        }
+            
+        else {
+            return{
+                prioridade: 'Superior',
+                anterior: 'Inferior'
+            }
+        }
     });
 
     useEffect(()=>{
@@ -70,20 +81,6 @@ export default function TrainingTypes(){
             setCurrentProgress({
                 trof: '/images/trofeis/trof12full.png',
                 message: `Faltam ${ALUNO_TREINOS.NumTreinosFaltam} treinos para você ganhar ${ALUNO_TREINOS.PontosNext} pontos`
-            })
-        }
-
-        if (ALUNO_TREINOS.ID_ultimoTreinoTipo === 'Superior') {
-            setTraining({
-                prioridade: 'Inferior',
-                anterior: 'Superior'
-            })
-        }
-            
-        else {
-            setTraining({
-                prioridade: 'Superior',
-                anterior: 'Inferior'
             })
         }
             
