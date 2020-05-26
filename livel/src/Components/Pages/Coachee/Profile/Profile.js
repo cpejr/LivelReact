@@ -5,35 +5,36 @@ import './Profile.css'
 
 import HeaderProfile from './Elements/HeaderProfile'
 import ExitButton from './Elements/ExitButton'
+import Choice from './Elements/Choice'
+import Results from './Elements/Results'
 
+// let ALUNO_INFO = {
+//     AlunoFoto: '/images/user.jpg',
+//     AlunoNome: 'Arthur Lima'
+// }
 
-// import PopUp from './Elements/PopUp'
+// let TREINO_SEMANA = {
+//     Periodizacao: 'T', 
+//     CadeiaExcentrica: '40',
+//     CadeiaConcentrica: '60'
+// }
 
-let ALUNO_INFO = {
-    AlunoFoto: '/images/user.jpg',
-    AlunoNome: 'Arthur Lima'
-}
-
-let TREINO_SEMANA = {
-    Periodizacao: 'T', 
-    CadeiaExcentrica: '40',
-    CadeiaConcentrica: '60'
-}
-
-let ALUNO_TREINOS = {
-    ID_ultimoTreinoTipo: 'Inferior',
-    NumTreinosMes: 9,
-    NumTreinosFaltam: 2,
-    PontosNext: 20,
-    FraseTreino: 'O progresso é impossível sem mudanças.',
-}
+// let ALUNO_TREINOS = {
+//     ID_ultimoTreinoTipo: 'Inferior',
+//     NumTreinosMes: 9,
+//     NumTreinosFaltam: 2,
+//     PontosNext: 20,
+//     FraseTreino: 'O progresso é impossível sem mudanças.',
+// }
 
 
 export default function Profile(){
     return(
         <div style={{height: "100%"}} >
             <HeaderProfile img="/images/user.jpg" level={true} back={true} />
+            <Choice janeiro={true} fevereiro={false} resultados={false}/>
             <div className="ProfileContainer">
+                <Results />
                 {/* <div className="pageTitle">
                 <Link to='/trainingTypes'>
                     <IconContext.Provider value={{ size: '1.8em', color: "#632467"}}>
