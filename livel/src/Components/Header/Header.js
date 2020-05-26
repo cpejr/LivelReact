@@ -22,7 +22,9 @@ export default function Header(props){
 
                 {(props.icons!=null) &&
                     <div>
+                        <Link className="button"  type="button" to="/rewards">
                         <img src='/images/icon1.png' alt="icone1" style={{marginRight: '16px'}} />
+                        </Link>
                         <img src='/images/icon2.png' alt="icone1"/>
                     </div>
                 }
