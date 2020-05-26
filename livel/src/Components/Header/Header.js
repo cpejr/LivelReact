@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {useHistory} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 
 import { IconContext } from "react-icons";
 import { IoIosArrowBack } from "react-icons/io";
@@ -34,7 +34,7 @@ export default function Header(props){
                         <Link className="button"  type="button" to="/rewards">
                         <img src='/images/icon1.png' alt="icone1" style={{marginRight: '16px'}} />
                         </Link>
-                        <img src='/images/icon2.png' alt="icone1">
+                        {/* <img src='/images/icon2.png' alt="icone1"> */}
                     </div>
                 }
 
