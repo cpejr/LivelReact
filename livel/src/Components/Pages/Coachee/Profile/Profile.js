@@ -32,7 +32,7 @@ export default function Profile(){
     return(
         <div style={{height: "100%"}} >
       
-            <HeaderProfile img="/images/user.jpg" level={5} back={true} /
+            <HeaderProfile img="/images/user.jpg" level={5} back={true} />
             <Choice janeiro={true} fevereiro={false} resultados={false}/>
 
             <div className="ProfileContainer">

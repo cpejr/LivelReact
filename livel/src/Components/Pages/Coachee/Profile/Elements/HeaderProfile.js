@@ -22,8 +22,8 @@ export default function HeaderProfile(props){
 
                 {(props.back!=null) && //rewards and profile
                     <div>
-                        <Link className="button"  type="button" to="/trainingTypes">
-                            <FiChevronLeft size={18} color="#632467" />
+                        <Link className="buttonProfile"  type="button" to="/trainingTypes">
+                            <FiChevronLeft size={30} color="#632467" />
                         </Link>
                     </div>
                 }
