@@ -7,20 +7,21 @@ export default function Choice(props){
     return (
 
         <div className="ContainerChoice">
-            <div className="Abas">  
+            <div className="FlexContainer">
+            <ul>  
             {/* Criando as abas  */}
-                <div className="lastMonth">
-                    Janeiro
-                </div>
-                <div className="month">
-                    Fevereiro
-                </div>
-                <div className="results">
-                    Resultados
-                </div>
-            </div>
+                <li className="lastMonth">
+                    <strong>Janeiro</strong>
+                </li>
+                <li className="month">
+                <strong> Fevereiro</strong>
+                </li>
+                <li className="results">
+                <strong>Resultados</strong>
+                </li>
+            </ul>
 
-           
+           </div>
         </div>
     )
 }    
