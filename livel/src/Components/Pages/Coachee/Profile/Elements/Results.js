@@ -11,22 +11,29 @@ export default function Results(props){
     return (
         <div className="ResultsContainer">
             <ul>
+
                 <li className="ResultsForça">
-                    forca
-                </li>
-                <li className="ResultsCardio" circle={true}>
-                    {this.isPositive : {true}}
-                    cardio
+                    <strong>FORÇA</strong>
+                    <a> = Abdominal + Flexão + Barra</a>
                     <CircleResults />
                 </li>
-                <li className="ResultsPeso" circle={null}>
-                    peso
+
+                <li className="ResultsCardio">
+                    <strong>CARDIO</strong>
+                    <a>Corrida / Caminhada</a>
                     <CircleResults />
                 </li>
-                <li className="ResultsGordura" circle={true}>
-                    gordura
+
+                <li className="ResultsPeso">
+                    <strong>PESO</strong>
                     <CircleResults />
                 </li>
+
+                <li className="ResultsGordura">
+                    <strong>% GORDURA</strong>
+                    <CircleResults />
+                </li>
+                
             </ul>
         </div>
     )
@@ -34,16 +41,34 @@ export default function Results(props){
 
 
 function CircleResults(props){
-    const isPositive = this.state.isPosite;
-    return (
-        <div>
-            {isPositive
-                ? <FiCircle size={50} color="#06BFB8" stroke-width="1px" />
-                : <FiCircle size={50} color="#FF818B" stroke-width="1px" />
-            }
-        </div>
-    );
-}
+    const isPositive = props.isPosite;
+    if (isPositive) {
+        return <FiCircle size={50} color="#06BFB8" stroke-width="1px" />
+      }
+      return <FiCircle size={50} color="#FF818B" stroke-width="1px" />
+    }
+  
+
+
+// function CircleResults(props){
+//     const isPositive = this.state.isPosite;
+//     return (
+//         <div>
+//             {isPositive
+//                 ? return<FiCircle size={50} color="#06BFB8" stroke-width="1px" />
+//                 : <FiCircle size={50} color="#FF818B" stroke-width="1px" />
+//             }
+//         </div>
+//     );
+// }
+
+// function Greeting(props) {
+//     const isLoggedIn = props.isLoggedIn;
+//     if (isLoggedIn) {
+//       return <UserGreeting />;
+//     }
+//     return <GuestGreeting />;
+//   }
 
 
 // function CircleResults(props){
