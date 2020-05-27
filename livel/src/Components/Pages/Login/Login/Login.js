@@ -1,37 +1,90 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
+import {getAluno} from '../../../../services/backEnd'
+import { login } from "../../../../services/auth";
 
-import PurpleBody from '../../../PurpleBody'
+import {TextField} from '@material-ui/core';
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+
 
 import './Login.css'
 
-export default function Login(){
+const styles = {
+    inputStyle: {
+        borderBottom: '1px solid white',
+        color: "white"
+    },
+    inputLabel: {
+      color: "white",
+    }
+};
+
+
+function Login(props){
+    const [matricula, setMatricula] = useState()
+    const [senha, setSenha] = useState()
+    const history = useHistory()
+    const { classes } = props;
+
+    function handleSubmit(e){
+        e.preventDefault()
+        const request = async () => {
+            getAluno(matricula, senha).then(result=>{
+                if(result.LOGIN.ID_Aluno > 0 && result.LOGIN.Status === 1){
+                    login(result.LOGIN.ID_Aluno)
+                    history.push({
+                        pathname: '/trainingTypes',
+                        state: result
+                    })
+                }
+                else{
+                    alert('Dados incorretos')
+                    history.push('/login')
+                }
+            }).catch(error=>{
+                alert(error)
+                history.push('/login')
+            })
+        }
+        request();
+    }
+
     return(
-        <div className="purpleBodyContainer">
-                <div className="Container">
-                <PurpleBody/>
-                    <form> 
-                    {/* onSubmit={handleLogin} */}
-                                <input
-                                    type="text"
-                                    placeholder="Matrícula"
-                                    name="Matricula" 
-                                    required="true"
-                                    // value={matricula}
-                                    // onChange={e => setMatricula(e.target.value)}
-                                 /> 
-                    </form>
-                    <Link type="submit" to="/trainingTypes">
-                        <div className="buttonAvancar"><h1>AVANÇAR</h1></div>
-                    </Link>
-                </div>
-                <div className="Container">
-                    <Link type="button" to="/requestNumber">
-                        <div className="linkRequestNumber"><a>Solicitar número da matrícula</a></div>
-                    </Link>
-                </div>
-                <div className="title"><h1> Login </h1></div>
-                
+        <div className="bodyContainer">
+            <img src='/images/Logo_Livel.png' alt="Logo do Livel" className='logo'/>
+            <div className='LoginTitle'>Login</div>
+            <div className='inputsContainer'>
+                <TextField label="Matrícula" onChange={(e)=>{setMatricula(e.target.value)}}
+                    InputLabelProps={{
+                        classes: {root: classes.inputLabel, focussed: classes.inputLabel}
+                    }}
+                    InputProps={{
+                        classes: {root: classes.inputStyle, focussed: classes.inputStyle, notchedOutline: classes.inputStyle}
+                    }}
+                />
+    
+                <TextField label="Senha" onChange={(e)=>{setSenha(e.target.value)}}
+                    type="password"
+                    InputLabelProps={{
+                        classes: {root: classes.inputLabel, focussed: classes.inputLabel}
+                    }}
+                    InputProps={{
+                        classes: {root: classes.inputStyle, focussed: classes.inputStyle, notchedOutline: classes.inputStyle}
+                    }}
+                />
+            </div>
+            <div className='loginClick' onClick={handleSubmit}>ENTRAR</div>
+            <Link className='link' to='/signUp'>Solicitar número de matrícula</Link>
         </div>
     )
 }
+
+
+Login.propTypes = {
+    classes: PropTypes.object.isRequired
+};
+
+
+export default withStyles(styles)(Login);

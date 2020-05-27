@@ -15,7 +15,7 @@ export default function Results(props){
                     forca
                 </li>
                 <li className="ResultsCardio" circle={true}>
-                    {this.isPositive : {true}}
+                    {/* {this.isPositive : {true}} */}
                     cardio
                     <CircleResults />
                 </li>
