@@ -12,6 +12,7 @@ import RequestNumber from './Components/Pages/Login/RequestNumber';
 import Rewards from './Components/Pages/Coachee/Rewards'
 import Home from './Components/Pages/Login/Home'
 import Body from './Components/Pages/Coachee/Body'
+import MidTraining from './Components/Pages/Coachee/MidTraining'
 
 
 export default function Routes(){
@@ -23,7 +24,7 @@ export default function Routes(){
                 <Route path="/signup" exact component={SignUp} />
                 <Route path="/requestNumber" exact component={RequestNumber} />
                 <Route path="/trainingTypes" component={TrainingTypes} />
-                {/* <Route path="/midTraining" component={MidTraining} /> */}
+                <Route path="/midTraining" component={MidTraining} /> 
                 <Route path="/timeSchedule" component={TimeSchedule} />
                 <Route path="/countdownTraining" component={CountdownTraining} /> 
                 <Route path="/profile" component={Profile} />
