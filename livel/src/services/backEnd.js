@@ -5,7 +5,7 @@ import Request from 'request-promise'
         return new Promise((resolve, reject) =>{
             Request({
               method: 'GET',
-              url: `${process.env.REACT_APP_API_URL}/livel_app.php?AuthToken=${process.env.REACT_APP_AUTH_TOKEN}&Metodo=alunoLogin&AlunoID=${AlunoID}&AlunoPwd=${AlunoPwd}`,
+              url: `http://fitgroup.com.br/livel/livel_app.php?AuthToken=${process.env.REACT_APP_AUTH_TOKEN}&Metodo=alunoLogin&AlunoID=${AlunoID}&AlunoPwd=${AlunoPwd}`,
               json: true,
               resolveWithFullResponse: true
             }).then((response) => {
