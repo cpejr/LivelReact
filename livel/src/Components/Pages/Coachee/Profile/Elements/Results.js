@@ -18,6 +18,7 @@ export default function Results(props){
                     <CircleResults />
                 </li>
 
+
                 <li className="ResultsCardio">
                     <strong>CARDIO</strong>
                     <a>Corrida / Caminhada</a>

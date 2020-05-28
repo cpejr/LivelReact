@@ -6,9 +6,3 @@ html, body, #root{
     height: 100%;
     margin: 0px;
 }
-
-.button {
-    cursor: pointer;
-    border: 0;
-    text-decoration: none;
-}

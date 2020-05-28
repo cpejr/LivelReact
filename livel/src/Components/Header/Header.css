@@ -24,6 +24,7 @@
 .name{
     color: #EF7D00;
     text-transform: uppercase;
+    max-width: 40%;
 }
 
 .level{

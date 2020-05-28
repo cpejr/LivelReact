@@ -18,7 +18,7 @@ export default function Header(props){
 
             <div className='headerContent'>
                 {(props.img!=null) &&
-                    <img src={props.img} alt="imagem" className="imagemHeader" onClick={()=>history.push('/profile')}/>
+                    <img src={`http://fitgroup.com.br/livel/fotos/${props.img}`} alt="imagem" className="imagemHeader" onClick={()=>history.push('/profile')}/>
                 }
 
                 {(props.name!=null) &&
