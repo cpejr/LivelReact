@@ -13,14 +13,33 @@ export default function Home() {
                     <img src='/images/Logo_Livel.png' alt="Logo do Livel" />
                 </div>
                 
-                <Link type="button" to="/login" className="buttonLogin">
-                <div>
-                    LOGIN
+                    <Link type="button" to="/login" className="buttonLogin">
+                        <div>
+                            LOGIN COACH
                 </div>
-                </Link>
-
+                    </Link>
+                    <Link type="button" to="/login" className="buttonLogin">
+                        <div>
+                            LOGIN COACHEE
+                </div>
+                    </Link>
+                    <Link type="button" to="/signup" className="buttonLogin">
+                        <div>
+                            SIGN UP
+                </div>
+                    </Link>
+                    <Link type="button" to="/requestnumber" className="buttonLogin">
+                        <div>
+                            SOLICITAR NUMERO
+                </div>
+                    </Link>
+                    <Link type="button" to="/forgetpassword" className="buttonLogin">
+                        <div>
+                            ESQUECI MINHA SENHA
+                </div>
+                    </Link>
+                </div>
             </div>
-        </div>
 
     )
 }
