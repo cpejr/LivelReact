@@ -7,25 +7,7 @@ import HeaderProfile from './Elements/HeaderProfile'
 import ExitButton from './Elements/ExitButton'
 import Choice from './Elements/Choice'
 import Results from './Elements/Results'
-
-// let ALUNO_INFO = {
-//     AlunoFoto: '/images/user.jpg',
-//     AlunoNome: 'Arthur Lima'
-// }
-
-// let TREINO_SEMANA = {
-//     Periodizacao: 'T', 
-//     CadeiaExcentrica: '40',
-//     CadeiaConcentrica: '60'
-// }
-
-// let ALUNO_TREINOS = {
-//     ID_ultimoTreinoTipo: 'Inferior',
-//     NumTreinosMes: 9,
-//     NumTreinosFaltam: 2,
-//     PontosNext: 20,
-//     FraseTreino: 'O progresso é impossível sem mudanças.',
-// }
+import MonthlyResult from './Elements/MonthlyResult'
 
 
 export default function Profile(){
@@ -36,27 +18,7 @@ export default function Profile(){
             <Choice janeiro={true} fevereiro={false} resultados={false}/>
 
             <div className="ProfileContainer">
-                <Results />
-                {/* <div className="pageTitle">
-                <Link to='/trainingTypes'>
-                    <IconContext.Provider value={{ size: '1.8em', color: "#632467"}}>
-                        <MdKeyboardArrowLeft />
-                    </IconContext.Provider>
-                </Link>
-                
-                    <div>MARQUE SEU HORÁRIO</div>
-                </div>
-                {
-                    horarios.map(
-                        (value) => {
-                            return(
-                                <div className="horario">
-                                    <div><b>{value}</b></div>
-                                </div>
-                            )
-                        }
-                    )
-                } */}
+                <MonthlyResult />
             </div>
             <Link type="button" to="/trainingTypes">
                 <ExitButton />
