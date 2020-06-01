@@ -56,21 +56,16 @@ const Tab = styled.button`
 }
 `;
 
+const abas = ['lastMonth', 'thisMonth', 'RESULTADO'];
 
-let lastMonth = "JANEIRO";
-let thisMonth = "FEVEREIRO";
-
-const abas = [lastMonth, thisMonth, 'RESULTADO'];
-
-function TabGroup(){
-    const [active, setActive] = useState(abas[0]);
+function TabGroup(props){
     return(
         <div className="FlexContainer">
             {abas.map(type => (
                 <Tab
                 key ={type}
-                active = {active === type}
-                onClick={() => setActive(type)}
+                active = {props.active === type}
+                onClick={() => {props.setActive(type)}}
                 >
                     {type}
                 </Tab>
@@ -85,7 +80,7 @@ export default function Choice(props){
     return (
         <div className="choices">
             <div className="grayLine" />  
-            <TabGroup />
+            <TabGroup  active={props.active} setActive={props.setActive} />
         </div>
     )
 }    
