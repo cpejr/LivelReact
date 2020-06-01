@@ -1,37 +1,11 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-// import { Tabs } from '@material-ui/core';
-import { render } from "react-dom";
-// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-// import 'react-tabs/style/react-tabs.css';
+
+
 
 import '../Profile.css'
-// import Results from './Elements/Results'
-// import Month from './Elements/Month'
-
-// class ContentMonth {
-//     render() {
-//       return <div >
-//           <Month />
-//       </div>
-//     }
-//   }
-
-//   class ContentResult{
-//     render() {
-//       return <div>
-//         <Results />
-//       </div>
-//     }
-//   }
 
 
-// function renderTab(){
-//     switch(this.state.tabName){
-//        case 'month': return <Results/>
-//        case 'results': return <Results/>
-//     }
-//  }
 
 const Tab = styled.button`
     background: #E6E6E6;
@@ -55,8 +29,10 @@ const Tab = styled.button`
     `
 }
 `;
+let lastMonth = "JANEIRO";
+let thisMonth = "FEVEREIRO";
 
-const abas = ['lastMonth', 'thisMonth', 'RESULTADO'];
+const abas = [lastMonth, thisMonth, 'RESULTADO'];
 
 function TabGroup(props){
     return(
@@ -85,10 +61,3 @@ export default function Choice(props){
     )
 }    
 
-//   class ContentResult extends Component {
-//     render() {
-//       return <div style={style}>
-//         this is Content2
-//       </div>
-//     }
-//   }
