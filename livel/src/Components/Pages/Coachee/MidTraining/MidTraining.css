@@ -4,16 +4,22 @@
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
+    background-color: #F2F2F2;
 }
 
-.body{
+.bodyy{
     height: 60%;
-
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    
+    background-image: linear-gradient(to bottom, #e6e6e6, rgb(243, 242, 242) );
 }
 
 .footer{
     height: 10%;
-    background-color: rgb(224, 220, 220);
+    background-color:#F2F2F2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,11 +41,87 @@
     text-decoration:none;
 }
 
-.block h4{
+.block {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    height: 22%;
+    width: 75%;
+    border-radius: 15px;
+    box-shadow:  0px 0px 5px rgb(194, 190, 190);
+}
+
+.boxbody{
+    width: 30%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.boxtitle{
+    margin-top: 10%;
+    margin-left: 20%;
+}
+
+.countinginfo{
+    
+    margin-left: 20%;
+    font-size: 40px;
+}
+
+.counting{
+    font-family: Univer;
+    align-items: flex-end;
+    display: flex;
+    justify-content: center;
+    height: 80%;
+    width: 70%;
+    text-align: center;
+    font-size: 40px;
+
+}
+
+.playButton{
+    height: 20%;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #797979;
-    height: 30%;
-    margin: 10px 0px 0px 0px;
+}
+
+.titlee{
+    color: #632467;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.finalization{
+    font-family: sans-serif;
+    color: rgb(75, 72, 72);
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.time1{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: rgb(126, 7, 7);
+}
+
+.time2{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(126, 7, 7);
+    margin-bottom: 2px;
+}
+
+.timeinfo{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-direction: row;
 }
