@@ -2,9 +2,6 @@ import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { isAuthenticated } from "./services/auth";
 
-import LoginImprovoisado from './Components/Pages/Login/Login/LoginImprovisado'
-
-
 import TimeSchedule from './Components/Pages/Coachee/TimeSchedule';
 import TrainingTypes from './Components/Pages/Coachee/TrainingTypes';
 import CountdownTraining from './Components/Pages/Coachee/CountdownTraining';
@@ -37,8 +34,6 @@ export default function Routes(){
     return (
         <BrowserRouter>
             <Switch>
-
-              <Route path="/loginImprovisado" exact component={LoginImprovoisado} />
 
               <Route path="/" exact component={Home} />
               <Route path="/login" exact component={Login} />

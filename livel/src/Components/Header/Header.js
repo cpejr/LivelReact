@@ -4,12 +4,14 @@ import {useHistory} from 'react-router-dom'
 
 import { IconContext } from "react-icons";
 import { IoIosArrowBack } from "react-icons/io";
+import {getAluno} from '../../services/auth'
 
 
 import './Header.css'
 
 export default function Header(props){
     let history = useHistory()
+    let aluno = getAluno()
 
     return (
         <div className="HeaderContainer">
@@ -17,9 +19,7 @@ export default function Header(props){
             <div className="orangeLine"/>
 
             <div className='headerContent'>
-                {(props.img!=null) &&
-                    <img src={`http://fitgroup.com.br/livel/fotos/${props.img}`} alt="imagem" className="imagemHeader" onClick={()=>history.push('/profile')}/>
-                }
+                <img src={`http://fitgroup.com.br/livel/fotos/${aluno.ALUNO_INFO.AlunoFoto}`} alt="imagem" className="imagemHeader" onClick={()=>history.push('/profile')}/>
 
                 {(props.name!=null) &&
                     <div className="name" onClick={()=>history.push('/profile')}>{props.name}</div>

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {getTreinoSemana} from '../../../../services/backEnd'
+import {getAluno} from '../../../../services/auth'
 
 import './TrainingTypes.css'
 
@@ -29,7 +30,7 @@ import PopUp from './Elements/PopUp'
 
 export default function TrainingTypes(props){
     // eslint-disable-next-line no-unused-vars
-    const [aluno, setAluno] = useState(props.location.state)
+    const [aluno, setAluno] = useState(getAluno())
     const [treinoSemana, setTreinoSemana] = useState(getTreinoSemana())
 
     const [currentProgress, setCurrentProgress] = useState({
@@ -71,7 +72,13 @@ export default function TrainingTypes(props){
             console.log(erro)
         })
 
-        if (aluno.ALUNO_TREINOS.NumTreinosMes<6){
+        if(!aluno.ALUNO_TREINOS.NumTreinosMes){
+            setCurrentProgress({
+                trof: '/images/trofeis/trof6trans.png',
+                message: `Nenhum treino registrado`
+            })
+        }
+        else if (aluno.ALUNO_TREINOS.NumTreinosMes<6){
             setCurrentProgress({
                 trof: '/images/trofeis/trof6trans.png',
                 message: `Faltam ${aluno.ALUNO_TREINOS.NumTreinosFaltam} treinos para você ganhar ${aluno.ALUNO_TREINOS.PontosNext} pontos`
@@ -108,15 +115,15 @@ export default function TrainingTypes(props){
 
     return(
         <div style={{height: "100%"}}>
-            <Header img={aluno.ALUNO_INFO.AlunoFoto} name={aluno.ALUNO_INFO.AlunoNome} icons={true} />
+            <Header name={true} icons={true} />
             <div className="popUpsContainer">
                 <PopUp TREINO_SEMANA={treinoSemana}/>
             </div>
             <div className="trainingsContainer">
-                <Link className='mainButton' to='/timeSchedule'>
+                <Link className='mainButton' to={{pathname: '/timeSchedule', state: training.prioridade}}>
                     <div><b>treino {training.prioridade}</b></div>
                 </Link>
-                <Link className="secondaryButton" to='/timeSchedule'>
+                <Link className="secondaryButton" to={{pathname: '/timeSchedule', state: training.prioridade}}>
                     <div><b>treino {training.anterior}</b></div>
                 </Link>
                 <Link className="secondaryButton" to='/timeSchedule'>

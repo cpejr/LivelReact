@@ -1,29 +1,12 @@
 import React, {useState} from 'react'
+import {registrarRestricoes} from '../../../../services/backEnd'
+import {getAluno} from '../../../../services/auth'
+
 import './Body.css'
 
 import Header from '../../../Header'
 
 import InterativeBody from './Elements/InterativeBody'
-
-let ALUNO_INFO = {
-    AlunoFoto: '/images/user.jpg',
-    AlunoNome: 'Arthur Lima'
-}
-
-let TREINO_SEMANA = {
-    Periodizacao: 'T', 
-    CadeiaExcentrica: '40',
-    CadeiaConcentrica: '60'
-}
-
-let ALUNO_TREINOS = {
-    ID_ultimoTreinoTipo: 'Inferior',
-    NumTreinosMes: 9,
-    NumTreinosFaltam: 2,
-    PontosNext: 20,
-    FraseTreino: 'O progresso é impossível sem mudanças.',
-}
-
 
 export default function Body(){
     const [hurtParts, setHurtParts] = useState([])
@@ -42,16 +25,28 @@ export default function Body(){
         }
     }
 
-    function handleSubmit(){
-        alert('Enviado com sucesso')
-        console.log(hurtParts)
-        console.log(customComment)
+    async function handleSubmit(){
+        try{
+            const alunoId = getAluno().ALUNO_INFO.ID_Aluno
+            if (customComment) {
+                await registrarRestricoes(alunoId, customComment, hurtParts)
+                alert('Enviado com sucesso')
+            }
+            else{
+                await registrarRestricoes(alunoId, -1, hurtParts)
+                alert('Enviado com sucesso')
+            }
+        }
+        catch(error){
+            alert(error)
+        }
+        
     }
 
 
     return (
         <div style={{height: '100%'}}>
-            <Header img={ALUNO_INFO.AlunoFoto} name={ALUNO_INFO.AlunoNome} back={true} />
+            <Header name={true} back={true} />
             <form onSubmit={handleSubmit} className='BodyContainer'>
                 <div className='title'>
                     Caso você tenha alguma restrição e/ou dor de movimentos, marque na figura abaixo os locais para que possamos orientar melhor o seu treino:

@@ -31,14 +31,12 @@ function Login(props){
     function handleSubmit(e){
         e.preventDefault()
         const request = async () => {
-            getAluno(matricula, senha).then(result=>{
+            getAluno(matricula, senha).then(async (result)=>{
                 if(result.LOGIN.ID_Aluno > 0 && result.LOGIN.Status === 1){
-                    login(result.LOGIN.ID_Aluno)
-                    history.push({
-                        pathname: '/trainingTypes',
-                        state: result
-                    })
+                    await login(result)
+                    history.push('/trainingTypes')
                 }
+                    
                 else{
                     alert('Dados incorretos')
                     history.push('/login')
