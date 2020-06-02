@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import {FiCircle} from 'react-icons/fi';
-// import { Link } from 'react-router-dom';
+
 
 import '../Profile.css'
-// import { renderIntoDocument } from 'react-dom/test-utils';
+
 
 let forca = 1.0;
 let cardio = 0.0;
@@ -49,12 +49,12 @@ function CircleResults(props){
     const isPositive = props.isPositive;
     console.log(isPositive);
     return (
-        <div className="resultsCircle">
+        <>
             {(isPositive >= 0.0)
                 ? <FiCircle size={50} color="#06BFB8" stroke-width="1px" />
                 : <FiCircle size={50} color="#FF818B" stroke-width="1px" />
             }
-        </div>
+        </>
     );
 }
 
