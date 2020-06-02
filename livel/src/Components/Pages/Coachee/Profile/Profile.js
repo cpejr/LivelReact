@@ -8,6 +8,7 @@ import ExitButton from './Elements/ExitButton'
 import Choice from './Elements/Choice'
 import Results from './Elements/Results'
 import MonthlyResult from './Elements/MonthlyResult'
+import ChartResults from './Elements/grapicos'
 
 
 let lastMonth = "JANEIRO";
@@ -34,6 +35,7 @@ export default function Profile(){
                     {(active === 'RESULTADO') && <Results   />}
                     {(active === lastMonth) && <MonthlyResult  />}
                     {(active === thisMonth) && <MonthlyResult  />}
+                    {/* <ChartResults /> */}
 
             </div>
             

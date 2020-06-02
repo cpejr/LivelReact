@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {FiCircle} from 'react-icons/fi';
 // import { Link } from 'react-router-dom';
 
@@ -57,4 +57,6 @@ function CircleResults(props){
         </div>
     );
 }
-  
+
+
+
