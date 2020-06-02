@@ -14,6 +14,40 @@ const Bar = ({ percent }) => {
     )
   }
 
+  
+
+export default function ChartResults(props){
+    return(
+        <div className="resultBars" style={{display: 'inline-block'}}>
+              <BarChart
+                  data={[
+                    {x: 'pesoBefore', y: 20},
+                    {x: 'pesoAfter', y: 30},
+                    {x: 'cardioBefore', y: 40},
+                    {x: 'cardioAfter', y: 20},
+                    {x: 'gorduraBefore', y: 40},
+                    {x: 'gorduraAfter', y: 25},
+                    {x: 'forcaBefore', y: 5},
+                    {x: 'forcaAfter', y: 5}
+                  ]}
+                    colorBars
+                    height={150}
+                    barWidth={40}
+                    width={650}
+                    margin={{top: 0, right: 0, bottom: 30, left: 100}}
+                    yDomainRange={[5, 50]}
+                />
+        </div>
+    )
+}
+
+// let thisData: 106330074359;
+// let thisData: 32402945322;
+// let thisData: 11864383092;
+// let thisData: 9612908814;
+// let thisData: 4644155391;
+// let thisData: 4084424747;
+
 //   <BarChart
 //     colorBars
 //     height={150}
@@ -93,18 +127,3 @@ const Bar = ({ percent }) => {
 //             )
 //         }      
 // }
-
-
-export default function ChartResults(props){
-    return(
-        <div>
-              <BarChart
-    colorBars
-    height={150}
-    width={650}
-    data={this.defaultData}
-    margin={{top: 0, right: 0, bottom: 30, left: 100}}
-  />
-        </div>
-    )
-}

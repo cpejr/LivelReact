@@ -159,6 +159,10 @@
     margin-top: 60%;
 }
 
+.resultBars{
+    max-height: 50%;
+}
+
 /* ---------------------Element MonthlyResult Profile--------------------- */
 .BodyResultContainer{
     height: 100%;
