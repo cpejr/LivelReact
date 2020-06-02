@@ -13,33 +13,33 @@ let gordura = 10.0;
 export default function Results(props){
     return (
         <div className="ResultsContainer">
-            <ul>
+            <div className="resultsRow">
 
-                <li className="ResultsForça">
-                    <strong>FORÇA</strong>
+                <div className="ResultsBox">
+                    <div className="boxHeader">FORÇA</div>
                     <a> = Abdominal + Flexão + Barra</a>
                     <CircleResults isPositive = {forca} />
-                </li>
+                </div>
 
 
-                <li className="ResultsCardio">
-                    <strong>CARDIO</strong>
+                <div className="ResultsBox">
+                    <div className="boxHeader">CARDIO</div>
                     <a> Corrida / Caminhada</a>
                     <CircleResults isPositive = {cardio} />
-                </li>
-            </ul>
-            <ul>
-                <li className="ResultsPeso">
-                    <strong>PESO</strong>
+                </div>
+            </div>
+            <div className="resultsRow">
+                <div className="ResultsBox">
+                    <div className="boxHeader">PESO</div>
                     <CircleResults isPositive = {peso} />
-                </li>
+                </div>
 
-                <li className="ResultsGordura">
-                    <strong>% GORDURA </strong>
+                <div className="ResultsBox">
+                    <div className="boxHeader">% GORDURA </div>
                     <CircleResults isPositive = {gordura} />
-                </li>
+                </div>
                 
-            </ul>
+            </div>
         </div>
     )
 }
