@@ -3,14 +3,14 @@ import '../Profile.css'
 import ReactDOM from 'react-dom';
 const render = ReactDOM.render;
 
-let peso = '80 kg';
-let gordura = '15.5 %';
-let alongamento = 'média';
-let altura = '1,79 m';
-let corrida = '2 km';
-let abdominal = '30';
-let flexao = '20';
-let barra = '5';
+let peso = '180 kg';
+let gordura = '19.5 %';
+let alongamento = 'bom';
+let altura = '1,20 m';
+let corrida = '0 km';
+let abdominal = '130';
+let flexao = '120';
+let barra = '50';
             
 let tempoCorrida = '10`';
 let tempoAbdominal = '1`';
@@ -19,31 +19,31 @@ let tempoFlexao = '1`';
 let score = '55';
 
 const biceps = {
-    value: '30 cm',
+    value: '40 cm',
     description: 'bíceps',
     bottom: '73%',
     left: '79%',
 }
 const coxa = {
-    value: '30 cm',
+    value: '120 cm',
     description: 'coxa',
-    left: '26%',
+    left: '24.5%',
     bottom: '35.5%',
 }
 const cintura = {
-    value: '30 cm',
+    value: '130 cm',
     description: 'cintura',
     bottom: '58.5%',
-    left: '26%',
+    left: '24.5%',
 }
 const pescoco = {
-    value: '30 cm',
+    value: '10 cm',
     description: 'pescoço',
-    left: '26%',
+    left: '24.5%',
     bottom: '80.5%',
 }
 const quadril = {
-    value: '30 cm',
+    value: '10 cm',
     description: 'quadril',
     left: '79%',
     bottom: '49.5%',

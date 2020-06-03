@@ -5,6 +5,7 @@ import{FiChevronLeft} from 'react-icons/fi';
 
 import '../Profile.css'
 
+
 export default function HeaderProfile(props){
     return (
         <div className="headerContainer">

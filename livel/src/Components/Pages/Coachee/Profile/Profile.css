@@ -38,9 +38,6 @@
     width: auto;
 }
 
-.buttonProfile{
-}
-
 /* ---------------------Element ExitButton Profile--------------------- */
 .exitButtonContainer{
     height: 5%;
@@ -79,7 +76,6 @@
     padding-inline-start: 0px;
     height: 80%;
 }
-
 
 
 /* ---------------------Element Results Profile--------------------- */

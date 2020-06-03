@@ -11,7 +11,6 @@ import CurrentMonthResult from './Elements/CurrentMonth'
 import LastMonthResult from './Elements/LastMonth'
 
 
-
 const abas = ['LastMonth', 'CurrentMonth', 'RESULTADO'];
 
 
@@ -22,7 +21,7 @@ export default function Profile(){
     return(
         <div style={{height: "100%"}} >
       
-            <HeaderProfile img="/images/user.jpg" level={5} back={true} />
+            <HeaderProfile img="/images/user.jpg" level={7} back={true} />
             <Choice resultados={false} active={active} setActive={setActive} />
 
             <div className="ProfileContainer">
