@@ -19,12 +19,12 @@ function CircleResults(props){
     const isPositive = props.isPositive;
     console.log(isPositive);
     return (
-        <>
+        <div className="circleMove">
             {(isPositive >= 0.0)
                 ? <FiCircle size={50} color="#06BFB8" stroke-width="1px" />
                 : <FiCircle size={50} color="#FF818B" stroke-width="1px" />
             }
-        </>
+        </div>
     );
 }
 
@@ -38,40 +38,44 @@ export default function Results(props){
 
                 <div className="ResultsBox">
                     <div className="boxHeader">
-                    FORÇA
-                        <a> = Abdominal + Flexão + Barra</a>
+                    <div className="forcaTitle">FORÇA</div> 
+                        <a className="forcaDescription"> = Abdominal + Flexão + Barra</a>
                         <CircleResults isPositive = {forca} />
                         <div className="resultBars" style={{display: 'inline-block', position: 'absolute'}}>
-                            <BarChart
-                                data={[
-                                    {x: 'forcaBefore', y: 50, color: '#C6BBCE'},
-                                    {x: 'forcaAfter', y: 150, color: '#532166'}
-                                ]}
-                                    width={120}
-                                    height={150}
-                                    margin={{top: 0, right: 0, bottom: 0, left: 0}}
-                                    yDomainRange={[0, 200]}
-                                />
+                            <div className="forcaMove">
+                                <BarChart
+                                    data={[
+                                        {x: 'forcaBefore', y: 50, color: '#C6BBCE'},
+                                        {x: 'forcaAfter', y: 150, color: '#532166'}
+                                    ]}
+                                        width={90}
+                                        height={75}
+                                        margin={{top: 0, right: 0, bottom: 0, left: 0}}
+                                        yDomainRange={[0, 200]}
+                                    />
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div className="ResultsBox">
                     <div className="boxHeader">
-                    CARDIO
-                            <a> Corrida / Caminhada</a>
+                    <div className="cardioTitle">CARDIO</div> 
+                            <a className="cardioDescription"> Corrida / Caminhada</a>
                             <CircleResults isPositive = {cardio} />
                             <div className="resultBars" style={{display: 'inline-block', position: 'absolute'}}>
-                                <BarChart
-                                    data={[
-                                        {x: 'cardioBefore', y: 4000, color: '#C6BBCE'},
-                                        {x: 'cardioAfter', y: 2000, color: '#532166'},
-                                    ]}
-                                    width={120}
-                                    height={150}
-                                    margin={{top: 0, right: 10, bottom: 0, left: 0}}
-                                    yDomainRange={[0, 4000]}
-                                />
+                                <div className="cardioMove">
+                                    <BarChart
+                                        data={[
+                                            {x: 'cardioBefore', y: 4000, color: '#C6BBCE'},
+                                            {x: 'cardioAfter', y: 2000, color: '#532166'},
+                                        ]}
+                                        width={90}
+                                        height={75}
+                                        margin={{top: 0, right: 0, bottom: 0, left: 0}}
+                                        yDomainRange={[0, 4000]}
+                                    />
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -83,38 +87,42 @@ export default function Results(props){
 
                 <div className="ResultsBox">
                     <div className="boxHeader">
-                        PESO
+                        <div className="pesoTitle">PESO</div> 
                         <CircleResults isPositive = {peso} />
                         <div className="resultBars" style={{display: 'inline-block', position: 'absolute'}}>
-                            <BarChart
-                                data={[
-                                    {x: 'pesoBefore', y: 120, color: '#C6BBCE'},
-                                    {x: 'pesoAfter', y: 130, color: '#532166'},
-                                ]}
-                                    width={120}
-                                    height={150}
-                                    margin={{top: 0, right: 0, bottom: 10, left: 0 }}
-                                    yDomainRange={[0, 200]}
-                                />
+                            <div className="pesoMove">
+                                <BarChart
+                                    data={[
+                                        {x: 'pesoBefore', y: 120, color: '#C6BBCE'},
+                                        {x: 'pesoAfter', y: 130, color: '#532166'},
+                                    ]}
+                                        width={90}
+                                        height={75}
+                                        margin={{top: 0, right: 0, bottom: 0, left: 0 }}
+                                        yDomainRange={[0, 200]}
+                                    />
+                            </div>    
                         </div>
                     </div>
                 </div>
 
                 <div className="ResultsBox">
                     <div className="boxHeader">
-                        % GORDURA 
+                        <div className="gorduraTitle"> % GORDURA </div>
                         <CircleResults isPositive = {gordura} />
                         <div className="resultBars" style={{display: 'inline-block', position: 'absolute'}}>
-                            <BarChart
-                                data={[
-                                    {x: 'gorduraBefore', y: 20, color: '#C6BBCE'},
-                                    {x: 'gorduraAfter', y: 30, color: '#532166'},
-                                ]}
-                                    width={120}
-                                    height={150}
-                                    margin={{top: 0, right: 0, bottom: 0, left: 0}}
-                                    yDomainRange={[0, 40]}
-                                />
+                            <div className="gorduraMove">
+                                <BarChart
+                                    data={[
+                                        {x: 'gorduraBefore', y: 20, color: '#C6BBCE'},
+                                        {x: 'gorduraAfter', y: 30, color: '#532166'},
+                                    ]}
+                                        width={90}
+                                        height={75}
+                                        margin={{top: 0, right: 0, bottom: 0, left: 0}}
+                                        yDomainRange={[0, 40]}
+                              />
+                            </div>  
                         </div>
                     </div>
                 </div>
