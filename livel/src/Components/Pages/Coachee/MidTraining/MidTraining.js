@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 
 import './MidTraining.css'
@@ -21,8 +21,15 @@ let time = {
 
 
 export default function MidTraining() {
-
+    const [Playpause, setPlaypause] = useState(false)
+    
+    function handleButton(){
+        setPlaypause(!Playpause)
+        console.log(Playpause)
+    }
+ 
     return (
+
         
         <div style={{ height: "100%", }}>
             <Header img={ALUNO_INFO.AlunoFoto} name={ALUNO_INFO.AlunoNome} icons={true} />
@@ -46,7 +53,7 @@ export default function MidTraining() {
                     </div>
                     <div className="counting">
                         <div> 
-                        <Clock2 minute={5} hour={0} second={0}/>
+                        <Clock2 minute={4} hour={0} second={0} state={Playpause}/>
                         </div>
                         </div>
 
@@ -62,7 +69,7 @@ export default function MidTraining() {
                     </div>
                     <div className="counting">
                         <div> 
-                        <Clock2 minute={0} hour={0} second={10}/>
+                        
                         </div>
                         </div>
 
@@ -84,13 +91,13 @@ export default function MidTraining() {
 
                 </div>
                 <div className="playButton">
-                   <button> <img src="images/playpause.png" alt="playpause"></img>
+                   <button onClick={handleButton}> <img src="images/playpause.png" alt="playpause"></img>
                    </button>
                 </div>
 
             </div>
             <div className="footer">
-                <Link type="button" to="/requestnumber" className="buttonAdvance">
+                <Link type="button" to="/requestnumber" className="buttonAdvance" >
                     <div>
                         AVANÇAR
                 </div>

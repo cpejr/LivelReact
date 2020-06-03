@@ -24,46 +24,55 @@ let countS = props.second;
     const [hour, setHour] = useState(props.hour);
     const [minute, setMinute] = useState(props.minute);
     const [second, setSecond] = useState(props.second);
+    const [intervalID, setIntervalID] = useState();
+
 
     useEffect(() => {
-        setInterval(() => {
-            // Condição de parada da contagem regressiva
-            if(countH === 0 && countM === 0 && countS === 0){
-                setHour(hour => 0);
-                setMinute(minute => 0);
-                setSecond(second => 0);
-            }
 
-            // Contagem regressiva
-            else if(countS > 0){
-                countS--;
-                setSecond(second => second - 1);
+    function countingmenos() {
+         // Condição de parada da contagem regressiva
+         if(countH === 0 && countM === 0 && countS === 0){
+            setHour(hour => 0);
+            setMinute(minute => 0);
+            setSecond(second => 0);
+        }
+
+        // Contagem regressiva
+        else if(countS > 0){
+            countS--;
+            setSecond(second => second - 1);
+        }
+        else{
+            countS = 59;
+            setSecond(second => 59);
+            if(countM > 0){
+                countM--;
+                setMinute(minute => minute -1);
             }
             else{
-                countS = 59;
-                setSecond(second => 59);
-                if(countM > 0){
-                    countM--;
-                    setMinute(minute => minute -1);
+                countM = 59;
+                setMinute(minute => 59);
+                if(hour > 0){
+                    countH--;
+                    setHour(hour => hour - 1);
                 }
+                // Ativação da condição de parada
                 else{
-                    countM = 59;
-                    setMinute(minute => 59);
-                    if(hour > 0){
-                        countH--;
-                        setHour(hour => hour - 1);
-                    }
-                    // Ativação da condição de parada
-                    else{
-                        countH = 0;
-                        countM = 0;
-                        countS = 0;
-                    }
-                }     
-            }
-        
-        }, 1000);
-      }, []);
+                    countH = 0;
+                    countM = 0;
+                    countS = 0;
+                }
+            }     
+        }
+    
+    
+    }
+        if(props.state){ 
+    setIntervalID(setInterval(countingmenos(), 1000));
+    } else if(intervalID) {
+        clearInterval(intervalID);
+    } 
+      }, [props.state]);
 
 
     return(
