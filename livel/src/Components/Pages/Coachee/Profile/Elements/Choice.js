@@ -15,37 +15,61 @@ const Tab = styled.button`
     outline: 0;
     cursor: pointer;
     text-align: center;
-    flex-grow: 1;
+    width: 33%;
+    font-size: 11px;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    color: #231F20;
+    height: 100%;
+    ${({ active}) =>
+    active && 
+    `
     font-size: 12px;
     font-family: sans-serif, Univers LT;
     font-stretch: condensed;
     font-weight: bold;
     color: #532166;
-    ${({ active}) =>
-    active && 
-    `
     background: white;
     border-bottom: 0.5mm solid purple;
     `
 }
 `;
-let lastMonth = "JANEIRO";
-let thisMonth = "FEVEREIRO";
 
-const abas = [lastMonth, thisMonth, 'RESULTADO'];
+const monthNames = ["Dezembro","Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho","Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+
+const month = new Date()
+const thisMonth =  monthNames[month.getMonth()+1]
+const lastMonth = monthNames[month.getMonth()]
+
+
 
 function TabGroup(props){
     return(
         <div className="FlexContainer">
-            {abas.map(type => (
                 <Tab
-                key ={type}
-                active = {props.active === type}
-                onClick={() => {props.setActive(type)}}
-                >
-                    {type}
+                key ={"LastMonth"}
+                active = {props.active === "LastMonth"}
+                onClick={() => {props.setActive("LastMonth")}}
+                > 
+                    {lastMonth}
                 </Tab>
-            )) }
+
+                <Tab
+                key ={"CurrentMonth"}
+                active = {props.active === "CurrentMonth"}
+                onClick={() => {props.setActive("CurrentMonth")}}
+                > 
+                    {thisMonth}
+                </Tab>
+
+                <Tab
+                key ={"RESULTADO"}
+                active = {props.active === "RESULTADO"}
+                onClick={() => {props.setActive("RESULTADO")}}
+                > 
+                    Resultados
+                </Tab>
          </div>
     );
 }
