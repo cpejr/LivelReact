@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 import './MidTraining.css'
-
+import Clock2 from '../Clock2/Clock2'
+import Clock3 from '../Clock3/Clock3'
 import Header from '../../../Header'
 
 let ALUNO_INFO = {
@@ -10,13 +11,20 @@ let ALUNO_INFO = {
     AlunoNome: 'Arthur Lima'
 }
 
-
+let time = {
+    hour: 0,
+    minutes: 5,
+    seconds: 0,
+    minutes2: 0,
+    seconds: 10
+}
 
 
 export default function MidTraining() {
 
     return (
-        <div style={{ height: "100%" }}>
+        
+        <div style={{ height: "100%", }}>
             <Header img={ALUNO_INFO.AlunoFoto} name={ALUNO_INFO.AlunoNome} icons={true} />
             <div className="info">
                 <div className="titlee">
@@ -33,12 +41,12 @@ export default function MidTraining() {
                             Atividade
                     </div>
                         <div className="countinginfo">
-                            5 Min
+                        5  min
                         </div>
                     </div>
                     <div className="counting">
                         <div> 
-                        05:00
+                        <Clock2 minute={5} hour={0} second={0}/>
                         </div>
                         </div>
 
@@ -46,15 +54,15 @@ export default function MidTraining() {
                 <div className="block">
                 <div className="boxbody">
                         <div className="boxtitle">
-                            Atividade
+                            Pausa
                     </div>
                         <div className="countinginfo">
-                            5 Min
+                            10 seg  
                         </div>
                     </div>
                     <div className="counting">
                         <div> 
-                        05:00
+                        <Clock2 minute={0} hour={0} second={10}/>
                         </div>
                         </div>
 
@@ -62,21 +70,22 @@ export default function MidTraining() {
                 <div className="block">
                 <div className="boxbody">
                         <div className="boxtitle">
-                            Atividade
+                            Serie
                     </div>
                         <div className="countinginfo">
-                            5 Min
+                            5 x
                         </div>
                     </div>
                     <div className="counting">
                         <div> 
-                        05:00
+                        2
                         </div>
-                        </div>u
+                        </div>
 
                 </div>
                 <div className="playButton">
-                    <img src="images/playpause.png" alt="playpause"></img>
+                   <button> <img src="images/playpause.png" alt="playpause"></img>
+                   </button>
                 </div>
 
             </div>
