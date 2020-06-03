@@ -16,34 +16,36 @@ let tempoCorrida = '10`';
 let tempoAbdominal = '1`';
 let tempoFlexao = '1`';
 
-const quadril = {
+let score = '55';
+
+const biceps = {
     value: '30 cm',
-    description: 'quadril',
-    bottom: '73.5%',
-    left: '84%',
+    description: 'bíceps',
+    bottom: '73%',
+    left: '79%',
 }
 const coxa = {
     value: '30 cm',
     description: 'coxa',
-    left: '30%',
+    left: '26%',
     bottom: '35.5%',
 }
 const cintura = {
     value: '30 cm',
     description: 'cintura',
     bottom: '58.5%',
-    left: '30%',
+    left: '26%',
 }
 const pescoco = {
     value: '30 cm',
     description: 'pescoço',
-    left: '30%',
+    left: '26%',
     bottom: '80.5%',
 }
-const biceps = {
+const quadril = {
     value: '30 cm',
-    description: 'bíceps',
-    left: '84%',
+    description: 'quadril',
+    left: '79%',
     bottom: '49.5%',
 }
 
@@ -72,8 +74,8 @@ const BodyResult= {img:'/images/profile/body.png'};
 
 const Abdominais = {img:'/images/profile/abdominais.png', 
                     value: abdominal,
-                    time: tempoAbdominal, 
-                    }; 
+                    time: '('+ tempoAbdominal + ')', 
+                }; 
 const Alongamento = {img:'/images/profile/alongamento.png', 
                     value: alongamento,
                 }; 
@@ -85,22 +87,22 @@ const Barra =       {img:'/images/profile/barra.png',
                 }; 
 const Corrida =     {img:'/images/profile/corrida.png',                     
                     value: corrida,
-                    time: tempoCorrida,
+                    time: '('+ tempoCorrida + ')',
                 }; 
 const Peso =        {img:'/images/profile/peso.png',                    
                     value: peso,
                 }; 
 const Flexao =      {img:'/images/profile/flexoes.png',                     
                     value: flexao,
-                    time: tempoFlexao,
+                    time: '('+ tempoFlexao+ ')',
                 }; 
 const Gordura =     {img:'/images/profile/porcentagemGordura.png',                    
                     value: gordura,
                 }; 
-const LittlePurple = {img:'/images/profile/littlePurpleLine.png', 
+const LittlePurple = {img:'/images/profile/purpleline.png', 
                 };
 
-const BigPurple = { img:'/images/profile/PurpleLine.png', 
+const BigPurple = { img:'/images/profile/purpleL.png', 
                 };
 
 
@@ -165,6 +167,12 @@ class MonthlyResultImages extends Component {
 
                     </ul>
                     <ul className="RightList">
+                        <div className="thePurples">
+                            <img className="bigPurple" src={BigPurple.img} />
+                            <img className="littlePurple" src={LittlePurple.img} />
+                            <div className="purpleScore">Score total:</div>
+                            <div className="purpleScoreAmount">{score}</div>
+                        </div>
                     {listaRight.map(right =>{
                             return(
                                 <li className="rightIcons">
@@ -173,7 +181,7 @@ class MonthlyResultImages extends Component {
                                         {right.value}
                                     </div>
                                     <div className="timeSubtitles">
-                                        ( {right.time} )
+                                         {right.time} 
                                     </div>
                                 </li>
                             )
@@ -192,10 +200,10 @@ class MonthlyResultImages extends Component {
 
 
 
-export default function MonthlyResult(props){
+export default function CurrentMonthResult(props){
     return (
             <div className="BodyResultContainer">
-                <MonthlyResultImages />      
+                <MonthlyResultImages /> 
  
             </div> 
     )

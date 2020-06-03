@@ -9,25 +9,72 @@ import '../Profile.css'
 
 const render = ReactDOM.render;
 
-let currentforca = 1.0;
-let currentcardio = 1.0;
-let currentpeso = 12.0;
-let currentgordura = 12.0;
+let currentforca = 180.0;
+let currentcardio = 3000.0;
+let currentpeso = 159.0;
+let currentgordura = 25.0;
 
-let lastforca = 0.1;
-let lastcardio = 5.0;
-let lastpeso = -5.0;
-let lastgordura = 9.0;
+let lastforca = 90.0;
+let lastcardio = 4000.0;
+let lastpeso = 190.0;
+let lastgordura = 40.0;
 
-let percentForca = (((currentforca)-(lastforca) / lastcardio) * 100).toFixed(0);
-let percentCardio = ((lastcardio / currentcardio) * 100).toFixed(0);
-let percentPeso = ((lastpeso / currentpeso) * 100).toFixed(0);
-let percentGordura = ((lastgordura / currentgordura) * 100).toFixed(0);
+let percentForca = ((((currentforca)-(lastforca) )/ lastforca) * 100).toFixed(0);
+let percentCardio = ((((currentcardio)-(lastcardio)) / lastcardio) * 100).toFixed(0);
+let percentPeso = ((((currentpeso)-(lastpeso)) / lastpeso) * 100).toFixed(0);
+let percentGordura = ((((currentgordura)-(lastgordura)) / lastgordura) * 100).toFixed(0);
+
+function StyleForcaPercent(props){
+    const isPositive = props.isPositive;
+    return (
+        <div className="percentMove">
+            {(isPositive >= 0.0)
+                ? <div style={{color:"#06BFB8"}}>{ percentForca }%</div>
+                : <div style={{color:"#FF818B"}}>{ percentForca }%</div>
+            }
+        </div>
+    );
+}
+
+function StyleCardioPercent(props){
+    const isPositive = props.isPositive;
+    return (
+        <div className="percentMove">
+            {(isPositive >= 0.0)
+                ? <div style={{color:"#06BFB8"}}>+{ percentCardio }%</div>
+                : <div style={{color:"#FF818B"}}>{ percentCardio }%</div>
+            }
+        </div>
+    );
+}
+
+function StylePesoPercent(props){
+    const isPositive = props.isPositive;
+    return (
+        <div className="percentMove">
+            {(isPositive >= 0.0)
+                ? <div style={{color:"#06BFB8"}}>+{ percentPeso }%</div>
+                : <div style={{color:"#FF818B"}}>{ percentPeso }%</div>
+            }
+        </div>
+    );
+}
+
+function StyleGorduraPercent(props){
+    const isPositive = props.isPositive;
+    return (
+        <div className="percentMove">
+            {(isPositive >= 0.0)
+                ? <div style={{color:"#06BFB8"}}>+{ percentGordura }%</div>
+                : <div style={{color:"#FF818B"}}>{ percentGordura }%</div>
+            }
+        </div>
+    );
+}
 
 
 function CircleResults(props){
     const isPositive = props.isPositive;
-    console.log(isPositive);
     return (
         <div className="circleMove">
             {(isPositive >= 0.0)
@@ -38,12 +85,13 @@ function CircleResults(props){
     );
 }
 
+const monthNames = ["Dez","Jan", "Fev", "Mar", "Abr", "Mai", "Jun","Jul", "Ago", "Set", "Out", "Nov", "Dez"];
 
 export class CurrentMonth extends React.Component {
     constructor() {
         super();
-        var month = new Date(),
-            thisMonth =  (month.getMonth()+1);
+        const month = new Date(),
+            thisMonth =  monthNames[month.getMonth()+1];
 
         this.state = {
             thisMonth: thisMonth
@@ -51,7 +99,7 @@ export class CurrentMonth extends React.Component {
     }
     render() {
         return (
-            <div className='thisMonth'>
+            <div className="thisMonth">
                 {this.state.thisMonth}
             </div>
         );
@@ -62,8 +110,8 @@ export class CurrentMonth extends React.Component {
 export class LastMonth extends React.Component {
     constructor() {
         super();
-        var month = new Date(),
-            lastMonth = (month.getMonth());
+        const month = new Date(),
+            lastMonth = monthNames[month.getMonth()];
 
         this.state = {
             lastMonth: lastMonth
@@ -71,7 +119,7 @@ export class LastMonth extends React.Component {
     }
     render() {
         return (
-            <div className='lastsMonth'>
+            <div className="lastsMonth">
                 {this.state.lastMonth}
             </div>
         );
@@ -90,23 +138,29 @@ export default function Results(props){
                 <div className="ResultsBox">
                     <div className="boxHeader">
                     <div className="forcaTitle">FORÇA</div> 
-                    <LastMonth />
-                    <CurrentMonth />
+                    <div className="lastMonthStyle">
+                        <LastMonth />
+                    </div> 
+                    <div className="thisMonthStyle">
+                        <CurrentMonth />
+                    </div> 
                         <a className="forcaDescription"> = Abdominal + Flexão + Barra</a>
                         <CircleResults isPositive = {percentForca} />
-                        <div className="percentType"> {percentForca}% </div>
+                        <StyleForcaPercent isPositive = {percentForca} className="percentType" />
                         <div className="resultBars" style={{display: 'inline-block', position: 'absolute'}}>
                             <div className="forcaMove">
                                 <BarChart
                                     data={[
-                                        {x: 'forcaBefore', y: percentForca, color: '#C6BBCE'},
-                                        {x: 'forcaAfter', y: 150, color: '#532166'}
+                                        {x: 'forcaBefore', y: lastforca, color: '#C6BBCE'},
+                                        {x: 'forcaAfter', y: currentforca, color: '#532166'}
                                     ]}
                                         width={90}
                                         height={75}
                                         margin={{top: 0, right: 0, bottom: 0, left: 0}}
                                         yDomainRange={[0, 200]}
                                     />
+                                <div className="currentAmount"> {currentforca} </div>
+                                <div className="lastAmount"> {lastforca} </div>
                             </div>
                             
                         </div>
@@ -116,23 +170,29 @@ export default function Results(props){
                 <div className="ResultsBox">
                     <div className="boxHeader">
                     <div className="cardioTitle">CARDIO</div> 
-                    <LastMonth />
-                    <CurrentMonth />
+                    <div className="lastMonthStyle">          
+                        <LastMonth />
+                    </div> 
+                    <div className="thisMonthStyle">   
+                        <CurrentMonth />
+                    </div> 
                             <a className="cardioDescription"> Corrida / Caminhada</a>
                             <CircleResults isPositive = {percentCardio} />
-                                <div className="percentType"> {percentCardio}% </div>
+                            <StyleCardioPercent isPositive = {percentCardio} className="percentType" />
                             <div className="resultBars" style={{display: 'inline-block', position: 'absolute'}}>
                                 <div className="cardioMove">
                                     <BarChart
                                         data={[
-                                            {x: 'cardioBefore', y: 4000, color: '#C6BBCE'},
-                                            {x: 'cardioAfter', y: 2000, color: '#532166'},
+                                            {x: 'cardioBefore', y: lastcardio, color: '#C6BBCE'},
+                                            {x: 'cardioAfter', y: currentcardio, color: '#532166'},
                                         ]}
                                         width={90}
                                         height={75}
                                         margin={{top: 0, right: 0, bottom: 0, left: 0}}
                                         yDomainRange={[0, 4000]}
                                     />
+                                    <div className="currentAmount"> {currentcardio}m </div>
+                                    <div className="lastAmount"> {lastcardio}m </div>
                                 </div>
                         </div>
                     </div>
@@ -146,22 +206,28 @@ export default function Results(props){
                 <div className="ResultsBox">
                     <div className="boxHeader">
                         <div className="pesoTitle">PESO</div> 
-                        <LastMonth />
-                        <CurrentMonth />
+                        <div className="lastMonthStyle">   
+                            <LastMonth />
+                        </div> 
+                        <div className="thisMonthStyle">   
+                            <CurrentMonth />
+                        </div> 
                         <CircleResults isPositive = {percentPeso} />
-                        <div className="percentType"> {percentPeso}% </div>
+                        <StylePesoPercent isPositive = {percentPeso} className="percentType" />
                         <div className="resultBars" style={{display: 'inline-block', position: 'absolute'}}>
                             <div className="pesoMove">
                                 <BarChart
                                     data={[
-                                        {x: 'pesoBefore', y: 120, color: '#C6BBCE'},
-                                        {x: 'pesoAfter', y: 130, color: '#532166'},
+                                        {x: 'pesoBefore', y: lastpeso, color: '#C6BBCE'},
+                                        {x: 'pesoAfter', y: currentpeso, color: '#532166'},
                                     ]}
                                         width={90}
                                         height={75}
                                         margin={{top: 0, right: 0, bottom: 0, left: 0 }}
                                         yDomainRange={[0, 200]}
                                     />
+                                    <div className="currentAmount"> {currentpeso}kg </div>
+                                    <div className="lastAmount"> {lastpeso}kg </div>
                             </div>    
                         </div>
                     </div>
@@ -170,22 +236,28 @@ export default function Results(props){
                 <div className="ResultsBox">
                     <div className="boxHeader">
                         <div className="gorduraTitle"> % GORDURA </div>
-                        <LastMonth />
-                        <CurrentMonth />
+                        <div className="lastMonthStyle">
+                            <LastMonth />
+                        </div>
+                        <div className="thisMonthStyle">
+                            <CurrentMonth />
+                        </div>
                         <CircleResults isPositive = {percentGordura} />
-                        <div className="percentType"> {percentGordura}% </div>
+                        <StyleGorduraPercent isPositive = {percentGordura} className="percentType" />
                         <div className="resultBars" style={{display: 'inline-block', position: 'absolute'}}>
                             <div className="gorduraMove">
                                 <BarChart
                                     data={[
-                                        {x: 'gorduraBefore', y: 20, color: '#C6BBCE'},
-                                        {x: 'gorduraAfter', y: 30, color: '#532166'},
+                                        {x: 'gorduraBefore', y: lastgordura, color: '#C6BBCE'},
+                                        {x: 'gorduraAfter', y: currentgordura, color: '#532166'},
                                     ]}
                                         width={90}
                                         height={75}
                                         margin={{top: 0, right: 0, bottom: 0, left: 0}}
                                         yDomainRange={[0, 40]}
                               />
+                                <div className="currentAmount"> {currentgordura}% </div>
+                                <div className="lastAmount"> {lastgordura}% </div>
                             </div>  
                         </div>
                     </div>
@@ -203,117 +275,3 @@ export default function Results(props){
 // link ensinando a usar react-easy-chart: https://experience-experiments.github.io/react-easy-chart/bar-chart/index.html
 
 // link que pega o month https://stackoverflow.com/questions/43744312/react-js-get-current-date 
-
-
-// let month = "Fevereiro";
-// let lastMonth = "Janeiro";
-
-
-        // var month = new Date().getMonth() + 1;
-        // var lastMonth = new Date().getMonth();
-        // console.log(month);
-        // console.log(lastMonth);
-
-// Month = () => {
-//     var months    = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-//     var now       = new Date();
-//     var thisMonth = months[now.getMonth()]; // getMonth method returns the month of the date (0-January :: 11-December)
-//     var output = document.getElementById('output');
-//     console.log(thisMonth);
-
-//     if(output.textContent !== undefined) {
-//         output.textContent = thisMonth;
-//     }
-//     else {
-//         output.innerText = thisMonth;
-//     }
-// }
-
-// Month = () => {
-//     const [startDate, setStartDate] = useState(
-//       (new Date())
-//     );
-//     return (
-//       <DatePicker
-//         selected={startDate}
-//         onChange={date => setStartDate(date)}
-//         showTimeSelect
-//         dateFormat="MMMM"
-//       />
-//     );
-//   };
-
-// class Months extends React.Component {  
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//         month = new Date().getMonth() + 1,
-//         lastMonth = new Date().getMonth()
-//         };
-//       }
-//     handleMonth(){  
-//       console.log(this.lastMonth);  
-//       console.log(this.month);  
-//     }  
-//     render() {
-//         return (
-//           <div class="date">
-//             <p> ddd {this.state.date}</p>
-//           </div>
-//         );
-//       }
-//     }
-
-
-// function getMonths(props){
-//     constructor(props) {
-//         super(props);
-//         // Don't call this.setState() here!
-//         this.state = { counter: 0 };
-//         this.handleClick = this.handleClick.bind(this);
-//       }
-//       }
-    
-
-// class Months extends React.Component {
-//     state = {
-//         date: ""
-//     };
-        
-//     getDate() {
-//         var month = new Date().getMonth() + 1;
-//         var lastMonth = new Date().getMonth();
-//         this.setState({ month });
-//         this.setState({ lastMonth });
-//     }
-      
-//     render() {
-//     return (
-//         <div class="date">
-//             <p> ddd {this.state.month}</p>
-//         </div>
-//           );
-//         }
-// }
-
-// var month = new Date().getMonth() + 1;
-// var lastMonth = new Date().getMonth();
-
-//(function() {
-    //     var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-    //     Date.prototype.getMonthName = function() {
-    //         return months[ this.getMonth() ];
-    //     };
-    // })();
-    
-    //     var now = new Date();
-    //     var month = now.getMonthName();
-    
-// function decidingPercentForca(props){
-// //     if(currentforca>=lastforca){
-// //       let percentForca = ((currentforca)-(lastforca) / lastcardio) * 100);
-// //     }
-// //     else if(currentforca<lastforca){
-// //         let percentForca = ((currentforca)-(lastforca) / lastcardio) * 100);
-// //     }
-// // }
