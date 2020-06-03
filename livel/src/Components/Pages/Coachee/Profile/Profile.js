@@ -10,6 +10,7 @@ import Results from './Elements/Results'
 import MonthlyResult from './Elements/MonthlyResult'
 
 
+
 let lastMonth = "JANEIRO";
 let thisMonth = "FEVEREIRO";
 
@@ -34,6 +35,7 @@ export default function Profile(){
                     {(active === 'RESULTADO') && <Results   />}
                     {(active === lastMonth) && <MonthlyResult  />}
                     {(active === thisMonth) && <MonthlyResult  />}
+                    {/* <ChartResults /> */}
 
             </div>
             

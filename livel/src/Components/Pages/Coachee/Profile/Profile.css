@@ -44,7 +44,7 @@
 /* ---------------------Element ExitButton Profile--------------------- */
 .exitButtonContainer{
     height: 5%;
-    position: relative;
+    /* position: relative; */
     display: flex;
     justify-content: center;
 }
@@ -93,12 +93,12 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-
+    position: relative;
 }
 
-.ResultsContainer ul{
+.resultsRow{
     width: 100%;
-    height: 70%;
+    height: 50%;
     display: flex;
     list-style: none;
     padding-inline-start: 0px;
@@ -106,70 +106,124 @@
     justify-content: space-evenly;
 }
 
-.ResultsContainer ul li{
+.ResultsBox{
     border: 0.3mm solid #C6BBCE;
     background: #F2F2F2;
     border-radius: 3px;
-    height: 105%;
+    height: 90%;
     width: 40%;
 }
 
-.ResultsContainer ul li strong{
+.gorduraTitle{
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    color: #532166;
+    font-weight: bolder;
+    font-size: 17px;
+    position: absolute;
+    margin-top: 45%;
+    max-width: 40%;
+    margin-left: 3%;
+}
+
+.pesoTitle{
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    color: #532166;
+    font-weight: bolder;
+    font-size: 17px;
+    position: absolute;
+    margin-top: 46%;
+    max-width: 40%;
+    margin-left: 13%;
+}
+
+.cardioTitle{
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    color: #532166;
+    font-weight: bolder;
+    font-size: 17px;
+    position: absolute;
+    margin-top: 43%;
+    max-width: 40%;
+    margin-left: 10%;
+}
+
+.forcaTitle{
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    color: #532166;
+    font-weight: bolder;
+    font-size: 17px;
+    position: absolute;
+    margin-top: 43%;
+    max-width: 40%;
+    margin-left: 12%;
+}
+
+.forcaDescription{
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    color: #676767;
+    font-size: 9px;
+    position: absolute;
+    margin-top: 50%;
+    max-width: 40%;
+    margin-left: -19%;
+}
+
+.cardioDescription{
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    color: #676767;
+    font-size: 9px;
+    position: absolute;
+    margin-top: 50%;
+    max-width: 40%;
+    margin-left: -12%;
+}
+
+.boxHeader{
     text-align: center;
-}
-
-.ResultsForça strong{
-    color: #532166;
-    font-size: 17px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    font-weight: bold;
-}
-
-.ResultsForça a{
-    color: #676767;
-    font-size: 9px;
-    font-family: sans-serif, Univers LT;
-
-}
-
-.ResultsCardio strong{
-    color: #532166;
-    font-size: 17px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    font-weight: bold;
-}
-
-.ResultsCardio a{ 
-    color: #676767;
-    font-size: 9px;
-    margin-top: 20px;
-    font-family: sans-serif, Univers LT;
-}
-
-.ResultsPeso strong{
-    color: #532166;
-    font-size: 17px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    font-weight: bold;
-}
-
-.ResultsGordura strong{
-    color: #532166;
-    font-size: 17px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    font-weight: bold;
 }
 
 .resultsCircle{
     height: 10%;
+    position: absolute;
+}
+
+.circleMove{
+    margin-left: 30%;
+    margin-top: 1%;
+}
+
+.barContainer{
+    max-width: 80%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    transform: rotate(180deg);
+}
+
+.columnBar{
+    width: 80%;
+    background: #532166;
+    z-index: 25; 
+    border-top: 10px solid #532166;
+    border-right: 10px solid #532166;
+}
+
+.resultBars{
+    display: flex;
+    align-items: center;
+    margin-top: 0%;
+    margin-left: -14%;
 }
 
 
-/* ---------------------Element MonthResult Profile--------------------- */
+
+/* ---------------------Element MonthlyResult Profile--------------------- */
 .BodyResultContainer{
     height: 100%;
     width: 100%;
@@ -179,12 +233,12 @@
 }
 
 .imagesContainer{
-    position: relative;
+    /* position: relative; */
     width: 80%;
 }
 
 .imagesContainer a{
-    position: relative;
+    /* position: relative; */
     font-size: 10px;
     font-family: sans-serif, Univers LT;
     font-stretch: condensed;
@@ -192,60 +246,6 @@
     font-weight: bold;
 }
 
-.quadril{
-    position: relative;
-    font-size: 8px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    color: #676767;
-    font-weight: bold;
-    bottom: 26.5%;
-    left: 77%;
-}
-
-.cintura{
-    position: relative;
-    font-size: 8px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    color: #676767;
-    font-weight: bold;
-    bottom: 35%;
-    left: 34%;
-}
-
-.pescoco{
-    position: relative;
-    font-size: 8px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    color: #676767;
-    font-weight: bold;
-    left: 33%;
-    bottom: 43.5%;
-}
-
-.biceps{
-    position: relative;
-    font-size: 8px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    color: #676767;
-    font-weight: bold;
-    left: 77%;
-    bottom: 44.3%;
-}
-
-.coxa{
-    position: relative;
-    font-size: 8px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    color: #676767;
-    font-weight: bold;
-    left: 35%;
-    bottom: 28.5%;
-}
 
 .BodyResultClass{
     height: 45%;
@@ -262,8 +262,75 @@
     font-weight: bold;
 }
 
-.valueStyled peso{
-    margin-top: 10px;
+
+.valueSubtitles{
+    font-size: 17px;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    color: #532166;
+    font-weight: bold;
+    margin-right: -15px;
+    margin-bottom: 4px;
+}
+.LeftList{
+    list-style: none;
+    display: flex;
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 14px;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    font-weight: bold;
+    color: #676767;
+    margin-top: -10px;
+    margin-right: 10px;
 }
 
+.leftIcons{
+    display: flex;
+    width: 100%;
+    height: 25%;
+    align-items: center;
+}
+
+.RightList{
+    list-style: none;
+    display: flex;
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 14px;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    font-weight: bold;
+    color: #676767;
+    margin-top: -10px;
+    margin-right: -58px;
+}
+
+.rightIcons{
+    display: flex;
+    width: 100%;
+    height: 25%;
+    align-items: center;
+}
+
+.timeSubtitles{
+    font-size: 10px;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    color: #676767;
+    margin-left: 12px;
+}
+
+.iconList{
+    height: auto;
+    width: 20%;
+    margin-right: 15px;
+}
 
