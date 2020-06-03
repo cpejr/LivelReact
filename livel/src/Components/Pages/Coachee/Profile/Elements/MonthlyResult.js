@@ -77,19 +77,25 @@ const Abdominais = {img:'/images/profile/abdominais.png',
 const Alongamento = {img:'/images/profile/alongamento.png', 
                     value: alongamento,
                 }; 
-const Altura =      {img:'/images/profile/altura.png',                    value: altura,
+const Altura =      {img:'/images/profile/altura.png',                    
+                    value: altura,
                 }; 
-const Barra =       {img:'/images/profile/barra.png',                    value: barra,
+const Barra =       {img:'/images/profile/barra.png',                           
+                    value: barra,
                 }; 
-const Corrida =     {img:'/images/profile/corrida.png',                     value: corrida,
+const Corrida =     {img:'/images/profile/corrida.png',                     
+                    value: corrida,
                     time: tempoCorrida,
                 }; 
-const Peso =        {img:'/images/profile/peso.png',                    value: peso,
+const Peso =        {img:'/images/profile/peso.png',                    
+                    value: peso,
                 }; 
-const Flexao =      {img:'/images/profile/flexoes.png',                     value: flexao,
+const Flexao =      {img:'/images/profile/flexoes.png',                     
+                    value: flexao,
                     time: tempoFlexao,
                 }; 
-const Gordura =     {img:'/images/profile/porcentagemGordura.png',                    value: gordura,
+const Gordura =     {img:'/images/profile/porcentagemGordura.png',                    
+                    value: gordura,
                 }; 
 const LittlePurple = {img:'/images/profile/littlePurpleLine.png', 
                 };
