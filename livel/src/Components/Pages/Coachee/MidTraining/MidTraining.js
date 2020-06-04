@@ -2,8 +2,7 @@ import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 
 import './MidTraining.css'
-import Clock2 from '../Clock2/Clock2'
-import Clock3 from '../Clock3/Clock3'
+import Clock from './Clock/Clock'
 import Header from '../../../Header'
 
 let ALUNO_INFO = {
@@ -21,12 +20,28 @@ let time = {
 
 
 export default function MidTraining() {
-    const [Playpause, setPlaypause] = useState(false)
-    
+    const [time1, settime1] = useState(3);
+    const [time2, settime2] = useState(3);
+    const [serie, setserie] = useState(1);
+    const [Playpause, setPlaypause] = useState(false);
+    const [state, setstate] = useState(true);
     function handleButton(){
         setPlaypause(!Playpause)
-        console.log(Playpause)
-    }
+    };
+
+    function changestate(){
+        console.log(time1, time2, Playpause, state);
+        if(state==false){
+            settime2(15)
+            setstate(true)
+            setserie(serie+1)
+        } else if (state==true){
+            settime1(15)
+            setstate(false)
+
+        }
+        console.log(time1, time2, Playpause, state);
+    };
  
     return (
 
@@ -53,7 +68,7 @@ export default function MidTraining() {
                     </div>
                     <div className="counting">
                         <div> 
-                        <Clock2 minute={4} hour={0} second={0} state={Playpause}/>
+                        <Clock seconds={time1} state={Playpause} state2={state} function={changestate}/>
                         </div>
                         </div>
 
@@ -69,7 +84,7 @@ export default function MidTraining() {
                     </div>
                     <div className="counting">
                         <div> 
-                        
+                        <Clock seconds={time2} state={Playpause} state2={!state} function={changestate}/>
                         </div>
                         </div>
 
@@ -85,7 +100,7 @@ export default function MidTraining() {
                     </div>
                     <div className="counting">
                         <div> 
-                        2
+                        {serie  }
                         </div>
                         </div>
 
