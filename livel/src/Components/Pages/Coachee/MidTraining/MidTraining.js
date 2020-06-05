@@ -15,32 +15,38 @@ let time = {
     minutes: 5,
     seconds: 0,
     minutes2: 0,
-    seconds: 10
+    seconds2: 10
 }
 
 
 export default function MidTraining() {
-    const [time1, settime1] = useState(3);
-    const [time2, settime2] = useState(3);
     const [serie, setserie] = useState(1);
-    const [Playpause, setPlaypause] = useState(false);
-    const [state, setstate] = useState(true);
-    function handleButton(){
-        setPlaypause(!Playpause)
-    };
+    const [active, setActive] = useState({
+        paused: true,
+        clock: 'training'
+    });
 
-    function changestate(){
-        console.log(time1, time2, Playpause, state);
-        if(state==false){
-            settime2(15)
-            setstate(true)
+    function changeActive(value){
+        if (value==='rest') {
+            setActive({
+                paused: active.paused,
+                clock: 'training'
+            })
             setserie(serie+1)
-        } else if (state==true){
-            settime1(15)
-            setstate(false)
-
         }
-        console.log(time1, time2, Playpause, state);
+        else if (value==='training') {
+            setActive({
+                paused: active.paused,
+                clock: 'rest'
+            })
+        }
+        else if (value==='paused') {
+            console.log(active)
+            setActive({
+                paused: !active.paused,
+                clock: active.clock
+            })
+        }
     };
  
     return (
@@ -63,12 +69,20 @@ export default function MidTraining() {
                             Atividade
                     </div>
                         <div className="countinginfo">
-                        5  min
+                            5  min
                         </div>
                     </div>
                     <div className="counting">
                         <div> 
-                        <Clock seconds={time1} state={Playpause} state2={state} function={changestate}/>
+                        <Clock
+                            seconds={5}
+                            active={()=>{
+                                if((active.clock==='training') && !(active.paused)) {console.log('Clock 1: true'); return true}
+                                else {console.log('Clock 1: false'); return false}
+                            }}
+                            clockId = {'training'}
+                            changeActive={changeActive}
+                        />
                         </div>
                         </div>
 
@@ -84,7 +98,14 @@ export default function MidTraining() {
                     </div>
                     <div className="counting">
                         <div> 
-                        <Clock seconds={time2} state={Playpause} state2={!state} function={changestate}/>
+                        <Clock seconds={5} 
+                            active={()=>{
+                                if((active.clock==='rest') && !(active.paused)) {console.log('Clock 2: true'); return true}
+                                else {console.log('Clock 2: false'); return false}
+                            }}
+                            clockId = {'rest'}
+                            changeActive={changeActive}
+                        />
                         </div>
                         </div>
 
@@ -106,7 +127,8 @@ export default function MidTraining() {
 
                 </div>
                 <div className="playButton">
-                   <button onClick={handleButton}> <img src="images/playpause.png" alt="playpause"></img>
+                   <button onClick={()=>{changeActive('paused')}}> 
+                        <img src="images/playpause.png" alt="playpause"></img>
                    </button>
                 </div>
 
@@ -115,7 +137,7 @@ export default function MidTraining() {
                 <Link type="button" to="/requestnumber" className="buttonAdvance" >
                     <div>
                         AVANÇAR
-                </div>
+                    </div>
                 </Link>
             </div>
 
