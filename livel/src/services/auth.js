@@ -1,9 +1,8 @@
-export const TOKEN_KEY = "@FitGroupLivel-Token";
-export const isAuthenticated = () => localStorage.getItem(TOKEN_KEY) !== null;
-export const getToken = () => localStorage.getItem(TOKEN_KEY);
-export const login = token => {
-  localStorage.setItem(TOKEN_KEY, token);
-};
-export const logout = () => {
-  localStorage.removeItem(TOKEN_KEY);
-};
+
+export const isAuthenticated = () => sessionStorage.getItem('ALUNO') !== null;
+
+export const getAluno = () => {return JSON.parse(sessionStorage.getItem('ALUNO'))};
+
+export const login = (aluno) => {sessionStorage.setItem('ALUNO', JSON.stringify(aluno))};
+
+export const logout = () => {sessionStorage.clear()};

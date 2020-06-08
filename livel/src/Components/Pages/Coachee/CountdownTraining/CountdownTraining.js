@@ -2,7 +2,7 @@ import React from 'react';
 import './CountdownTraining.css';
 
 import Header from '../../../Header';
-import Clock from '../Clock';
+import Clock from './Clock';
 
 const trainingType = "Treino superior";
 const phrase = "Seu corpo é sua modara. Cuide-se!";

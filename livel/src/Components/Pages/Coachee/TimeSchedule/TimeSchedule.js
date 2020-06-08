@@ -1,6 +1,8 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
+import {Link, useHistory} from 'react-router-dom'
 import './TimeSchedule.css'
+import {getHorarios, registroTreino} from '../../../../services/backEnd'
+import {getAluno} from '../../../../services/auth'
 
 import Header from '../../../Header'
 
@@ -9,9 +11,47 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 
 const horarios = ["15:00", "16:30", "17:00"];
 
-//Quando lincar com o back, pegar a imagem e passar como props para o Header
+export default function TimeSchedule(props){
 
-export default function TimeSchedule(){
+    // const [horarios, setHorarios] = useState([])
+
+    const history = useHistory()
+
+    useEffect(()=>{
+        async function backRequest(){
+            try {
+                const horarioBack = await getHorarios()
+                console.log(horarioBack)
+                //Checar se vem na forma de vetor (se n, transformar em vetor)
+                // setHorarios(horarioBack)
+            }
+            catch(error) {
+                alert(error)
+            }
+        }
+        backRequest()
+    }, [])
+
+    async function handleSchedule(time){
+        const alunoId = getAluno().ALUNO_INFO.ID_Aluno
+        const trainingType = props.location.state
+        try{
+            const treinoId = await registroTreino(alunoId, trainingType, time)
+            history.push({
+                pathname: '/countdownTraining',
+                state: {
+                    trainingTime: time,
+                    treinoId: treinoId
+                }
+            })
+        }
+        catch(error) {
+            alert(error)
+        }
+    }
+
+
+
     return(
         <div style={{height: "100%"}} >
             <Header img="/images/user.jpg" name="Arthur Lima" icons={true} />
@@ -29,7 +69,7 @@ export default function TimeSchedule(){
                     horarios.map(
                         (value) => {
                             return(
-                                <div className="horario">
+                                <div className="horario" onClick={()=>{handleSchedule(value)}}>
                                     <div><b>{value}</b></div>
                                 </div>
                             )
