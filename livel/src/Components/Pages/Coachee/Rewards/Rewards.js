@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-
+import {getAluno} from '../../../../services/auth'
 import './Rewards.css'
 
 import Header from '../../../Header'
@@ -9,18 +9,18 @@ let ALUNO_INFO = {
     AlunoNome: 'Arthur Lima'
 }
 
-let ALUNO_TREINOS = {
+/* let aluno.ALUNO_TREINOS = {
     NumTreinosMes: 10,
     Pontos: 40
 }
-
+ */
 
 
 
 export default function TrainingTypes() {
-
+    const [aluno, setAluno] = useState(getAluno())
     const [trophies, setTrophies] = useState(()=>{
-        if (ALUNO_TREINOS.NumTreinosMes<6){
+        if (aluno.ALUNO_TREINOS.NumTreinosMes<6 || aluno.ALUNO_TREINOS.NumTreinosMes == null){
            return{
                trof12d:'/images/trofeis/trof12trans.png',             
                trof10d: '/images/trofeis/trof10trans.png',
@@ -29,7 +29,7 @@ export default function TrainingTypes() {
            }
             
         }
-        else if (ALUNO_TREINOS.NumTreinosMes<8){
+        else if (aluno.ALUNO_TREINOS.NumTreinosMes<8){
             return{
                 trof12d:'/images/trofeis/trof12trans.png',
                 trof10d: '/images/trofeis/trof10trans.png',
@@ -37,7 +37,7 @@ export default function TrainingTypes() {
                 trof6d: '/images/trofeis/trof6full.png'
             }
         }
-        else if (ALUNO_TREINOS.NumTreinosMes<10){
+        else if (aluno.ALUNO_TREINOS.NumTreinosMes<10){
             return{
                 trof12d:'/images/trofeis/trof12trans.png',      
                 trof10d: '/images/trofeis/trof10trans.png',
@@ -45,7 +45,7 @@ export default function TrainingTypes() {
                 trof6d: '/images/trofeis/trof6full.png'
             }
         }
-        else if (ALUNO_TREINOS.NumTreinosMes<12){
+        else if (aluno.ALUNO_TREINOS.NumTreinosMes<12){
             return{
                 trof12d:'/images/trofeis/trof12trans.png',
                 trof10d: '/images/trofeis/trof10full.png',
@@ -53,7 +53,7 @@ export default function TrainingTypes() {
                 trof6d: '/images/trofeis/trof6full.png'
             }
             }
-         else if (ALUNO_TREINOS.NumTreinosMes>=12){
+         else if (aluno.ALUNO_TREINOS.NumTreinosMes>=12){
             return{
                 trof12d:'/images/trofeis/trof12full.png',
                 trof10d: '/images/trofeis/trof10full.png',
@@ -102,7 +102,7 @@ export default function TrainingTypes() {
                 <img src='/images/programa.png' alt="programa" className="programImage"/>
                 </div>
                 <div className="points">
-                    <div>Você possui um total de <b>{ALUNO_TREINOS.Pontos} pontos</b></div>
+                    <div>Você possui um total de <b>{aluno.ALUNO_TREINOS.PontosLivel} pontos</b></div>
                 </div>
             </div>
         </div>
