@@ -1,80 +1,82 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
-
-import PurpleBody from '../../../PurpleBody'
 
 import './RequestNumber.css'
 
+import {TextField} from '@material-ui/core';
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
 
-// async function RequestNumber(e){
-//     e.preventDefault(); 
+const styles = {
+    inputStyle: {
+        borderBottom: '1px solid white',
+        color: "white"
+    },
+    inputLabel: {
+      color: "white",
+    }
+};
 
-//     const data = {
-//         name,
-//         lastName,
-//         email,
-//         cpf,
-//     };
-// try{
-//     const response = await api.post('ongs', data);
 
-//     alert(`Seu ID de acesso: ${response.data.id}`);
 
-//     history.push('/');
+function RequestNumber(props){
     
-// } catch (err) {
-//     alert('Erro na requisição de número de matrícula');
-// }
-// }
-
-export default function RequestNumber(){
+    const [Name, setName] = useState()
+    const [LastName, setLastName] = useState() 
+    const [CPF, setCPF] = useState()
+    const [Email, setEmail] = useState() 
+    const { classes } = props;   
+    
     return(
-        <div className="purpleBodyContainer">
-                <div className="Container">
-                <PurpleBody/>
-                    <form> 
-                    {/* onSubmit={handleRequestNumber} */}
-                            <input
-                                    type="text"
-                                    placeholder="Nome"
-                                    name="Nome" 
-                                    required="true"
-                                    // value={name}
-                                    // onChange={e => setName(e.target.value)}
-                            />
-                            <input 
-                                    type="text"
-                                    placeholder="Sobrenome" 
-                                    name="Sobrenome" 
-                                    required="true"
-                                    // value={lastName}
-                                    // onChange={e => setLastName(e.target.value)}
-                            />
-
-                            <input
-                                    type="number"
-                                    placeholder="CPF" 
-                                    name="CPF" 
-                                    required="true"
-                                    // value={cpf}
-                                    // onChange={e => setCpf(e.target.value)}
-                            />
-
-                            <input
-                                    type="email" 
-                                    placeholder="E-mail" 
-                                    name="email" 
-                                    required="true"
-                                    // value={email}
-                                    // onChange={e => setEmail(e.target.value)}
-                            />
-                    </form>
-                    <Link type="submit" to="/">
-                        <div className="buttonEnviar"><h1>ENVIAR</h1></div>
-                    </Link>
+            <div className="Container">
+                <img src='/images/Logo_Livel.png' alt="Logo do Livel" className='logo'/>
+                <div className='ForgetTitle'>Esqueci Minha Senha</div>
+                <div className='formContainer'>
+                    <form>
+                <TextField label="Nome" onChange={(e)=>{setName(e.target.value)}}
+                    InputLabelProps={{
+                        classes: {root: classes.inputLabel, focussed: classes.inputLabel}
+                    }}
+                    InputProps={{
+                        classes: {root: classes.inputStyle, focussed: classes.inputStyle, notchedOutline: classes.inputStyle}
+                    }}
+                />
+    
+                <TextField label="Sobrenome" onChange={(e)=>{setLastName(e.target.value)}}
+                    InputLabelProps={{
+                        classes: {root: classes.inputLabel, focussed: classes.inputLabel}
+                    }}
+                    InputProps={{
+                        classes: {root: classes.inputStyle, focussed: classes.inputStyle, notchedOutline: classes.inputStyle}
+                    }}
+                />
+                <TextField label="CPF" onChange={(e)=>{setCPF(e.target.value)}}
+                    InputLabelProps={{
+                        classes: {root: classes.inputLabel, focussed: classes.inputLabel}
+                    }}
+                    InputProps={{
+                        classes: {root: classes.inputStyle, focussed: classes.inputStyle, notchedOutline: classes.inputStyle}
+                    }}
+                />
+                <TextField label="E-mail" onChange={(e)=>{setEmail(e.target.value)}}
+                    InputLabelProps={{
+                        classes: {root: classes.inputLabel, focussed: classes.inputLabel}
+                    }}
+                    InputProps={{
+                        classes: {root: classes.inputStyle, focussed: classes.inputStyle, notchedOutline: classes.inputStyle}
+                    }}
+                />
+                </form>
                 </div>
-                <div className="requestNumberText"><a>Preencha os dados abaixo e enviaremos seu número de matrícula para seu e-mail:</a></div>
-                <div className="title"><h1> Solicite seu número de matrícula </h1></div>
-        </div>
-    )
-}
+                <Link className='forgetClick' to='/'>ENVIAR</Link>
+            </div>
+        )
+    }
+
+    RequestNumber.propTypes = {
+        classes: PropTypes.object.isRequired
+    };
+    
+    
+    export default withStyles(styles)(RequestNumber);
+    
