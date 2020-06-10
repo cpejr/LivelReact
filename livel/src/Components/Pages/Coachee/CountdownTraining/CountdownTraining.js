@@ -1,5 +1,7 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom'
 import './CountdownTraining.css';
+import { checkOut } from '../../../../services/backEnd'
 
 import Header from '../../../Header';
 import Clock from './Clock';
@@ -7,11 +9,23 @@ import Clock from './Clock';
 const trainingType = "Treino superior";
 const phrase = "Seu corpo é sua modara. Cuide-se!";
 
-export default function CountdownTraining(){
+export default function CountdownTraining(props){
+
+    const history = useHistory()
+
+    async function cancelTraining(){
+        try{
+            const response = await checkOut(props.location.state.treinoId)
+            history.push('/trainingTypes')
+        }catch(error){
+            alert(error)
+        }
+    }
+
 
     return(
         <div style={{height: "100%"}}>
-            <Header img="/images/user.jpg" name="Arthur Lima" icons={true} />
+            <Header img={true} name={true} icons={true} />
             <div class="CountdownTrainingContainer">
                 <div class="DisplayTrainingType">
                     <h3>{trainingType}</h3>
@@ -19,7 +33,7 @@ export default function CountdownTraining(){
                 <div class="MainContentContainer">
                     <div class="CountdownClock">
                         <h4>Seu treino começa em:</h4>
-                        <Clock/>
+                        <Clock time={props.location.state.horario}/>
                     </div>
                     <div class="MotivacionalPhrase">
                         <h4>"{phrase}"</h4> 
@@ -27,7 +41,7 @@ export default function CountdownTraining(){
                 </div>
                 <div class="ButtonContainer">
                     <button class="MarkoffButton">
-                        <h4>desmarcar</h4>
+                        <h4 onClick={cancelTraining}>desmarcar</h4>
                     </button>
                 </div>
             </div>

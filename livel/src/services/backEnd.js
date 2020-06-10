@@ -1,6 +1,8 @@
 import Request from 'request-promise'
 
 
+//////////////////////////////////////////////COACHEE//////////////////////////////////////////////////////////////
+
   export const getAluno = (AlunoID, AlunoPwd) => {
         return new Promise((resolve, reject) =>{
             Request({
@@ -53,7 +55,7 @@ import Request from 'request-promise'
     return new Promise((resolve, reject) =>{
       Request({
           method: 'GET',
-          url: `${process.env.REACT_APP_API_URL}/livel_app.php?AuthToken=${process.env.REACT_APP_AUTH_TOKEN}&Metodo=treinoHRegistra&AlunoID=${AlunoID}&TipoTreinoID=${TipoTreinoID}&HorarioID=${HorarioID}`,
+          url: `${process.env.REACT_APP_API_URL}/livel_app.php?AuthToken=${process.env.REACT_APP_AUTH_TOKEN}&Metodo=treinoRegistra&AlunoID=${AlunoID}&TipoTreinoID=${TipoTreinoID}&HorarioID=${HorarioID}`,
           json: true,
           resolveWithFullResponse: true
         }).then((response) => {
@@ -148,5 +150,54 @@ import Request from 'request-promise'
   }
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////////////////COACH////////////////////////////////////////////////////////////////
 
+  export const getCoach = (matricula, pwd) => {
+    return new Promise((resolve, reject) =>{
+        Request({
+          method: 'GET',
+          url: `http://fitgroup.com.br/livel/livel_app.php?AuthToken=${process.env.REACT_APP_AUTH_TOKEN}&Metodo=professorAutentica&ProfessorLogin=${matricula}&ProfessorPwd=${pwd}`,
+          json: true,
+          resolveWithFullResponse: true
+        }).then((response) => {
+          resolve (response.body);
+        }).catch((err) => {
+          console.log(err);
+          reject (err);
+        });
+    });
+  }
+
+  export const getCoachHorarios = (ProfessorID) => {
+    return new Promise((resolve, reject) =>{
+        Request({
+          method: 'GET',
+          url: `http://fitgroup.com.br/livel/livel_app.php?AuthToken=${process.env.REACT_APP_AUTH_TOKEN}&Metodo=professorHoriarios&ProfessorID=${ProfessorID}`,
+          json: true,
+          resolveWithFullResponse: true
+        }).then((response) => {
+          resolve (response.body);
+        }).catch((err) => {
+          console.log(err);
+          reject (err);
+        });
+    });
+  }
+
+  export const treinoTransfere = (TreinoID, UsuarioDestinoID) => {
+    return new Promise((resolve, reject) =>{
+        Request({
+          method: 'GET',
+          url: `http://fitgroup.com.br/livel/livel_app.php?AuthToken=${process.env.REACT_APP_AUTH_TOKEN}&Metodo=treinoTransfere&TreinoID=${TreinoID}&UsuarioDestinoID=${UsuarioDestinoID}`,
+          json: true,
+          resolveWithFullResponse: true
+        }).then((response) => {
+          resolve (response.body);
+        }).catch((err) => {
+          console.log(err);
+          reject (err);
+        });
+    });
+  }
