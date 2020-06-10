@@ -9,11 +9,11 @@ import Header from '../../../Header'
 import { IconContext } from "react-icons";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 
-const horarios = ["15:00", "16:30", "17:00"];
+const horariosMao = ["15:00", "16:30", "17:00"];
 
 export default function TimeSchedule(props){
 
-    // const [horarios, setHorarios] = useState([])
+    const [horarios, setHorarios] = useState([])
 
     const history = useHistory()
 
@@ -21,9 +21,7 @@ export default function TimeSchedule(props){
         async function backRequest(){
             try {
                 const horarioBack = await getHorarios()
-                console.log(horarioBack)
-                //Checar se vem na forma de vetor (se n, transformar em vetor)
-                // setHorarios(horarioBack)
+                setHorarios(horarioBack.TREINO_HORARIOS)
             }
             catch(error) {
                 alert(error)
@@ -32,15 +30,15 @@ export default function TimeSchedule(props){
         backRequest()
     }, [])
 
-    async function handleSchedule(time){
+    async function handleSchedule(horario){
         const alunoId = getAluno().ALUNO_INFO.ID_Aluno
-        const trainingType = props.location.state
+        const trainingType = props.location.state.trainingType
         try{
-            const treinoId = await registroTreino(alunoId, trainingType, time)
+            const treinoId = await registroTreino(alunoId, trainingType, horario.ID_Horario)
             history.push({
                 pathname: '/countdownTraining',
                 state: {
-                    trainingTime: time,
+                    trainingTime: horario,
                     treinoId: treinoId
                 }
             })
@@ -66,15 +64,14 @@ export default function TimeSchedule(props){
                     <div>MARQUE SEU HORÁRIO</div>
                 </div>
                 {
-                    horarios.map(
-                        (value) => {
-                            return(
-                                <div className="horario" onClick={()=>{handleSchedule(value)}}>
-                                    <div><b>{value}</b></div>
-                                </div>
-                            )
-                        }
-                    )
+                    horarios.map(horario => {
+                        const horarioExibido = horario.Horario.slice(0, -3)
+                        return(
+                            <div className="horario" onClick={()=>{handleSchedule(horario)}}>
+                                <div><b>{horarioExibido}</b></div>
+                            </div>
+                        )
+                    })
                 }
             </div>
         </div>

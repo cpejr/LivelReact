@@ -8,23 +8,6 @@ import './TrainingTypes.css'
 import Header from '../../../Header'
 import PopUp from './Elements/PopUp'
 
-// let ALUNO_INFO = {
-//     AlunoFoto: '/images/user.jpg',
-//     AlunoNome: 'Arthur Lima'
-// }
-// let ALUNO_TREINOS = {
-//     ID_ultimoTreinoTipo: 'Inferior',
-//     NumTreinosMes: 9,
-//     NumTreinosFaltam: 2,
-//     PontosNext: 20,
-//     FraseTreino: 'O progresso é impossível sem mudanças.',
-// }
-// let TREINO_SEMANA = {
-//     Periodizacao: 'T', 
-//     CadeiaExcentrica: '40',
-//     CadeiaConcentrica: '60'
-// }
-
 
 
 
@@ -57,12 +40,8 @@ export default function TrainingTypes(props){
 
     useEffect(()=>{
 
-        console.log(aluno)
-
         getTreinoSemana().then(result=>{
             if(result.ID_Semana>0){
-                console.log('aaaaa')
-                console.log(result)
                 setTreinoSemana(result)
             }
             else{
@@ -120,10 +99,10 @@ export default function TrainingTypes(props){
                 <PopUp TREINO_SEMANA={treinoSemana}/>
             </div>
             <div className="trainingsContainer">
-                <Link className='mainButton' to={{pathname: '/timeSchedule', state: training.prioridade}}>
+                <Link className='mainButton' to={{pathname: '/timeSchedule', state: {trainingType: training.prioridade}}}>
                     <div><b>treino {training.prioridade}</b></div>
                 </Link>
-                <Link className="secondaryButton" to={{pathname: '/timeSchedule', state: training.prioridade}}>
+                <Link className="secondaryButton" to={{pathname: '/timeSchedule', state: {trainingType: training.prioridade}}}>
                     <div><b>treino {training.anterior}</b></div>
                 </Link>
                 <Link className="secondaryButton" to='/timeSchedule'>
