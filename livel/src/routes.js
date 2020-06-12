@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { isAuthenticated } from "./services/auth";
+import { resultadoRegistra } from "./services/backEnd";
+
 
 import TimeSchedule from './Components/Pages/Coachee/TimeSchedule';
 import TrainingTypes from './Components/Pages/Coachee/TrainingTypes';
@@ -36,6 +38,8 @@ export default function Routes(){
         <BrowserRouter>
             <Switch>
 
+              <Route path="/testando" exact component={PaginaTeste} /> 
+
               <Route path="/" exact component={Home} />
               <Route path="/login" exact component={Login} />
               <Route path="/signup" exact component={SignUp} />
@@ -48,10 +52,29 @@ export default function Routes(){
               <PrivateRoute path="/profile" component={Profile} />
               <PrivateRoute path="/rewards" component={Rewards} />
               <PrivateRoute path="/body" component={Body} />
-              {/* <PrivateRoute path="/midTraining" component={MidTraining} /> */}
               {/* <PrivateRoute path="/coach" component={Coach} /> */}
 
             </Switch>
         </BrowserRouter>
     )
+}
+
+function PaginaTeste(){
+
+  useEffect(()=>{
+    async function testeBack(){
+      try{
+        const date = new Date()
+        const result =  resultadoRegistra(1, date, 50, 180, 1, 50, 50, 12, 30, 100, 80, 40, 70)
+        console.log(result)
+      }catch(error){
+        alert(error)
+      }
+    }
+    testeBack()
+  }, [])
+
+  return (
+    <div>Pagina de teste</div>
+  )
 }

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {Link, useHistory} from 'react-router-dom'
 import './TimeSchedule.css'
-import {getHorarios, registroTreino} from '../../../../services/backEnd'
+import {treinoHorarios, treinoRegistra} from '../../../../services/backEnd'
 import {getAluno} from '../../../../services/auth'
 
 import Header from '../../../Header'
@@ -9,7 +9,6 @@ import Header from '../../../Header'
 import { IconContext } from "react-icons";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 
-const horariosMao = ["15:00", "16:30", "17:00"];
 
 export default function TimeSchedule(props){
 
@@ -20,7 +19,7 @@ export default function TimeSchedule(props){
     useEffect(()=>{
         async function backRequest(){
             try {
-                const horarioBack = await getHorarios()
+                const horarioBack = await treinoHorarios()
                 setHorarios(horarioBack.TREINO_HORARIOS)
             }
             catch(error) {
@@ -34,7 +33,8 @@ export default function TimeSchedule(props){
         const alunoId = getAluno().ALUNO_INFO.ID_Aluno
         const trainingType = props.location.state.trainingType
         try{
-            const treinoId = await registroTreino(alunoId, trainingType, horario.ID_Horario)
+            const treinoId = await treinoRegistra(alunoId, trainingType, horario.ID_Horario)
+            console.log(treinoId)
             history.push({
                 pathname: '/countdownTraining',
                 state: {

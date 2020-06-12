@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {registrarRestricoes} from '../../../../services/backEnd'
+import {restricoesRegistra} from '../../../../services/backEnd'
 import {getAluno} from '../../../../services/auth'
 
 import './Body.css'
@@ -29,11 +29,11 @@ export default function Body(){
         try{
             const alunoId = getAluno().ALUNO_INFO.ID_Aluno
             if (customComment) {
-                await registrarRestricoes(alunoId, customComment, hurtParts)
+                await restricoesRegistra(alunoId, customComment, hurtParts)
                 alert('Enviado com sucesso')
             }
             else{
-                await registrarRestricoes(alunoId, -1, hurtParts)
+                await restricoesRegistra(alunoId, -1, hurtParts)
                 alert('Enviado com sucesso')
             }
         }

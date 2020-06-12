@@ -1,22 +1,11 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom';
+import {treinoAvalia} from '../../../../services/backEnd'
+
 
 import './MidTraining.css'
 import Clock from './Clock/Clock'
 import Header from '../../../Header'
 
-let ALUNO_INFO = {
-    AlunoFoto: '/images/user.jpg',
-    AlunoNome: 'Arthur Lima'
-}
-
-let time = {
-    hour: 0,
-    minutes: 5,
-    seconds: 0,
-    minutes2: 0,
-    seconds2: 10
-}
 
 
 export default function MidTraining() {
@@ -48,12 +37,21 @@ export default function MidTraining() {
             })
         }
     };
+
+    function advance(){
+        try{
+            const result = treinoAvalia(234, 5)
+            console.log(result)
+        }catch(error){
+            alert(error)
+        }
+    }
  
     return (
 
         
         <div style={{ height: "100%", }}>
-            <Header img={ALUNO_INFO.AlunoFoto} name={ALUNO_INFO.AlunoNome} icons={true} />
+            <Header img={true} name={true} icons={true} />
             <div className="info">
                 <div className="titlee">
                     TREINO INFERIOR
@@ -134,11 +132,11 @@ export default function MidTraining() {
 
             </div>
             <div className="footer">
-                <Link type="button" to="/requestnumber" className="buttonAdvance" >
+                <button type="button" className="buttonAdvance" onClick={advance}>
                     <div>
                         AVANÇAR
                     </div>
-                </Link>
+                </button>
             </div>
 
         </div>

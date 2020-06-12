@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom'
+import { treinoCheckOut } from '../../../../services/backEnd'
 import './CountdownTraining.css';
-import { checkOut } from '../../../../services/backEnd'
 
 import Header from '../../../Header';
 import Clock from './Clock';
@@ -11,11 +11,13 @@ const phrase = "Seu corpo é sua modara. Cuide-se!";
 
 export default function CountdownTraining(props){
 
+    console.log(props)
+
     const history = useHistory()
 
     async function cancelTraining(){
         try{
-            const response = await checkOut(props.location.state.treinoId)
+            await treinoCheckOut(props.location.state.treinoId)
             history.push('/trainingTypes')
         }catch(error){
             alert(error)
@@ -33,7 +35,7 @@ export default function CountdownTraining(props){
                 <div class="MainContentContainer">
                     <div class="CountdownClock">
                         <h4>Seu treino começa em:</h4>
-                        <Clock time={props.location.state.horario}/>
+                        <Clock time={props.location.state.trainingTime.Horario}/>
                     </div>
                     <div class="MotivacionalPhrase">
                         <h4>"{phrase}"</h4> 

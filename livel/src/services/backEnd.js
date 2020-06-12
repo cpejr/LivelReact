@@ -3,7 +3,7 @@ import Request from 'request-promise'
 
 //////////////////////////////////////////////COACHEE//////////////////////////////////////////////////////////////
 
-  export const getAluno = (AlunoID, AlunoPwd) => {
+  export const alunoLogin = (AlunoID, AlunoPwd) => {
         return new Promise((resolve, reject) =>{
             Request({
               method: 'GET',
@@ -35,7 +35,7 @@ import Request from 'request-promise'
     });
   }
 
-  export const getHorarios = () => {
+  export const treinoHorarios = () => {
     return new Promise((resolve, reject) =>{
       Request({
           method: 'GET',
@@ -51,7 +51,7 @@ import Request from 'request-promise'
     });
   }
 
-  export const registroTreino = (AlunoID, TipoTreinoID, HorarioID) => {
+  export const treinoRegistra = (AlunoID, TipoTreinoID, HorarioID) => {
     return new Promise((resolve, reject) =>{
       Request({
           method: 'GET',
@@ -67,7 +67,7 @@ import Request from 'request-promise'
     });
   }
 
-  export const checkOut = (TreinoID) => {
+  export const treinoCheckOut = (TreinoID) => {
     return new Promise((resolve, reject) =>{
       Request({
           method: 'GET',
@@ -84,23 +84,8 @@ import Request from 'request-promise'
   }
 
 
-  export const avaliacao = (TreinoID, Avaliacao) => {
-    return new Promise((resolve, reject) =>{
-      Request({
-          method: 'GET',
-          url: `${process.env.REACT_APP_API_URL}/livel_app.php?AuthToken=${process.env.REACT_APP_AUTH_TOKEN}&Metodo=treinoAvalia&TreinoID=${TreinoID}&Avaliacao=${Avaliacao}`,
-          json: true,
-          resolveWithFullResponse: true
-        }).then((response) => {
-          resolve (response.body);
-        }).catch((err) => {
-          console.log(err);
-          reject (err);
-      });
-    });
-  }
 
-  export const registrarRestricoes = (AlunoID, RestricoesObs, RestricoesLocais) => {
+  export const restricoesRegistra = (AlunoID, RestricoesObs, RestricoesLocais) => {
     if (RestricoesObs!==-1) {
       return new Promise((resolve, reject) =>{
         Request({
@@ -133,11 +118,27 @@ import Request from 'request-promise'
     }
   }
 
-  export const registrarResultado = (TreinoID, Avaliacao) => {
+  export const treinoAvalia = (TreinoID, Avaliacao) => {
     return new Promise((resolve, reject) =>{
       Request({
           method: 'GET',
           url: `${process.env.REACT_APP_API_URL}/livel_app.php?AuthToken=${process.env.REACT_APP_AUTH_TOKEN}&Metodo=treinoAvalia&TreinoID=${TreinoID}&Avaliacao=${Avaliacao}`,
+          json: true,
+          resolveWithFullResponse: true
+        }).then((response) => {
+          resolve (response.body);
+        }).catch((err) => {
+          console.log(err);
+          reject (err);
+      });
+    });
+  }
+
+  export const resultadoRegistra = (AlunoID, DataResultado, Peso, Altura, AlongamentoNivel, Adbominais, Flexoes, Barra, Pescoco, Cintura, Quadril, Biceps, Coxa) => {
+    return new Promise((resolve, reject) =>{
+      Request({
+          method: 'GET',
+          url: `${process.env.REACT_APP_API_URL}/livel_app.php?AuthToken=${process.env.REACT_APP_AUTH_TOKEN}&Metodo=resultadoRegistra&AlunoID=${AlunoID}&DataResultado=${DataResultado}&Peso=${Peso}&Altura=${Altura}&AlongamentoNivel=${AlongamentoNivel}&Adbominais=${Adbominais}&Flexoes=${Flexoes}&Barra=${Barra}&Pescoco=${Pescoco}&Cintura=${Cintura}&Quadril=${Quadril}&Biceps=${Biceps}&Coxa=${Coxa}`,
           json: true,
           resolveWithFullResponse: true
         }).then((response) => {

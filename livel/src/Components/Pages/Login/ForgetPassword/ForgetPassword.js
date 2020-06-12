@@ -25,6 +25,7 @@ function ForgetPassword(props){
     const [email, setEmail] = useState() 
     const { classes } = props;   
     
+    
     return(
             <div className="Container">
                 <img src='/images/Logo_Livel.png' alt="Logo do Livel" className='logo'/>

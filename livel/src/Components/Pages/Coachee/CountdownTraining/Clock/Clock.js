@@ -1,36 +1,37 @@
 import React, {useState, useEffect} from 'react';
 import './Clock.css';
-// Hora que começa o treino
-const recivedHour = 17;
-const recivedMin = 0;
-const recivedSec = 0;
-
-// Horário atual
-let currentSec = new Date().getSeconds();
-let currentMin = new Date().getMinutes();
-let currentHour = new Date().getHours();
-
-// Tempo restante para o treino
-let leftSec = recivedSec - currentSec;
-let leftMin = recivedMin - currentMin;
-let leftHour = recivedHour - currentHour;
-
-// Correção de valores do tempo
-if(leftSec < 0){
-    leftSec = 59 + leftSec;
-    leftMin--; 
-}
-
-if(leftMin < 0){
-    leftMin = 59 + leftMin;
-    leftHour--;
-}
-
-let countH = leftHour;
-let countM = leftMin;
-let countS = leftSec;
 
 export default function Clock(props){
+
+    const recivedHour = parseInt(props.time.slice(0, 2));
+    const recivedMin = parseInt(props.time.slice(3, 5));;
+    const recivedSec = parseInt(props.time.slice(6, 8));;
+
+    // Horário atual
+    let currentSec = new Date().getSeconds();
+    let currentMin = new Date().getMinutes();
+    let currentHour = new Date().getHours();
+
+    // Tempo restante para o treino
+    let leftSec = recivedSec - currentSec;
+    let leftMin = recivedMin - currentMin;
+    let leftHour = recivedHour - currentHour;
+
+    // Correção de valores do tempo
+    if(leftSec < 0){
+        leftSec = 59 + leftSec;
+        leftMin--; 
+    }
+
+    if(leftMin < 0){
+        leftMin = 59 + leftMin;
+        leftHour--;
+    }
+
+    let countH = leftHour;
+    let countM = leftMin;
+    let countS = leftSec;   
+
 
     const [hour, setHour] = useState(leftHour);
     const [minute, setMinute] = useState(leftMin);

@@ -14,7 +14,9 @@ import PopUp from './Elements/PopUp'
 export default function TrainingTypes(props){
     // eslint-disable-next-line no-unused-vars
     const [aluno, setAluno] = useState(getAluno())
-    const [treinoSemana, setTreinoSemana] = useState(getTreinoSemana())
+    const [treinoSemana, setTreinoSemana] = useState({
+        periodizacao: 'T'
+    })
 
     const [currentProgress, setCurrentProgress] = useState({
         trof: '/images/trofeis/trof6trans.png',
@@ -88,6 +90,8 @@ export default function TrainingTypes(props){
                 message: `Faltam ${aluno.ALUNO_TREINOS.NumTreinosFaltam} treinos para você ganhar ${aluno.ALUNO_TREINOS.PontosNext} pontos`
             })
         }
+
+        console.log(aluno.ALUNO_RESULTADOS)
             
     }, [aluno])
 

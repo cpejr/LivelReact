@@ -22,7 +22,7 @@ export default function Header(props){
                 <img src={`http://fitgroup.com.br/livel/fotos/${aluno.ALUNO_INFO.AlunoFoto}`} alt="imagem" className="imagemHeader" onClick={()=>history.push('/profile')}/>
 
                 {(props.name!=null) &&
-                    <div className="name" onClick={()=>history.push('/profile')}>{props.name}</div>
+                    <div className="name" onClick={()=>history.push('/profile')}>{aluno.ALUNO_INFO.AlunoNome}</div>
                 }
 
                 {(props.level!=null) &&
