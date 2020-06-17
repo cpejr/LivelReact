@@ -11,17 +11,20 @@ import InterativeBody from './Elements/InterativeBody'
 export default function Body(){
     const [hurtParts, setHurtParts] = useState([])
     const [customComment, setCustomComment] = useState()
-    const [reload, setReload] = useState(true)
 
 
     function handleSelect(part){
-        let exist = hurtParts.indexOf(part)
-        if(exist===-1)
+        //Checa se já esta selecionado ou não (-1 significa que não está selecionado)
+        let index = hurtParts.indexOf(part)
+
+        //Maniplando arrays em state sempre exige que, no momento de alterar o state, se desconstrua o novo array para atribuir ao state (usando esse ... abaixo)
+        if(index===-1)
+            //Desconstroi o array anterior, adicionando a nova parte ao final
             setHurtParts([...hurtParts, part]);
         else{
-            hurtParts.splice(exist, 1)
-            setHurtParts(hurtParts)
-            setReload(!reload)
+            //Remove a parte já selecionada, depois atribuindo ao state o novo array sem essa parte
+            hurtParts.splice(index, 1)
+            setHurtParts([...hurtParts])
         }
     }
 
@@ -40,7 +43,6 @@ export default function Body(){
         catch(error){
             alert(error)
         }
-        
     }
 
 
@@ -53,16 +55,11 @@ export default function Body(){
                 </div>
                 <div className='BodyInput'>
                     <div className='HurtList'>
-                            {reload ?
-                                hurtParts.map((value)=>{
-                                    return <li style={{marginBottom: '5px', marginRight: '-50px'}}>{value}</li>
-                                })
-                                :
+                            {
                                 hurtParts.map((value)=>{
                                     return <li style={{marginBottom: '5px', marginRight: '-50px'}}>{value}</li>
                                 })
                             }
-                            
                     </div>
                     <div className="Body">
                         <InterativeBody handleSelect={handleSelect}/>
