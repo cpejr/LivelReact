@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 import '../Profile.css'
 import ReactDOM from 'react-dom';
 const render = ReactDOM.render;

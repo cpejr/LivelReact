@@ -1,0 +1,61 @@
+.completeBody{
+    background-color: #E6E6E6;
+    height: auto;
+}
+/* ---------------------Element Header Coach--------------------- */
+.HeaderContainer{
+    background-color: #E6E6E6;
+    height: 60px;
+}
+
+.coachBlock{
+    display: flex;
+    flex-direction: row;
+    width: 30vh;
+    justify-content: space-around;
+    
+}
+.purpleLine{
+    background-color: #632467;
+    height: 10px;
+}
+
+
+.coachInfo{
+    color: #632467;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: #632467;
+    margin-top: 20px;
+}
+
+.positionCoach{
+    font-size: 14px;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    font-style: italic;
+}
+
+.nameCoach{
+    font-size: 16px;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    font-style: italic;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.imagemHeaderCoach{
+    height: 7vh;
+    width: 7vh;
+    border-radius: 50%;
+    border: 3px solid #632467;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+/* ---------------------Element HourBox Coach--------------------- */
+.hourBoxContainer{
+    height: 60px;
+}
