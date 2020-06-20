@@ -8,6 +8,7 @@ import './Coach.css'
 
 import HeaderCoach from './Elements/Header';
 import HourBox from './Elements/HourBox';
+import ToggleSwitch from './Elements/ToggleSwitch';
 
 
 export default function Coach(){
@@ -17,7 +18,7 @@ export default function Coach(){
         <HeaderCoach img={true} name={true} position={true}/>
     </div>
     <div className="completeBody">
-        <HourBox />
+        <ToggleSwitch />
     </div>
     </>
     )
