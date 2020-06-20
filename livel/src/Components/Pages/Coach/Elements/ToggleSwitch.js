@@ -18,7 +18,6 @@ class ToggleButton extends Component {
     render() {
         return(
             <div>
-                <h2> Toggle Switch</h2>
                 <Switch
                     className="react-switch"
                     onChange={this.handleChange}
