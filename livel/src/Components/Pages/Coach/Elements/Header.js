@@ -5,7 +5,7 @@ import '../Coach.css'
 
 
 let COACH_INFO = {
-    CoachFoto: '/images/coach.jpg',
+    CoachFoto: '/images/Coach/coach.jpg',
     CoachNome: 'Alemao',
     Position: 'coach',
     Hours: ('13:30', '14:00' ,'14:30'),

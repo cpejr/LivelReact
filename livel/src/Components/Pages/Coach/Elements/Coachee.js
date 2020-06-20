@@ -5,22 +5,28 @@ const render = ReactDOM.render;
 let COACHEE1_INFO = {
     CoacheeFoto: '/images/Coach/aluna1.jpg',
     CoacheeNome: 'Beatriz Sinqueira',
+    CoacheeLevel: 1,
 }
 
 let COACHEE2_INFO = {
     CoacheeFoto: '/images/Coach/alun02.jpg',
     CoacheeNome: 'Paulo Diniz',
+    CoacheeLevel: 3,
 }
 
 let COACHEE3_INFO = {
     CoacheeFoto: '/images/Coach/aluna3.jpg',
     CoacheeNome: 'Beatriz Sinqueira',
+    CoacheeLevel: 4,
 }
 
 let COACHEE4_INFO = {
     CoacheeFoto: '/images/Coach/aluno3.jpg',
     CoacheeNome: 'Pietro Carvalho',
+    CoacheeLevel: 2,
 }
+
+const ALL_COACHEES = [COACHEE1_INFO, COACHEE2_INFO, COACHEE3_INFO, COACHEE4_INFO];
 
 let GENERAL_INFO = {
     Restricao: '/images/Coach/restricao.png',
@@ -28,11 +34,34 @@ let GENERAL_INFO = {
     Aerobico: '/images/Coach/aerobico.png',
 }
 
+let TIPO_EXERCICIOS = {
+    Inferior: 'inferior',
+    Superior: 'Superior',
+    Aerobico: 'Resultado',
+}
 
-function Restricoes(props){
+//Fazer um mapa
+
+function AllProps(props){
     return(
-        <ul className="restricoesescritas">
-            
+        < >
+        <div className="GeneralInfos">
+
+            <img src={COACHEE4_INFO.CoachFoto} alt="imagem coach" className="imagemHeaderCoach" />
+            <div className="WrittenInfos">
+                    {(props.name!=null) &&
+                        <div className="nameCoachee"> {COACHEE4_INFO.CoacheeNome} </div>
+                    }
+                    {(props.exerciseType!=null) &&
+                        <div className="exerciseType"> {TIPO_EXERCICIOS.Inferior} </div>
+                    }
+                    {(props.icons!=null) &&
+                        <div className="icons"> {GENERAL_INFO.LivelOne} </div>
+                    }
+            </div> 
+        </div>
+
+        <ul className="restricoesescritas">    
         {(props.cabeca!=null) &&
             <li className="cabeca"> Cabeça </li>
         }
@@ -102,6 +131,7 @@ function Restricoes(props){
         }
 
     </ul>
+    </>
     )
 }
 
@@ -109,7 +139,9 @@ function Restricoes(props){
 export default function HourBox(props){
     return (
             < >
-                <ToggleSwitch />
+                <AllProps img={true} name={true} exerciseType={true} icon={true} />
             </> 
     )
 }   
+
+//o nivel do coachee mostra qual cor ele tera sua border em volta da sua foto

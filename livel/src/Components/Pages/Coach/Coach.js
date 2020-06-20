@@ -8,6 +8,7 @@ import './Coach.css'
 
 import HeaderCoach from './Elements/Header';
 import HourBox from './Elements/HourBox';
+import Coachee from './Elements/Coachee';
 
 
 
@@ -18,7 +19,7 @@ export default function Coach(){
         <HeaderCoach img={true} name={true} position={true}/>
     </div>
     <div className="completeBody">
-        <HourBox />
+        <Coachee />
     </div>
     </>
     )
