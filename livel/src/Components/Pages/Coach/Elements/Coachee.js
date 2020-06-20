@@ -3,25 +3,25 @@ import ReactDOM from 'react-dom';
 const render = ReactDOM.render;
 
 let COACHEE1_INFO = {
-    CoacheeFoto: '/images/Coach/aluna1.jpg',
+    CoacheeFoto: '/images/Coach/aluno1.jpg',
     CoacheeNome: 'Beatriz Sinqueira',
     CoacheeLevel: 1,
 }
 
 let COACHEE2_INFO = {
-    CoacheeFoto: '/images/Coach/alun02.jpg',
+    CoacheeFoto: '/images/Coach/aluno2.jpg',
     CoacheeNome: 'Paulo Diniz',
     CoacheeLevel: 3,
 }
 
 let COACHEE3_INFO = {
-    CoacheeFoto: '/images/Coach/aluna3.jpg',
+    CoacheeFoto: '/images/Coach/aluno3.jpg',
     CoacheeNome: 'Beatriz Sinqueira',
     CoacheeLevel: 4,
 }
 
 let COACHEE4_INFO = {
-    CoacheeFoto: '/images/Coach/aluno3.jpg',
+    CoacheeFoto: '/images/Coach/aluno4.jpg',
     CoacheeNome: 'Pietro Carvalho',
     CoacheeLevel: 2,
 }
@@ -47,7 +47,7 @@ function AllProps(props){
         < >
         <div className="GeneralInfos">
 
-            <img src={COACHEE4_INFO.CoachFoto} alt="imagem coach" className="imagemHeaderCoach" />
+            <img src={COACHEE4_INFO.CoacheeFoto} alt="imagem coachee" className="fotoCoachee" />
             <div className="WrittenInfos">
                     {(props.name!=null) &&
                         <div className="nameCoachee"> {COACHEE4_INFO.CoacheeNome} </div>
