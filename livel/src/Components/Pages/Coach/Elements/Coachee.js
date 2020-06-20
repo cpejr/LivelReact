@@ -40,23 +40,19 @@ let TIPO_EXERCICIOS = {
     Aerobico: 'Resultado',
 }
 
-//Fazer um mapa
-
 function AllProps(props){
     return(
         < >
         <div className="GeneralInfos">
 
             <img src={COACHEE4_INFO.CoacheeFoto} alt="imagem coachee" className="fotoCoachee" />
+            <img src={GENERAL_INFO.LivelOne} alt="icons coachee" className="icons" />
             <div className="WrittenInfos">
                     {(props.name!=null) &&
                         <div className="nameCoachee"> {COACHEE4_INFO.CoacheeNome} </div>
                     }
                     {(props.exerciseType!=null) &&
                         <div className="exerciseType"> {TIPO_EXERCICIOS.Inferior} </div>
-                    }
-                    {(props.icons!=null) &&
-                        <div className="icons"> {GENERAL_INFO.LivelOne} </div>
                     }
             </div> 
         </div>
@@ -139,9 +135,11 @@ function AllProps(props){
 export default function HourBox(props){
     return (
             < >
-                <AllProps img={true} name={true} exerciseType={true} icon={true} />
+                <AllProps img={true} name={true} exerciseType={true} icons={true} />
             </> 
     )
 }   
 
-//o nivel do coachee mostra qual cor ele tera sua border em volta da sua foto
+//o nivel do coachee mostra qual cor ele tera sua border em volta da sua foto. Como fazer isso?
+//Fazer um mapa com os coachees
+//como colocar na informacoa do coachee qual a restricao e tipo de exercicio dele?
