@@ -65,10 +65,11 @@
 .hourContainer{
     height: 30px;
     width: 60%;
-    font-size: 30px;
+    font-size: 28px;
     font-family: sans-serif, Bebas Neue;
-    font-weight: bold;
-    font-stretch: condensed;
+    font-weight: bolder;
+    font-stretch: extra-condensed;
+    letter-spacing: 0.05mm;
     color:#632467;
     display: flex;
     flex-direction: row;
@@ -105,6 +106,58 @@
     align-self: flex-start;
     position: absolute;
     margin-left: 100px;
-    opacity: 30%;
+    opacity: 40%;
 }
+
+.writtenInfos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    height: 40%;
+    margin: auto;
+}
+
+.coacheeName{
+    font-size: 15px;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    color:#231F20;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.coacheeExercise{
+    font-size: 13px;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+}
+
+.coacheeIcons{
+    size: 7mm;
+    height: 7mm;
+}
+
+.livelOneStyled{
+    display: block;
+    line-height: 3mm;
+    height: 20%;
+}
+
+.livelStyled{
+    font-size: 9px;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    font-weight: 800;
+    color:#36AAFF;
+}
+
+.OneStyled{
+    font-size: 10px;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    font-weight: 900;
+    color:#36AAFF;
+}
+
 /* ---------------------Element ToggleSwitch Coach--------------------- */

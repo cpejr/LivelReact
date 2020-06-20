@@ -3,8 +3,16 @@ import ReactDOM from 'react-dom';
 const render = ReactDOM.render;
 
 
+class LivelOne extends Component {
+    render() {
+        return (
+        < >
+        <div className="livelOneStyled">
+            <div className="livelStyled"> Livel</div> <div className="OneStyled"> ONE</div>
+        </div>
+        </>)}}
+
 let Restricao =  '/images/Coach/restricao.png';
-let LivelOne = '/images/Coach/livelOne.png';
 let Aerobico = '/images/Coach/aerobico.png';
 
 const GENERAL_INFO = [null, Restricao, LivelOne, Aerobico];
@@ -21,7 +29,7 @@ let COACHEE1_INFO = {
     CoacheeNome: 'Beatriz Sinqueira',
     CoacheeLevel: 1,
     CoacheeExercise: TIPO_EXERCICIOS[0],
-    CoacheeIcons: GENERAL_INFO[0],
+    CoacheeIcons: GENERAL_INFO[1],
 }
 
 let COACHEE2_INFO = {
@@ -30,7 +38,7 @@ let COACHEE2_INFO = {
     CoacheeLevel: 3,
     CoacheeExercise: TIPO_EXERCICIOS[1],
     CoacheeIcons: GENERAL_INFO[2],
-    CoacheeIcons: GENERAL_INFO[1],
+    CoacheeIcons: GENERAL_INFO[3],
 }
 
 let COACHEE3_INFO = {
@@ -142,9 +150,13 @@ function AllCoachees(props){
                     <div className="coacheeExercise"> {coachee.CoacheeExercise} </div>
                 </div>
                 {
-                (coachee.CoacheeIcons!=GENERAL_INFO[0]) &&
+                (coachee.CoacheeIcons!=GENERAL_INFO[0]&&coachee.CoacheeIcons!=GENERAL_INFO[2]) &&
                 <img src={coachee.CoacheeIcons} alt="imagem coachee" className="coacheeIcons" />
-                }                
+                }
+                {
+                (coachee.CoacheeIcons!=GENERAL_INFO[0]&&coachee.CoacheeIcons==GENERAL_INFO[2]) &&
+                <LivelOne />
+                }                   
             </div>
             )}
         </div>
