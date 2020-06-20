@@ -8,18 +8,20 @@ import './Coach.css'
 
 import HeaderCoach from './Elements/Header';
 import HourBox from './Elements/HourBox';
-import Coachee from './Elements/Coachee';
+// import Coachee from './Elements/Coachee';
 
 
 
 export default function Coach(){
     return(
     < >
-    <div className="headerContainer">
-        <HeaderCoach img={true} name={true} position={true}/>
-    </div>
     <div className="completeBody">
-        <Coachee />
+        
+        <div className="headerContainer">
+            <HeaderCoach img={true} name={true} position={true}/>
+        </div>
+        
+        <HourBox />
     </div>
     </>
     )

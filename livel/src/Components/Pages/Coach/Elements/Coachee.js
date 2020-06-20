@@ -135,6 +135,7 @@ function AllCoachees(props){
         <div className="coacheesHours">
             {ALL_COACHEES.map(coachee =>
             <div className="coacheeContainer">
+                <div className="grayLine" />
                 <img src={coachee.CoacheeFoto} alt="imagem coachee" className="fotoCoachee" />
                 <div className="writtenInfos">
                     <div className="coacheeName"> {coachee.CoacheeNome} </div>
@@ -152,7 +153,7 @@ function AllCoachees(props){
 
 
 
-export default function HourBox(props){
+export default function Coachee(props){
     return (
             < >
                 <AllCoachees />
