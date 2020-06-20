@@ -3,56 +3,50 @@ import ReactDOM from 'react-dom';
 const render = ReactDOM.render;
 
 
-let GENERAL_INFO = {
-    Restricao: '/images/Coach/restricao.png',
-    LivelOne: '/images/Coach/livelOne.png',
-    Aerobico: '/images/Coach/aerobico.png',
-}
+let Restricao =  '/images/Coach/restricao.png';
+let LivelOne = '/images/Coach/livelOne.png';
+let Aerobico = '/images/Coach/aerobico.png';
 
-let TIPO_EXERCICIOS = {
-    Inferior: 'inferior',
-    Superior: 'Superior',
-    Aerobico: 'Resultado',
-}
+const GENERAL_INFO = [null, Restricao, LivelOne, Aerobico];
+
+let Inferior = "Inferior";
+let Superior = "Superior";
+let Resultado = "Resultado";
+
+const TIPO_EXERCICIOS = [Inferior, Superior, Resultado];
+
 
 let COACHEE1_INFO = {
     CoacheeFoto: '/images/Coach/aluno1.jpg',
     CoacheeNome: 'Beatriz Sinqueira',
     CoacheeLevel: 1,
-    CoacheeExercise: TIPO_EXERCICIOS.inferior,
-    CoacheeRestricao: null,
-    CoacheeLivelOne: GENERAL_INFO.LivelOne,
-    CoacheeAerobico: null
+    CoacheeExercise: TIPO_EXERCICIOS[0],
+    CoacheeIcons: GENERAL_INFO[0],
 }
 
 let COACHEE2_INFO = {
     CoacheeFoto: '/images/Coach/aluno2.jpg',
     CoacheeNome: 'Paulo Diniz',
     CoacheeLevel: 3,
-    CoacheeExercise: TIPO_EXERCICIOS.inferior,
-    CoacheeRestricao: null,
-    CoacheeLivelOne: GENERAL_INFO.LivelOne,
-    CoacheeAerobico: null
+    CoacheeExercise: TIPO_EXERCICIOS[1],
+    CoacheeIcons: GENERAL_INFO[2],
+    CoacheeIcons: GENERAL_INFO[1],
 }
 
 let COACHEE3_INFO = {
     CoacheeFoto: '/images/Coach/aluno3.jpg',
     CoacheeNome: 'Beatriz Sinqueira',
     CoacheeLevel: 4,
-    CoacheeExercise: TIPO_EXERCICIOS.inferior,
-    CoacheeRestricao: null,
-    CoacheeLivelOne: GENERAL_INFO.LivelOne,
-    CoacheeAerobico: null
+    CoacheeExercise: TIPO_EXERCICIOS[2],
+    CoacheeIcons: null,
 }
 
 let COACHEE4_INFO = {
     CoacheeFoto: '/images/Coach/aluno4.jpg',
     CoacheeNome: 'Pietro Carvalho',
     CoacheeLevel: 2,
-    CoacheeExercise: TIPO_EXERCICIOS.inferior,
-    CoacheeRestricao: null,
-    CoacheeLivelOne: GENERAL_INFO.LivelOne,
-    CoacheeAerobico: null
+    CoacheeExercise: TIPO_EXERCICIOS[1],
+    CoacheeIcons: GENERAL_INFO[2],
 }
 
 const ALL_COACHEES = [COACHEE1_INFO, COACHEE2_INFO, COACHEE3_INFO, COACHEE4_INFO];
@@ -138,13 +132,19 @@ function AllRestriction(props){
 
 function AllCoachees(props){
     return(
-        <div className="coacheeContainer">
+        <div className="coacheesHours">
             {ALL_COACHEES.map(coachee =>
-            < >
-            <img src={coachee.CoacheeFoto} alt="imagem coachee" className="fotoCoachee" />
-            <div className="coacheeName"> {coachee.CoacheeNome} </div>
-            <div className="coacheeLevel"> {coachee.CoacheeLevel} </div>
-            </>
+            <div className="coacheeContainer">
+                <img src={coachee.CoacheeFoto} alt="imagem coachee" className="fotoCoachee" />
+                <div className="writtenInfos">
+                    <div className="coacheeName"> {coachee.CoacheeNome} </div>
+                    <div className="coacheeExercise"> {coachee.CoacheeExercise} </div>
+                </div>
+                {
+                (coachee.CoacheeIcons!=GENERAL_INFO[0]) &&
+                <img src={coachee.CoacheeIcons} alt="imagem coachee" className="coacheeIcons" />
+                }                
+            </div>
             )}
         </div>
     )
@@ -161,6 +161,6 @@ export default function HourBox(props){
 }   
 
 //o nivel do coachee mostra qual cor ele tera sua border em volta da sua foto. Como fazer isso?
-//como colocar na informacoa do coachee qual a restricao e tipo de exercicio dele?
+
 
 
