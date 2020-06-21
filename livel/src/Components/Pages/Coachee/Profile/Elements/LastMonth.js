@@ -112,18 +112,18 @@ const listaLeft = [Alongamento, Altura, Peso, Gordura, ];
 const listaRight = [Corrida, Abdominais, Flexao, Barra,]
 
 
-function partStyle(style_top, style_left, style_width){
-    return {
-        position: 'absolute',
-        top: style_top,
-        left: style_left,
-        width: style_width,
-        transform: 'translate(-50%, -50%)',
-        height: 'auto',
-        fontSize: '55px',
-        textAlign: 'center'
-    }
-}
+// function partStyle(style_top, style_left, style_width){
+//     return {
+//         position: 'absolute',
+//         top: style_top,
+//         left: style_left,
+//         width: style_width,
+//         transform: 'translate(-50%, -50%)',
+//         height: 'auto',
+//         fontSize: '55px',
+//         textAlign: 'center'
+//     }
+// }
 
 
 class MonthlyResultImages extends Component {

@@ -1,7 +1,9 @@
 import React, { Component, useState } from 'react'
+import { makeStyles } from '@material-ui/core/styles';
+import styled from 'styled-components'
 import ReactDOM from 'react-dom';
+import{FaCheck} from 'react-icons/fa';
 const render = ReactDOM.render;
-
 
 class LivelOne extends Component {
     render() {
@@ -58,7 +60,6 @@ let COACHEE4_INFO = {
 }
 
 const ALL_COACHEES = [COACHEE1_INFO, COACHEE2_INFO, COACHEE3_INFO, COACHEE4_INFO];
-
 
 function AllRestriction(props){
     return(
@@ -137,12 +138,48 @@ function AllRestriction(props){
     )
 }
 
+const CheckFA = <FaCheck />;
+
+const Check = styled.button`
+    background: #FFFFFF;
+    transition: ease border-bottom 250ms;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    width: 33px;
+    color: #632467;
+    height: 100%;
+    ${({ active}) =>
+    active && 
+    `
+    background: #632467;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    width: 33px;
+    color: #FFFFFF;
+    height: 100%;
+    `
+}
+`;
 
 function AllCoachees(props){
+
     return(
         <div className="coacheesHours">
             {ALL_COACHEES.map(coachee =>
             <div className="coacheeContainer">
+                <div className="checkCoachee">
+                <Check
+                    key ={{CheckFA}}
+                    active = {props.active === {CheckFA}}
+                    onClick={() => {props.setActive({CheckFA})}}
+                /> 
+                </div>
                 <div className="grayLine" />
                 <img src={coachee.CoacheeFoto} alt="imagem coachee" className="fotoCoachee" />
                 <div className="writtenInfos">
@@ -166,14 +203,12 @@ function AllCoachees(props){
 
 
 export default function Coachee(props){
+    const [active, setActive] = useState();
     return (
             < >
-                <AllCoachees />
+                <AllCoachees active={active} setActive={setActive} />
             </> 
     )
 }   
 
 //o nivel do coachee mostra qual cor ele tera sua border em volta da sua foto. Como fazer isso?
-
-
-
