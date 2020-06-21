@@ -14,10 +14,22 @@ class LivelOne extends Component {
         </div>
         </>)}}
 
-let Restricao =  '/images/Coach/restricao.png';
-let Aerobico = '/images/Coach/aerobico.png';
+const Restricao = {img:'/images/Coach/restricao.png',
+                   right: '5%',
+} 
 
-const GENERAL_INFO = [null, Restricao, LivelOne, Aerobico];
+const Aerobico = {img:'/images/Coach/aerobico.png',
+                  right: '10%',
+}
+
+const GENERAL_INFO = [null, LivelOne, Restricao, Aerobico];
+
+function generalInfoStyle(style_right){
+    return {
+        right: style_right,
+        position: 'absolute',
+    }
+}
 
 let Inferior = "Inferior";
 let Superior = "Superior";
@@ -138,7 +150,9 @@ function AllRestriction(props){
     )
 }
 
-const CheckFA = <FaCheck />;
+
+// function CheckFa(props){}
+let  CheckFA = <FaCheck color="#632467" />;
 
 const Check = styled.button`
     background: #FFFFFF;
@@ -168,7 +182,6 @@ const Check = styled.button`
 `;
 
 function AllCoachees(props){
-
     return(
         <div className="coacheesHours">
             {ALL_COACHEES.map(coachee =>
@@ -177,8 +190,9 @@ function AllCoachees(props){
                 <Check
                     key ={{CheckFA}}
                     active = {props.active === {CheckFA}}
-                    onClick={() => {props.setActive({CheckFA})}}
-                /> 
+                    onClick={() => {props.setActive({CheckFA})}}>
+                        {CheckFA}
+                </Check>
                 </div>
                 <div className="grayLine" />
                 <img src={coachee.CoacheeFoto} alt="imagem coachee" className="fotoCoachee" />
@@ -186,14 +200,16 @@ function AllCoachees(props){
                     <div className="coacheeName"> {coachee.CoacheeNome} </div>
                     <div className="coacheeExercise"> {coachee.CoacheeExercise} </div>
                 </div>
+                <div className="coachee_icons" >
+                    {
+                    (coachee.CoacheeIcons!=GENERAL_INFO[0]&&coachee.CoacheeIcons!=GENERAL_INFO[1]) &&
+                    <img src={coachee.CoacheeIcons.img} alt="imagem coachee" className="coacheeIcons" style={generalInfoStyle(coachee.CoacheeIcons.right)} />
+                    }
+                </div>   
                 {
-                (coachee.CoacheeIcons!=GENERAL_INFO[0]&&coachee.CoacheeIcons!=GENERAL_INFO[2]) &&
-                <img src={coachee.CoacheeIcons} alt="imagem coachee" className="coacheeIcons" />
-                }
-                {
-                (coachee.CoacheeIcons!=GENERAL_INFO[0]&&coachee.CoacheeIcons==GENERAL_INFO[2]) &&
-                <LivelOne />
-                }                   
+                    (coachee.CoacheeIcons!=GENERAL_INFO[0]&&coachee.CoacheeIcons==GENERAL_INFO[1]) &&
+                    <LivelOne />
+                }               
             </div>
             )}
         </div>
@@ -203,10 +219,9 @@ function AllCoachees(props){
 
 
 export default function Coachee(props){
-    const [active, setActive] = useState();
     return (
             < >
-                <AllCoachees active={active} setActive={setActive} />
+                <AllCoachees active={props.active} setActive={props.setActive} />
             </> 
     )
 }   

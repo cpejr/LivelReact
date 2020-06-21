@@ -8,11 +8,12 @@ import './Coach.css'
 
 import HeaderCoach from './Elements/Header';
 import HourBox from './Elements/HourBox';
-// import Coachee from './Elements/Coachee';
+import Coachee from './Elements/Coachee';
 
 
 
 export default function Coach(){
+    const [active, setActive] = useState();
     return(
     < >
     <div className="completeBody">
@@ -22,6 +23,7 @@ export default function Coach(){
         </div>
         
         <HourBox />
+        {/* <Coachee active={active} setActive={setActive} /> */}
     </div>
     </>
     )
