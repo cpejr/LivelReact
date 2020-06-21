@@ -27,7 +27,7 @@ const GENERAL_INFO = [null, LivelOne, Restricao, Aerobico];
 function generalInfoStyle(style_right){
     return {
         right: style_right,
-        position: 'absolute',
+        position: 'absolute'
     }
 }
 
@@ -37,12 +37,14 @@ let Resultado = "Resultado";
 
 const TIPO_EXERCICIOS = [Inferior, Superior, Resultado];
 
+const AVAILABLE_TIME = ['13:00', '14:00', '14:30'];
 
 let COACHEE1_INFO = {
     CoacheeFoto: '/images/Coach/aluno1.jpg',
     CoacheeNome: 'Beatriz Sinqueira',
     CoacheeLevel: 1,
     CoacheeExercise: TIPO_EXERCICIOS[0],
+    CoacheeSchedule: AVAILABLE_TIME[0],
     CoacheeIcons: GENERAL_INFO[1],
 }
 
@@ -51,8 +53,8 @@ let COACHEE2_INFO = {
     CoacheeNome: 'Paulo Diniz',
     CoacheeLevel: 3,
     CoacheeExercise: TIPO_EXERCICIOS[1],
+    CoacheeSchedule: AVAILABLE_TIME[0],
     CoacheeIcons: GENERAL_INFO[2],
-    CoacheeIcons: GENERAL_INFO[3],
 }
 
 let COACHEE3_INFO = {
@@ -60,6 +62,7 @@ let COACHEE3_INFO = {
     CoacheeNome: 'Beatriz Sinqueira',
     CoacheeLevel: 4,
     CoacheeExercise: TIPO_EXERCICIOS[2],
+    CoacheeSchedule: AVAILABLE_TIME[0],
     CoacheeIcons: null,
 }
 
@@ -68,90 +71,13 @@ let COACHEE4_INFO = {
     CoacheeNome: 'Pietro Carvalho',
     CoacheeLevel: 2,
     CoacheeExercise: TIPO_EXERCICIOS[1],
+    CoacheeSchedule: AVAILABLE_TIME[0],
     CoacheeIcons: GENERAL_INFO[2],
 }
 
 const ALL_COACHEES = [COACHEE1_INFO, COACHEE2_INFO, COACHEE3_INFO, COACHEE4_INFO];
 
-function AllRestriction(props){
-    return(
-        < >
-        <ul className="restricoesescritas">    
-        {(props.cabeca!=null) &&
-            <li className="cabeca"> Cabeça </li>
-        }
 
-        {(props.pescoco!=null) &&
-            <li className="pescoco"> Pescoço </li>
-        }
-
-        {(props.coluna!=null) &&
-            <li className="coluna"> Coluna </li>
-        }
-
-        {(props.coracao!=null) &&
-            <li className="coracao"> Coração </li>
-        }
-
-        {(props.quadril!=null) &&
-            <li className="quadril"> Quadril </li>
-        }
-
-        {(props.joelhoesquerdo!=null) &&
-            <li className="joelhoesquerdo"> Joelho Esquerdo </li>
-        }
-
-        {(props.joelhodireito!=null) &&
-            <li className="joelhodireito"> Joelho Direito </li>
-        }
-
-        {(props.canelaesquerda!=null) &&
-            <li className="canelaesquerda"> Canela Esquerda </li>
-        }
-
-        {(props.caneladireita!=null) &&
-            <li className="caneladireita"> Canela Direita </li>
-        }
-
-        {(props.ombroesquerdo!=null) &&
-            <li className="ombroesquerdo"> Ombro Esquerdo </li>
-        }
-
-        {(props.ombrodireito!=null) &&
-            <li className="ombrodireito"> Ombro Direito </li>
-        }
-
-        {(props.cotoveloesquerdo!=null) &&
-            <li className="cotoveloesquerdo"> Cotovelo Esquerdo </li>
-        }
-
-        {(props.cotovelodireito!=null) &&
-            <li className="cotovelodireito"> Cotovelo Direito </li>
-        }
-
-        {(props.pulsoesquerdo!=null) &&
-            <li className="pulsoesquerdo"> Pulso Esquerdo </li>
-        }
-
-        {(props.pulsodireito!=null) &&
-            <li className="pulsodireito"> Pulso Direito </li>
-        }
-
-        {(props.maoesquerda!=null) &&
-            <li className="maoesquerda"> Mão Esquerda </li>
-        }
-
-        {(props.maoedireita!=null) &&
-            <li className="maoedireita"> Mão Direita </li>
-        }
-
-    </ul>
-    </>
-    )
-}
-
-
-// function CheckFa(props){}
 let  CheckFA = <FaCheck color="#632467" />;
 
 const Check = styled.button`
