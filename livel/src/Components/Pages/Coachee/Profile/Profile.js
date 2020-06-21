@@ -11,9 +11,6 @@ import CurrentMonthResult from './Elements/CurrentMonth'
 import LastMonthResult from './Elements/LastMonth'
 
 
-const abas = ['LastMonth', 'CurrentMonth', 'RESULTADO'];
-
-
 export default function Profile(){
 
     const [active, setActive] = useState('RESULTADO');

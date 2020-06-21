@@ -22,12 +22,10 @@ const Aerobico = {img:'/images/Coach/aerobico.png',
                   right: '10%',
 }
 
-const GENERAL_INFO = [null, LivelOne, Restricao, Aerobico];
 
 function generalInfoStyle(style_right){
     return {
         right: style_right,
-        position: 'absolute'
     }
 }
 
@@ -45,7 +43,9 @@ let COACHEE1_INFO = {
     CoacheeLevel: 1,
     CoacheeExercise: TIPO_EXERCICIOS[0],
     CoacheeSchedule: AVAILABLE_TIME[0],
-    CoacheeIcons: GENERAL_INFO[1],
+    CoacheeLivelOne: LivelOne,
+    CoacheeRestriction: Restricao,
+    CoacheeCore: Aerobico,
 }
 
 let COACHEE2_INFO = {
@@ -54,8 +54,11 @@ let COACHEE2_INFO = {
     CoacheeLevel: 3,
     CoacheeExercise: TIPO_EXERCICIOS[1],
     CoacheeSchedule: AVAILABLE_TIME[0],
-    CoacheeIcons: GENERAL_INFO[2],
+    CoacheeLivelOne: 'null',
+    CoacheeRestriction: 'null',
+    CoacheeCore: 'null',
 }
+
 
 let COACHEE3_INFO = {
     CoacheeFoto: '/images/Coach/aluno3.jpg',
@@ -63,8 +66,11 @@ let COACHEE3_INFO = {
     CoacheeLevel: 4,
     CoacheeExercise: TIPO_EXERCICIOS[2],
     CoacheeSchedule: AVAILABLE_TIME[0],
-    CoacheeIcons: null,
+    CoacheeLivelOne: 'null',
+    CoacheeRestriction: Restricao,
+    CoacheeCore: Aerobico,
 }
+
 
 let COACHEE4_INFO = {
     CoacheeFoto: '/images/Coach/aluno4.jpg',
@@ -72,8 +78,11 @@ let COACHEE4_INFO = {
     CoacheeLevel: 2,
     CoacheeExercise: TIPO_EXERCICIOS[1],
     CoacheeSchedule: AVAILABLE_TIME[0],
-    CoacheeIcons: GENERAL_INFO[2],
+    CoacheeLivelOne: LivelOne,
+    CoacheeRestriction: 'null',
+    CoacheeCore: 'null',
 }
+
 
 const ALL_COACHEES = [COACHEE1_INFO, COACHEE2_INFO, COACHEE3_INFO, COACHEE4_INFO];
 
@@ -127,15 +136,16 @@ function AllCoachees(props){
                     <div className="coacheeExercise"> {coachee.CoacheeExercise} </div>
                 </div>
                 <div className="coachee_icons" >
-                    {
-                    (coachee.CoacheeIcons!=GENERAL_INFO[0]&&coachee.CoacheeIcons!=GENERAL_INFO[1]) &&
-                    <img src={coachee.CoacheeIcons.img} alt="imagem coachee" className="coacheeIcons" style={generalInfoStyle(coachee.CoacheeIcons.right)} />
+                    {(coachee.CoacheeLivelOne!='null')&&
+                    <LivelOne />
+                    }
+                    {(coachee.CoacheeRestriction!='null')&&
+                    <img src={coachee.CoacheeRestriction.img} alt="imagem coachee" className="coacheeIcons" style={generalInfoStyle(coachee.CoacheeRestriction.right)} />
+                    }
+                    {(coachee.CoacheeCore!='null')&&
+                    <img src={coachee.CoacheeCore.img} alt="imagem coachee" className="coacheeIcons" style={generalInfoStyle(coachee.CoacheeCore.right)} />
                     }
                 </div>   
-                {
-                    (coachee.CoacheeIcons!=GENERAL_INFO[0]&&coachee.CoacheeIcons==GENERAL_INFO[1]) &&
-                    <LivelOne />
-                }               
             </div>
             )}
         </div>
