@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import './PopUp.css'
 
 export default function PopUp() {
@@ -91,9 +92,11 @@ useEffect(()=>
                     </div>
                 </div>
                 <div className="buttons">
-                       <button className="sendbutton">
-                        ENVIAR
-                    </button>
+                <Link type="button" to="/trainingtypes" className="sendbutton">
+                        <div>
+                           ENVIAR
+                </div>
+                    </Link>
                     <button className="fbimg">
                         <img src={'./images/fbimg.png'} alt="fbimg" />
                     </button>
