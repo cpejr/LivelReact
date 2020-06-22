@@ -87,6 +87,10 @@
     background-color: #fff;
     border:none;
 }
+.fbimg:active{
+    border: none;
+    margin:none;
+}
 .fbimg img{
     width: 30vh;
     max-width: 100%;
