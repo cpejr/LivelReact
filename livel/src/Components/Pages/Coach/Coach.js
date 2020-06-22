@@ -8,7 +8,6 @@ import './Coach.css'
 
 import HeaderCoach from './Elements/Header';
 import HourBox from './Elements/HourBox';
-import Coachee from './Elements/Coachee';
 
 
 
