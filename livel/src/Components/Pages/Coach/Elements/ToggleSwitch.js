@@ -3,7 +3,39 @@ import Switch from 'react-switch'
 import ReactDOM from 'react-dom';
 const render = ReactDOM.render;
 
-class ToggleButton extends Component {
+const ToggleButtonDo = styled.button`
+    background: #E6E6E6;
+    transition: ease border-bottom 250ms;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    width: 33%;
+    font-size: 11px;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    color: #231F20;
+    height: 100%;
+    ${({ active}) =>
+    active && 
+    `
+    font-size: 12px;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    font-weight: bold;
+    color: #532166;
+    background: white;
+    border-bottom: 0.5mm solid purple;
+    `
+}
+`;
+
+
+
+
+
+class IsActive extends Component {
     constructor() {
         super()
         this.state = {
@@ -43,19 +75,4 @@ class ToggleButton extends Component {
 
     }
 }
-
-
-export default function ToggleSwitch(props){
-    return (
-            < >
-                <ToggleButton />
-            </> 
-    )
-}   
-
-// links de consulta: 
-// https://www.youtube.com/watch?v=SGrfLkW13_c
-// https://github.com/markusenglund/react-switch
-
-{/* <p>this switch is <b>{this.state.checked ? 'on' : 'off'}</b></p> */}
 

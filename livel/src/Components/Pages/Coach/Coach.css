@@ -56,10 +56,16 @@
 }
 
 /* ---------------------Element HourBox Coach--------------------- */
-.thisHourBox{
+.HourBoxIsOn{
     height: 60px;
     width: 100%;
     background-color: #ffffff;
+}
+
+.HourBoxIsOff{
+    height: 60px;
+    width: 100%;
+    background-color: #FF7878;
 }
 
 .hourContainer{
