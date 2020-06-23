@@ -7,11 +7,24 @@
     height: 10%
 }
 
+.purpleLine{
+    background-color: #632467;
+    height: 1.5vh;
+}
+
 .headerContent{
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 90%;
+}
+
+.CoachheaderContent{
+    display: flex;
+    align-items: center;
+    height: 90%;
+    margin-top: 1vh;
+    margin-left: 1vh;
 }
 
 .imagemHeader{
@@ -21,10 +34,37 @@
     border: 3px solid #EF7D00
 }
 
+.nameContainer{
+    margin-left: 3%;
+    width: 100%;
+    margin-top: 1vh;
+    color: #632467;
+}
+
+.CoachimagemHeader{
+    margin-top: 1vh;
+    margin-left: 10%;
+    height: 7vh;
+    width: 7vh;
+    border-radius: 50%;
+    border: 3px solid #632467
+}
+
 .name{
     color: #EF7D00;
     text-transform: uppercase;
     max-width: 40%;
+}
+
+.Coachname{
+    font-family: arial;
+    font-weight: bold;
+    color: #632467;
+    text-transform: 632467;
+    max-width: 60%;
+    display: flex;
+    margin-top: 1vh;
+
 }
 
 .level{

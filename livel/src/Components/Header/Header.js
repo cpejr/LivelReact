@@ -12,7 +12,45 @@ import './Header.css'
 export default function Header(props){
     let history = useHistory()
     let aluno = getAluno()
+    if(props.coach){return (
+        <div className="HeaderContainer">
 
+            <div className="purpleLine"/>
+
+            <div className='CoachheaderContent'>
+                <img src={`http://fitgroup.com.br/livel/fotos/${aluno.ALUNO_INFO.AlunoFoto}`} alt="imagem" className="CoachimagemHeader" onClick={()=>history.push('/profile')}/>
+
+                {(props.name!=null) &&
+                    <div className="nameContainer">
+                    <div>COACH</div>
+                    <div className="Coachname" onClick={()=>history.push('/profile')}>{aluno.ALUNO_INFO.AlunoNome}</div>
+                    </div>
+                }
+
+                {(props.level!=null) &&
+                    <img src={`/images/level/nivel${props.level}.png`} alt="level" className='level' />
+                }
+
+                {(props.icons!=null) &&
+                    <div>
+                        <img src='/images/bodyIcon.png' alt="icone1" style={{marginRight: '16px'}} onClick={()=>history.push('/body')}/>
+                        <img src='/images/rewardsIcon.png' alt="icone1" onClick={()=>history.push('/rewards')}/>
+                    </div>
+                }
+
+                {(props.back!=null) &&
+                    <IconContext.Provider value={{ size: '3em', color: "#632467" }}>
+                        <IoIosArrowBack  onClick={()=>history.push('/trainingTypes')}/>
+                    </IconContext.Provider>
+
+                }
+
+            </div>
+
+        </div>
+    )
+
+    }else{
     return (
         <div className="HeaderContainer">
 
@@ -47,4 +85,5 @@ export default function Header(props){
 
         </div>
     )
+}
 }
