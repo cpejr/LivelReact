@@ -17,6 +17,7 @@ import Body from './Components/Pages/Coachee/Body'
 import MidTraining from './Components/Pages/Coachee/MidTraining'
 // import ForgetPassword from './Components/Pages/Login/ForgetPassword'
 import Coach from './Components/Pages/Coach'
+import CoachProfile from './Components/Pages/Coach/CoachProfile'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route
@@ -54,6 +55,7 @@ export default function Routes(){
               <PrivateRoute path="/rewards" component={Rewards} />
               <PrivateRoute path="/body" component={Body} />
               <PrivateRoute path="/coach" component={Coach} />
+              <PrivateRoute path="/coachprofile" component={CoachProfile}/>
 
             </Switch>
         </BrowserRouter>
