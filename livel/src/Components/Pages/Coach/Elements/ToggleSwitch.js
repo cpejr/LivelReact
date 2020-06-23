@@ -76,3 +76,25 @@ class IsActive extends Component {
     }
 }
 
+function toggleOnFunction (props){
+    return (
+        <div className="HourBoxIsOn">
+            <div className="hourContainer">
+                {UNAVAILABLE_TIME[0]}
+            </div>
+        </div>
+    )
+}
+
+function toggleOffFunction (props){
+    return (
+        <div className="HourBoxIsOff">
+            <div className="hourContainer">
+                {AVAILABLE_TIME[0]}
+            </div>
+            <div className="coacheeContainerHourBox">
+                <Coachee />
+            </div>
+        </div>
+    )
+}

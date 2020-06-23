@@ -57,33 +57,31 @@
 
 /* ---------------------Element HourBox Coach--------------------- */
 .HourBoxIsOn{
-    height: 60px;
     width: 100%;
     background-color: #ffffff;
 }
 
 .HourBoxIsOff{
-    height: 60px;
     width: 100%;
     background-color: #FF7878;
 }
 
-.hourContainer{
-    height: 30px;
-    width: 60%;
-    font-size: 28px;
+.HourAndToggle{
+    height: 60px;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.whatTimeIsIt{
+    font-size: 25px;
     font-family: sans-serif, Bebas Neue;
     font-weight: bolder;
     font-stretch: extra-condensed;
     letter-spacing: 0.05mm;
     color:#632467;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.coacheeContainerHourBox{
-
 }
 /* ---------------------Element Coachee Coach--------------------- */
 .fotoCoachee{

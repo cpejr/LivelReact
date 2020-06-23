@@ -68,23 +68,15 @@ class ToggleButton extends Component {
     }
 }
 
+function toggleOffFunction (props){
+    return (
+        <div className="HourBoxIsOff" />
+    )
+}
 
 function toggleOnFunction (props){
     return (
         <div className="HourBoxIsOn">
-            <div className="hourContainer">
-                {UNAVAILABLE_TIME[0]}
-            </div>
-        </div>
-    )
-}
-
-function toggleOffFunction (props){
-    return (
-        <div className="HourBoxIsOff">
-            <div className="hourContainer">
-                {AVAILABLE_TIME[0]}
-            </div>
             <div className="coacheeContainerHourBox">
                 <Coachee />
             </div>
@@ -92,46 +84,41 @@ function toggleOffFunction (props){
     )
 }
 
+
 export default function HourBox(props){
     const [toggleOn, setToggleOn] = useState(false);
     
     const toggleOnAnimation = useSpring({
       opacity: toggleOn ? 1 : 0,
       transform: toggleOn ? `translateX(0)` : `translateX(100%)`
-    });
-    return (
-    <div className="divMother" >
+    })
 
-        <div className="App">
-            <ToggleButton
-            className="toggle-button"
-            onClick={() => setToggleOn(!toggleOn)}
-            style={toggleOnAnimation}
-            />
+    return (
+        <div className="divMother" >
+            <div className="eachContainer">
+            {ALL_TIME.map(time =>
+                <div className="HourAndToggle">
+                    <ToggleButton
+                    className="toggle-button"
+                    onClick={() => setToggleOn(!toggleOn)}
+                    style={toggleOnAnimation}
+                    />
+                    <div className="whatTimeIsIt">
+                        {time}
+                    </div>
+                </div>,
+                <div className="isItOnorOff">
+                {toggleOn ? toggleOnFunction.call : toggleOffFunction.call}
+                </div>
+            )}
+            </div>
         </div>
-        {toggleOn ? toggleOnFunction(props) : toggleOffFunction(props)}
-      </div>
     );
   }
   
-
-// export default function HourBox(props){
-//     return (
-//         <div className="thisHourBox">
-//             <div className="hourContainer">
-//                 {AVAILABLE_TIME[0]}
-//                 <setActiveOrNot />
-//             </div>
-//             <div className="coacheeContainerHourBox">
-//                     <Coachee />
-//             </div>
-//         </div>
-//     )
-// }   
 
 
 // links de consulta: 
 // https://www.youtube.com/watch?v=SGrfLkW13_c
 // https://github.com/markusenglund/react-switch
 
-{/* <p>this switch is <b>{this.state.checked ? 'on' : 'off'}</b></p> */}
