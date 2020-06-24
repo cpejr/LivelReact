@@ -4,7 +4,6 @@ import Coachee from './Coachee';
 import Switch from 'react-switch'
 import styled from 'styled-components'
 import ReactDOM from 'react-dom';
-import { FaThumbsDown } from 'react-icons/fa';
 const render = ReactDOM.render;
 
 const ALL_TIME = [
@@ -115,7 +114,7 @@ export default function HourBox(props){
                             </div>
                         </div>
                         <div className="isItOnorOff">
-                        {toggleOn ? <ToggleOnFunction /> : <ToggleOffFunction />}
+                        {toggleOn ? ToggleOnFunction(time) : ToggleOffFunction(time) }
                         </div>
                     </div>
                     )
