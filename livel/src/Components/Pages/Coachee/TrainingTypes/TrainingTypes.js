@@ -90,8 +90,6 @@ export default function TrainingTypes(props){
                 message: `Faltam ${aluno.ALUNO_TREINOS.NumTreinosFaltam} treinos para você ganhar ${aluno.ALUNO_TREINOS.PontosNext} pontos`
             })
         }
-
-        console.log(aluno.ALUNO_RESULTADOS)
             
     }, [aluno])
 
@@ -126,6 +124,7 @@ export default function TrainingTypes(props){
                 </div>
                 <div className="medalSide">
                     <div className='Reward'>
+                        {/* A o trofeu e a mensagem atuais são definidos pelo state. Esse state é definido na montagem do componente (useEffect) de acordo com o numero de treinos do usuário */}
                         <img src={currentProgress.trof} alt='Trofel' className='trophy' />
                         <div>{currentProgress.message}</div>
                     </div>
