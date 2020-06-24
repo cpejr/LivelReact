@@ -1,8 +1,7 @@
 import React, { Component, useState } from 'react'
-import { makeStyles } from '@material-ui/core/styles';
 import styled from 'styled-components'
 import ReactDOM from 'react-dom';
-import{FaCheck} from 'react-icons/fa';
+import{FaCheck, FaChevronRight} from 'react-icons/fa';
 const render = ReactDOM.render;
 
 class LivelOne extends Component {
@@ -115,6 +114,36 @@ const Check = styled.button`
     `
 }
 `;
+
+let  Chevron = <FaChevronRight color="#676767" size={10}/>;
+
+// const Check = styled.button`
+//     background: #FFFFFF;
+//     transition: ease border-bottom 250ms;
+//     border: 0;
+//     border-bottom: 2px solid transparent;
+//     outline: 0;
+//     cursor: pointer;
+//     text-align: center;
+//     width: 33px;
+//     color: #632467;
+//     height: 100%;
+//     ${({ active}) =>
+//     active && 
+//     `
+//     background: #632467;
+//     border: 0;
+//     border-bottom: 2px solid transparent;
+//     outline: 0;
+//     cursor: pointer;
+//     text-align: center;
+//     width: 33px;
+//     color: #FFFFFF;
+//     height: 100%;
+//     `
+// }
+// `;
+
 
 function AllCoachees(props){
     return(

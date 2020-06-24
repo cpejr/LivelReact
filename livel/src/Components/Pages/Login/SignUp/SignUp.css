@@ -8,9 +8,12 @@
     width: 100%;
 }
 
-.ForgetTitle{
+.SignUpTitle{
     color: #ffff;
-    font-size: 150%;
+    font-size: 100%;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    font-weight: bold;
 }
 
 .formContainer form{
@@ -18,15 +21,24 @@
     flex-direction: column;
 }
 
+.formContainer label{
+    color: #ffff;
+    font-size: 70%;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
+    opacity: 0.8;
+}
 
 
 .forgetClick{
-    padding-left: 110px;
-    padding-right: 110px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: #e7db18;
     border-radius: 10px;
+    font-family: sans-serif, Univers LT;
+    font-stretch: condensed;
     color: #632467;
-    text-decoration: none;
+    font-weight: bolder;
 }

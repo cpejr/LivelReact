@@ -10,7 +10,8 @@ import { withStyles } from "@material-ui/core/styles";
 const styles = {
     inputStyle: {
         borderBottom: '1px solid white',
-        color: "white"
+        color: "white",
+        opacity: 0.8,
     },
     inputLabel: {
       color: "white",
@@ -29,10 +30,10 @@ const styles = {
     return(
             <div className="Container">
                 <img src='/images/Logo_Livel.png' alt="Logo do Livel" className='logo'/>
-                <div className='ForgetTitle'>Sign Up</div>
+                <div className='SignUpTitle'>Realize seu Cadastro</div>
                 <div className='formContainer'>
                     <form>
-                <TextField label="Nome" onChange={(e)=>{setNome(e.target.value)}}
+                <TextField label="nome" onChange={(e)=>{setNome(e.target.value)}}
                     InputLabelProps={{
                         classes: {root: classes.inputLabel, focussed: classes.inputLabel}
                     }}
@@ -41,7 +42,7 @@ const styles = {
                     }}
                 />
     
-                <TextField label="Sobrenome" onChange={(e)=>{setSobrenome(e.target.value)}}
+                <TextField label="sobrenome" onChange={(e)=>{setSobrenome(e.target.value)}}
                     InputLabelProps={{
                         classes: {root: classes.inputLabel, focussed: classes.inputLabel}
                     }}
@@ -49,7 +50,7 @@ const styles = {
                         classes: {root: classes.inputStyle, focussed: classes.inputStyle, notchedOutline: classes.inputStyle}
                     }}
                 />
-                <TextField label="E-mail" onChange={(e)=>{setEmail(e.target.value)}}
+                <TextField label="e-mail" onChange={(e)=>{setEmail(e.target.value)}}
                     InputLabelProps={{
                         classes: {root: classes.inputLabel, focussed: classes.inputLabel}
                     }}
@@ -57,7 +58,7 @@ const styles = {
                         classes: {root: classes.inputStyle, focussed: classes.inputStyle, notchedOutline: classes.inputStyle}
                     }}
                 />
-                <TextField label="Criar Senha" onChange={(e)=>{setPassword(e.target.value)}}
+                <TextField label="criar senha" onChange={(e)=>{setPassword(e.target.value)}}
                     InputLabelProps={{
                         classes: {root: classes.inputLabel, focussed: classes.inputLabel}
                     }}
@@ -65,7 +66,7 @@ const styles = {
                         classes: {root: classes.inputStyle, focussed: classes.inputStyle, notchedOutline: classes.inputStyle}
                     }}
                 />
-                <TextField label="Confirmar Senha" onChange={(e)=>{setConfirmPassword(e.target.value)}}
+                <TextField label="confirmar senha" onChange={(e)=>{setConfirmPassword(e.target.value)}}
                     InputLabelProps={{
                         classes: {root: classes.inputLabel, focussed: classes.inputLabel}
                     }}
@@ -75,7 +76,7 @@ const styles = {
                 />
                 </form>
                 </div>
-                <Link className='forgetClick' to='/'>CADASTRAR</Link>
+                <Link className='forgetClick' to='/'>ENVIAR</Link>
             </div>
         )
     }

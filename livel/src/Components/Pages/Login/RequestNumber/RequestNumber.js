@@ -30,7 +30,8 @@ function RequestNumber(props){
     return(
             <div className="Container">
                 <img src='/images/Logo_Livel.png' alt="Logo do Livel" className='logo'/>
-                <div className='ForgetTitle'>Esqueci Minha Senha</div>
+                <div className='RequestNumberTitle'>Solicite seu número de matrícula</div>
+                <div className='RequestNumberText'>Preencha os dados abaixo e enviaremos seu número de matrícula para seu e-mail:</div>
                 <div className='formContainer'>
                     <form>
                 <TextField label="Nome" onChange={(e)=>{setName(e.target.value)}}

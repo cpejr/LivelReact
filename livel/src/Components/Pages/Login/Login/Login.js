@@ -54,7 +54,7 @@ function Login(props){
             <img src='/images/Logo_Livel.png' alt="Logo do Livel" className='logo'/>
             <div className='LoginTitle'>Login</div>
             <div className='inputsContainer'>
-                <TextField label="Matrícula" onChange={(e)=>{setMatricula(e.target.value)}}
+                <TextField  className="matriculaInput" label="matrícula" onChange={(e)=>{setMatricula(e.target.value)}}
                     InputLabelProps={{
                         classes: {root: classes.inputLabel, focussed: classes.inputLabel}
                     }}
@@ -63,7 +63,7 @@ function Login(props){
                     }}
                 />
     
-                <TextField label="Senha" onChange={(e)=>{setSenha(e.target.value)}}
+                <TextField  className="senhaInput" label="senha" onChange={(e)=>{setSenha(e.target.value)}}
                     type="password"
                     InputLabelProps={{
                         classes: {root: classes.inputLabel, focussed: classes.inputLabel}
