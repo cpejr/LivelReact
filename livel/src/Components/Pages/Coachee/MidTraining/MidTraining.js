@@ -3,12 +3,14 @@ import {treinoAvalia} from '../../../../services/backEnd'
 
 
 import './MidTraining.css'
-import Clock from './Clock/Clock'
+import Clock from './Elements/Clock/Clock'
 import Header from '../../../Header'
+import PopUp from './Elements/PopUp/PopUp'
 
 
 
 export default function MidTraining() {
+    const[isModalVisible, setisModalVisible] = useState(false);
     const [serie, setserie] = useState(1);
     const [active, setActive] = useState({
         paused: true,
@@ -16,12 +18,23 @@ export default function MidTraining() {
     });
 
     function changeActive(value){
-        if (value==='rest') {
+       
+       
+         if (value==='rest') {
             setActive({
                 paused: active.paused,
                 clock: 'training'
             })
+           if(serie == 2){
+            setActive({
+                paused: !active.paused,
+                clock: active.clock
+            })
+               setisModalVisible(true)
+               
+           } else{
             setserie(serie+1)
+           }
         }
         else if (value==='training') {
             setActive({
@@ -49,8 +62,10 @@ export default function MidTraining() {
  
     return (
 
-        
         <div style={{ height: "100%", }}>
+            <div className="PopUp">
+              {isModalVisible?  <PopUp/> : null}
+            </div>
             <Header img={true} name={true} icons={true} />
             <div className="info">
                 <div className="titlee">
@@ -73,7 +88,7 @@ export default function MidTraining() {
                     <div className="counting">
                         <div> 
                         <Clock
-                            seconds={5}
+                            seconds={1}
                             active={()=>{
                                 if((active.clock==='training') && !(active.paused)) {console.log('Clock 1: true'); return true}
                                 else {console.log('Clock 1: false'); return false}
@@ -96,7 +111,7 @@ export default function MidTraining() {
                     </div>
                     <div className="counting">
                         <div> 
-                        <Clock seconds={5} 
+                        <Clock seconds={1} 
                             active={()=>{
                                 if((active.clock==='rest') && !(active.paused)) {console.log('Clock 2: true'); return true}
                                 else {console.log('Clock 2: false'); return false}
