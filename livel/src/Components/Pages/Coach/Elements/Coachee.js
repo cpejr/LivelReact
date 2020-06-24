@@ -1,147 +1,165 @@
 import React, { Component, useState } from 'react'
+import { makeStyles } from '@material-ui/core/styles';
+import styled from 'styled-components'
 import ReactDOM from 'react-dom';
+import{FaCheck} from 'react-icons/fa';
 const render = ReactDOM.render;
 
+class LivelOne extends Component {
+    render() {
+        return (
+        < >
+        <div className="livelOneStyled">
+            <div className="livelStyled"> Livel</div> <div className="OneStyled"> ONE</div>
+        </div>
+        </>)}}
+
+const Restricao = {img:'/images/Coach/restricao.png',
+                   right: '5%',
+} 
+
+const Aerobico = {img:'/images/Coach/aerobico.png',
+                  right: '10%',
+}
+
+
+function generalInfoStyle(style_right){
+    return {
+        right: style_right,
+    }
+}
+
+let Inferior = "Inferior";
+let Superior = "Superior";
+let Resultado = "Resultado";
+
+const TIPO_EXERCICIOS = [Inferior, Superior, Resultado];
+
+const AVAILABLE_TIME = ['13:00', '14:00', '14:30'];
+
 let COACHEE1_INFO = {
-    CoacheeFoto: '/images/Coach/aluna1.jpg',
+    CoacheeFoto: '/images/Coach/aluno1.jpg',
     CoacheeNome: 'Beatriz Sinqueira',
     CoacheeLevel: 1,
+    CoacheeExercise: TIPO_EXERCICIOS[0],
+    CoacheeSchedule: AVAILABLE_TIME[0],
+    CoacheeLivelOne: LivelOne,
+    CoacheeRestriction: Restricao,
+    CoacheeCore: Aerobico,
 }
 
 let COACHEE2_INFO = {
-    CoacheeFoto: '/images/Coach/alun02.jpg',
+    CoacheeFoto: '/images/Coach/aluno2.jpg',
     CoacheeNome: 'Paulo Diniz',
     CoacheeLevel: 3,
+    CoacheeExercise: TIPO_EXERCICIOS[1],
+    CoacheeSchedule: AVAILABLE_TIME[0],
+    CoacheeLivelOne: 'null',
+    CoacheeRestriction: 'null',
+    CoacheeCore: 'null',
 }
+
 
 let COACHEE3_INFO = {
-    CoacheeFoto: '/images/Coach/aluna3.jpg',
+    CoacheeFoto: '/images/Coach/aluno3.jpg',
     CoacheeNome: 'Beatriz Sinqueira',
     CoacheeLevel: 4,
+    CoacheeExercise: TIPO_EXERCICIOS[2],
+    CoacheeSchedule: AVAILABLE_TIME[0],
+    CoacheeLivelOne: 'null',
+    CoacheeRestriction: Restricao,
+    CoacheeCore: Aerobico,
 }
 
+
 let COACHEE4_INFO = {
-    CoacheeFoto: '/images/Coach/aluno3.jpg',
+    CoacheeFoto: '/images/Coach/aluno4.jpg',
     CoacheeNome: 'Pietro Carvalho',
     CoacheeLevel: 2,
+    CoacheeExercise: TIPO_EXERCICIOS[1],
+    CoacheeSchedule: AVAILABLE_TIME[0],
+    CoacheeLivelOne: LivelOne,
+    CoacheeRestriction: 'null',
+    CoacheeCore: 'null',
 }
+
 
 const ALL_COACHEES = [COACHEE1_INFO, COACHEE2_INFO, COACHEE3_INFO, COACHEE4_INFO];
 
-let GENERAL_INFO = {
-    Restricao: '/images/Coach/restricao.png',
-    LivelOne: '/images/Coach/livelOne.png',
-    Aerobico: '/images/Coach/aerobico.png',
+
+let  CheckFA = <FaCheck color="#632467" />;
+
+const Check = styled.button`
+    background: #FFFFFF;
+    transition: ease border-bottom 250ms;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    width: 33px;
+    color: #632467;
+    height: 100%;
+    ${({ active}) =>
+    active && 
+    `
+    background: #632467;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    width: 33px;
+    color: #FFFFFF;
+    height: 100%;
+    `
 }
+`;
 
-let TIPO_EXERCICIOS = {
-    Inferior: 'inferior',
-    Superior: 'Superior',
-    Aerobico: 'Resultado',
-}
-
-//Fazer um mapa
-
-function AllProps(props){
+function AllCoachees(props){
     return(
-        < >
-        <div className="GeneralInfos">
-
-            <img src={COACHEE4_INFO.CoachFoto} alt="imagem coach" className="imagemHeaderCoach" />
-            <div className="WrittenInfos">
-                    {(props.name!=null) &&
-                        <div className="nameCoachee"> {COACHEE4_INFO.CoacheeNome} </div>
+        <div className="coacheesHours">
+            {ALL_COACHEES.map(coachee =>
+            <div className="coacheeContainer">
+                <div className="checkCoachee">
+                <Check
+                    key ={{CheckFA}}
+                    active = {props.active === {CheckFA}}
+                    onClick={() => {props.setActive({CheckFA})}}>
+                        {CheckFA}
+                </Check>
+                </div>
+                <div className="grayLine" />
+                <img src={coachee.CoacheeFoto} alt="imagem coachee" className="fotoCoachee" />
+                <div className="writtenInfos">
+                    <div className="coacheeName"> {coachee.CoacheeNome} </div>
+                    <div className="coacheeExercise"> {coachee.CoacheeExercise} </div>
+                </div>
+                <div className="coachee_icons" >
+                    {(coachee.CoacheeLivelOne!='null')&&
+                    <LivelOne />
                     }
-                    {(props.exerciseType!=null) &&
-                        <div className="exerciseType"> {TIPO_EXERCICIOS.Inferior} </div>
+                    {(coachee.CoacheeRestriction!='null')&&
+                    <img src={coachee.CoacheeRestriction.img} alt="imagem coachee" className="coacheeIcons" style={generalInfoStyle(coachee.CoacheeRestriction.right)} />
                     }
-                    {(props.icons!=null) &&
-                        <div className="icons"> {GENERAL_INFO.LivelOne} </div>
+                    {(coachee.CoacheeCore!='null')&&
+                    <img src={coachee.CoacheeCore.img} alt="imagem coachee" className="coacheeIcons" style={generalInfoStyle(coachee.CoacheeCore.right)} />
                     }
-            </div> 
+                </div>   
+            </div>
+            )}
         </div>
-
-        <ul className="restricoesescritas">    
-        {(props.cabeca!=null) &&
-            <li className="cabeca"> Cabeça </li>
-        }
-
-        {(props.pescoco!=null) &&
-            <li className="pescoco"> Pescoço </li>
-        }
-
-        {(props.coluna!=null) &&
-            <li className="coluna"> Coluna </li>
-        }
-
-        {(props.coracao!=null) &&
-            <li className="coracao"> Coração </li>
-        }
-
-        {(props.quadril!=null) &&
-            <li className="quadril"> Quadril </li>
-        }
-
-        {(props.joelhoesquerdo!=null) &&
-            <li className="joelhoesquerdo"> Joelho Esquerdo </li>
-        }
-
-        {(props.joelhodireito!=null) &&
-            <li className="joelhodireito"> Joelho Direito </li>
-        }
-
-        {(props.canelaesquerda!=null) &&
-            <li className="canelaesquerda"> Canela Esquerda </li>
-        }
-
-        {(props.caneladireita!=null) &&
-            <li className="caneladireita"> Canela Direita </li>
-        }
-
-        {(props.ombroesquerdo!=null) &&
-            <li className="ombroesquerdo"> Ombro Esquerdo </li>
-        }
-
-        {(props.ombrodireito!=null) &&
-            <li className="ombrodireito"> Ombro Direito </li>
-        }
-
-        {(props.cotoveloesquerdo!=null) &&
-            <li className="cotoveloesquerdo"> Cotovelo Esquerdo </li>
-        }
-
-        {(props.cotovelodireito!=null) &&
-            <li className="cotovelodireito"> Cotovelo Direito </li>
-        }
-
-        {(props.pulsoesquerdo!=null) &&
-            <li className="pulsoesquerdo"> Pulso Esquerdo </li>
-        }
-
-        {(props.pulsodireito!=null) &&
-            <li className="pulsodireito"> Pulso Direito </li>
-        }
-
-        {(props.maoesquerda!=null) &&
-            <li className="maoesquerda"> Mão Esquerda </li>
-        }
-
-        {(props.maoedireita!=null) &&
-            <li className="maoedireita"> Mão Direita </li>
-        }
-
-    </ul>
-    </>
     )
 }
 
 
-export default function HourBox(props){
+
+export default function Coachee(props){
     return (
             < >
-                <AllProps img={true} name={true} exerciseType={true} icon={true} />
+                <AllCoachees active={props.active} setActive={props.setActive} />
             </> 
     )
 }   
 
-//o nivel do coachee mostra qual cor ele tera sua border em volta da sua foto
+//o nivel do coachee mostra qual cor ele tera sua border em volta da sua foto. Como fazer isso?
