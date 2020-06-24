@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import './PopUp.css'
 
 export default function PopUp() {
+    
+// NOTA DADA PELO USUARIO DE ACORDO COM QUAL ESTRELA ELE CLICA
 
     const [rate, setRate] = useState()
     const [path, setPath] = useState(()=>{
@@ -15,7 +17,7 @@ export default function PopUp() {
     } 
 });
     
-    
+//MUDA A IMAGEM DA ESTRELA DE ACORDO COM O RATE
 useEffect(()=>
     {
         if (rate == 0) {

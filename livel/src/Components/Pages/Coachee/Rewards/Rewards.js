@@ -18,7 +18,10 @@ let ALUNO_INFO = {
 
 
 export default function TrainingTypes() {
+    //PEGA INFORMAÇÕES NO BACK DOS ALUNOS
     const [aluno, setAluno] = useState(getAluno())
+ 
+    //FUNÇÃO DEFINE QUAIS IMAGENS DE TROFEU APARECE DE ACORDO COM O NUMERO DE TREINO
     const [trophies, setTrophies] = useState(()=>{
         if (aluno.ALUNO_TREINOS.NumTreinosMes<6 || aluno.ALUNO_TREINOS.NumTreinosMes == null){
            return{

@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 
 
 export default function Clock(props){
+  // CRONOMETRO DA PAGINA DE ACORDO COM A QUANTIDADE DE SEGUNDOS QUE É PASSADO E SE TA ATIVO OU NÃO
   const [seconds, setSeconds] = useState(props.seconds);
   const [active, setActive] = useState(props.active)
 
