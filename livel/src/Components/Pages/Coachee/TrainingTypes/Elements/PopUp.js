@@ -214,7 +214,7 @@ export default function PopUpPeriodizacao(props){
                                 <div className={classes.descriptionTitleYellow}>TENSIONAL</div>
                                 Maiores cargas
                                 <br/>
-                                Menores repetiçoes ({props.TREINO_SEMANA.MargemtRepeticaoInferior} a {props.TREINO_SEMANA.MargemtRepeticaoSuperior})
+                                Menores repetiçoes ({props.TREINO_SEMANA.MargemtRepeticaoInferior} a {props.TREINO_SEMANA.MargemRepeticaoSuperior})
                                 <br/>
                                 Maiores Pausas (1' a 2')
                                 <br/>

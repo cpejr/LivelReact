@@ -27,7 +27,7 @@ import Request from 'request-promise'
           json: true,
           resolveWithFullResponse: true
         }).then((response) => {
-          resolve (response.body);
+          resolve (response.body.TREINO_SEMANA);
         }).catch((err) => {
           console.log(err);
           reject (err);

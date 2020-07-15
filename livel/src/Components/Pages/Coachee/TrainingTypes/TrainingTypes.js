@@ -8,7 +8,7 @@ import './TrainingTypes.css'
 import Header from '../../../Header'
 import PopUp from './Elements/PopUp'
 
-
+//Usar no futuro: https://www.npmjs.com/package/react-circular-progressbar
 
 
 export default function TrainingTypes(props){
@@ -43,6 +43,7 @@ export default function TrainingTypes(props){
     useEffect(()=>{
 
         getTreinoSemana().then(result=>{
+            console.log(result)
             if(result.ID_Semana>0){
                 setTreinoSemana(result)
             }
@@ -114,13 +115,24 @@ export default function TrainingTypes(props){
             <div className="monthReport">
                 <div className="imgSide">
                     JANEIRO
-                    <div className="trainingCircle" style={{backgroundImage: `url(/images/circle/${aluno.ALUNO_TREINOS.NumTreinosMes}-12.png)`}}>
-                        <div style={{fontSize: "100%"}}>você treinou</div>
-                        <div className="circleContent">
-                            <div style={{fontSize: "500%"}}><b>{aluno.ALUNO_TREINOS.NumTreinosMes}</b></div>
-                            <div style={{fontSize: "200%"}}>x</div>
-                        </div>
-                    </div>
+                    {
+                        aluno.ALUNO_TREINOS.NumTreinosMes ?
+                            <div className="trainingCircle" style={{backgroundImage: `url(/images/circle/${aluno.ALUNO_TREINOS.NumTreinosMes}-12.png)`}}>
+                                <div style={{fontSize: "100%"}}>você treinou</div>
+                                <div className="circleContent">
+                                    <div style={{fontSize: "500%"}}><b>{aluno.ALUNO_TREINOS.NumTreinosMes}</b></div>
+                                    <div style={{fontSize: "200%"}}>x</div>
+                                </div>
+                            </div>
+                        :
+                        <div className="trainingCircle" style={{backgroundImage: `url(/images/circle/0-12.png)`}}>
+                                <div style={{fontSize: "100%"}}>você treinou</div>
+                                <div className="circleContent">
+                                    <div style={{fontSize: "500%"}}><b>0</b></div>
+                                    <div style={{fontSize: "200%"}}>x</div>
+                                </div>
+                            </div>
+                    }
                 </div>
                 <div className="medalSide">
                     <div className='Reward'>
