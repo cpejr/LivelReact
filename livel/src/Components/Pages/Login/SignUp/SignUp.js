@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
 import './SignUp.css'
 
@@ -20,12 +20,24 @@ const styles = {
 
 
  function SignUp(props){
+
+    const history = useHistory()
+
     const [Nome, setNome] = useState()
     const [Sobrenome, setSobrenome] = useState()
     const [Email, setEmail] = useState() 
     const [Password, setPassword] = useState()
     const [ConfirmPassword, setConfirmPassword] = useState() 
     const { classes } = props;
+
+    function handleSend(){
+        console.log(Nome)
+        console.log(Sobrenome)
+        console.log(Email)
+        console.log(Password)
+        console.log(ConfirmPassword)
+        history.push('/')
+    }
 
     return(
             <div className="Container">
@@ -76,7 +88,7 @@ const styles = {
                 />
                 </form>
                 </div>
-                <Link className='forgetClick' to='/'>ENVIAR</Link>
+                <div className='forgetClick' onClick={handleSend}>ENVIAR</div>
             </div>
         )
     }

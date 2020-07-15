@@ -10,8 +10,8 @@ let ALUNO_INFO = {
 
 export default function CoachProfile() {
     const [virgula, setvirgula] = useState(false);
-    const [path, setPath] = useState(() => {
-        if (ALUNO_INFO.rate == 0) {
+    const path = () => {
+        if (ALUNO_INFO.rate === 0) {
             setvirgula(true);
             return {
                 star1path: '/images/star_gray.png',
@@ -22,7 +22,7 @@ export default function CoachProfile() {
                 
             }
         }
-        else if (ALUNO_INFO.rate == 1) {
+        else if (ALUNO_INFO.rate === 1) {
             setvirgula(true);
             return {
                 star1path: '/images/star_full.png',
@@ -33,7 +33,7 @@ export default function CoachProfile() {
                 
             }
         }
-        else if (ALUNO_INFO.rate == 2) {
+        else if (ALUNO_INFO.rate === 2) {
             setvirgula(true);
             return {
                 star1path: '/images/star_full.png',
@@ -44,7 +44,7 @@ export default function CoachProfile() {
                 
             }
         }
-        else if (ALUNO_INFO.rate == 3) {
+        else if (ALUNO_INFO.rate === 3) {
             setvirgula(true);
             return {
                 star1path: '/images/star_full.png',
@@ -55,7 +55,7 @@ export default function CoachProfile() {
                 
             }
         }
-        else if (ALUNO_INFO.rate == 4) {
+        else if (ALUNO_INFO.rate === 4) {
             setvirgula(true);
             return {
                 star1path: '/images/star_full.png',
@@ -66,7 +66,7 @@ export default function CoachProfile() {
                 
             }
         }
-        else if (ALUNO_INFO.rate == 5) {
+        else if (ALUNO_INFO.rate === 5) {
             setvirgula(true);
             return {
                 star1path: '/images/star_full.png',
@@ -124,14 +124,13 @@ export default function CoachProfile() {
 
         }
         
-    });
-    console.log(virgula);
+    };
     return (
         <div style={{ height: "100%", }}>
 
             <Header img={true} name={true} coach={true} />
             <div className="grade">
-                <a>Sua nota é:</a>
+                <div>Sua nota é:</div>
                 <div className="starsrate">
                     <img src={path.star1path} alt="star1" />
                     <img src={path.star2path} alt="star2" />
@@ -140,8 +139,8 @@ export default function CoachProfile() {
                     <img src={path.star5path} alt="star5" />
                 </div>
                 <b>
-                    {(virgula==true) && `${ALUNO_INFO.rate}.0`}
-                    {(virgula==false) && `${ALUNO_INFO.rate}`}
+                    {(virgula===true) && `${ALUNO_INFO.rate}.0`}
+                    {(virgula===false) && `${ALUNO_INFO.rate}`}
                     
                 </b>
             </div>

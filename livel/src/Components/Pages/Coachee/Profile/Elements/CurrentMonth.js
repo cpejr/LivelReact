@@ -1,7 +1,5 @@
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 import '../Profile.css'
-import ReactDOM from 'react-dom';
-const render = ReactDOM.render;
 
 let peso = '80 kg';
 let gordura = '15.5 %';
@@ -112,19 +110,6 @@ const listaLeft = [Alongamento, Altura, Peso, Gordura, ];
 const listaRight = [Corrida, Abdominais, Flexao, Barra,]
 
 
-function partStyle(style_top, style_left, style_width){
-    return {
-        position: 'absolute',
-        top: style_top,
-        left: style_left,
-        width: style_width,
-        transform: 'translate(-50%, -50%)',
-        height: 'auto',
-        fontSize: '55px',
-        textAlign: 'center'
-    }
-}
-
 
 class MonthlyResultImages extends Component {
     render() {
@@ -133,7 +118,7 @@ class MonthlyResultImages extends Component {
             <div className="imagesContainer">
                 {/* parte de cima */}
                 <div style={{position: "relative"}} >
-                    <img src={BodyResult.img} className="BodyResultClass" />
+                    <img src={BodyResult.img} alt='bodyResults' className="BodyResultClass" />
                     { bodySubtitles.map(part => {
                         return (
                             <div style={descriptionStyle(part.bottom, part.left)} >
@@ -155,7 +140,7 @@ class MonthlyResultImages extends Component {
                         {listaLeft.map(left =>{
                             return(
                                 <li className="leftIcons">
-                                    <img className="iconList" src={left.img} />
+                                    <img className="iconList" alt='iconlist' src={left.img} />
                                     <div className="valueList">
                                         {left.value}
                                     </div>
@@ -168,15 +153,15 @@ class MonthlyResultImages extends Component {
                     </ul>
                     <ul className="RightList">
                         <div className="thePurples">
-                            <img className="bigPurple" src={BigPurple.img} />
-                            <img className="littlePurple" src={LittlePurple.img} />
+                            <img className="bigPurple" alt='purpleDivider' src={BigPurple.img} />
+                            <img className="littlePurple" alt='purpleDivider' src={LittlePurple.img} />
                             <div className="purpleScore">Score total:</div>
                             <div className="purpleScoreAmount">{score}</div>
                         </div>
                     {listaRight.map(right =>{
                             return(
                                 <li className="rightIcons">
-                                    <img className="iconList" src={right.img} />
+                                    <img className="iconList" alt='iconList' src={right.img} />
                                     <div className="valueList">
                                         {right.value}
                                     </div>

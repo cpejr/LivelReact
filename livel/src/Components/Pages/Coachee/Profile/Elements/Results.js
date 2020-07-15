@@ -1,13 +1,10 @@
-import React, { Component, useState } from 'react'
+import React from 'react'
 import {FiCircle} from 'react-icons/fi';
-import ReactDOM from 'react-dom';
 import {BarChart} from 'react-easy-chart';
 
 
 import '../Profile.css'
 
-
-const render = ReactDOM.render;
 
 let currentforca = 180.0;
 let currentcardio = 3000.0;
@@ -144,7 +141,7 @@ export default function Results(props){
                     <div className="thisMonthStyle">
                         <CurrentMonth />
                     </div> 
-                        <a className="forcaDescription"> = Abdominal + Flexão + Barra</a>
+                        <div className="forcaDescription"> = Abdominal + Flexão + Barra</div>
                         <CircleResults isPositive = {percentForca} />
                         <StyleForcaPercent isPositive = {percentForca} className="percentType" />
                         <div className="resultBars" style={{display: 'inline-block', position: 'absolute'}}>
@@ -176,7 +173,7 @@ export default function Results(props){
                     <div className="thisMonthStyle">   
                         <CurrentMonth />
                     </div> 
-                            <a className="cardioDescription"> Corrida / Caminhada</a>
+                            <div className="cardioDescription"> Corrida / Caminhada</div>
                             <CircleResults isPositive = {percentCardio} />
                             <StyleCardioPercent isPositive = {percentCardio} className="percentType" />
                             <div className="resultBars" style={{display: 'inline-block', position: 'absolute'}}>

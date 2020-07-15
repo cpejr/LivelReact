@@ -1,8 +1,6 @@
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
-import ReactDOM from 'react-dom';
 import{FaCheck, FaChevronRight} from 'react-icons/fa';
-const render = ReactDOM.render;
 
 class LivelOne extends Component {
     render() {
@@ -165,13 +163,13 @@ function AllCoachees(props){
                     <div className="coacheeExercise"> {coachee.CoacheeExercise} </div>
                 </div>
                 <div className="coachee_icons" >
-                    {(coachee.CoacheeLivelOne!='null')&&
+                    {(coachee.CoacheeLivelOne!=='null')&&
                     <LivelOne />
                     }
-                    {(coachee.CoacheeRestriction!='null')&&
+                    {(coachee.CoacheeRestriction!=='null')&&
                     <img src={coachee.CoacheeRestriction.img} alt="imagem coachee" className="coacheeIcons" style={generalInfoStyle(coachee.CoacheeRestriction.right)} />
                     }
-                    {(coachee.CoacheeCore!='null')&&
+                    {(coachee.CoacheeCore!=='null')&&
                     <img src={coachee.CoacheeCore.img} alt="imagem coachee" className="coacheeIcons" style={generalInfoStyle(coachee.CoacheeCore.right)} />
                     }
                 </div>   

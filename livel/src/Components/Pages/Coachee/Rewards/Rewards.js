@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {getAluno} from '../../../../services/auth'
 import './Rewards.css'
 
@@ -19,10 +19,10 @@ let ALUNO_INFO = {
 
 export default function TrainingTypes() {
     //PEGA INFORMAÇÕES NO BACK DOS ALUNOS
-    const [aluno, setAluno] = useState(getAluno())
+    const aluno = getAluno()
  
     //FUNÇÃO DEFINE QUAIS IMAGENS DE TROFEU APARECE DE ACORDO COM O NUMERO DE TREINO
-    const [trophies, setTrophies] = useState(()=>{
+    const trophies = ()=>{
         if (aluno.ALUNO_TREINOS.NumTreinosMes<6 || aluno.ALUNO_TREINOS.NumTreinosMes == null){
            return{
                trof12d:'/images/trofeis/trof12trans.png',             
@@ -65,7 +65,7 @@ export default function TrainingTypes() {
                 }
                 }
 
-    });
+    };
 
     return (
         <div style={{ height: "100%" }}>

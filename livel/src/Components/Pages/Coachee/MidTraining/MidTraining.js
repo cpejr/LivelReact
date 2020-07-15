@@ -26,7 +26,7 @@ export default function MidTraining() {
                 paused: active.paused,
                 clock: 'training'
             })
-            if (serie == 2) {
+            if (serie === 2) {
                 setActive({
                     paused: !active.paused,
                     clock: active.clock

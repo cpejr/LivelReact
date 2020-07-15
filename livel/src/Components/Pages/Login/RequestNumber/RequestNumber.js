@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
 import './RequestNumber.css'
 
@@ -20,12 +20,22 @@ const styles = {
 
 
 function RequestNumber(props){
+
+    const history = useHistory()
     
     const [Name, setName] = useState()
     const [LastName, setLastName] = useState() 
     const [CPF, setCPF] = useState()
     const [Email, setEmail] = useState() 
-    const { classes } = props;   
+    const { classes } = props;
+
+    function handleSend(){
+        console.log(Name)
+        console.log(LastName)
+        console.log(CPF)
+        console.log(Email)
+        history.push('/')
+    }
     
     return(
             <div className="Container">
@@ -69,7 +79,7 @@ function RequestNumber(props){
                 />
                 </form>
                 </div>
-                <Link className='forgetClick' to='/'>ENVIAR</Link>
+                <button className='forgetClick' onClick={()=>handleSend}>ENVIAR</button>
             </div>
         )
     }

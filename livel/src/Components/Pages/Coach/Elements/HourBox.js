@@ -2,9 +2,6 @@ import React, { Component, useState } from 'react'
 import { useSpring } from "react-spring";
 import Coachee from './Coachee';
 import Switch from 'react-switch'
-import styled from 'styled-components'
-import ReactDOM from 'react-dom';
-const render = ReactDOM.render;
 
 const ALL_TIME = [
     '13:00',
