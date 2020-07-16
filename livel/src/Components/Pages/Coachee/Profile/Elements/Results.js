@@ -2,6 +2,9 @@ import React from 'react'
 import {FiCircle} from 'react-icons/fi';
 import {BarChart} from 'react-easy-chart';
 
+// import  {ResponsiveContainer} from "recharts";
+// import {} from 'react-responsive-container'
+
 
 import '../Profile.css'
 
@@ -134,64 +137,86 @@ export default function Results(props){
 
                 <div className="ResultsBox">
                     <div className="boxHeader">
-                    <div className="forcaTitle">FORÇA</div> 
-                    <div className="lastMonthStyle">
-                        <LastMonth />
-                    </div> 
-                    <div className="thisMonthStyle">
-                        <CurrentMonth />
-                    </div> 
-                        <div className="forcaDescription"> = Abdominal + Flexão + Barra</div>
                         <CircleResults isPositive = {percentForca} />
                         <StyleForcaPercent isPositive = {percentForca} className="percentType" />
-                        <div className="resultBars" style={{display: 'inline-block', position: 'absolute'}}>
+                    </div>
+
+                    <div className="mainInfo">
+                        <div className="resultBars" >
                             <div className="forcaMove">
-                                <BarChart
-                                    data={[
-                                        {x: 'forcaBefore', y: lastforca, color: '#C6BBCE'},
-                                        {x: 'forcaAfter', y: currentforca, color: '#532166'}
-                                    ]}
-                                        width={90}
-                                        height={75}
-                                        margin={{top: 0, right: 0, bottom: 0, left: 0}}
-                                        yDomainRange={[0, 200]}
-                                    />
+
+                                {/* <ResponsiveContainer width="80%" height="70%"> */}
+                                    <BarChart
+                                        data={[
+                                            {x: 'forcaBefore', y: lastforca, color: '#C6BBCE'},
+                                            {x: 'forcaAfter', y: currentforca, color: '#532166'}
+                                        ]}
+                                            width={90}
+                                            height={75}
+                                            margin={{top: 0, right: 0, bottom: 0, left: 0}}
+                                            yDomainRange={[0, 200]}
+                                        />
+                                {/* </ResponsiveContainer> */}
+
                                 <div className="currentAmount"> {currentforca} </div>
                                 <div className="lastAmount"> {lastforca} </div>
                             </div>
                             
                         </div>
+
+                        <div className="months">
+                            <div className="lastMonthStyle">
+                                <LastMonth />
+                            </div> 
+                            <div className="thisMonthStyle">
+                                <CurrentMonth />
+                            </div> 
+                        </div>
                     </div>
+                    
+                    <div className="footerInfo">
+                        <strong className="forcaTitle">FORÇA</strong>
+                        <p className="forcaDescription"> = Abdominal + Flexão + Barra</p>
+                    </div>
+                    
                 </div>
 
                 <div className="ResultsBox">
                     <div className="boxHeader">
-                    <div className="cardioTitle">CARDIO</div> 
-                    <div className="lastMonthStyle">          
-                        <LastMonth />
-                    </div> 
-                    <div className="thisMonthStyle">   
-                        <CurrentMonth />
-                    </div> 
-                            <div className="cardioDescription"> Corrida / Caminhada</div>
-                            <CircleResults isPositive = {percentCardio} />
-                            <StyleCardioPercent isPositive = {percentCardio} className="percentType" />
-                            <div className="resultBars" style={{display: 'inline-block', position: 'absolute'}}>
-                                <div className="cardioMove">
-                                    <BarChart
-                                        data={[
-                                            {x: 'cardioBefore', y: lastcardio, color: '#C6BBCE'},
-                                            {x: 'cardioAfter', y: currentcardio, color: '#532166'},
-                                        ]}
-                                        width={90}
-                                        height={75}
-                                        margin={{top: 0, right: 0, bottom: 0, left: 0}}
-                                        yDomainRange={[0, 4000]}
-                                    />
-                                    <div className="currentAmount"> {currentcardio}m </div>
-                                    <div className="lastAmount"> {lastcardio}m </div>
-                                </div>
+                        <CircleResults isPositive = {percentCardio} />
+                        <StyleCardioPercent isPositive = {percentCardio} className="percentType" />
+                    </div>
+
+                    <div className="mainInfo">
+                        <div className="resultBars" >
+                            <div className="cardioMove">
+                                <BarChart
+                                    data={[
+                                        {x: 'cardioBefore', y: lastcardio, color: '#C6BBCE'},
+                                        {x: 'cardioAfter', y: currentcardio, color: '#532166'},
+                                    ]}
+                                    width={90}
+                                    height={75}
+                                    margin={{top: 0, right: 0, bottom: 0, left: 0}}
+                                    yDomainRange={[0, 4000]}
+                                />
+                                <div className="currentAmount"> {currentcardio}m </div>
+                                <div className="lastAmount"> {lastcardio}m </div>
+                            </div>
                         </div>
+                        <div className="months">
+                            <div className="lastMonthStyle">          
+                                <LastMonth />
+                            </div> 
+                            <div className="thisMonthStyle">   
+                                <CurrentMonth />
+                            </div> 
+                        </div>
+                    </div>
+                    
+                    <div className="footerInfo">
+                        <strong className="cardioTitle">CARDIO</strong> 
+                        <p className="cardioDescription"> Corrida / Caminhada</p>
                     </div>
                 </div>
                 
@@ -202,16 +227,13 @@ export default function Results(props){
 
                 <div className="ResultsBox">
                     <div className="boxHeader">
-                        <div className="pesoTitle">PESO</div> 
-                        <div className="lastMonthStyle">   
-                            <LastMonth />
-                        </div> 
-                        <div className="thisMonthStyle">   
-                            <CurrentMonth />
-                        </div> 
                         <CircleResults isPositive = {percentPeso} />
                         <StylePesoPercent isPositive = {percentPeso} className="percentType" />
-                        <div className="resultBars" style={{display: 'inline-block', position: 'absolute'}}>
+                    </div>
+
+                    <div className="mainInfo">
+
+                        <div className="resultBars" >
                             <div className="pesoMove">
                                 <BarChart
                                     data={[
@@ -227,21 +249,32 @@ export default function Results(props){
                                     <div className="lastAmount"> {lastpeso}kg </div>
                             </div>    
                         </div>
+                        <div className="months">
+                            <div className="lastMonthStyle">   
+                                <LastMonth />
+                            </div> 
+                            <div className="thisMonthStyle">   
+                                <CurrentMonth />
+                            </div>
+                        </div>
+                        
                     </div>
+
+                    <div className="footerInfo">
+                        <strong className="pesoTitle">PESO</strong> 
+                    </div>
+                    
                 </div>
 
                 <div className="ResultsBox">
                     <div className="boxHeader">
-                        <div className="gorduraTitle"> % GORDURA </div>
-                        <div className="lastMonthStyle">
-                            <LastMonth />
-                        </div>
-                        <div className="thisMonthStyle">
-                            <CurrentMonth />
-                        </div>
                         <CircleResults isPositive = {percentGordura} />
                         <StyleGorduraPercent isPositive = {percentGordura} className="percentType" />
-                        <div className="resultBars" style={{display: 'inline-block', position: 'absolute'}}>
+                    </div>
+
+                    <div className="mainInfo">
+
+                        <div className="resultBars" >
                             <div className="gorduraMove">
                                 <BarChart
                                     data={[
@@ -252,12 +285,26 @@ export default function Results(props){
                                         height={75}
                                         margin={{top: 0, right: 0, bottom: 0, left: 0}}
                                         yDomainRange={[0, 40]}
-                              />
+                                />
                                 <div className="currentAmount"> {currentgordura}% </div>
                                 <div className="lastAmount"> {lastgordura}% </div>
                             </div>  
                         </div>
+
+                        <div className="months">
+                            <div className="lastMonthStyle">
+                                <LastMonth />
+                            </div>
+                            <div className="thisMonthStyle">
+                                <CurrentMonth />
+                            </div>
+                        </div>
+
                     </div>
+                    <div className="footerInfo">
+                        <strong className="gorduraTitle"> % GORDURA </strong>
+                    </div>
+                    
                 </div>
                 
             </div>

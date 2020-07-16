@@ -107,6 +107,28 @@
     border-radius: 3px;
     height: 90%;
     width: 40%;
+    
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.mainInfo{
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+}
+
+.footerInfo{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .gorduraTitle{
@@ -115,10 +137,10 @@
     color: #532166;
     font-weight: bold;
     font-size: 14px;
-    position: absolute;
-    margin-top: 46%;
+    /* position: absolute;
+    margin-top: 46%; */
     max-width: 40%;
-    margin-left: 6%;
+    /* margin-left: 6%; */
 }
 
 .pesoTitle{
@@ -127,10 +149,10 @@
     color: #532166;
     font-weight: bold;
     font-size: 14px;
-    position: absolute;
-    margin-top: 46%;
+    /* position: absolute;
+    margin-top: 46%; */
     max-width: 40%;
-    margin-left: 15%;
+    /* margin-left: 15%; */
 }
 
 .cardioTitle{
@@ -139,10 +161,10 @@
     color: #532166;
     font-weight: bold;
     font-size: 14px;
-    position: absolute;
-    margin-top: 46%;
+    /* position: absolute;
+    margin-top: 46%; */
     max-width: 40%;
-    margin-left: 12%;
+    /* margin-left: 12%; */
 }
 
 .forcaTitle{
@@ -151,9 +173,9 @@
     color: #532166;
     font-weight: bold;
     font-size: 14px;
-    position: absolute;
-    margin-top: 46%;
-    margin-left: 14%;
+    /* position: absolute; */
+    /* margin-top: 46%;
+    margin-left: 14%; */
 }
 
 .forcaDescription{
@@ -161,11 +183,11 @@
     font-stretch: condensed;
     color: #676767;
     font-size: 9px;
-    position: absolute;
-    margin-top: 52%;
-    max-width: 40%;
-    margin-left: -18.5%;
-    position: absolute;
+    /* position: absolute; */
+    /* margin-top: 52%; */
+    max-width: 90%;
+    /* margin-left: -1 */
+    /* position: absolute; */
 }
 
 .cardioDescription{
@@ -173,15 +195,17 @@
     font-stretch: condensed;
     color: #676767;
     font-size: 9px;
-    position: absolute;
-    margin-top: 52%;
-    max-width: 40%;
-    margin-left: -12%;
-    position: absolute;
+    /* position: absolute; */
+    /* margin-top: 52%; */
+    max-width: 90%;
+    /* margin-left: -12%; */
+    /* position: absolute; */
 }
 
 .boxHeader{
-    text-align: center;
+    /* text-align: center; */
+    /* position: absolute; */
+    box-sizing: border-box;
 }
 
 .resultsCircle{
@@ -190,8 +214,9 @@
 }
 
 .circleMove{
-    margin-left: 50%;
-    margin-top: 1%;
+    float: right;
+    margin-right: 30px;
+    margin-top: 10px;
 }
 
 .barContainer{
@@ -215,10 +240,15 @@
 .resultBars{
     display: flex;
     flex-direction: row;
-    margin-top: 0%;
-    margin-left: -14%;
-    position: relative;
+    flex:23;
+    /* margin-top: 0%;
+    margin-left: -14%; 
+    position: relative; */
     justify-content: space-around;
+}
+
+.forcaMove{
+    margin-top: 40px;
 }
 
 .currentAmount{
@@ -228,53 +258,70 @@
     font-size: 10px;
     font-weight: 900;
     z-index: 10; 
-    margin-left: 43px;
-    margin-top: -25%;
+    margin-left: 55px;
+    margin-top: -25px;
 }
 
 .lastAmount{
+    width: 30px;
+
     color: white;
     font-family: sans-serif, Univers LT;
     font-stretch: condensed;
     font-size: 10px;
     font-weight: 900;
     z-index: 10; 
-    margin-right: 43px;
-    margin-top: -15px;
+    margin-left: 15px;
+    margin-top: -14px;
 }
 
 .percentMove{
+    
+    /* width: auto; */
     font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
+    /* font-stretch: condensed; */
     font-size: 12.5px;
     font-weight: bolder;
-    position: absolute;
+
+    float: right;
+    margin-right: -39px;
+    margin-top: 25px;
+    /* position: absolute;
     margin-top: -10%;
-    margin-left: 25%; 
+    margin-left: 25%;  */
 }
+
+.months{
+    width: 70%;
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 
 .thisMonthStyle{
     text-transform: uppercase;
     color: #532166;
     font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
+    /* font-stretch: condensed; */
     font-size: 10px;
     font-weight: 900;
-    position: absolute;
-    margin-top: 40%;
-    margin-left: 23%;
+    /* position: absolute; */
+    /* margin-top: 40%;
+    margin-left: 23%; */
 }
 
 .lastMonthStyle{
     text-transform: uppercase;
     color: #C6BBCE;
     font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
+    /* font-stretch: condensed; */
     font-size: 10px;
     font-weight: 900;
-    position: absolute;
+    /* position: absolute;
     margin-top: 40%;
-    margin-left: 9%;
+    margin-left: 9%; */
 }
 
 /* ---------------------Element MonthlyResult Profile--------------------- */
