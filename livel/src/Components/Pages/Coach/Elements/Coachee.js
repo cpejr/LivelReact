@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import{FaCheck, FaChevronRight} from 'react-icons/fa';
 
+/* O esquema é ir no All coaches e fazer um if. Só vai retornar
+aquele cuja hora foi concordada */
+
 class LivelOne extends Component {
     render() {
         return (
@@ -144,6 +147,10 @@ let  Chevron = <FaChevronRight color="#676767" size={10}/>;
 
 
 function AllCoachees(props){
+    /* se o toggle de tempo tá marcado, voce retonra, se nao, vc nao retorna */
+    
+    
+    
     return(
         <div className="coacheesHours">
             {ALL_COACHEES.map(coachee =>
@@ -185,6 +192,7 @@ export default function Coachee(props){
     return (
             < >
                 <AllCoachees active={props.active} setActive={props.setActive} />
+                {console.log(props.active + ' o props .active')}
             </> 
     )
 }   

@@ -70,11 +70,11 @@ function ToggleOffFunction (props){
     )
 }
 
-function ToggleOnFunction (props){
+function ToggleOnFunction (timee){
     return (
         <div className="HourBoxIsOn">
             <div className="coacheeContainerHourBox">
-                <Coachee />
+                <Coachee time={timee} />{/* Algo ali */}
             </div>
         </div>
     )
@@ -93,7 +93,7 @@ export default function HourBox(props){
         setToggleOn(!toggleOn);
         console.log(toggleOn);
     }
-
+    let var_iteracao=1;
     return (
         <div className="divMother" >
             <div className="eachContainer">
@@ -102,7 +102,7 @@ export default function HourBox(props){
                     <div className="parent">
                         <div className="HourAndToggle">
                             <ToggleButton
-                            className="toggle-button"
+                            className={`toggle-button ${var_iteracao++}`}
                             style={toggleOnAnimation}
                             setToggleOn={teste}
                             />
