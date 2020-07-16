@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
-import './PopUp.css'
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
+import {FacebookShareButton} from "react-share"; // pro post do facebook
+
+import "./PopUp.css";
 
 export default function PopUp() {
-    
-// NOTA DADA PELO USUARIO DE ACORDO COM QUAL ESTRELA ELE CLICA
+    // NOTA DADA PELO USUARIO DE ACORDO COM QUAL ESTRELA ELE CLICA
 
     const [rate, setRate] = useState()
     const [path, setPath] = useState(()=>{
@@ -67,14 +69,14 @@ useEffect(()=>
         }
         else if (rate === 5) {
             setPath({
-                star1path: '/images/star_full.png',
-                star2path: '/images/star_full.png',
-                star3path: '/images/star_full.png',
-                star4path: '/images/star_full.png',
-                star5path: '/images/star_full.png',
-            })
+                star1path: "/images/star_full.png",
+                star2path: "/images/star_full.png",
+                star3path: "/images/star_full.png",
+                star4path: "/images/star_full.png",
+                star5path: "/images/star_full.png",
+            });
         }
-    },[rate]);
+    }, [rate]);
 
     return (
         <div className="Modal">
@@ -86,25 +88,41 @@ useEffect(()=>
                 <div className="avaliation">
                     <div>AVALIE SEU TREINO</div>
                     <div className="stars">
-                       <button className="img" onClick = {()=> setRate(1)}><img src={path.star1path} alt="star1" /></button>
-                       <button className="img" onClick = {()=> setRate(2)}><img src={path.star2path} alt="star2" /></button>
-                       <button className="img" onClick = {()=> setRate(3)}><img src={path.star3path} alt="star3" /></button>
-                       <button className="img" onClick = {()=> setRate(4)}><img src={path.star4path} alt="star4" /></button>
-                       <button className="img" onClick = {()=> setRate(5)}><img src={path.star5path} alt="star5" /></button>
+                        <button className="img" onClick={() => setRate(1)}>
+                            <img src={path.star1path} alt="star1" />
+                        </button>
+                        <button className="img" onClick={() => setRate(2)}>
+                            <img src={path.star2path} alt="star2" />
+                        </button>
+                        <button className="img" onClick={() => setRate(3)}>
+                            <img src={path.star3path} alt="star3" />
+                        </button>
+                        <button className="img" onClick={() => setRate(4)}>
+                            <img src={path.star4path} alt="star4" />
+                        </button>
+                        <button className="img" onClick={() => setRate(5)}>
+                            <img src={path.star5path} alt="star5" />
+                        </button>
                     </div>
                 </div>
                 <div className="buttons">
-                <Link type="button" to="/trainingtypes" className="sendbutton">
-                        <div>
-                           ENVIAR
-                </div>
+                    <Link
+                        type="button"
+                        to="/trainingtypes"
+                        className="sendbutton"
+                    >
+                        <div>ENVIAR</div>
                     </Link>
                     <button className="fbimg">
-                        <img src={'./images/fbimg.png'} alt="fbimg" />
+                        <FacebookShareButton
+                            url={"http://github.com"}/* Adicione ali o URL necessário */
+                            quote={"Adicione Aqui o Título"}/* Adicione ali o titulo da aplicacao */
+                        >
+                            <img src={"./images/fbimg.png"} alt="fbimg" />
+                        </FacebookShareButton>
                     </button>
                 </div>
             </div>
         </div>
-
-    )
+    );
 }
