@@ -8,7 +8,16 @@ import HeaderCoach from './Elements/Header';
 import HourBox from './Elements/HourBox';
 
 
+/* ######################################
+Família Peraaaaaa
+    Tem 3 arquivos que estão mexendo com o toggle, o coach,
+    o Hourbox e o COachee.
 
+    Pelo que eu vi até agora o problema tá no arquivo Coachee.js, dessa pasta.
+    O return All coaches nao coloca um 'if', aí ele retorna tudo ou nada.
+    
+#######################################
+ */
 export default function Coach(){
     return(
     < >
