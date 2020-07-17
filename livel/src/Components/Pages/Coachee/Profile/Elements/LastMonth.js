@@ -19,32 +19,32 @@ let score = '55';
 const biceps = {
     value: '40 cm',
     description: 'bíceps',
-    bottom: '141px',
-    left: '7px',
+    bottom: '150px',
+    left: '-40px',
 }
 const coxa = {
     value: '120 cm',
     description: 'coxa',
-    left: '24.5px',
-    bottom: '35.5px',
+    left: '-186px',
+    bottom: '-60px',
 }
 const cintura = {
     value: '130 cm',
     description: 'cintura',
-    bottom: '58.5px',
-    left: '24.5px',
+    bottom: '35px',
+    left: '-187px',
 }
 const pescoco = {
     value: '10 cm',
     description: 'pescoço',
-    left: '24.5px',
-    bottom: '80.5px',
+    left: '-187px',
+    bottom: '127px',
 }
 const quadril = {
     value: '10 cm',
     description: 'quadril',
-    left: '79px',
-    bottom: '49.5px',
+    left: '-40px',
+    bottom: '-66px',
 }
 
 
@@ -107,7 +107,7 @@ const BigPurple = { img:'/images/profile/purpleL.png',
 
 
 
-const listaLeft = [Alongamento, Altura, Peso, Gordura, ];
+const listaLeft = [ Peso, Gordura, Alongamento, Altura ];
 const listaRight = [Corrida, Abdominais, Flexao, Barra,]
 
 
@@ -153,21 +153,23 @@ class MonthlyResultImages extends Component {
                 
                 {/* parte de baixo */}
                 <div className="mainData">
-                    <ul className="LeftList"> 
-                        {listaLeft.map(left =>{
-                            return(
-                                <li className="leftIcons">
-                                    <img className="iconList" alt='iconlist' src={left.img} />
-                                    <div className="valueList">
-                                        {left.value}
-                                    </div>
-                                </li>
-                            )
-                        }
+                    <div className="leftSide">
+                        <ul className="LeftList"> 
+                            {listaLeft.map(left =>{
+                                return(
+                                    <li className="leftIcons">
+                                        <img className="iconList" alt='iconlist' src={left.img} />
+                                        <div className="valueList">
+                                            {left.value}
+                                        </div>
+                                    </li>
+                                )
+                            }
 
-                        )}
+                            )}
 
-                    </ul>
+                        </ul>
+                    </div>
                     <div className="RightSide">
 
                         <div className="thePurples">
