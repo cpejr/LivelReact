@@ -19,32 +19,32 @@ let score = '55';
 const biceps = {
     value: '40 cm',
     description: 'bíceps',
-    bottom: '73%',
-    left: '79%',
+    bottom: '141px',
+    left: '7px',
 }
 const coxa = {
     value: '120 cm',
     description: 'coxa',
-    left: '24.5%',
-    bottom: '35.5%',
+    left: '24.5px',
+    bottom: '35.5px',
 }
 const cintura = {
     value: '130 cm',
     description: 'cintura',
-    bottom: '58.5%',
-    left: '24.5%',
+    bottom: '58.5px',
+    left: '24.5px',
 }
 const pescoco = {
     value: '10 cm',
     description: 'pescoço',
-    left: '24.5%',
-    bottom: '80.5%',
+    left: '24.5px',
+    bottom: '80.5px',
 }
 const quadril = {
     value: '10 cm',
     description: 'quadril',
-    left: '79%',
-    bottom: '49.5%',
+    left: '79px',
+    bottom: '49.5px',
 }
 
 
@@ -52,7 +52,8 @@ function descriptionStyle(style_bottom, style_left){
     return {
         bottom: style_bottom,
         left: style_left,
-        position: 'absolute',
+        width: '60px',
+        position: 'relative',
         fontSize: '9px',
         fontFamily: 'sans-serif, Univers LT',
         fontStretch: 'condensed',
@@ -130,30 +131,33 @@ class MonthlyResultImages extends Component {
         <>
             <div className="imagesContainer">
                 {/* parte de cima */}
-                <div style={{position: "relative"}} >
-                    <img src={BodyResult.img} alt='BodyResult' className="BodyResultClass" />
-                    { bodySubtitles.map(part => {
-                        return (
-                            <div style={descriptionStyle(part.bottom, part.left)} >
-                                <div className="valueSubtitles">
-                                    {part.value}
+                <div className="bodyData" >
+                    <img src={BodyResult.img} alt='bodyResults' className="BodyResultClass" />
+                    <div className="bodyMeasures">
+                        { bodySubtitles.map(part => {
+                            return (
+                                <div style={descriptionStyle(part.bottom, part.left)} >
+                                    <span className="valueSubtitles">
+                                        {part.value}
+                                    </span>
+                                    <p className="bodyPart">
+                                        {part.description}
+                                    </p>  
                                 </div>
-                                <div>
-                                    {part.description}
-                                </div>  
-                            </div>
-                        )
-                    }
+                            )
+                        }
+                        )}
+                    </div>
 
-                    )}
                 </div>
+                
                 {/* parte de baixo */}
-                <div style={{display: "flex", height:"40%"}}>
+                <div className="mainData">
                     <ul className="LeftList"> 
                         {listaLeft.map(left =>{
                             return(
                                 <li className="leftIcons">
-                                    <img className="iconList" alt='iconList' src={left.img} />
+                                    <img className="iconList" alt='iconlist' src={left.img} />
                                     <div className="valueList">
                                         {left.value}
                                     </div>
@@ -164,32 +168,35 @@ class MonthlyResultImages extends Component {
                         )}
 
                     </ul>
-                    <ul className="RightList">
+                    <div className="RightSide">
+
                         <div className="thePurples">
-                            <img className="bigPurple" alt='bigPurpleDivisor' src={BigPurple.img} />
-                            <img className="littlePurple" alt='purpleDivisor' src={LittlePurple.img} />
-                            <div className="purpleScore">Score total:</div>
-                            <div className="purpleScoreAmount">{score}</div>
+                            <img className="bigPurple" alt='purpleDivider' src={BigPurple.img} />
+                            <img className="littlePurple" alt='purpleDivider' src={LittlePurple.img} />
+                            <strong className="purpleScore">Score total: {score}</strong>
+                            {/* <div className="purpleScoreAmount"></div> */}
                         </div>
-                    {listaRight.map(right =>{
-                            return(
-                                <li className="rightIcons">
-                                    <img className="iconList" alt='iconList' src={right.img} />
-                                    <div className="valueList">
-                                        {right.value}
-                                    </div>
-                                    <div className="timeSubtitles">
-                                         {right.time} 
-                                    </div>
-                                </li>
-                            )
-                        }
-
-                        )}
-
-                    </ul>
+                        <ul className="RightList">
+                            
+                            {listaRight.map(right =>{
+                                    return(
+                                        <li className="rightIcons">
+                                            <img className="iconList" alt='iconList' src={right.img} />
+                                            <div className="valueList">
+                                                {right.value}
+                                            </div>
+                                            <div className="timeSubtitles">
+                                                {right.time} 
+                                            </div>
+                                        </li>
+                                    )
+                                }
+                            )}
+                        </ul>
+                    </div>
 
                 </div>
+                
             </div>
         </>
         );

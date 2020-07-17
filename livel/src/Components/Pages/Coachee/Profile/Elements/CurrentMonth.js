@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import '../Profile.css'
 
 let peso = '80 kg';
-let gordura = '15.5 %';
+let gordura = '15.5 px';
 let alongamento = 'média';
 let altura = '1,79 m';
 let corrida = '2 km';
@@ -19,32 +19,32 @@ let score = '55';
 const biceps = {
     value: '30 cm',
     description: 'bíceps',
-    bottom: '73%',
-    left: '79%',
+    bottom: '141px',
+    left: '7px',
 }
 const coxa = {
     value: '30 cm',
     description: 'coxa',
-    left: '26%',
-    bottom: '35.5%',
+    left: '26px',
+    bottom: '35.5px',
 }
 const cintura = {
     value: '30 cm',
     description: 'cintura',
-    bottom: '58.5%',
-    left: '26%',
+    bottom: '58.5px',
+    left: '26px',
 }
 const pescoco = {
     value: '30 cm',
     description: 'pescoço',
-    left: '26%',
-    bottom: '80.5%',
+    left: '26px',
+    bottom: '80.5px',
 }
 const quadril = {
     value: '30 cm',
     description: 'quadril',
-    left: '79%',
-    bottom: '49.5%',
+    left: '79px',
+    bottom: '49px',
 }
 
 
@@ -52,7 +52,8 @@ function descriptionStyle(style_bottom, style_left){
     return {
         bottom: style_bottom,
         left: style_left,
-        position: 'absolute',
+        width: '60px',
+        position: 'relative',
         fontSize: '9px',
         fontFamily: 'sans-serif, Univers LT',
         fontStretch: 'condensed',
@@ -117,25 +118,27 @@ class MonthlyResultImages extends Component {
         <>
             <div className="imagesContainer">
                 {/* parte de cima */}
-                <div style={{position: "relative"}} >
+                <div className="bodyData" >
                     <img src={BodyResult.img} alt='bodyResults' className="BodyResultClass" />
-                    { bodySubtitles.map(part => {
-                        return (
-                            <div style={descriptionStyle(part.bottom, part.left)} >
-                                <div className="valueSubtitles">
-                                    {part.value}
+                    <div className="bodyMeasures">
+                        { bodySubtitles.map(part => {
+                            return (
+                                <div style={descriptionStyle(part.bottom, part.left)} >
+                                    <span className="valueSubtitles">
+                                        {part.value}
+                                    </span>
+                                    <p className="bodyPart">
+                                        {part.description}
+                                    </p>  
                                 </div>
-                                <div>
-                                    {part.description}
-                                </div>  
-                            </div>
-                        )
-                    }
+                            )
+                        }
+                        )}
+                    </div>
 
-                    )}
                 </div>
                 {/* parte de baixo */}
-                <div style={{display: "flex", height:"40%"}}>
+                <div className="mainData">
                     <ul className="LeftList"> 
                         {listaLeft.map(left =>{
                             return(
@@ -151,30 +154,33 @@ class MonthlyResultImages extends Component {
                         )}
 
                     </ul>
-                    <ul className="RightList">
+                    <div className="RightSide">
+
                         <div className="thePurples">
                             <img className="bigPurple" alt='purpleDivider' src={BigPurple.img} />
                             <img className="littlePurple" alt='purpleDivider' src={LittlePurple.img} />
-                            <div className="purpleScore">Score total:</div>
-                            <div className="purpleScoreAmount">{score}</div>
+                            <strong className="purpleScore">Score total: {score}</strong>
+                            {/* <div className="purpleScoreAmount"></div> */}
                         </div>
-                    {listaRight.map(right =>{
-                            return(
-                                <li className="rightIcons">
-                                    <img className="iconList" alt='iconList' src={right.img} />
-                                    <div className="valueList">
-                                        {right.value}
-                                    </div>
-                                    <div className="timeSubtitles">
-                                         {right.time} 
-                                    </div>
-                                </li>
-                            )
-                        }
+                        <ul className="RightList">
+                            
+                            {listaRight.map(right =>{
+                                    return(
+                                        <li className="rightIcons">
+                                            <img className="iconList" alt='iconList' src={right.img} />
+                                            <div className="valueList">
+                                                {right.value}
+                                            </div>
+                                            <div className="timeSubtitles">
+                                                {right.time} 
+                                            </div>
+                                        </li>
+                                    )
+                                }
+                            )}
 
-                        )}
-
-                    </ul>
+                        </ul>
+                    </div>
 
                 </div>
             </div>

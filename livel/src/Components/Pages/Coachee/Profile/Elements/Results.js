@@ -143,7 +143,7 @@ export default function Results(props){
 
                     <div className="mainInfo">
                         <div className="resultBars" >
-                            <div className="forcaMove">
+                            <div className="topicMove">
 
                                 {/* <ResponsiveContainer width="80%" height="70%"> */}
                                     <BarChart
@@ -175,8 +175,8 @@ export default function Results(props){
                     </div>
                     
                     <div className="footerInfo">
-                        <strong className="forcaTitle">FORÇA</strong>
-                        <p className="forcaDescription"> = Abdominal + Flexão + Barra</p>
+                        <strong className="footerTitle">FORÇA</strong>
+                        <p className="footerDescription"> = Abdominal + Flexão + Barra</p>
                     </div>
                     
                 </div>
@@ -189,7 +189,7 @@ export default function Results(props){
 
                     <div className="mainInfo">
                         <div className="resultBars" >
-                            <div className="cardioMove">
+                            <div className="topicMove">
                                 <BarChart
                                     data={[
                                         {x: 'cardioBefore', y: lastcardio, color: '#C6BBCE'},
@@ -215,8 +215,8 @@ export default function Results(props){
                     </div>
                     
                     <div className="footerInfo">
-                        <strong className="cardioTitle">CARDIO</strong> 
-                        <p className="cardioDescription"> Corrida / Caminhada</p>
+                        <strong className="footerTitle">CARDIO</strong> 
+                        <p className="footerDescription"> Corrida / Caminhada</p>
                     </div>
                 </div>
                 
@@ -234,7 +234,7 @@ export default function Results(props){
                     <div className="mainInfo">
 
                         <div className="resultBars" >
-                            <div className="pesoMove">
+                            <div className="topicMove">
                                 <BarChart
                                     data={[
                                         {x: 'pesoBefore', y: lastpeso, color: '#C6BBCE'},
@@ -261,7 +261,7 @@ export default function Results(props){
                     </div>
 
                     <div className="footerInfo">
-                        <strong className="pesoTitle">PESO</strong> 
+                        <strong className="footerTitle">PESO</strong> 
                     </div>
                     
                 </div>
@@ -275,7 +275,7 @@ export default function Results(props){
                     <div className="mainInfo">
 
                         <div className="resultBars" >
-                            <div className="gorduraMove">
+                            <div className="topicMove">
                                 <BarChart
                                     data={[
                                         {x: 'gorduraBefore', y: lastgordura, color: '#C6BBCE'},
@@ -302,7 +302,7 @@ export default function Results(props){
 
                     </div>
                     <div className="footerInfo">
-                        <strong className="gorduraTitle"> % GORDURA </strong>
+                        <strong className="footerTitle"> % GORDURA </strong>
                     </div>
                     
                 </div>
