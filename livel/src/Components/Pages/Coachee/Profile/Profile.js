@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 import './Profile.css'
 
-import HeaderProfile from './Elements/HeaderProfile'
+import Header from '../../../Header'
 import ExitButton from './Elements/ExitButton'
 import Choice from './Elements/Choice'
 import Results from './Elements/Results'
@@ -18,7 +18,7 @@ export default function Profile(){
     return(
         <div style={{height: "100%"}} >
       
-            <HeaderProfile img="/images/user.jpg" level={7} back={true} />
+            <Header level={3} back={true} />
             <Choice resultados={false} active={active} setActive={setActive} />
 
             <div className="ProfileContainer">
