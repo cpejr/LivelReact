@@ -1,12 +1,4 @@
-import React from 'react'
-
-import './Coach.css'
-
-// import {getCoach} from '../../../services/auth'
-
-import HeaderCoach from './Elements/Header';
-import HourBox from './Elements/HourBox';
-
+import React, { useState } from 'react'
 
 const PROFESSOR_HORARIOS = {
     ProfessorID: 12,
@@ -22,7 +14,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoID: 12,
                     TreinoAlunoInscricaoID: 123,
                     TreinoAlunoTipo: 1,
-                    TreinoAlunoFoto: '/images/Coach/aluno1.jpg',
+                    TreinoAlunoFoto: 123,
                     TreinoAlunoRestricoes: 5,
                     TreinoTipoID: 1,
                     TreinoTipoDescricao: 'blablabla',
@@ -33,7 +25,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoID: 13,
                     TreinoAlunoInscricaoID: 12,
                     TreinoAlunoTipo: 2,
-                    TreinoAlunoFoto: '/images/Coach/aluno2.jpg',
+                    TreinoAlunoFoto: 12,
                     TreinoAlunoRestricoes: 0,
                     TreinoTipoID: 2,
                     TreinoTipoDescricao: 'blablabla',
@@ -44,7 +36,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoID: 14,
                     TreinoAlunoInscricaoID: 113,
                     TreinoAlunoTipo: 2,
-                    TreinoAlunoFoto: '/images/Coach/aluno3.jpg',
+                    TreinoAlunoFoto: 1,
                     TreinoAlunoRestricoes: 0,
                     TreinoTipoID: 3,
                     TreinoTipoDescricao: 'blablabla',
@@ -55,7 +47,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoID: 15,
                     TreinoAlunoInscricaoID: 10,
                     TreinoAlunoTipo: 2,
-                    TreinoAlunoFoto: '/images/Coach/aluno4.jpg',
+                    TreinoAlunoFoto: 15,
                     TreinoAlunoRestricoes: 3,
                     TreinoTipoID: 2,
                     TreinoTipoDescricao: 'blablabla',
@@ -73,7 +65,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoID: 110,
                     TreinoAlunoInscricaoID: 11,
                     TreinoAlunoTipo: 1,
-                    TreinoAlunoFoto: '/images/Coach/aluno1.jpg',
+                    TreinoAlunoFoto: 45,
                     TreinoAlunoRestricoes: 0,
                     TreinoTipoID: 3,
                     TreinoTipoDescricao: 'blablabla',
@@ -84,7 +76,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoID: 3,
                     TreinoAlunoInscricaoID: 3,
                     TreinoAlunoTipo: 2,
-                    TreinoAlunoFoto: '/images/Coach/aluno3.jpg',
+                    TreinoAlunoFoto: 8,
                     TreinoAlunoRestricoes: 0,
                     TreinoTipoID: 2,
                     TreinoTipoDescricao: 'blablabla',
@@ -95,7 +87,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoID: 5,
                     TreinoAlunoInscricaoID: 5,
                     TreinoAlunoTipo: 1,
-                    TreinoAlunoFoto: '/images/Coach/aluno4.jpg',
+                    TreinoAlunoFoto: 5,
                     TreinoAlunoRestricoes: 0,
                     TreinoTipoID: 1,
                     TreinoTipoDescricao: 'blablabla',
@@ -107,20 +99,33 @@ const PROFESSOR_HORARIOS = {
     ]
 }
 
-export default function Coach(){
-    return(
-    < >
-    <div className="completeBody">
-        
-        <div className="headerContainer">
-            <HeaderCoach img={true} name={true} position={true} data={PROFESSOR_HORARIOS} />
-        </div>
-        
-         <HourBox data={PROFESSOR_HORARIOS} />  
- 
-        {/* <Coachee active={active} setActive={setActive} /> */}
-    </div>
-    </>
-    )
+export default function Body(){
 
+    return (
+        <div>
+            {
+                PROFESSOR_HORARIOS.Horarios.map((horario)=>{
+                    return <Horario horario_info={horario}/>
+                })
+            }
+        </div>
+    )
+}
+
+function Horario(){
+    const [toggleOn, setToggleOn] = useState(true)
+
+    return(
+        <div>
+            <div className='header'>
+                <button onClick={()=>{setToggleOn(!toggleOn)}}>OI</button>
+            </div>
+            {
+                toggleOn &&
+                <div className='coachess'>
+                    
+                </div>
+            }
+        </div>
+    )
 }
