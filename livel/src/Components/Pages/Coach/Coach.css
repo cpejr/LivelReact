@@ -8,15 +8,11 @@
 
 .headerContainer{
     background-color: #E6E6E6;
-    height: 60px;
+    height: 13vh;
 }
 
 .coachBlock{
     display: flex;
-    flex-direction: row;
-    width: 30vh;
-    justify-content: space-around;
-    
 }
 .purpleLine{
     background-color: #632467;
@@ -54,7 +50,8 @@
     border-radius: 50%;
     border: 3px solid #632467;
     margin-top: 10px;
-    margin-left: 30px;
+    margin-left: 5vw;
+    margin-right: 1vw;
 }
 
 /* ---------------------Element HourBox Coach--------------------- */
@@ -70,14 +67,15 @@
 
 .HourAndToggle{
     height: 60px;
-    width: 40%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     align-items: center;
+    margin-left: 6vw; 
+
 }
 
 .whatTimeIsIt{
+    margin-left:4vw;/* No telefone é 4 e no PC é 1 */
+
     font-size: 25px;
     font-family: sans-serif, Bebas Neue;
     font-weight: bolder;
@@ -86,33 +84,40 @@
     color:#632467;
 }
 /* ---------------------Element Coachee Coach--------------------- */
+.coacheeInfo{
+    margin: 0px;
+    padding: 0px;
+    
+    flex:1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+/* 
+    border-top:0.1mm solid #707070;
+    border-top-width: 100%; */
+}
+
 .fotoCoachee{
     height: 6vh;
     width: 6vh;
     border-radius: 50%;
     border: 3px solid #632467;
-    margin-top: 10px;
-    margin-left: 8px;
+    margin:4px;
 }
-
 
 .coacheeContainer{
+    box-sizing: border-box;
+
     background-color: #ffffff;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
-    max-height: 50px;
-}
-
-.grayLine{
-    background-color: #707070;
-    height: 0.1mm;
-    width: 70%;
-    align-self: flex-start;
-    position: absolute;
-    margin-left: 100px;
-    opacity: 40%;
+    padding-left: 5vw;
+    
+    border-top: solid 0.1mm rgba(4,1,3,0.2);
 }
 
 .writtenInfos{
@@ -146,11 +151,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-right: 10px;
+    align-items: center;
 }
 
 .coacheeIcons{
     size: 6mm;
     height: 6mm;
+    margin-left: 10px;
 }
 
 .livelOneStyled{

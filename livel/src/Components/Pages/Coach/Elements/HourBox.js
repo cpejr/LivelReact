@@ -3,18 +3,6 @@ import { useSpring } from "react-spring";
 import Coachee from "./Coachee";
 import Switch from "react-switch";
 
- const ALL_TIME = [
-    '13:00',
-    '13:30',
-    '14:00',
-    '14:30',
-    '15:00',
-] 
-
-const AVAILABLE_TIME = ["13:00", "14:00", "14:30", "15:00"];
-
-const UNAVAILABLE_TIME = ["13:30"];
-
 class ToggleButton extends Component {
     constructor() {
         super();
@@ -51,72 +39,44 @@ class ToggleButton extends Component {
     }
 }
 
-function ToggleOffFunction(props) {
-    return <div className="HourBoxIsOff" />;
-}
 
-function ToggleOnFunction(props) {
+export default function Body(props) {
     return (
-        <div className="HourBoxIsOn">
-            <div className="coacheeContainerHourBox">
-                <Coachee />
-                {/* Algo ali */}
-            </div>
+        <div className="divMother">
+            {props.data.Horarios.map((time, index) => (
+                <HourBox key={index} time_info={time} />
+            ))}
         </div>
     );
 }
 
-export default function HourBox(props) {
+function HourBox(props) {
     const [toggleOn, setToggleOn] = useState(false);
-
-    const [horas_disp, setHorasDisp] = useState([]);
 
     const toggleOnAnimation = useSpring({
         opacity: toggleOn ? 1 : 0,
         transform: toggleOn ? `translateX(0)` : `translateX(100%)`,
     });
 
-
-
     return (
-
-        <div className="divMother">
-            <div className="eachContainer">
-                {ALL_TIME.map((time, index) => {
-                    return (
-                        <div className="parent">
-                            <div className="HourAndToggle">
-                                <ToggleButton
-                                    className={`toggle-button`}
-                                    style={toggleOnAnimation}
-                                    setToggleOn={() => {
-                                        if (!horas_disp.includes(time)) {
-                                            setHorasDisp((Antigo_array) => [
-                                                ...Antigo_array,
-                                                time,
-                                            ]);
-                                        } else {
-                                            var array = [...horas_disp]; // make a separate copy of the array
-                                            var index = array.indexOf(
-                                                time
-                                            );
-                                            if (index !== -1) {
-                                                array.splice(index, 1);
-                                                
-                                                setHorasDisp(array)
-                                            }
-                                        }
-                                    }}
-                                />
-                                <div className="whatTimeIsIt">{time}</div>
-                            </div>
-                            <div className="isItOnorOff">
-                                {horas_disp.includes(time)? ToggleOnFunction(): ToggleOffFunction()}
-                                {console.log(horas_disp)}
-                            </div>
-                        </div>
-                    );
-                })}
+        <div className="eachContainer">
+            <div className="parent">
+                <div className="HourAndToggle">
+                    <ToggleButton
+                        className={`toggle-button`}
+                        style={toggleOnAnimation}
+                        setToggleOn={()=>(setToggleOn(!toggleOn))}
+                    />
+                    <div className="whatTimeIsIt">
+                        {props.time_info.Horario}
+                    </div>
+                </div>
+                <div className="isItOnorOff">
+                    {props.time_info.Horario_Treinos.map((person, index) => (
+                            toggleOn &&
+                        <Coachee key={index}  data={person}/>
+                    ))}
+                </div>
             </div>
         </div>
     );
