@@ -38,26 +38,13 @@ class ToggleButton extends Component {
         );
     }
 }
-/* 
-function ToggleOffFunction(props) {
-    return <div className="HourBoxIsOff" />;
-}
 
-function ToggleOnFunction(props) {
-    return (
-        <div className="HourBoxIsOn">
-            <div className="coacheeContainerHourBox">
-                <Coachee />
-            </div>
-        </div>
-    );
-} */
 
 export default function Body(props) {
     return (
         <div className="divMother">
-            {props.data.Horarios.map((time) => (
-                <HourBox time_info={time} />
+            {props.data.Horarios.map((time, index) => (
+                <HourBox key={index} time_info={time} />
             ))}
         </div>
     );
@@ -85,9 +72,9 @@ function HourBox(props) {
                     </div>
                 </div>
                 <div className="isItOnorOff">
-                    {props.time_info.Horario_Treinos.map((person) => (
+                    {props.time_info.Horario_Treinos.map((person, index) => (
                             toggleOn &&
-                        <Coachee data={person}/>
+                        <Coachee key={index}  data={person}/>
                     ))}
                 </div>
             </div>

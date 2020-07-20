@@ -32,8 +32,6 @@ function Train_ID2Name(Train_ID) {
 function AllCoachees(props) {
     return (
         <div className="coacheeContainer">
-            <div className="grayLine" /> 
-
             <img
                 src={props.person.TreinoAlunoFoto}
                 alt="imagem coachee"
@@ -76,7 +74,6 @@ export default function Coachee(props) {
     return (
         <>
             <AllCoachees person={props.data} />
-            {console.log(props.active + " o props .active")}
         </>
     );
 }
