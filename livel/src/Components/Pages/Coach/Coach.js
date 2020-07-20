@@ -10,7 +10,7 @@ import HourBox from './Elements/HourBox';
 
 const PROFESSOR_HORARIOS = {
     ProfessorID: 12,
-    ProfessorNome: 'Coach Alemão',
+    ProfessorNome: 'Alemão',
     ProfessorFoto: '/images/Coach/coach.jpg',
     Horarios: [
         {

@@ -3,8 +3,6 @@ import { useSpring } from "react-spring";
 import Coachee from "./Coachee";
 import Switch from "react-switch";
 
-const ALL_TIME = ["13:00", "13:30", "14:00", "14:30", "15:00"];
-
 class ToggleButton extends Component {
     constructor() {
         super();
@@ -40,7 +38,7 @@ class ToggleButton extends Component {
         );
     }
 }
-
+/* 
 function ToggleOffFunction(props) {
     return <div className="HourBoxIsOff" />;
 }
@@ -53,7 +51,7 @@ function ToggleOnFunction(props) {
             </div>
         </div>
     );
-}
+} */
 
 export default function Body(props) {
     return (

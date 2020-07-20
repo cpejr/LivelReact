@@ -17,31 +17,30 @@ const Restricao = "/images/Coach/restricao.png";
 
 const Aerobico = "/images/Coach/aerobico.png";
 
-function Train_ID2Name(Train_ID){
-
-    if (Train_ID === 1){
-        return 'Superior'
-    }else  if (Train_ID === 2){
-        return 'Inferior'
-    }else if (Train_ID ===3 ){
-        return 'Resutado'
-    }else {
-        return 'Ferrou'
+function Train_ID2Name(Train_ID) {
+    if (Train_ID === 1) {
+        return "Superior";
+    } else if (Train_ID === 2) {
+        return "Inferior";
+    } else if (Train_ID === 3) {
+        return "Resutado";
+    } else {
+        return "Ferrou";
     }
 }
 
 function AllCoachees(props) {
     return (
-        <div className="coacheesHours">
-            <div className="coacheeContainer">
-                <div className="checkCoachee"></div>
-                <div className="grayLine" />
-                <img
-                    src={props.person.TreinoAlunoFoto}
-                    alt="imagem coachee"
-                    className="fotoCoachee"
-                />
+        <div className="coacheeContainer">
+            <div className="grayLine" /> 
 
+            <img
+                src={props.person.TreinoAlunoFoto}
+                alt="imagem coachee"
+                className="fotoCoachee"
+            />
+
+            <div className="coacheeInfo">
                 <div className="writtenInfos">
                     <div className="coacheeName">
                         {props.person.TreinoAlunoNome}
@@ -50,6 +49,7 @@ function AllCoachees(props) {
                         {Train_ID2Name(props.person.TreinoTipoID)}
                     </div>
                 </div>
+
                 <div className="coachee_icons">
                     {props.person.TreinoAlunoTipo === 1 && <LivelOne />}
                     {props.person.TreinoAlunoRestricoes !== 0 && (
