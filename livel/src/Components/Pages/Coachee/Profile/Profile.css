@@ -1,5 +1,5 @@
 .ProfileContainer{
-    height: 80%;
+    height: 74%;
     width: 100%;
     background-color: #E6E6E6;
     display: flex;
@@ -11,8 +11,8 @@
 
 /* ---------------------Element Header Profile--------------------- */
 
-.headerContainer{
-    height: 20%
+.HeaderContainer{
+    height: 15%
 }
 
 .orangeLine{
@@ -41,10 +41,10 @@
 
 /* ---------------------Element ExitButton Profile--------------------- */
 .exitButtonContainer{
-    margin-top: 2%;
-    height: 5%;
+    height: 4%;
     /* position: relative; */
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
@@ -122,6 +122,7 @@
     align-items: center;
     justify-content: center;
     flex: 2;
+    padding-bottom: 40px;
 }
 
 .footerInfo{
@@ -139,6 +140,7 @@
     color: #532166;
     font-weight: bold;
     font-size: 14px;
+    margin-bottom: -4px;
 }
 
 .footerDescription{
@@ -236,7 +238,8 @@
     flex:1;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 
@@ -247,9 +250,7 @@
     /* font-stretch: condensed; */
     font-size: 10px;
     font-weight: 900;
-    /* position: absolute; */
-    /* margin-top: 40%;
-    margin-left: 23%; */
+    padding-left: 15px;
 }
 
 .lastMonthStyle{
@@ -259,9 +260,7 @@
     /* font-stretch: condensed; */
     font-size: 10px;
     font-weight: 900;
-    /* position: absolute;
-    margin-top: 40%;
-    margin-left: 9%; */
+    padding-right: 15px;
 }
 
 /* ---------------------Element MonthlyResult Profile--------------------- */
@@ -274,13 +273,11 @@
 }
 
 .imagesContainer{
-    /* position: relative; */
     width: 100%;
+    /* height: 100%; */
 }
 
 .imagesContainer a{
-    /* position: relative; */
-    
     font-size: 10px;
     font-family: sans-serif, Univers LT;
     font-stretch: condensed;
@@ -290,8 +287,6 @@
 
 .bodyData{
     width: 100%;
-    /* height: 80%; */
-    margin-left: 4%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -301,27 +296,28 @@
     z-index:2;
 }
 
-.mainData{
+.bodyAlign{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 60px;
+}
 
+.mainData{
     width: 100%;
-    height: 50%;
+    height: 55%;
     display: flex;
     
-    /* margin-top: 30px; */
-
 }
 
 .BodyResultClass{
     height: 45%;
     width: auto;
-    /* margin-left: 25%;
-    margin-top: 4%; */
 }
 
 .valueStyled{
     font-size: 14px;
     font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
     color: #676767;
     font-weight: bold;
 }
@@ -377,37 +373,30 @@
     align-items: center;
 }
 
-.RightSide{
-
+.rightSide{
     width: 50%;
-    /* height: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 2%;
-    /* padding-left: 5px; */
+    margin-top: 20px;
 }
 
 .RightList{
     list-style: none;
     display: flex;
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     font-size: 14px;
     font-family: sans-serif, Univers LT;
-    /* font-stretch: condensed; */
     font-weight: bold;
     color: #676767;
-    padding-right: 50px;
-    /* margin-left: -8%; */
-    
-    /* position: relative; */
-    
-    /* bottom: 212px;
-    left: 15%; */
+    padding: 0;
+
+    margin-top: 20px;
+    margin-left: -25%;
 }
 
 .RightList li + li{
@@ -416,12 +405,11 @@
 
 
 .rightIcons{
+
     display: flex;
     width: 100%;
-    /* height: 25%; */
+    height: 25%;
     align-items: center;
-    margin-top: 15px;
-    box-sizing: border-box;
 }
 
 .timeSubtitles{
@@ -433,49 +421,167 @@
 }
 
 .iconList{
-    /* height: auto; */
-    /* width: 20%; */
     margin-right: 15px;
 }
 
 .thePurples{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     z-index:2;
     position: relative;
-    width: 200px;
-    left: 8px;
-
-    bottom: -65px;
+    height: 100%;
+    margin-top: 5px;
+    margin-right: -35px;
+    left: 40px;
+    bottom: -15px;
     
 }
 
-
 .bigPurple{
     position: relative;
-    bottom: -109px;
+    bottom: -60px;
     left: 25px;
     
     z-index: 10;
-    height: 200px;
+    height: 65%;
     width: 30px;
 }
 
 .littlePurple{
     position: relative;
 
-    top: -195px;
-    left: -4px;
+    bottom: 15px;
+    left: 25px;
     z-index: 10;
-    height: 30px;
     width: 2px;
 }
 
 .purpleScore{
-
-    font-size: 16px;
+    z-index: 10;
+    width: 150px ;
+    font-size: 15px;
     font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
+    /* font-stretch: condensed; */
     color: #532166;
     position: relative;
-    top: 112px;
-    left: 30px;
+    top: 50px;
+    left: 65px;
 }
+
+/* Resposividade para o Iphone 5 */
+@media screen and (max-height: 568px) and (max-width: 320px){
+    .bodyData{
+        height: 50%;
+    }
+    
+    .mainData{
+        width: 100%;
+        height: 25%;
+        display: flex;
+        padding-top: 40px;
+    }
+
+    .RightList{    
+        margin-left: -10%;
+        padding-top: 3px;
+    }
+
+    .RightList li + li{
+        margin-top: 35px;
+    }
+}
+
+/* Resposividade para o Iphone 6,7,8 */
+@media screen and (max-height: 667px) and (max-width: 375px) {
+
+    .RightList{    
+        margin-left: -10%;
+        margin-top: 30px;
+    }
+
+    .RightList li + li{
+        margin-top: 40px;
+    }
+}
+
+/* Resposividade para o Iphone 6,7,8 Plus */
+@media screen and (max-height: 736px) and (max-width: 414px) {
+    .mainData{
+        width: 100%;
+        height: 25%;
+        display: flex;
+    }
+    
+    .rightSide{
+        margin-top: 25px;
+    }
+
+    .RightList{    
+        margin-left: -10%;
+        margin-top: 55px;
+    }
+
+    .RightList li + li{
+        margin-top: 20px;
+    }
+
+    .thePurples{
+        margin-left: -55px;
+        margin-top: 10px;
+    }
+}
+
+
+@media screen and (max-width: 375px){
+
+    .RightList{    
+        margin-left: -10%;
+    }
+
+    .RightList li + li{
+        margin-top: 30px;
+    }
+
+}
+
+@media screen and (max-height: 811px){
+    .mainData{
+        width: 100%;
+        height: 45%;
+        display: flex;
+        padding-top: 40px;
+    }
+
+    
+    .LeftList li + li{
+        margin-top: 25px;
+    }
+
+    .RightList{    
+        margin-top: 20px;
+    }
+
+    .RightList li + li{
+        margin-top: 30px;
+    }
+
+    .thePurples{
+        left: 50px;
+        bottom: 10px;
+    }
+
+    .littlePurple{
+        position: relative;
+        bottom: -10px;
+        left: 25px;
+        height: 10%;
+    }
+
+    .bigPurple{
+        height: 70%;
+    }
+}
+
+
+

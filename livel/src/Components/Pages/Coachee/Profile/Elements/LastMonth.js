@@ -132,23 +132,25 @@ class MonthlyResultImages extends Component {
             <div className="imagesContainer">
                 {/* parte de cima */}
                 <div className="bodyData" >
-                    <img src={BodyResult.img} alt='bodyResults' className="BodyResultClass" />
-                    <div className="bodyMeasures">
-                        { bodySubtitles.map(part => {
-                            return (
-                                <div style={descriptionStyle(part.bottom, part.left)} >
-                                    <span className="valueSubtitles">
-                                        {part.value}
-                                    </span>
-                                    <p className="bodyPart">
-                                        {part.description}
-                                    </p>  
-                                </div>
-                            )
-                        }
-                        )}
-                    </div>
+                    <div className="bodyAlign">
 
+                        <img src={BodyResult.img} alt='bodyResults' className="BodyResultClass" />
+                        <div className="bodyMeasures">
+                            { bodySubtitles.map(part => {
+                                return (
+                                    <div style={descriptionStyle(part.bottom, part.left)} >
+                                        <span className="valueSubtitles">
+                                            {part.value}
+                                        </span>
+                                        <p className="bodyPart">
+                                            {part.description}
+                                        </p>  
+                                    </div>
+                                )
+                            }
+                            )}
+                        </div>
+                    </div>
                 </div>
                 
                 {/* parte de baixo */}
@@ -170,26 +172,27 @@ class MonthlyResultImages extends Component {
 
                         </ul>
                     </div>
-                    <div className="RightSide">
 
-                        <div className="thePurples">
-                            <img className="bigPurple" alt='purpleDivider' src={BigPurple.img} />
-                            <img className="littlePurple" alt='purpleDivider' src={LittlePurple.img} />
-                            <strong className="purpleScore">Score total: {score}</strong>
-                            {/* <div className="purpleScoreAmount"></div> */}
-                        </div>
+                    <div className="thePurples">
+                        <img className="littlePurple" alt='purpleDivider' src={LittlePurple.img} />
+                        <img className="bigPurple" alt='purpleDivider' src={BigPurple.img} />
+                        <strong className="purpleScore">Score total: {score}</strong>
+                        {/* <div className="purpleScoreAmount"></div> */}
+                    </div>
+
+                    <div className="rightSide">
                         <ul className="RightList">
                             
                             {listaRight.map(right =>{
                                     return(
                                         <li className="rightIcons">
                                             <img className="iconList" alt='iconList' src={right.img} />
-                                            <div className="valueList">
+                                            <span className="valueStyled">
                                                 {right.value}
-                                            </div>
-                                            <div className="timeSubtitles">
+                                            </span>
+                                            <span className="timeSubtitles">
                                                 {right.time} 
-                                            </div>
+                                            </span>
                                         </li>
                                     )
                                 }

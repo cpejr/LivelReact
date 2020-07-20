@@ -151,8 +151,8 @@ export default function Results(props){
                                             {x: 'forcaBefore', y: lastforca, color: '#C6BBCE'},
                                             {x: 'forcaAfter', y: currentforca, color: '#532166'}
                                         ]}
-                                            width={90}
-                                            height={75}
+                                            width= { 110 }
+                                            height={85}
                                             margin={{top: 0, right: 0, bottom: 0, left: 0}}
                                             yDomainRange={[0, 200]}
                                         />
@@ -195,8 +195,8 @@ export default function Results(props){
                                         {x: 'cardioBefore', y: lastcardio, color: '#C6BBCE'},
                                         {x: 'cardioAfter', y: currentcardio, color: '#532166'},
                                     ]}
-                                    width={90}
-                                    height={75}
+                                    width= { 110 }
+                                    height={85}
                                     margin={{top: 0, right: 0, bottom: 0, left: 0}}
                                     yDomainRange={[0, 4000]}
                                 />
@@ -240,8 +240,8 @@ export default function Results(props){
                                         {x: 'pesoBefore', y: lastpeso, color: '#C6BBCE'},
                                         {x: 'pesoAfter', y: currentpeso, color: '#532166'},
                                     ]}
-                                        width={90}
-                                        height={75}
+                                        width= { 110 }
+                                        height={85}
                                         margin={{top: 0, right: 0, bottom: 0, left: 0 }}
                                         yDomainRange={[0, 200]}
                                     />
@@ -281,8 +281,8 @@ export default function Results(props){
                                         {x: 'gorduraBefore', y: lastgordura, color: '#C6BBCE'},
                                         {x: 'gorduraAfter', y: currentgordura, color: '#532166'},
                                     ]}
-                                        width={90}
-                                        height={75}
+                                        width= { 110 }
+                                        height={85}
                                         margin={{top: 0, right: 0, bottom: 0, left: 0}}
                                         yDomainRange={[0, 40]}
                                 />
