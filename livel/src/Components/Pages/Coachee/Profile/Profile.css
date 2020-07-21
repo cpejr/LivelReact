@@ -1,5 +1,6 @@
 .ProfileContainer{
-    height: 69%;
+    height: 74%;
+    width: 100%;
     background-color: #E6E6E6;
     display: flex;
     flex-direction: column;
@@ -10,8 +11,8 @@
 
 /* ---------------------Element Header Profile--------------------- */
 
-.headerContainer{
-    height: 20%
+.HeaderContainer{
+    height: 15%
 }
 
 .orangeLine{
@@ -40,9 +41,10 @@
 
 /* ---------------------Element ExitButton Profile--------------------- */
 .exitButtonContainer{
-    height: 5%;
+    height: 4%;
     /* position: relative; */
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
@@ -107,81 +109,50 @@
     border-radius: 3px;
     height: 90%;
     width: 40%;
+    
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
-.gorduraTitle{
+.mainInfo{
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+    padding-bottom: 40px;
+}
+
+.footerInfo{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+} 
+
+.footerTitle{
     font-family: sans-serif, Univers LT;
     font-stretch: condensed;
     color: #532166;
     font-weight: bold;
     font-size: 14px;
-    position: absolute;
-    margin-top: 46%;
-    max-width: 40%;
-    margin-left: 6%;
+    margin-bottom: -4px;
 }
 
-.pesoTitle{
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    color: #532166;
-    font-weight: bold;
-    font-size: 14px;
-    position: absolute;
-    margin-top: 46%;
-    max-width: 40%;
-    margin-left: 15%;
-}
-
-.cardioTitle{
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    color: #532166;
-    font-weight: bold;
-    font-size: 14px;
-    position: absolute;
-    margin-top: 46%;
-    max-width: 40%;
-    margin-left: 12%;
-}
-
-.forcaTitle{
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    color: #532166;
-    font-weight: bold;
-    font-size: 14px;
-    position: absolute;
-    margin-top: 46%;
-    margin-left: 14%;
-}
-
-.forcaDescription{
+.footerDescription{
     font-family: sans-serif, Univers LT;
     font-stretch: condensed;
     color: #676767;
     font-size: 9px;
-    position: absolute;
-    margin-top: 52%;
-    max-width: 40%;
-    margin-left: -18.5%;
-    position: absolute;
+    max-width: 90%;
 }
 
-.cardioDescription{
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    color: #676767;
-    font-size: 9px;
-    position: absolute;
-    margin-top: 52%;
-    max-width: 40%;
-    margin-left: -12%;
-    position: absolute;
-}
-
-.boxHeader{
-    text-align: center;
+.boxHeader{   
+    box-sizing: border-box;
 }
 
 .resultsCircle{
@@ -190,8 +161,9 @@
 }
 
 .circleMove{
-    margin-left: 50%;
-    margin-top: 1%;
+    float: right;
+    margin-right: 30px;
+    margin-top: 10px;
 }
 
 .barContainer{
@@ -215,66 +187,80 @@
 .resultBars{
     display: flex;
     flex-direction: row;
-    margin-top: 0%;
-    margin-left: -14%;
-    position: relative;
+    flex:5;
+    
     justify-content: space-around;
 }
 
+.topicMove{
+    margin-top: 40px;
+}
+
 .currentAmount{
+    text-align: center;
     color: white;
     font-family: sans-serif, Univers LT;
     font-stretch: condensed;
     font-size: 10px;
     font-weight: 900;
     z-index: 10; 
-    margin-left: 43px;
-    margin-top: -25%;
+    margin-left: 45px;
+    margin-top: -25px;
 }
 
 .lastAmount{
+    width: 35px;
+
     color: white;
     font-family: sans-serif, Univers LT;
     font-stretch: condensed;
     font-size: 10px;
     font-weight: 900;
     z-index: 10; 
-    margin-right: 43px;
-    margin-top: -15px;
+    margin-left: 8px;
+    margin-top: -14px;
 }
 
 .percentMove{
+    
     font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
     font-size: 12.5px;
     font-weight: bolder;
-    position: absolute;
-    margin-top: -10%;
-    margin-left: 25%; 
+
+    float: right;
+    margin-right: -39px;
+    margin-top: 25px;
+    
 }
+
+.months{
+    width: 70%;
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 
 .thisMonthStyle{
     text-transform: uppercase;
     color: #532166;
     font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
+    /* font-stretch: condensed; */
     font-size: 10px;
     font-weight: 900;
-    position: absolute;
-    margin-top: 40%;
-    margin-left: 23%;
+    padding-left: 15px;
 }
 
 .lastMonthStyle{
     text-transform: uppercase;
     color: #C6BBCE;
     font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
+    /* font-stretch: condensed; */
     font-size: 10px;
     font-weight: 900;
-    position: absolute;
-    margin-top: 40%;
-    margin-left: 9%;
+    padding-right: 15px;
 }
 
 /* ---------------------Element MonthlyResult Profile--------------------- */
@@ -287,12 +273,11 @@
 }
 
 .imagesContainer{
-    /* position: relative; */
-    width: 80%;
+    width: 100%;
+    /* height: 100%; */
 }
 
 .imagesContainer a{
-    /* position: relative; */
     font-size: 10px;
     font-family: sans-serif, Univers LT;
     font-stretch: condensed;
@@ -300,18 +285,39 @@
     font-weight: bold;
 }
 
+.bodyData{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bodyMeasures{
+    z-index:2;
+}
+
+.bodyAlign{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 60px;
+}
+
+.mainData{
+    width: 100%;
+    height: 55%;
+    display: flex;
+    
+}
 
 .BodyResultClass{
     height: 45%;
     width: auto;
-    margin-left: 25%;
-    margin-top: 4%;
 }
 
 .valueStyled{
     font-size: 14px;
     font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
     color: #676767;
     font-weight: bold;
 }
@@ -320,27 +326,44 @@
 .valueSubtitles{
     font-size: 17px;
     font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
+    /* font-stretch: condensed; */
     color: #532166;
     font-weight: bold;
     margin-right: -10px;
     margin-bottom: 4px;
 }
+
+.bodyPart{
+    margin-top: 2px;
+}
+
+.leftSide{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .LeftList{
     list-style: none;
     display: flex;
-    width: 50%;
     height: 100%;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     font-size: 14px;
     font-family: sans-serif, Univers LT;
     font-stretch: condensed;
     font-weight: bold;
     color: #676767;
-    margin-top: -10px;
-    margin-right: -10px;
+    
+    z-index: 10;
+    margin-top: 40px;
+    
+}
+
+.LeftList li + li{
+    margin-top: 15px;
 }
 
 .leftIcons{
@@ -350,24 +373,39 @@
     align-items: center;
 }
 
+.rightSide{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
 .RightList{
     list-style: none;
     display: flex;
-    width: 50%;
-    height: 80%;
+    /* width: 100%; */
+    height: 100%;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     font-size: 14px;
     font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
     font-weight: bold;
     color: #676767;
-    margin-top: 0px;
-    margin-right: -45px;
+    padding: 0;
+
+    margin-top: 20px;
+    margin-left: -25%;
 }
 
+.RightList li + li{
+    margin-top: 28px;
+}
+
+
 .rightIcons{
+
     display: flex;
     width: 100%;
     height: 25%;
@@ -383,45 +421,167 @@
 }
 
 .iconList{
-    height: auto;
-    width: 20%;
     margin-right: 15px;
 }
 
+.thePurples{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index:2;
+    position: relative;
+    height: 100%;
+    margin-top: 5px;
+    margin-right: -35px;
+    left: 40px;
+    bottom: -15px;
+    
+}
+
 .bigPurple{
-    position: absolute;
-    bottom: 7.5%;
-    left: 53.5%;
-    height: 103px;
+    position: relative;
+    bottom: -60px;
+    left: 25px;
+    
+    z-index: 10;
+    height: 65%;
     width: 30px;
 }
 
 .littlePurple{
-    position: absolute;
-    bottom: 29%;
-    left: 53.5%;
-    height: 15px;
-    width: 1.5px;
+    position: relative;
+
+    bottom: 15px;
+    left: 25px;
+    z-index: 10;
+    width: 2px;
 }
 
 .purpleScore{
-    font-size: 13px;
+    z-index: 10;
+    width: 150px ;
+    font-size: 15px;
     font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
+    /* font-stretch: condensed; */
     color: #532166;
-    position: absolute;
-    bottom: 6.5%;
-    left: 64%;
+    position: relative;
+    top: 50px;
+    left: 65px;
+}
+
+/* Resposividade para o Iphone 5 */
+@media screen and (max-height: 568px) and (max-width: 320px){
+    .bodyData{
+        height: 50%;
+    }
+    
+    .mainData{
+        width: 100%;
+        height: 25%;
+        display: flex;
+        padding-top: 40px;
+    }
+
+    .RightList{    
+        margin-left: -10%;
+        padding-top: 3px;
+    }
+
+    .RightList li + li{
+        margin-top: 35px;
+    }
+}
+
+/* Resposividade para o Iphone 6,7,8 */
+@media screen and (max-height: 667px) and (max-width: 375px) {
+
+    .RightList{    
+        margin-left: -10%;
+        margin-top: 30px;
+    }
+
+    .RightList li + li{
+        margin-top: 40px;
+    }
+}
+
+/* Resposividade para o Iphone 6,7,8 Plus */
+@media screen and (max-height: 736px) and (max-width: 414px) {
+    .mainData{
+        width: 100%;
+        height: 25%;
+        display: flex;
+    }
+    
+    .rightSide{
+        margin-top: 25px;
+    }
+
+    .RightList{    
+        margin-left: -10%;
+        margin-top: 55px;
+    }
+
+    .RightList li + li{
+        margin-top: 20px;
+    }
+
+    .thePurples{
+        margin-left: -55px;
+        margin-top: 10px;
+    }
 }
 
 
-.purpleScoreAmount{
-    font-size: 18px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    color: #532166;
-    font-weight: bold;
-    position: absolute;
-    bottom: 6%;
-    left: 88%;
+@media screen and (max-width: 375px){
+
+    .RightList{    
+        margin-left: -10%;
+    }
+
+    .RightList li + li{
+        margin-top: 30px;
+    }
+
 }
+
+@media screen and (max-height: 811px){
+    .mainData{
+        width: 100%;
+        height: 45%;
+        display: flex;
+        padding-top: 40px;
+    }
+
+    
+    .LeftList li + li{
+        margin-top: 25px;
+    }
+
+    .RightList{    
+        margin-top: 20px;
+    }
+
+    .RightList li + li{
+        margin-top: 30px;
+    }
+
+    .thePurples{
+        left: 50px;
+        bottom: 10px;
+    }
+
+    .littlePurple{
+        position: relative;
+        bottom: -10px;
+        left: 25px;
+        height: 10%;
+    }
+
+    .bigPurple{
+        height: 70%;
+    }
+}
+
+
+
