@@ -1,5 +1,21 @@
+/* div que envolve toda a página profile */
+.profile{
+    height: 100%;
+}
+
+/* Estlização do button Sair */
+.profile a{
+    height: 5%;
+    text-decoration: none;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
 .ProfileContainer{
-    height: 74%;
+    height: 75%;
     width: 100%;
     background-color: #E6E6E6;
     display: flex;
@@ -41,18 +57,15 @@
 
 /* ---------------------Element ExitButton Profile--------------------- */
 .exitButtonContainer{
-    height: 4%;
-    /* position: relative; */
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .exitButtonContainer h1{
-    position: absolute;
     font-size: 12px;
     font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
     font-weight: bold;
     color: #632467;
 }
@@ -60,7 +73,7 @@
 
 /* ---------------------Element Choice Profile--------------------- */
 .choices {
-    height: 6%;
+    height: 5%;
 }
 
 .grayLine{
@@ -270,58 +283,45 @@
     background-color: white; /* For browsers that do not support gradients */
     background-image: linear-gradient(white, #F2F2F2); /* Standard syntax (must be last) */
     display: flex;
-}
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-.imagesContainer{
-    width: 100%;
-    /* height: 100%; */
-}
-
-.imagesContainer a{
-    font-size: 10px;
+    /* font-size: 10px;
     font-family: sans-serif, Univers LT;
     font-stretch: condensed;
     color: #676767;
-    font-weight: bold;
+    font-weight: bold; */
 }
 
 .bodyData{
     width: 100%;
+    height: 55%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.bodyMeasures{
-    z-index:2;
-}
-
 .bodyAlign{
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 60px;
 }
 
-.mainData{
-    width: 100%;
-    height: 55%;
-    display: flex;
-    
-}
-
 .BodyResultClass{
-    height: 45%;
-    width: auto;
+    height: 100%;
+    /* width: 100%; */
 }
 
-.valueStyled{
-    font-size: 14px;
-    font-family: sans-serif, Univers LT;
-    color: #676767;
-    font-weight: bold;
+.bodyMeasures{
+    z-index:2;
+    height: 100%;
+    /* width: 100%; */
+    position: relative;
 }
-
 
 .valueSubtitles{
     font-size: 17px;
@@ -337,14 +337,21 @@
     margin-top: 2px;
 }
 
+.mainData{
+    width: 100%;
+    height: 40%;
+    display: flex;    
+}
+
 .leftSide{
     width: 50%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.LeftList{
+.list{
     list-style: none;
     display: flex;
     height: 100%;
@@ -357,59 +364,32 @@
     font-weight: bold;
     color: #676767;
     
-    z-index: 10;
-    margin-top: 40px;
-    
 }
 
-.LeftList li + li{
-    margin-top: 15px;
+.list li + li{
+    margin-top: 14px;
 }
 
-.leftIcons{
+.icons{
     display: flex;
     width: 100%;
-    height: 25%;
+    height: 20%;
     align-items: center;
 }
 
-.rightSide{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.RightList{
-    list-style: none;
-    display: flex;
-    /* width: 100%; */
+/* ícone em si */
+.iconList{
     height: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 14px;
+    /* width: 60%; */
+    margin-right: 15px;
+}
+
+.valueStyled{
+    font-size: 16px;
     font-family: sans-serif, Univers LT;
-    font-weight: bold;
     color: #676767;
-    padding: 0;
-
-    margin-top: 20px;
-    margin-left: -25%;
-}
-
-.RightList li + li{
-    margin-top: 28px;
-}
-
-
-.rightIcons{
-
-    display: flex;
-    width: 100%;
-    height: 25%;
-    align-items: center;
+    font-stretch: condensed;
+    font-weight: bold;
 }
 
 .timeSubtitles{
@@ -420,27 +400,46 @@
     margin-left: 12px;
 }
 
-.iconList{
-    margin-right: 15px;
+.right{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
 }
+
+.rightSide{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .thePurples{
     display: flex;
+    height: 100%;
+    width: 5%;
     flex-direction: column;
     justify-content: center;
-    z-index:2;
+    z-index:10;
     position: relative;
-    height: 100%;
-    margin-top: 5px;
-    margin-right: -35px;
-    left: 40px;
-    bottom: -15px;
+    right: 20px;
     
+}
+
+.littlePurple{
+    height: 15%;
+    position: relative;
+
+    top: -5px;
+    left: 25px;
+    z-index: 10;
+    width: 2px;
 }
 
 .bigPurple{
     position: relative;
-    bottom: -60px;
+    bottom: -38px;
     left: 25px;
     
     z-index: 10;
@@ -448,14 +447,6 @@
     width: 30px;
 }
 
-.littlePurple{
-    position: relative;
-
-    bottom: 15px;
-    left: 25px;
-    z-index: 10;
-    width: 2px;
-}
 
 .purpleScore{
     z-index: 10;
@@ -465,123 +456,13 @@
     /* font-stretch: condensed; */
     color: #532166;
     position: relative;
-    top: 50px;
+    top: 28px;
     left: 65px;
 }
 
-/* Resposividade para o Iphone 5 */
-@media screen and (max-height: 568px) and (max-width: 320px){
-    .bodyData{
-        height: 50%;
-    }
-    
-    .mainData{
-        width: 100%;
-        height: 25%;
-        display: flex;
-        padding-top: 40px;
-    }
 
-    .RightList{    
-        margin-left: -10%;
-        padding-top: 3px;
-    }
-
-    .RightList li + li{
-        margin-top: 35px;
-    }
-}
-
-/* Resposividade para o Iphone 6,7,8 */
-@media screen and (max-height: 667px) and (max-width: 375px) {
-
-    .RightList{    
-        margin-left: -10%;
-        margin-top: 30px;
-    }
-
-    .RightList li + li{
-        margin-top: 40px;
-    }
-}
-
-/* Resposividade para o Iphone 6,7,8 Plus */
-@media screen and (max-height: 736px) and (max-width: 414px) {
-    .mainData{
-        width: 100%;
-        height: 25%;
-        display: flex;
-    }
-    
-    .rightSide{
-        margin-top: 25px;
-    }
-
-    .RightList{    
-        margin-left: -10%;
-        margin-top: 55px;
-    }
-
-    .RightList li + li{
-        margin-top: 20px;
-    }
-
+@media screen and (max-width: 500px){
     .thePurples{
-        margin-left: -55px;
-        margin-top: 10px;
+        margin-right: 25px;
     }
 }
-
-
-@media screen and (max-width: 375px){
-
-    .RightList{    
-        margin-left: -10%;
-    }
-
-    .RightList li + li{
-        margin-top: 30px;
-    }
-
-}
-
-@media screen and (max-height: 811px){
-    .mainData{
-        width: 100%;
-        height: 45%;
-        display: flex;
-        padding-top: 40px;
-    }
-
-    
-    .LeftList li + li{
-        margin-top: 25px;
-    }
-
-    .RightList{    
-        margin-top: 20px;
-    }
-
-    .RightList li + li{
-        margin-top: 30px;
-    }
-
-    .thePurples{
-        left: 50px;
-        bottom: 10px;
-    }
-
-    .littlePurple{
-        position: relative;
-        bottom: -10px;
-        left: 25px;
-        height: 10%;
-    }
-
-    .bigPurple{
-        height: 70%;
-    }
-}
-
-
-
