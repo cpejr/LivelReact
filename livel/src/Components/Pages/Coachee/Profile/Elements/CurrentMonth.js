@@ -19,32 +19,32 @@ let score = '55';
 const biceps = {
     value: '30 cm',
     description: 'bíceps',
-    bottom: '162px',
-    left: '-40px',
+    bottom: '72%',
+    left: '81%',
 }
 const coxa = {
     value: '30 cm',
     description: 'coxa',
-    left: '-218px',
-    bottom: '-64px',
+    left: '0%',
+    bottom: '32%',
 }
 const cintura = {
     value: '30 cm',
     description: 'cintura',
-    bottom: '41px',
-    left: '-218px',
+    bottom: '57%',
+    left: '0%',
 }
 const pescoco = {
     value: '30 cm',
     description: 'pescoço',
-    left: '-218px',
-    bottom: '141px',
+    left: '0%',
+    bottom: '80%',
 }
 const quadril = {
     value: '30 cm',
     description: 'quadril',
-    left: '-40px',
-    bottom: '-64px',
+    left: '81%',
+    bottom: '48%',
 }
 
 
@@ -53,7 +53,7 @@ function descriptionStyle(style_bottom, style_left){
         bottom: style_bottom,
         left: style_left,
         width: '60px',
-        position: 'relative',
+        position: 'absolute',
         fontSize: '9px',
         fontFamily: 'sans-serif, Univers LT',
         fontStretch: 'condensed',
@@ -106,7 +106,6 @@ const BigPurple = { img:'/images/profile/purpleL.png',
 
 
 
-
 const listaLeft = [Peso, Gordura, Alongamento, Altura ];
 const listaRight = [Corrida, Abdominais, Flexao, Barra,]
 
@@ -120,21 +119,21 @@ class MonthlyResultImages extends Component {
                 <div className="bodyData" >
 
                     <div className="bodyAlign">
-                        <img src={BodyResult.img} alt='bodyResults' className="BodyResultClass" />
-                        <div className="bodyMeasures">
-                            { bodySubtitles.map(part => {
-                                return (
-                                    <div style={descriptionStyle(part.bottom, part.left)} >
-                                        <span className="valueSubtitles">
-                                            {part.value}
-                                        </span>
-                                        <p className="bodyPart">
-                                            {part.description}
-                                        </p>  
-                                    </div>
-                                )
-                            }
-                            )}
+                        <div className="responsiveBody">
+                            <img src={BodyResult.img} alt='bodyResults' className="BodyResultClass"/>
+                                { bodySubtitles.map(part => {
+                                    return (
+                                        <div style={descriptionStyle(part.bottom, part.left)} >
+                                            <span className="valueSubtitles">
+                                                {part.value}
+                                            </span>
+                                            <p className="bodyPart">
+                                                {part.description}
+                                            </p> 
+                                        </div>
+                                    )
+                                }
+                                )}
                         </div>
                     </div>
 
@@ -195,7 +194,6 @@ class MonthlyResultImages extends Component {
         );
     }
 }
-
 
 
 export default function CurrentMonthResult(props){

@@ -287,11 +287,6 @@ ul{
     justify-content: center;
     align-items: center;
 
-    /* font-size: 10px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    color: #676767;
-    font-weight: bold; */
 }
 
 .bodyData{
@@ -308,23 +303,27 @@ ul{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 60px;
+}
+
+.responsiveBody{
+    height: 230px;
+    width: 210px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    
 }
 
 .BodyResultClass{
-    height: 100%;
-    /* width: 100%; */
+    height: 230px;
+    width: 210px;
+
 }
 
-.bodyMeasures{
-    z-index:2;
-    height: 100%;
-    /* width: 100%; */
-    position: relative;
-}
 
 .valueSubtitles{
     font-size: 17px;
+    width: 50px;
     font-family: sans-serif, Univers LT;
     /* font-stretch: condensed; */
     color: #532166;
@@ -355,6 +354,7 @@ ul{
     list-style: none;
     display: flex;
     height: 100%;
+
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
@@ -370,22 +370,27 @@ ul{
     margin-top: 14px;
 }
 
+.rightSide .list{
+    margin-left: -20px;
+
+}
+
 .icons{
     display: flex;
-    width: 100%;
+    width: 80%;
     height: 20%;
     align-items: center;
 }
 
 /* ícone em si */
 .iconList{
-    height: 100%;
-    /* width: 60%; */
+    height: 60%;
     margin-right: 15px;
 }
 
 .valueStyled{
-    font-size: 16px;
+    font-size: 14px;
+    width: 40px;
     font-family: sans-serif, Univers LT;
     color: #676767;
     font-stretch: condensed;
@@ -409,6 +414,8 @@ ul{
 
 .rightSide{
     width: 90%;
+    height: 90%;
+    padding-top: 7px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -417,7 +424,7 @@ ul{
 
 .thePurples{
     display: flex;
-    height: 100%;
+    height: 95%;
     width: 5%;
     flex-direction: column;
     justify-content: center;
