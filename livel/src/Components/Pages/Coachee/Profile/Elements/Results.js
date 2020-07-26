@@ -145,18 +145,16 @@ export default function Results(props){
                         <div className="resultBars" >
                             <div className="topicMove">
 
-                                {/* <ResponsiveContainer width="80%" height="70%"> */}
                                     <BarChart
                                         data={[
                                             {x: 'forcaBefore', y: lastforca, color: '#C6BBCE'},
                                             {x: 'forcaAfter', y: currentforca, color: '#532166'}
                                         ]}
-                                            width= { 110 }
-                                            height={85}
+                                            width= { 105 }
+                                            height={75}
                                             margin={{top: 0, right: 0, bottom: 0, left: 0}}
                                             yDomainRange={[0, 200]}
                                         />
-                                {/* </ResponsiveContainer> */}
 
                                 <div className="currentAmount"> {currentforca} </div>
                                 <div className="lastAmount"> {lastforca} </div>
@@ -195,8 +193,8 @@ export default function Results(props){
                                         {x: 'cardioBefore', y: lastcardio, color: '#C6BBCE'},
                                         {x: 'cardioAfter', y: currentcardio, color: '#532166'},
                                     ]}
-                                    width= { 110 }
-                                    height={85}
+                                    width= { 105 }
+                                    height={75}
                                     margin={{top: 0, right: 0, bottom: 0, left: 0}}
                                     yDomainRange={[0, 4000]}
                                 />
@@ -240,8 +238,8 @@ export default function Results(props){
                                         {x: 'pesoBefore', y: lastpeso, color: '#C6BBCE'},
                                         {x: 'pesoAfter', y: currentpeso, color: '#532166'},
                                     ]}
-                                        width= { 110 }
-                                        height={85}
+                                        width= { 105 }
+                                        height={75}
                                         margin={{top: 0, right: 0, bottom: 0, left: 0 }}
                                         yDomainRange={[0, 200]}
                                     />

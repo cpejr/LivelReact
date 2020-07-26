@@ -27,9 +27,11 @@ export default function Profile(){
 
             </div>
             
-            <Link type="button" to="/trainingTypes">
-                <ExitButton />
-            </Link>
+            <div className="exitButton">
+                <Link type="button" to="/trainingTypes">
+                    <ExitButton />
+                </Link>
+            </div>
         </div>
     )
 
