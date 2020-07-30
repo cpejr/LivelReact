@@ -150,8 +150,9 @@ export default function MidTraining() {
             </div>
             <div className="footer">
                 <button type="button" className="buttonAdvance" onClick={advance}>
-                    <div>
-                        AVANÇAR
+                    <div  onClick={()=>setisModalVisible(!isModalVisible)} >
+                        {/* Coloca o pop-up ali em cima */}
+                        FINALIZAR
                     </div>
                 </button>
             </div>

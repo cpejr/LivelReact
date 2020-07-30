@@ -74,8 +74,9 @@
 .countinginfo{
     
     margin-left: 25%;
-    font-size: 22px;
+    font-size: 25px;
     font-weight: bold;
+    width: max-content;
 }
 
 .counting{
