@@ -84,7 +84,7 @@ export default function MidTraining() {
                             Atividade
                     </div>
                         <div className="countinginfo">
-                            5  min
+                            5 min
                         </div>
                     </div>
                     <div className="counting">
@@ -107,7 +107,7 @@ export default function MidTraining() {
                         <div className="boxtitle">
                             Pausa
                     </div>
-                        <div className="countinginfo">
+                        <div id = "seg" className="countinginfo">
                             10 seg
                         </div>
                     </div>
