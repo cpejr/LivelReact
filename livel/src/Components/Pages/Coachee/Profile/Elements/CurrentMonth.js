@@ -19,32 +19,32 @@ let score = '55';
 const biceps = {
     value: '30 cm',
     description: 'bíceps',
-    bottom: '150px',
-    left: '-40px',
+    bottom: '72%',
+    left: '81%',
 }
 const coxa = {
     value: '30 cm',
     description: 'coxa',
-    left: '-186px',
-    bottom: '-60px',
+    left: '0%',
+    bottom: '32%',
 }
 const cintura = {
     value: '30 cm',
     description: 'cintura',
-    bottom: '35px',
-    left: '-187px',
+    bottom: '57%',
+    left: '0%',
 }
 const pescoco = {
     value: '30 cm',
     description: 'pescoço',
-    left: '-187px',
-    bottom: '127px',
+    left: '0%',
+    bottom: '80%',
 }
 const quadril = {
     value: '30 cm',
     description: 'quadril',
-    left: '-40px',
-    bottom: '-66px',
+    left: '81%',
+    bottom: '48%',
 }
 
 
@@ -53,7 +53,7 @@ function descriptionStyle(style_bottom, style_left){
         bottom: style_bottom,
         left: style_left,
         width: '60px',
-        position: 'relative',
+        position: 'absolute',
         fontSize: '9px',
         fontFamily: 'sans-serif, Univers LT',
         fontStretch: 'condensed',
@@ -106,7 +106,6 @@ const BigPurple = { img:'/images/profile/purpleL.png',
 
 
 
-
 const listaLeft = [Peso, Gordura, Alongamento, Altura ];
 const listaRight = [Corrida, Abdominais, Flexao, Barra,]
 
@@ -116,26 +115,25 @@ class MonthlyResultImages extends Component {
     render() {
         return (
         <>
-            <div className="imagesContainer">
                 {/* parte de cima */}
                 <div className="bodyData" >
 
                     <div className="bodyAlign">
-                        <img src={BodyResult.img} alt='bodyResults' className="BodyResultClass" />
-                        <div className="bodyMeasures">
-                            { bodySubtitles.map(part => {
-                                return (
-                                    <div style={descriptionStyle(part.bottom, part.left)} >
-                                        <span className="valueSubtitles">
-                                            {part.value}
-                                        </span>
-                                        <p className="bodyPart">
-                                            {part.description}
-                                        </p>  
-                                    </div>
-                                )
-                            }
-                            )}
+                        <div className="responsiveBody">
+                            <img src={BodyResult.img} alt='bodyResults' className="BodyResultClass"/>
+                                { bodySubtitles.map(part => {
+                                    return (
+                                        <div style={descriptionStyle(part.bottom, part.left)} >
+                                            <span className="valueSubtitles">
+                                                {part.value}
+                                            </span>
+                                            <p className="bodyPart">
+                                                {part.description}
+                                            </p> 
+                                        </div>
+                                    )
+                                }
+                                )}
                         </div>
                     </div>
 
@@ -144,14 +142,14 @@ class MonthlyResultImages extends Component {
                 <div className="mainData">
 
                     <div className="leftSide">
-                        <ul className="LeftList"> 
+                        <ul className="list"> 
                             {listaLeft.map(left =>{
                                 return(
-                                    <li className="leftIcons">
+                                    <li className="icons">
                                         <img className="iconList" alt='iconlist' src={left.img} />
-                                        <div className="valueList">
+                                        <span className="valueStyled">
                                             {left.value}
-                                        </div>
+                                        </span>
                                     </li>
                                 )
                             }
@@ -161,40 +159,41 @@ class MonthlyResultImages extends Component {
 
                     </div>
                     
-                    <div className="thePurples">
-                        <img className="littlePurple" alt='purpleDivider' src={LittlePurple.img} />
-                        <img className="bigPurple" alt='purpleDivider' src={BigPurple.img} />
-                        <strong className="purpleScore">Score total: {score}</strong>
-                        {/* <div className="purpleScoreAmount"></div> */}
-                    </div>
 
-                    <div className="rightSide">
-                        <ul className="RightList">
-                            {listaRight.map(right =>{
-                                    return(
-                                        <li className="rightIcons">
-                                            <img className="iconList" alt='iconList' src={right.img} />
-                                            <span className="valueStyled">
-                                                {right.value}
-                                            </span>
-                                            <span className="timeSubtitles">
-                                                {right.time} 
-                                            </span>
-                                        </li>
-                                    )
-                                }
-                            )}
+                    <div className="right">
+                        <div className="thePurples">
+                            <img className="littlePurple" alt='purpleDivider' src={LittlePurple.img} />
+                            <img className="bigPurple" alt='purpleDivider' src={BigPurple.img} />
+                            <strong className="purpleScore">Score total: {score}</strong>
+                            {/* <div className="purpleScoreAmount"></div> */}
+                        </div>
 
-                        </ul>
+                        <div className="rightSide">
+                            <ul className="list">
+                                {listaRight.map(right =>{
+                                        return(
+                                            <li className="icons">
+                                                <img className="iconList" alt='iconList' src={right.img} />
+                                                <span className="valueStyled">
+                                                    {right.value}
+                                                </span>
+                                                <span className="timeSubtitles">
+                                                    {right.time} 
+                                                </span>
+                                            </li>
+                                        )
+                                    }
+                                )}
+
+                            </ul>
+                        </div>
                     </div>
 
                 </div>
-            </div>
         </>
         );
     }
 }
-
 
 
 export default function CurrentMonthResult(props){

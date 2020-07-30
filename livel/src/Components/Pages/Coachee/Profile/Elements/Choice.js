@@ -1,11 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
-
 import '../Profile.css'
-
-
 
 const Tab = styled.button`
     background: #E6E6E6;
@@ -16,9 +12,9 @@ const Tab = styled.button`
     cursor: pointer;
     text-align: center;
     width: 33%;
-    font-size: 11px;
+    font-size: 12px;
     font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
+    /* font-stretch: condensed; */
     color: #231F20;
     height: 100%;
     ${({ active}) =>
@@ -26,7 +22,6 @@ const Tab = styled.button`
     `
     font-size: 12px;
     font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
     font-weight: bold;
     color: #532166;
     background: white;
