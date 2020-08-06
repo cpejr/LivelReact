@@ -84,7 +84,7 @@ export default function MidTraining() {
                             Atividade
                     </div>
                         <div className="countinginfo">
-                            5  min
+                            5 min
                         </div>
                     </div>
                     <div className="counting">
@@ -107,7 +107,7 @@ export default function MidTraining() {
                         <div className="boxtitle">
                             Pausa
                     </div>
-                        <div className="countinginfo">
+                        <div id = "seg" className="countinginfo">
                             10 seg
                         </div>
                     </div>
@@ -150,8 +150,9 @@ export default function MidTraining() {
             </div>
             <div className="footer">
                 <button type="button" className="buttonAdvance" onClick={advance}>
-                    <div>
-                        AVANÇAR
+                    <div  onClick={()=>setisModalVisible(!isModalVisible)} >
+                        {/* Coloca o pop-up ali em cima */}
+                        FINALIZAR
                     </div>
                 </button>
             </div>

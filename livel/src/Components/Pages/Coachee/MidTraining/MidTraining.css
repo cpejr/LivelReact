@@ -65,16 +65,18 @@
 
 .boxtitle{
     margin-top: 10%;
-    margin-left: 20%;
+    margin-left: 18%;
     color: #632467;
     font-weight: bold;
+    font-size: 22px;
 }
 
 .countinginfo{
     
-    margin-left: 20%;
-    font-size: 30px;
+    margin-left: 25%;
+    font-size: 25px;
     font-weight: bold;
+    width: max-content;
 }
 
 .counting{
@@ -137,4 +139,8 @@
     justify-content: center;
     align-items: baseline;
     flex-direction: row;
+}
+
+#seg{
+    margin-left: 22% !important;
 }
