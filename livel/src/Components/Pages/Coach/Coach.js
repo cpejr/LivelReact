@@ -6,6 +6,9 @@ import './Coach.css'
 
 import HeaderCoach from './Elements/Header';
 import HourBox from './Elements/HourBox';
+import { SwipeableList, SwipeableListItem } from '@sandstreamdev/react-swipeable-list';
+import '@sandstreamdev/react-swipeable-list/dist/styles.css';
+
 
 
 const PROFESSOR_HORARIOS = {
@@ -114,9 +117,11 @@ export default function Coach(){
         
         <div className="headerContainer">
             <HeaderCoach img={true} name={true} position={true} data={PROFESSOR_HORARIOS} />
+            
         </div>
-        
-         <HourBox data={PROFESSOR_HORARIOS} />  
+
+        <HourBox data={PROFESSOR_HORARIOS} /> 
+    
  
         {/* <Coachee active={active} setActive={setActive} /> */}
     </div>

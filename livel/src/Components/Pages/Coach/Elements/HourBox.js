@@ -2,6 +2,8 @@ import React, { Component, useState } from "react";
 import { useSpring } from "react-spring";
 import Coachee from "./Coachee";
 import Switch from "react-switch";
+import { SwipeableList, SwipeableListItem } from '@sandstreamdev/react-swipeable-list';
+import '@sandstreamdev/react-swipeable-list/dist/styles.css';
 
 
 /* Vermelho do coach: 
@@ -43,6 +45,26 @@ class ToggleButton extends Component {
             </div>
         );
     }
+}
+
+function Swipe(){
+    return(
+    <SwipeableList className = "swipeList">
+    <SwipeableListItem
+        swipeLeft={{
+  content: <div>Revealed content during swipe</div>,
+  action: () => console.info('swipe action triggered')
+        }}
+        swipeRight={{
+    content: <div>Revealed content during swipe</div>,
+    action: () => console.info('swipe action triggered')
+}}
+onSwipeProgress={progress => console.info(`Swipe progress: ${progress}%`)}>
+    <div> Escreva aqui </div>
+</SwipeableListItem>
+</SwipeableList>)
+   
+
 }
 
 
