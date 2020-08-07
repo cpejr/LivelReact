@@ -106,12 +106,14 @@
     background: #4a1768;
     color: #fff;
     padding: 10px 20px;
+    z-index: 10;
 }
 
 .secondIconSwipeLeft{
     background: #e0dbe2;
     color: #4a1768;
     padding: 10px 20px;
+    z-index: 10;
 }
 
 
