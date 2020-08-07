@@ -1,6 +1,7 @@
 import React, { Component, useState } from "react";
 // Teste icons
-import { FaArrowsAltH, FaTrashAlt, FaCheck } from "react-icons/fa";
+import { FaArrowsAltH, FaTrashAlt, FaCheck, FaAngleRight } from "react-icons/fa";
+
 
 import PopUp from './PopUp/PopUp';
 
@@ -24,10 +25,22 @@ class LivelOne extends Component {
     }
 }
 
-const Restricao = "/images/Coach/restricao.png";
+const Restricao = "/images/Coach/restricao2.svg";
 
 const Aerobico = "/images/Coach/aerobico.png";
 
+function Train_ID2Style(Train_ID){
+    if (Train_ID === 1) {
+        /* return "Superior";  Vermelha*/
+        return {color:'#FF0000', borderColor:'#FF0000'}
+    } else if (Train_ID === 2) {
+        /* return "Inferior"; Cinza */
+        return {color:'#ADB4B5',borderColor: '#ADB4B5'}
+    } else if (Train_ID === 3) {
+        /* return "Resutado"; Verde */
+        return {color:'#61A64C', borderColor:'#61A64C'}
+    }
+}
 
 function Train_ID2Name(Train_ID) {
     if (Train_ID === 1) {
@@ -40,6 +53,7 @@ function Train_ID2Name(Train_ID) {
         return "Ferrou";
     }
 }
+
 
 function swipeLeftIcons({isModalVisible, setisModalVisible}) {
     const iconsSize = 25;
@@ -77,65 +91,63 @@ function AllCoachees(props) {
     const [isModalVisible, setisModalVisible] = useState(false);
 
     return (
-        <>  
-            <PopUp />
-            <div className="PopUp">
-                    {isModalVisible ? <PopUp /> : null}
-            </div>
-
-            <SwipeableListItem
-                blockSwipe={false}
-                threshold={0.1}
-    /*             scrollStartThreshold= {0.2} Acredito que nao ta funnfando
-                swipeStartThreshold= {0.2} */
-                swipeLeft={{
-                    content: swipeLeftIcons(isModalVisible, setisModalVisible),
-                    action: () => console.info("swipe action triggered"),
-                    actionAnimation: ActionAnimations["NONE"],
-                }}
-                swipeRight={{
-                    content: swipeRightIcons(),
-                    action: () => console.info("swipe action triggered"),
-                    actionAnimation: ActionAnimations["NONE"],
-                }}
-                onSwipeProgress={(progress) =>
-                    progress > 50 ? (progress = 50) : progress
-                }
-            >
-                {/* console.info(`Swipe progress: ${progress}%`) */}
-                <img
-                    src={props.person.TreinoAlunoFoto}
-                    alt="imagem coachee"
-                    className="fotoCoachee"
-                />
-
-                <div className="coacheeInfo">
-                    <div className="writtenInfos">
-                        <div className="coacheeName">
-                            {props.person.TreinoAlunoNome}
-                        </div>
-                        <div className="coacheeExercise">
-                            {Train_ID2Name(props.person.TreinoTipoID)}
-                        </div>
+        // <div className="coacheeContainer">
+        <PopUp />
+        <div className="PopUp">
+                {isModalVisible ? <PopUp /> : null}
+        </div>
+        <SwipeableListItem
+            blockSwipe={false}
+            threshold={0.1}
+/*             scrollStartThreshold= {0.2} Acredito que nao ta funnfando
+            swipeStartThreshold= {0.2} */
+            swipeLeft={{
+                content: swipeLeftIcons(),
+                action: () => console.info("swipe action triggered"),
+                actionAnimation: ActionAnimations["NONE"],
+            }}
+            swipeRight={{
+                content: swipeRightIcons(),
+                action: () => console.info("swipe action triggered"),
+                actionAnimation: ActionAnimations["NONE"],
+            }}
+            onSwipeProgress={(progress) =>
+                progress > 50 ? (progress = 50) : progress
+            }
+        >
+            {/* console.info(`Swipe progress: ${progress}%`) */}
+            <img
+                src={props.person.TreinoAlunoFoto}
+                alt="imagem coachee"
+                className="fotoCoachee"
+                 style={Train_ID2Style(props.person.TreinoTipoID)}
+            />
+            <div className="coacheeInfo">
+                <div className="writtenInfos">
+                    <div className="coacheeName">
+                        {props.person.TreinoAlunoNome}
+                    </div>
+                    <div className="coacheeExercise" style={Train_ID2Style(props.person.TreinoTipoID)}>
+                        {Train_ID2Name(props.person.TreinoTipoID)}
                     </div>
 
-                    <div className="coachee_icons">
-                        {props.person.TreinoAlunoTipo === 1 && <LivelOne />}
-                        {props.person.TreinoAlunoRestricoes !== 0 && (
-                            <img
-                                src={Restricao}
-                                alt="imagem coachee"
-                                className="coacheeIcons"
-                            />
-                        )}
-                        {props.person.TreinoTipoID === 3 && (
-                            <img
-                                src={Aerobico}
-                                alt="imagem coachee"
-                                className="coacheeIcons"
-                            />
-                        )}
-                    </div>
+                <div className="coachee_icons">
+                    {props.person.TreinoAlunoTipo === 1 && <LivelOne />}
+                    {props.person.TreinoAlunoRestricoes !== 0 && (
+                        <img
+                            src={Restricao}
+                            alt="imagem coachee"
+                            className="coacheeIcons"
+                        />
+                    )}
+                    {props.person.TreinoTipoID === 3 && (
+                        <img
+                            src={Aerobico}
+                            alt="imagem coachee"
+                            className="coacheeIcons"
+                        />
+                    )}
+                   <FaAngleRight size={20} color='#ADB4B5'/>
                 </div>
             </SwipeableListItem>
         </>

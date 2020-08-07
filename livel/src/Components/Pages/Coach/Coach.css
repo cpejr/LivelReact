@@ -184,6 +184,10 @@
     justify-content: space-around;
     margin-right: 10px;
     align-items: center;
+
+    font-weight:bolder;
+    font-size: large;
+    color:'#ADB4B5'!important;
 }
 
 .coacheeIcons{
