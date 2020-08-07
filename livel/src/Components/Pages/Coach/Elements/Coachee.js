@@ -1,11 +1,13 @@
-import React, { Component } from "react";
-
+import React, { Component, useState } from "react";
 // Teste icons
-import { FaArrowsAltH, FaTrashAlt, FaCheck } from 'react-icons/fa';
+import { FaArrowsAltH, FaTrashAlt, FaCheck } from "react-icons/fa";
 
 //  Teste
-import { SwipeableListItem } from '@sandstreamdev/react-swipeable-list';
-import '@sandstreamdev/react-swipeable-list/dist/styles.css';
+import {
+    SwipeableListItem,
+    ActionAnimations,
+} from "@sandstreamdev/react-swipeable-list";
+import "@sandstreamdev/react-swipeable-list/dist/styles.css";
 
 class LivelOne extends Component {
     render() {
@@ -36,52 +38,60 @@ function Train_ID2Name(Train_ID) {
     }
 }
 
-function swipeLeftIcons(){
+function swipeLeftIcons() {
     const iconsSize = 25;
 
     return (
         <div className="swipeLeft">
             {/* Primeiro ícone - duas setas */}
             <div className="fistIconSwipeLeft">
-                <FaArrowsAltH size={iconsSize}/>
+                <FaArrowsAltH size={iconsSize} />
             </div>
 
             {/* Segundo ícone - Lixeira */}
             <div className="secondIconSwipeLeft">
-                <FaTrashAlt size={iconsSize}/>
+                <FaTrashAlt size={iconsSize} />
             </div>
         </div>
     );
 }
 
-function swipeRightIcons(){
+function swipeRightIcons() {
     const iconsSize = 25;
 
     return (
         <div className="swipeRight">
             {/* Primeiro ícone - Check */}
             <div className="fistIconSwipeRigth">
-                <FaCheck size={iconsSize}/>
+                <FaCheck size={iconsSize} />
             </div>
         </div>
     );
 }
-
+ 
 function AllCoachees(props) {
     return (
         // <div className="coacheeContainer">
         <SwipeableListItem
+            blockSwipe={false}
+            threshold={0.1}
+/*             scrollStartThreshold= {0.2} Acredito que nao ta funnfando
+            swipeStartThreshold= {0.2} */
             swipeLeft={{
-    content: swipeLeftIcons() ,
-    action: () => console.info('swipe action triggered')
+                content: swipeLeftIcons(),
+                action: () => console.info("swipe action triggered"),
+                actionAnimation: ActionAnimations["NONE"],
             }}
             swipeRight={{
-        content: swipeRightIcons(),
-        action: () => console.info('swipe action triggered')
-    }}
-    onSwipeProgress={progress => progress > 50 ? progress = 50: progress}
-    >
-        {/* console.info(`Swipe progress: ${progress}%`) */}
+                content: swipeRightIcons(),
+                action: () => console.info("swipe action triggered"),
+                actionAnimation: ActionAnimations["NONE"],
+            }}
+            onSwipeProgress={(progress) =>
+                progress > 50 ? (progress = 50) : progress
+            }
+        >
+            {/* console.info(`Swipe progress: ${progress}%`) */}
             <img
                 src={props.person.TreinoAlunoFoto}
                 alt="imagem coachee"
