@@ -1,6 +1,7 @@
 import React, { Component, useState } from "react";
 // Teste icons
-import { FaArrowsAltH, FaTrashAlt, FaCheck } from "react-icons/fa";
+import { FaArrowsAltH, FaTrashAlt, FaCheck, FaAngleRight } from "react-icons/fa";
+
 
 //  Teste
 import {
@@ -22,7 +23,7 @@ class LivelOne extends Component {
     }
 }
 
-const Restricao = "/images/Coach/restricao.png";
+const Restricao = "/images/Coach/restricao2.svg";
 
 const Aerobico = "/images/Coach/aerobico.png";
 
@@ -35,6 +36,19 @@ function Train_ID2Name(Train_ID) {
         return "Resutado";
     } else {
         return "Ferrou";
+    }
+}
+
+function Train_ID2Style(Train_ID){
+    if (Train_ID === 1) {
+        /* return "Superior";  Vermelha*/
+        return {color:'#FF0000', borderColor:'#FF0000'}
+    } else if (Train_ID === 2) {
+        /* return "Inferior"; Cinza */
+        return {color:'#ADB4B5',borderColor: '#ADB4B5'}
+    } else if (Train_ID === 3) {
+        /* return "Resutado"; Verde */
+        return {color:'#61A64C', borderColor:'#61A64C'}
     }
 }
 
@@ -96,14 +110,14 @@ function AllCoachees(props) {
                 src={props.person.TreinoAlunoFoto}
                 alt="imagem coachee"
                 className="fotoCoachee"
+                 style={Train_ID2Style(props.person.TreinoTipoID)}
             />
-
             <div className="coacheeInfo">
                 <div className="writtenInfos">
                     <div className="coacheeName">
                         {props.person.TreinoAlunoNome}
                     </div>
-                    <div className="coacheeExercise">
+                    <div className="coacheeExercise" style={Train_ID2Style(props.person.TreinoTipoID)}>
                         {Train_ID2Name(props.person.TreinoTipoID)}
                     </div>
                 </div>
@@ -124,6 +138,7 @@ function AllCoachees(props) {
                             className="coacheeIcons"
                         />
                     )}
+                   <FaAngleRight size={20} color='#ADB4B5'/>
                 </div>
             </div>
         </SwipeableListItem>
