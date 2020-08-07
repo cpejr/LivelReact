@@ -4,6 +4,7 @@ import { FaArrowsAltH, FaTrashAlt, FaCheck, FaAngleRight } from "react-icons/fa"
 
 
 import PopUp from './PopUp/PopUp';
+import PopUp2 from './PopUpResultadoRegistra/PopUp';
 
 //  Teste
 import {
@@ -55,7 +56,7 @@ function Train_ID2Name(Train_ID) {
 }
 
 
-function swipeLeftIcons({isModalVisible, setisModalVisible}) {
+function swipeLeftIcons() {
     const iconsSize = 25;
 
     return (
@@ -91,11 +92,12 @@ function AllCoachees(props) {
     const [isModalVisible, setisModalVisible] = useState(false);
 
     return (
-        // <div className="coacheeContainer">
-        <PopUp />
-        <div className="PopUp">
+        <>
+        {/* <PopUp /> */}
+        <PopUp2 />
+        {/* <div className="PopUp">
                 {isModalVisible ? <PopUp /> : null}
-        </div>
+        </div> */}
         <SwipeableListItem
             blockSwipe={false}
             threshold={0.1}
@@ -115,7 +117,7 @@ function AllCoachees(props) {
                 progress > 50 ? (progress = 50) : progress
             }
         >
-            {/* console.info(`Swipe progress: ${progress}%`) */}
+            
             <img
                 src={props.person.TreinoAlunoFoto}
                 alt="imagem coachee"
@@ -130,6 +132,7 @@ function AllCoachees(props) {
                     <div className="coacheeExercise" style={Train_ID2Style(props.person.TreinoTipoID)}>
                         {Train_ID2Name(props.person.TreinoTipoID)}
                     </div>
+                </div>
 
                 <div className="coachee_icons">
                     {props.person.TreinoAlunoTipo === 1 && <LivelOne />}
@@ -147,8 +150,9 @@ function AllCoachees(props) {
                             className="coacheeIcons"
                         />
                     )}
-                   <FaAngleRight size={20} color='#ADB4B5'/>
+                    <FaAngleRight size={20} color='#ADB4B5'/>
                 </div>
+            </div>
             </SwipeableListItem>
         </>
     );
