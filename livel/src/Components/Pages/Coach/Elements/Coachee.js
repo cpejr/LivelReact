@@ -79,8 +79,9 @@ function AllCoachees(props) {
         content: swipeRightIcons(),
         action: () => console.info('swipe action triggered')
     }}
-    onSwipeProgress={progress => console.info(`Swipe progress: ${progress}%`)}
+    onSwipeProgress={progress => progress > 50 ? progress = 50: progress}
     >
+        {/* console.info(`Swipe progress: ${progress}%`) */}
             <img
                 src={props.person.TreinoAlunoFoto}
                 alt="imagem coachee"

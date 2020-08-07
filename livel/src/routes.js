@@ -43,7 +43,7 @@ export default function Routes(){
               <Route path="/testando" exact component={PaginaTeste} /> 
 
               <Route path="/" exact component={Home} />
-              <Route path="/login" exact component={Login} />
+              <Route path="/login" exact component={Login}/>
               <Route path="/signup" exact component={SignUp} />
               <Route path="/requestNumber" exact component={RequestNumber} />
               {/* <Route path="/forgetpassword" exact component={ForgetPassword} /> */}
