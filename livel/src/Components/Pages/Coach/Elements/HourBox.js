@@ -50,21 +50,19 @@ class ToggleButton extends Component {
 function Swipe(){
     return(
     <SwipeableList className = "swipeList">
-    <SwipeableListItem
-        swipeLeft={{
-  content: <div>Revealed content during swipe</div>,
-  action: () => console.info('swipe action triggered')
-        }}
-        swipeRight={{
+        <SwipeableListItem
+            swipeLeft={{
     content: <div>Revealed content during swipe</div>,
     action: () => console.info('swipe action triggered')
-}}
-onSwipeProgress={progress => console.info(`Swipe progress: ${progress}%`)}>
-    <div> Escreva aqui </div>
-</SwipeableListItem>
-</SwipeableList>)
-   
-
+            }}
+            swipeRight={{
+        content: <div>Revealed content during swipe</div>,
+        action: () => console.info('swipe action triggered')
+    }}
+    onSwipeProgress={progress => console.info(`Swipe progress: ${progress}%`)}>
+        <div> Escreva aqui </div>
+        </SwipeableListItem>
+    </SwipeableList>);
 }
 
 
@@ -104,10 +102,15 @@ function HourBox(props) {
                     </div>
                 </div>
                 <div className="isItOnorOff">
+
+                {toggleOn && 
+                <SwipeableList className = "swipeList">
                     {props.time_info.Horario_Treinos.map((person, index) => (
                             toggleOn &&
                         <Coachee key={index}  data={person}/>
                     ))}
+                </SwipeableList>
+                }
                 </div>
             </div>
         </div>

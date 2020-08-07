@@ -1,5 +1,12 @@
 import React, { Component } from "react";
 
+// Teste icons
+import { FaArrowsAltH, FaTrashAlt, FaCheck } from 'react-icons/fa';
+
+//  Teste
+import { SwipeableListItem } from '@sandstreamdev/react-swipeable-list';
+import '@sandstreamdev/react-swipeable-list/dist/styles.css';
+
 class LivelOne extends Component {
     render() {
         return (
@@ -29,9 +36,51 @@ function Train_ID2Name(Train_ID) {
     }
 }
 
+function swipeLeftIcons(){
+    const iconsSize = 25;
+
+    return (
+        <div className="swipeLeft">
+            {/* Primeiro ícone - duas setas */}
+            <div className="fistIconSwipeLeft">
+                <FaArrowsAltH size={iconsSize}/>
+            </div>
+
+            {/* Segundo ícone - Lixeira */}
+            <div className="secondIconSwipeLeft">
+                <FaTrashAlt size={iconsSize}/>
+            </div>
+        </div>
+    );
+}
+
+function swipeRightIcons(){
+    const iconsSize = 25;
+
+    return (
+        <div className="swipeRight">
+            {/* Primeiro ícone - Check */}
+            <div className="fistIconSwipeRigth">
+                <FaCheck size={iconsSize}/>
+            </div>
+        </div>
+    );
+}
+
 function AllCoachees(props) {
     return (
-        <div className="coacheeContainer">
+        // <div className="coacheeContainer">
+        <SwipeableListItem
+            swipeLeft={{
+    content: swipeLeftIcons() ,
+    action: () => console.info('swipe action triggered')
+            }}
+            swipeRight={{
+        content: swipeRightIcons(),
+        action: () => console.info('swipe action triggered')
+    }}
+    onSwipeProgress={progress => console.info(`Swipe progress: ${progress}%`)}
+    >
             <img
                 src={props.person.TreinoAlunoFoto}
                 alt="imagem coachee"
@@ -66,7 +115,8 @@ function AllCoachees(props) {
                     )}
                 </div>
             </div>
-        </div>
+        </SwipeableListItem>
+        // </div>
     );
 }
 

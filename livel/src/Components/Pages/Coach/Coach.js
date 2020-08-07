@@ -6,8 +6,6 @@ import './Coach.css'
 
 import HeaderCoach from './Elements/Header';
 import HourBox from './Elements/HourBox';
-import { SwipeableList, SwipeableListItem } from '@sandstreamdev/react-swipeable-list';
-import '@sandstreamdev/react-swipeable-list/dist/styles.css';
 
 
 

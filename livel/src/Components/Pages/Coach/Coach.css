@@ -86,6 +86,35 @@
     letter-spacing: 0.05mm;
 }
 /* ---------------------Element Coachee Coach--------------------- */
+
+.swipeLeft{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.fistIconSwipeRigth{
+    background: #4a1768;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.swipeRight{
+    display: flex;
+    justify-content: center;
+}
+.fistIconSwipeLeft{
+    background: #4a1768;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.secondIconSwipeLeft{
+    background: #e0dbe2;
+    color: #4a1768;
+    padding: 10px 20px;
+}
+
+
 .coacheeInfo{
     margin: 0px;
     padding: 0px;
