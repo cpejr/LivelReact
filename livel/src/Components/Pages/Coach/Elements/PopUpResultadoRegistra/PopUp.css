@@ -11,59 +11,42 @@
     align-items: center;
 }
 
-.ContainerModal{
+.Modal .ContainerModal{
     background-color: rgb(248, 242, 242);
     color: #000;
     border: 1px solid #eee;
-    width: 85%;
-    height: 55%;
+    border-radius: 15px;
+    width: 70%;
+    min-width: fit-content;
+    height: 70%;
+    min-height: fit-content;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    
+    padding:10px
 }
 
-.titlePopUpChangeCoach{
+.Modal .ContainerModal .titleResultadoRegitra {
+    font-family: sans-serif;
+    font-size: 30px;
+}
+.Modal .ContainerModal .Form_treino div{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    justify-content:flex-end;
+    margin: 3px;
+}
+.Modal .ContainerModal .Form_treino div input {
+    border: 1px solid ;
+    border-radius: 4px;
+    margin-left: 9px;
 }
 
-.titlePopUpChangeCoach span{
-    font-size: 22px;
-    font-weight: 700;
-    color: #632467;
-    margin: 0;
-}
-
-.manyCoachs{
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-    gap: 15px;
-    padding: 10px;
-    margin-left: 20px;
-}
-
-.coachOption{
+.Modal .ContainerModal .button_submit {
     display: flex;
-    align-items: center;
-
+    justify-content: center !important;
 }
-
-.coachOption img {
-    width: 25px;
-    border-radius: 50%;
-    border: 3px solid #632467;
-    margin-right: 5px;
+.Modal .ContainerModal .button_submit .button{
+    font-family: sans-serif;
+    font: bolder;
 }
-
-.coachOption span {
-    font-size: 13px;
-    font-weight: 800;
-    color: #632467;
-}
-
-
-
