@@ -3,6 +3,12 @@ import { useSpring } from "react-spring";
 import Coachee from "./Coachee";
 import Switch from "react-switch";
 
+
+/* Vermelho do coach: 
+HEX : #ff7878
+RGB : 34, 20, 43
+HSL : 276, 36%, 12% 
+*/
 class ToggleButton extends Component {
     constructor() {
         super();
@@ -53,19 +59,23 @@ export default function Body(props) {
 function HourBox(props) {
     const [toggleOn, setToggleOn] = useState(false);
 
+
     const toggleOnAnimation = useSpring({
         opacity: toggleOn ? 1 : 0,
         transform: toggleOn ? `translateX(0)` : `translateX(100%)`,
     });
 
+    const colors = [ {backgroundColor:'#ff7878',color:'#fff'} , { color:'#632467'} ]
+
     return (
-        <div className="eachContainer">
+        <div className="eachContainer" style={toggleOn?colors[1]:colors[0]}>
             <div className="parent">
-                <div className="HourAndToggle">
+                <div className="HourAndToggle" >
                     <ToggleButton
                         className={`toggle-button`}
                         style={toggleOnAnimation}
                         setToggleOn={()=>(setToggleOn(!toggleOn))}
+                        
                     />
                     <div className="whatTimeIsIt">
                         {props.time_info.Horario}

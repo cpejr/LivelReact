@@ -55,6 +55,9 @@
 }
 
 /* ---------------------Element HourBox Coach--------------------- */
+.eachContainer{
+    margin-bottom:2vw;
+}
 .HourBoxIsOn{
     width: 100%;
     background-color: #ffffff;
@@ -81,7 +84,6 @@
     font-weight: bolder;
     font-stretch: extra-condensed;
     letter-spacing: 0.05mm;
-    color:#632467;
 }
 /* ---------------------Element Coachee Coach--------------------- */
 .coacheeInfo{
@@ -183,3 +185,7 @@
 }
 
 /* ---------------------Element ToggleSwitch Coach--------------------- */
+
+.react-switch{
+    border: 1px solid #632467;
+}
