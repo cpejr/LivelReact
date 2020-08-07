@@ -3,6 +3,8 @@ import React, { Component, useState } from "react";
 import { FaArrowsAltH, FaTrashAlt, FaCheck, FaAngleRight } from "react-icons/fa";
 
 
+import PopUp from './PopUp/PopUp';
+
 //  Teste
 import {
     SwipeableListItem,
@@ -27,18 +29,6 @@ const Restricao = "/images/Coach/restricao2.svg";
 
 const Aerobico = "/images/Coach/aerobico.png";
 
-function Train_ID2Name(Train_ID) {
-    if (Train_ID === 1) {
-        return "Superior";
-    } else if (Train_ID === 2) {
-        return "Inferior";
-    } else if (Train_ID === 3) {
-        return "Resutado";
-    } else {
-        return "Ferrou";
-    }
-}
-
 function Train_ID2Style(Train_ID){
     if (Train_ID === 1) {
         /* return "Superior";  Vermelha*/
@@ -52,13 +42,26 @@ function Train_ID2Style(Train_ID){
     }
 }
 
-function swipeLeftIcons() {
+function Train_ID2Name(Train_ID) {
+    if (Train_ID === 1) {
+        return "Superior";
+    } else if (Train_ID === 2) {
+        return "Inferior";
+    } else if (Train_ID === 3) {
+        return "Resutado";
+    } else {
+        return "Ferrou";
+    }
+}
+
+
+function swipeLeftIcons({isModalVisible, setisModalVisible}) {
     const iconsSize = 25;
 
     return (
         <div className="swipeLeft">
             {/* Primeiro ícone - duas setas */}
-            <div className="fistIconSwipeLeft">
+            <div className="fistIconSwipeLeft" onClick={ () => console.log('ahahahaha') }>
                 <FaArrowsAltH size={iconsSize} />
             </div>
 
@@ -84,8 +87,15 @@ function swipeRightIcons() {
 }
  
 function AllCoachees(props) {
+
+    const [isModalVisible, setisModalVisible] = useState(false);
+
     return (
         // <div className="coacheeContainer">
+        <PopUp />
+        <div className="PopUp">
+                {isModalVisible ? <PopUp /> : null}
+        </div>
         <SwipeableListItem
             blockSwipe={false}
             threshold={0.1}
@@ -120,7 +130,6 @@ function AllCoachees(props) {
                     <div className="coacheeExercise" style={Train_ID2Style(props.person.TreinoTipoID)}>
                         {Train_ID2Name(props.person.TreinoTipoID)}
                     </div>
-                </div>
 
                 <div className="coachee_icons">
                     {props.person.TreinoAlunoTipo === 1 && <LivelOne />}
@@ -140,15 +149,15 @@ function AllCoachees(props) {
                     )}
                    <FaAngleRight size={20} color='#ADB4B5'/>
                 </div>
-            </div>
-        </SwipeableListItem>
-        // </div>
+            </SwipeableListItem>
+        </>
     );
 }
 
 export default function Coachee(props) {
+
     return (
-        <>
+        <>  
             <AllCoachees person={props.data} />
         </>
     );
