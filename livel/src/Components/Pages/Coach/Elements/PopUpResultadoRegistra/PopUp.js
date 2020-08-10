@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 // import {FacebookShareButton} from "react-share"; // pro post do facebook
 
-import "./PopUp.css";
+import "./PopUpRegisterResult.css";
 
-export default function PopUp() {
+export default function PopUp({functionState}) {
     let metricasAluno = {
         AlunoID: "tetete",
         dataResultado: "07/08/2020",
@@ -25,6 +26,11 @@ export default function PopUp() {
     return (
         <div className="Modal">
             <div className="ContainerModal">
+                <div className="ClosePopUp2"
+                    onClick={() => functionState(false)}
+                >
+                    <AiFillCloseCircle size={35} />
+                </div>
                 <div className="titleResultadoRegitra">
                     <span>Registro do Treino</span>
                 </div>

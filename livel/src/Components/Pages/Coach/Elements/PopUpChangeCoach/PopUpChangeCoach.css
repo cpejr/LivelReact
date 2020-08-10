@@ -1,7 +1,7 @@
 .Modal{
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 10;
@@ -13,6 +13,7 @@
 
 .ContainerModal{
     background-color: rgb(248, 242, 242);
+    position: relative;
     color: #000;
     border: 1px solid #eee;
     width: 85%;
@@ -21,7 +22,16 @@
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+    box-sizing: border-box;
     
+}
+
+.ClosePopUp{
+    color: #632467; 
+    border-radius: 50%;
+    position: absolute; 
+    top: -2px; 
+    right: 0px; 
 }
 
 .titlePopUpChangeCoach{
@@ -35,13 +45,14 @@
     font-size: 22px;
     font-weight: 700;
     color: #632467;
-    margin: 0;
+    margin: 0 15px;
 }
 
 .manyCoachs{
     display: grid;
     grid-template-columns: 2fr 2fr;
-    gap: 15px;
+    column-gap: 10%;
+    row-gap: 15px;
     padding: 10px;
     margin-left: 20px;
 }

@@ -3,8 +3,8 @@ import React, { Component, useState } from "react";
 import { FaArrowsAltH, FaTrashAlt, FaCheck, FaAngleRight } from "react-icons/fa";
 
 
-import PopUp from './PopUp/PopUp';
-import PopUp2 from './PopUpResultadoRegistra/PopUp';
+import PopUpChangeCoach from './PopUpChangeCoach/PopUp';
+import PopUpRegisterResult from './PopUpResultadoRegistra/PopUp';
 
 //  Teste
 import {
@@ -56,13 +56,13 @@ function Train_ID2Name(Train_ID) {
 }
 
 
-function swipeLeftIcons() {
+function swipeLeftIcons(isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible) {
     const iconsSize = 25;
 
     return (
         <div className="swipeLeft">
             {/* Primeiro ícone - duas setas */}
-            <div className="fistIconSwipeLeft" onClick={ () => console.log('ahahahaha') }>
+            <div className="fistIconSwipeLeft" onClick={ () => setIsPopUpChangeCoachVisible(!isPopUpChangeCoachVisible) }>
                 <FaArrowsAltH size={iconsSize} />
             </div>
 
@@ -86,43 +86,56 @@ function swipeRightIcons() {
         </div>
     );
 }
- 
+
 function AllCoachees(props) {
 
-    const [isModalVisible, setisModalVisible] = useState(false);
+    const [isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible] = useState(false);
+
+    const [isPopUpRegisterResultVisible, setIsPopUpRegisterResultVisible] = useState(false);
+
+    const [isCheck, setIsCheck] = useState(false);
+
+    function function_check(isCheck){
+        setIsCheck(!isCheck);
+    }
 
     return (
         <>
-        {/* <PopUp /> */}
-        <PopUp2 />
-        {/* <div className="PopUp">
-                {isModalVisible ? <PopUp /> : null}
-        </div> */}
+        {/* <PopUp /> PopUp Trocar coach */}
+        {/* <PopUp2 /> PopUp RegistraResultado*/}
+        <div className="PopUp">
+                {isPopUpChangeCoachVisible ? <PopUpChangeCoach functionState = {setIsPopUpChangeCoachVisible}/> : null}
+                {isPopUpRegisterResultVisible ? <PopUpRegisterResult functionState = {setIsPopUpRegisterResultVisible}/> : null}
+        </div>
         <SwipeableListItem
             blockSwipe={false}
             threshold={0.1}
 /*             scrollStartThreshold= {0.2} Acredito que nao ta funnfando
             swipeStartThreshold= {0.2} */
             swipeLeft={{
-                content: swipeLeftIcons(),
+                content: swipeLeftIcons(isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible),
                 action: () => console.info("swipe action triggered"),
                 actionAnimation: ActionAnimations["NONE"],
             }}
             swipeRight={{
                 content: swipeRightIcons(),
-                action: () => console.info("swipe action triggered"),
-                actionAnimation: ActionAnimations["NONE"],
+                action: () => function_check(isCheck),
+                actionAnimation: ActionAnimations["RETURN"],
             }}
             onSwipeProgress={(progress) =>
                 progress > 50 ? (progress = 50) : progress
             }
         >
+
+            {isCheck &&
+                        <FaCheck size={25} style={{margin:'0 10px'}}/>}
             
             <img
                 src={props.person.TreinoAlunoFoto}
                 alt="imagem coachee"
                 className="fotoCoachee"
-                 style={Train_ID2Style(props.person.TreinoTipoID)}
+                style={Train_ID2Style(props.person.TreinoTipoID)}
+                onClick={ () => setIsPopUpRegisterResultVisible(!isPopUpRegisterResultVisible) }
             />
             <div className="coacheeInfo">
                 <div className="writtenInfos">
@@ -134,7 +147,7 @@ function AllCoachees(props) {
                     </div>
                 </div>
 
-                <div className="coachee_icons">
+                <div className="coachee_icons" >
                     {props.person.TreinoAlunoTipo === 1 && <LivelOne />}
                     {props.person.TreinoAlunoRestricoes !== 0 && (
                         <img

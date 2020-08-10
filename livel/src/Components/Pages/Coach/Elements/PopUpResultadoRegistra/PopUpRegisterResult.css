@@ -12,6 +12,7 @@
 }
 
 .Modal .ContainerModal{
+    position: absolute;
     background-color: rgb(248, 242, 242);
     color: #000;
     border: 1px solid #eee;
@@ -25,6 +26,14 @@
     align-items: center;
     flex-direction: column;
     padding:10px
+}
+
+.ClosePopUp2{
+    color: #632467; 
+    border-radius: 50%;
+    position: absolute; 
+    top: -2px; 
+    right: 50px; 
 }
 
 .Modal .ContainerModal .titleResultadoRegitra {

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 // import {FacebookShareButton} from "react-share"; // pro post do facebook
 
-import "./PopUp.css";
+import "./PopUpChangeCoach.css";
 
 
-export default function PopUp() {
+export default function PopUp({functionState}) {
 
     let coachArray = [
         {
@@ -47,9 +48,15 @@ export default function PopUp() {
     return (
         <div className="Modal">
             <div className="ContainerModal">
+                <div className="ClosePopUp"
+                    onClick={() => functionState(false)}
+                >
+                    <AiFillCloseCircle size={35} />
+                </div>
                 <div className="titlePopUpChangeCoach">
                     <span>Selecione o coach para transferir o treino:</span>
                 </div>
+
                 <div className="manyCoachs">
                     
                     {
