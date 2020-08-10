@@ -154,7 +154,7 @@ function AllCoachees(props) {
                 alt="imagem coachee"
                 className="fotoCoachee"
                 style={Train_ID2Style(props.person.TreinoTipoID)}
-                onClick={ () => console.log('fUAHAUHAUH') }
+                onClick={ () => setIsPopUpRegisterResultVisible(!isPopUpRegisterResultVisible)}
             />
             
             <div className="coacheeInfo">
