@@ -5,6 +5,7 @@ import { FaArrowsAltH, FaTrashAlt, FaCheck, FaAngleRight } from "react-icons/fa"
 
 import PopUpChangeCoach from './PopUpChangeCoach/PopUp';
 import PopUpRegisterResult from './PopUpResultadoRegistra/PopUp';
+import PopUpAlertDelete from './PopUpAlertDelete'
 
 //  Teste
 import {
@@ -56,7 +57,7 @@ function Train_ID2Name(Train_ID) {
 }
 
 
-function swipeLeftIcons(isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible) {
+function swipeLeftIcons(isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ) {
     const iconsSize = 25;
 
     return (
@@ -67,7 +68,7 @@ function swipeLeftIcons(isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible)
             </div>
 
             {/* Segundo ícone - Lixeira */}
-            <div className="secondIconSwipeLeft">
+            <div className="secondIconSwipeLeft" onClick={() => setIsPopUpAlertDelete(!isPopUpAlertDelete)}>
                 <FaTrashAlt size={iconsSize} />
             </div>
         </div>
@@ -93,6 +94,9 @@ function AllCoachees(props) {
 
     const [isPopUpRegisterResultVisible, setIsPopUpRegisterResultVisible] = useState(false);
 
+    const [isPopUpAlertDelete, setIsPopUpAlertDelete]= useState(false);
+
+
     const [isCheck, setIsCheck] = useState(false);
 
     function function_check(isCheck){
@@ -101,11 +105,11 @@ function AllCoachees(props) {
 
     return (
         <>
-        {/* <PopUp /> PopUp Trocar coach */}
-        {/* <PopUp2 /> PopUp RegistraResultado*/}
         <div className="PopUp">
                 {isPopUpChangeCoachVisible ? <PopUpChangeCoach functionState = {setIsPopUpChangeCoachVisible}/> : null}
                 {isPopUpRegisterResultVisible ? <PopUpRegisterResult functionState = {setIsPopUpRegisterResultVisible}/> : null}
+                {isPopUpAlertDelete ? <PopUpAlertDelete functionState = {setIsPopUpAlertDelete}/> : null}
+                
         </div>
         <SwipeableListItem
             blockSwipe={false}
@@ -113,7 +117,7 @@ function AllCoachees(props) {
 /*             scrollStartThreshold= {0.2} Acredito que nao ta funnfando
             swipeStartThreshold= {0.2} */
             swipeLeft={{
-                content: swipeLeftIcons(isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible),
+                content: swipeLeftIcons(isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ),
                 action: () => console.info("swipe action triggered"),
                 actionAnimation: ActionAnimations["NONE"],
             }}
