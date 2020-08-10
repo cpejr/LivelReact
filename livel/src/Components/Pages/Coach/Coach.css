@@ -92,6 +92,10 @@
 }
 /* ---------------------Element Coachee Coach--------------------- */
 
+.swipeable-list-item__content{
+    z-index: 11 !important;
+}
+
 /* Container pai do SwipeLeft */
 .swipeable-list-item__content-left{
     z-index: 10 !important;
@@ -150,7 +154,6 @@
 .fotoCoachee{
     height: 6vh;
     width: 6vh;
-    z-index: 15;
     border-radius: 50%;
     border: 3px solid #632467;
     margin:4px;
