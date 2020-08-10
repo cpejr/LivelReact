@@ -59,16 +59,26 @@ function Train_ID2Name(Train_ID) {
 
 function swipeLeftIcons(isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ) {
     const iconsSize = 25;
+    
+    function return_zIndexes(){
+        document.getElementsByClassName('swipeable-list-item__content')[0].style.zIndex=11 ;
+        document.getElementsByClassName('swipeable-list-item__content-left')[0].style.zIndex=-1;
+    }
 
     return (
-        <div className="swipeLeft">
+        <div className="swipeLeft" id="swp_left">
             {/* Primeiro ícone - duas setas */}
-            <div className="fistIconSwipeLeft" onClick={ () => setIsPopUpChangeCoachVisible(!isPopUpChangeCoachVisible) }>
+            <div className="fistIconSwipeLeft" onClick={ () =>{ 
+                return_zIndexes();
+                setIsPopUpChangeCoachVisible(!isPopUpChangeCoachVisible)}}>
                 <FaArrowsAltH size={iconsSize} />
             </div>
 
             {/* Segundo ícone - Lixeira */}
-            <div className="secondIconSwipeLeft" onClick={() => setIsPopUpAlertDelete(!isPopUpAlertDelete)}>
+            <div className="secondIconSwipeLeft" onClick={() =>{
+                return_zIndexes();
+                setIsPopUpAlertDelete(!isPopUpAlertDelete);
+            }}>
                 <FaTrashAlt size={iconsSize} />
             </div>
         </div>
@@ -103,6 +113,11 @@ function AllCoachees(props) {
         setIsCheck(!isCheck);
     }
 
+    function function_swipe_left(){
+        document.getElementsByClassName('swipeable-list-item__content')[0].style.zIndex=11 ;
+        document.getElementsByClassName('swipeable-list-item__content-left')[0].style.zIndex=10;
+    }
+
     return (
         <>
         <div className="PopUp">
@@ -114,11 +129,11 @@ function AllCoachees(props) {
         <SwipeableListItem
             blockSwipe={false}
             threshold={0.1}
-/*             scrollStartThreshold= {0.2} Acredito que nao ta funnfando
+            /* scrollStartThreshold= {0.2} Acredito que nao ta funnfando
             swipeStartThreshold= {0.2} */
             swipeLeft={{
                 content: swipeLeftIcons(isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ),
-                action: () => console.info("swipe action triggered"),
+                action: () => function_swipe_left(),
                 actionAnimation: ActionAnimations["NONE"],
             }}
             swipeRight={{

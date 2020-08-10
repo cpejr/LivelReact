@@ -92,19 +92,16 @@
 }
 /* ---------------------Element Coachee Coach--------------------- */
 
+/*  As duas coisas abaixo são pra deixar a beirada clicavel
 .swipeable-list-item__content{
     z-index: 11 !important;
-}
+}  */
 
 /* Container pai do SwipeLeft */
-.swipeable-list-item__content-left{
+/*  .swipeable-list-item__content-left{
     z-index: 10 !important;
-}
-
-.swipeable-list-item__content-right{
-    z-index: 10;
-}
-
+} */
+ 
 .swipeLeft{
     z-index: 10;
     display: flex;
