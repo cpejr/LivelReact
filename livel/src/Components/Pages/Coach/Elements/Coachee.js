@@ -56,6 +56,15 @@ function Train_ID2Name(Train_ID) {
     }
 }
 
+function Train_ID2Function(Train_ID,  setIsPopUpRegisterResultVisible){
+    if (Train_ID === 3) {
+    setIsPopUpRegisterResultVisible(true);
+    
+    } else {
+        return "Ferrou";
+    }
+}
+
 
 function swipeLeftIcons(isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ) {
     const iconsSize = 25;
@@ -154,7 +163,7 @@ function AllCoachees(props) {
                 alt="imagem coachee"
                 className="fotoCoachee"
                 style={Train_ID2Style(props.person.TreinoTipoID)}
-                onClick={ () => setIsPopUpRegisterResultVisible(!isPopUpRegisterResultVisible)}
+                onClick={() => Train_ID2Function(props.person.TreinoTipoID,setIsPopUpRegisterResultVisible)}
             />
             
             <div className="coacheeInfo">
