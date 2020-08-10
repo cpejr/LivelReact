@@ -29,12 +29,13 @@
     padding:10px
 }
 
-.ClosePopUp2{
+.ClosePopUp2 {
     color: #632467; 
     border-radius: 50%;
     position: absolute; 
-    top: -2px; 
-    right: 50px; 
+    top: -15px !important; 
+    right: 30px!important; 
+    background-color: white;
 }
 
 .Modal .ContainerModal .titleResultadoRegitra {
