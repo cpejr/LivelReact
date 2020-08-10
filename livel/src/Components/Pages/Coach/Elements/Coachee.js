@@ -5,7 +5,7 @@ import { FaArrowsAltH, FaTrashAlt, FaCheck, FaAngleRight } from "react-icons/fa"
 
 import PopUpChangeCoach from './PopUpChangeCoach/PopUp';
 import PopUpRegisterResult from './PopUpResultadoRegistra/PopUp';
-import PopUpAlertDelete from './PopUpAlertDelete'
+import PopUpAlertDelete from './PopUpAlertDelete/PopUp'
 
 //  Teste
 import {

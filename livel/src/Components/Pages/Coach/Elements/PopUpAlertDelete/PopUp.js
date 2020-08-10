@@ -6,7 +6,7 @@ import {FaExclamationTriangle} from 'react-icons/fa'
 
 // import {FacebookShareButton} from "react-share"; // pro post do facebook
 
-import "./PopUpRegisterResult.css";
+import "./PopUpAlertDelete.css";
 
 export default function PopUp({functionState}) {
 
