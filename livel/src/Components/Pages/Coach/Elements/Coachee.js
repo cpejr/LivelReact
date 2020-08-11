@@ -70,10 +70,18 @@ function swipeLeftIcons(isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible,
     const iconsSize = 25;
     
     function return_zIndexes(){
-        document.getElementsByClassName('swipeable-list-item__content')[0].style.zIndex=11 ;
-        document.getElementsByClassName('swipeable-list-item__content-left')[0].style.zIndex=-1;
-    }
+        let outsideContent = document.getElementsByClassName('swipeable-list-item__content');
+        let insideContent = document.getElementsByClassName('swipeable-list-item__content-left');
 
+        for (let item of outsideContent) {
+            item.style.zIndex=11;
+        }
+
+        for (let item of insideContent) {
+            item.style.zIndex=-1;
+        }
+    }
+ 
     return (
         <div className="swipeLeft" id="swp_left">
             {/* Primeiro ícone - duas setas */}
@@ -123,17 +131,24 @@ function AllCoachees(props) {
     }
 
     function function_swipe_left(){
-        document.getElementsByClassName('swipeable-list-item__content')[0].style.zIndex=11 ;
-        document.getElementsByClassName('swipeable-list-item__content-left')[0].style.zIndex=10;
+        let outsideContent = document.getElementsByClassName('swipeable-list-item__content');
+        let insideContent = document.getElementsByClassName('swipeable-list-item__content-left');
+
+        for (let item of outsideContent) {
+            item.style.zIndex = 11;
+        }
+
+        for (let item of insideContent) {
+            item.style.zIndex=10;
+        }
     }
 
     return (
         <>
         <div className="PopUp">
-                {isPopUpChangeCoachVisible ? <PopUpChangeCoach functionState = {setIsPopUpChangeCoachVisible}/> : null}
-                {isPopUpRegisterResultVisible ? <PopUpRegisterResult functionState = {setIsPopUpRegisterResultVisible}/> : null}
-                {isPopUpAlertDelete ? <PopUpAlertDelete functionState = {setIsPopUpAlertDelete}/> : null}
-                
+            {isPopUpChangeCoachVisible ? <PopUpChangeCoach functionState = {setIsPopUpChangeCoachVisible}/> : null}
+            {isPopUpRegisterResultVisible ? <PopUpRegisterResult functionState = {setIsPopUpRegisterResultVisible}/> : null}
+            {isPopUpAlertDelete ? <PopUpAlertDelete functionState = {setIsPopUpAlertDelete}/> : null}
         </div>
         <SwipeableListItem
             blockSwipe={false}
