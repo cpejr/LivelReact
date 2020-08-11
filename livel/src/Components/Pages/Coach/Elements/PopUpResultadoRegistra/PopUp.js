@@ -23,14 +23,15 @@ export default function PopUp({ functionState }) {
         Coxa: "",
     };
 
-    function funcao_enviar() {
-        console.log(metricasAluno);
+    function funcao_enviar(event) {
+        event.preventDefault();
+        //o objeto metricasAluno tá preenchido
     }
     return (
         <div className="Modal">
             <div className="ContainerModal">
                 <div
-                    className="ClosePopUp2"
+                    className="ClosePopUpRegister"
                     onClick={() => functionState(false)}
                 >
                     <AiFillCloseCircle size={35} />
@@ -90,7 +91,8 @@ export default function PopUp({ functionState }) {
                             id="alogamento"
                             name="inp_along"
                             onChange={(e) =>
-                                (metricasAluno.AlongamentoNivel = e.target.value)
+                                (metricasAluno.AlongamentoNivel =
+                                    e.target.value)
                             }
                         />
                     </div>
@@ -182,11 +184,12 @@ export default function PopUp({ functionState }) {
                             }
                         />
                     </div>
-                    <div className="button_submit">
                         <button
-                            onClick={funcao_enviar}
-                        />
-                    </div>
+                            className="button"
+                            onClick={(event) => funcao_enviar(event)}
+                        >
+                            Enviar
+                        </button>
                 </form>
             </div>
         </div>

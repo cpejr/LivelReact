@@ -62,7 +62,7 @@ export default function PopUp({functionState}) {
                     {
                     coachArray.map( (coach) => 
                         // <div className="juninhoAlemao">
-                            <div className="coachOption" onClick={() => console.log('CLICOU AUQI')}>
+                            <div className="coachOption">
                                 <img src={coach.photo} alt="coachs" />
                                 <span>{coach.name}</span>
                             </div>
