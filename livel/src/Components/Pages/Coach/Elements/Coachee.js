@@ -66,7 +66,7 @@ function Train_ID2Function(Train_ID,  setIsPopUpRegisterResultVisible){
 }
 
 
-function swipeLeftIcons(isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ) {
+function swipeLeftIcons(setClicked, isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ) {
     const iconsSize = 25;
     
     function return_zIndexes(){
@@ -74,7 +74,7 @@ function swipeLeftIcons(isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible,
         let insideContent = document.getElementsByClassName('swipeable-list-item__content-left');
 
         for (let item of outsideContent) {
-            item.style.zIndex=11;
+            item.style.zIndex=0;
         }
 
         for (let item of insideContent) {
@@ -85,9 +85,12 @@ function swipeLeftIcons(isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible,
     return (
         <div className="swipeLeft" id="swp_left">
             {/* Primeiro ícone - duas setas */}
-            <div className="fistIconSwipeLeft" onClick={ () =>{ 
-                return_zIndexes();
-                setIsPopUpChangeCoachVisible(!isPopUpChangeCoachVisible)}}>
+            <div className="fistIconSwipeLeft" 
+                onClick={ () =>{
+                    setClicked(true);
+                    return_zIndexes();
+                    setIsPopUpChangeCoachVisible(!isPopUpChangeCoachVisible)}}
+            >
                 <FaArrowsAltH size={iconsSize} />
             </div>
 
@@ -130,18 +133,21 @@ function AllCoachees(props) {
         setIsCheck(!isCheck);
     }
 
-    function function_swipe_left(){
+
+    function swipingLeft(){
         let outsideContent = document.getElementsByClassName('swipeable-list-item__content');
         let insideContent = document.getElementsByClassName('swipeable-list-item__content-left');
 
         for (let item of outsideContent) {
-            item.style.zIndex = 11;
+            item.style.zIndex = 0;
         }
 
         for (let item of insideContent) {
-            item.style.zIndex=10;
+            item.style.zIndex = 1;
         }
     }
+
+    const [clicked, setClicked] = useState(false);
 
     return (
         <>
@@ -156,8 +162,8 @@ function AllCoachees(props) {
             /* scrollStartThreshold= {0.2} Acredito que nao ta funnfando
             swipeStartThreshold= {0.2} */
             swipeLeft={{
-                content: swipeLeftIcons(isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ),
-                action: () => function_swipe_left(),
+                content: swipeLeftIcons(setClicked, isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ),
+                action: () => !clicked ? swipingLeft() : setClicked(false), // não clicou ? ativa
                 actionAnimation: ActionAnimations["NONE"],
             }}
             swipeRight={{
