@@ -1,0 +1,64 @@
+.Modal{
+    width: 100%;
+    min-height: 100%;
+    height: max-content;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Modal .ContainerModal{
+    position: absolute;
+    background-color: rgb(248, 242, 242);
+    color: #000;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    width: 70%;
+    min-width: fit-content;
+    height: 70%;
+    min-height: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding:10px
+}
+
+.Modal .ContainerModal .ClosePopUpRegister {
+    color: #632467; 
+    border-radius: 50%;
+    position: absolute; 
+    top: -15px !important; 
+    right: 30px!important; 
+    background-color: white;
+}
+
+.Modal .ContainerModal .titleResultadoRegitra {
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
+.Modal .ContainerModal .Form_treino {
+    text-align: center;
+}
+
+.Modal .ContainerModal .Form_treino div{
+    display: flex;
+    justify-content:flex-end;
+    margin: 3px;
+}
+.Modal .ContainerModal .Form_treino div input {
+    border: 1px solid ;
+    border-radius: 4px;
+    margin-left: 9px;
+}
+
+.Modal .ContainerModal .button{
+    font-family: sans-serif;
+    font:bolder;
+}

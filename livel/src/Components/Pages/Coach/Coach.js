@@ -8,6 +8,7 @@ import HeaderCoach from './Elements/Header';
 import HourBox from './Elements/HourBox';
 
 
+
 const PROFESSOR_HORARIOS = {
     ProfessorID: 12,
     ProfessorNome: 'Alemão',
@@ -103,6 +104,210 @@ const PROFESSOR_HORARIOS = {
                     TreinoAlunoNome: 'Diogo'
                 },
             ]
+        },
+        {
+            HorarioID: 123,
+            Horario: '16:00',
+            HorarioOnline: 1,
+            Horario_Treinos: [
+                {
+                    TreinoID: 12,
+                    TreinoAlunoInscricaoID: 123,
+                    TreinoAlunoTipo: 1,
+                    TreinoAlunoFoto: '/images/Coach/aluno1.jpg',
+                    TreinoAlunoRestricoes: 5,
+                    TreinoTipoID: 1,
+                    TreinoTipoDescricao: 'blablabla',
+                    TreinoConcluido: 0,
+                    TreinoAlunoNome: 'Joana'
+                },
+                {
+                    TreinoID: 13,
+                    TreinoAlunoInscricaoID: 12,
+                    TreinoAlunoTipo: 2,
+                    TreinoAlunoFoto: '/images/Coach/aluno2.jpg',
+                    TreinoAlunoRestricoes: 0,
+                    TreinoTipoID: 2,
+                    TreinoTipoDescricao: 'blablabla',
+                    TreinoConcluido: 0,
+                    TreinoAlunoNome: 'Batata'
+                },
+                {
+                    TreinoID: 14,
+                    TreinoAlunoInscricaoID: 113,
+                    TreinoAlunoTipo: 2,
+                    TreinoAlunoFoto: '/images/Coach/aluno3.jpg',
+                    TreinoAlunoRestricoes: 0,
+                    TreinoTipoID: 3,
+                    TreinoTipoDescricao: 'blablabla',
+                    TreinoConcluido: 0,
+                    TreinoAlunoNome: 'Maria'
+                },
+                {
+                    TreinoID: 15,
+                    TreinoAlunoInscricaoID: 10,
+                    TreinoAlunoTipo: 2,
+                    TreinoAlunoFoto: '/images/Coach/aluno4.jpg',
+                    TreinoAlunoRestricoes: 3,
+                    TreinoTipoID: 2,
+                    TreinoTipoDescricao: 'blablabla',
+                    TreinoConcluido: 0,
+                    TreinoAlunoNome: 'Arthur'
+                },
+            ]
+        },
+        {
+            HorarioID: 123,
+            Horario: '17:00',
+            HorarioOnline: 1,
+            Horario_Treinos: [
+                {
+                    TreinoID: 12,
+                    TreinoAlunoInscricaoID: 123,
+                    TreinoAlunoTipo: 1,
+                    TreinoAlunoFoto: '/images/Coach/aluno1.jpg',
+                    TreinoAlunoRestricoes: 5,
+                    TreinoTipoID: 1,
+                    TreinoTipoDescricao: 'blablabla',
+                    TreinoConcluido: 0,
+                    TreinoAlunoNome: 'Joana'
+                },
+                {
+                    TreinoID: 13,
+                    TreinoAlunoInscricaoID: 12,
+                    TreinoAlunoTipo: 2,
+                    TreinoAlunoFoto: '/images/Coach/aluno2.jpg',
+                    TreinoAlunoRestricoes: 0,
+                    TreinoTipoID: 2,
+                    TreinoTipoDescricao: 'blablabla',
+                    TreinoConcluido: 0,
+                    TreinoAlunoNome: 'Batata'
+                },
+                {
+                    TreinoID: 14,
+                    TreinoAlunoInscricaoID: 113,
+                    TreinoAlunoTipo: 2,
+                    TreinoAlunoFoto: '/images/Coach/aluno3.jpg',
+                    TreinoAlunoRestricoes: 0,
+                    TreinoTipoID: 3,
+                    TreinoTipoDescricao: 'blablabla',
+                    TreinoConcluido: 0,
+                    TreinoAlunoNome: 'Maria'
+                },
+                {
+                    TreinoID: 15,
+                    TreinoAlunoInscricaoID: 10,
+                    TreinoAlunoTipo: 2,
+                    TreinoAlunoFoto: '/images/Coach/aluno4.jpg',
+                    TreinoAlunoRestricoes: 3,
+                    TreinoTipoID: 2,
+                    TreinoTipoDescricao: 'blablabla',
+                    TreinoConcluido: 0,
+                    TreinoAlunoNome: 'Arthur'
+                },
+            ]
+        },
+        {
+            HorarioID: 123,
+            Horario: '19:00',
+            HorarioOnline: 1,
+            Horario_Treinos: [
+                {
+                    TreinoID: 12,
+                    TreinoAlunoInscricaoID: 123,
+                    TreinoAlunoTipo: 1,
+                    TreinoAlunoFoto: '/images/Coach/aluno1.jpg',
+                    TreinoAlunoRestricoes: 5,
+                    TreinoTipoID: 1,
+                    TreinoTipoDescricao: 'blablabla',
+                    TreinoConcluido: 0,
+                    TreinoAlunoNome: 'Joana'
+                },
+                {
+                    TreinoID: 13,
+                    TreinoAlunoInscricaoID: 12,
+                    TreinoAlunoTipo: 2,
+                    TreinoAlunoFoto: '/images/Coach/aluno2.jpg',
+                    TreinoAlunoRestricoes: 0,
+                    TreinoTipoID: 2,
+                    TreinoTipoDescricao: 'blablabla',
+                    TreinoConcluido: 0,
+                    TreinoAlunoNome: 'Batata'
+                },
+                {
+                    TreinoID: 14,
+                    TreinoAlunoInscricaoID: 113,
+                    TreinoAlunoTipo: 2,
+                    TreinoAlunoFoto: '/images/Coach/aluno3.jpg',
+                    TreinoAlunoRestricoes: 0,
+                    TreinoTipoID: 3,
+                    TreinoTipoDescricao: 'blablabla',
+                    TreinoConcluido: 0,
+                    TreinoAlunoNome: 'Maria'
+                },
+                {
+                    TreinoID: 15,
+                    TreinoAlunoInscricaoID: 10,
+                    TreinoAlunoTipo: 2,
+                    TreinoAlunoFoto: '/images/Coach/aluno4.jpg',
+                    TreinoAlunoRestricoes: 3,
+                    TreinoTipoID: 2,
+                    TreinoTipoDescricao: 'blablabla',
+                    TreinoConcluido: 0,
+                    TreinoAlunoNome: 'Arthur'
+                },
+            ]
+        },
+        {
+            HorarioID: 123,
+            Horario: '20:00',
+            HorarioOnline: 1,
+            Horario_Treinos: [
+                {
+                    TreinoID: 12,
+                    TreinoAlunoInscricaoID: 123,
+                    TreinoAlunoTipo: 1,
+                    TreinoAlunoFoto: '/images/Coach/aluno1.jpg',
+                    TreinoAlunoRestricoes: 5,
+                    TreinoTipoID: 1,
+                    TreinoTipoDescricao: 'blablabla',
+                    TreinoConcluido: 0,
+                    TreinoAlunoNome: 'Joana'
+                },
+                {
+                    TreinoID: 13,
+                    TreinoAlunoInscricaoID: 12,
+                    TreinoAlunoTipo: 2,
+                    TreinoAlunoFoto: '/images/Coach/aluno2.jpg',
+                    TreinoAlunoRestricoes: 0,
+                    TreinoTipoID: 2,
+                    TreinoTipoDescricao: 'blablabla',
+                    TreinoConcluido: 0,
+                    TreinoAlunoNome: 'Batata'
+                },
+                {
+                    TreinoID: 14,
+                    TreinoAlunoInscricaoID: 113,
+                    TreinoAlunoTipo: 2,
+                    TreinoAlunoFoto: '/images/Coach/aluno3.jpg',
+                    TreinoAlunoRestricoes: 0,
+                    TreinoTipoID: 3,
+                    TreinoTipoDescricao: 'blablabla',
+                    TreinoConcluido: 0,
+                    TreinoAlunoNome: 'Maria'
+                },
+                {
+                    TreinoID: 15,
+                    TreinoAlunoInscricaoID: 10,
+                    TreinoAlunoTipo: 2,
+                    TreinoAlunoFoto: '/images/Coach/aluno4.jpg',
+                    TreinoAlunoRestricoes: 3,
+                    TreinoTipoID: 2,
+                    TreinoTipoDescricao: 'blablabla',
+                    TreinoConcluido: 0,
+                    TreinoAlunoNome: 'Arthur'
+                },
+            ]
         }
     ]
 }
@@ -114,9 +319,11 @@ export default function Coach(){
         
         <div className="headerContainer">
             <HeaderCoach img={true} name={true} position={true} data={PROFESSOR_HORARIOS} />
+            
         </div>
-        
-         <HourBox data={PROFESSOR_HORARIOS} />  
+
+        <HourBox data={PROFESSOR_HORARIOS} /> 
+    
  
         {/* <Coachee active={active} setActive={setActive} /> */}
     </div>

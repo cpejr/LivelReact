@@ -13,15 +13,27 @@ export default function Home() {
                     <img src='/images/Logo_Livel.png' alt="Logo do Livel" />
                 </div>
                 
-                    <Link type="button" to="/login" className="buttonLogin">
+                    <Link type="button" 
+                            to={{
+                                pathname: "/login",
+                                state: { isCoach: true}
+                            }}
+                            className="buttonLogin"
+                    >
                         <div>
-                            LOGIN COACH
-                </div>
+                            LOGIN PROFESSOR
+                        </div>
                     </Link>
-                    <Link type="button" to="/login" className="buttonLogin">
+                    <Link type="button" 
+                            to={{
+                                pathname: "/login",
+                                state: { isCoach: false}
+                            }}
+                            className="buttonLogin"
+                    >
                         <div>
-                            LOGIN COACHEE
-                </div>
+                            LOGIN ALUNO
+                        </div>
                     </Link>
                     <Link type="button" to="/signup" className="buttonLogin">
                         <div>

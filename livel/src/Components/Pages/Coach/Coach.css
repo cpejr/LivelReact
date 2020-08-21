@@ -1,7 +1,8 @@
 .completeBody{
     background-color: #E6E6E6;
     background-image: linear-gradient( #F2F2F2,#E6E6E6); /* Standard syntax (must be last) */
-    height:100%;
+    min-height: 100vh; 
+    height:fit-content;
     width: 100%;
 }
 /* ---------------------Element Header Coach--------------------- */
@@ -9,6 +10,10 @@
 .headerContainer{
     background-color: #E6E6E6;
     height: 13vh;
+}
+
+.eachContainer{
+    margin-bottom: 10px;
 }
 
 .coachBlock{
@@ -55,6 +60,9 @@
 }
 
 /* ---------------------Element HourBox Coach--------------------- */
+.eachContainer{
+    margin-bottom:2vw;
+}
 .HourBoxIsOn{
     width: 100%;
     background-color: #ffffff;
@@ -81,13 +89,54 @@
     font-weight: bolder;
     font-stretch: extra-condensed;
     letter-spacing: 0.05mm;
-    color:#632467;
 }
 /* ---------------------Element Coachee Coach--------------------- */
+
+/*  As duas coisas abaixo são pra deixar a beirada clicavel
+.swipeable-list-item__content{
+    z-index: 11 !important;
+}  */
+
+/* Container pai do SwipeLeft */
+/*  .swipeable-list-item__content-left{
+    z-index: 10 !important;
+} */
+ 
+.swipeLeft{
+    z-index: 10;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.fistIconSwipeRigth{
+    background: #4a1768;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.swipeRight{
+    display: flex;
+    justify-content: center;
+}
+.fistIconSwipeLeft{
+    background: #4a1768;
+    color: #fff;
+    padding: 10px 20px;
+    z-index: 10;
+}
+
+.secondIconSwipeLeft{
+    background: #e0dbe2;
+    color: #4a1768;
+    padding: 10px 20px;
+    z-index: 10;
+}
+
+
 .coacheeInfo{
     margin: 0px;
     padding: 0px;
-    
+    z-index: 15;
     flex:1;
     width: 100%;
     display: flex;
@@ -153,6 +202,9 @@
     justify-content: space-around;
     margin-right: 10px;
     align-items: center;
+    font-weight:bolder;
+    font-size: large;
+    color: #ADB4B5;
 }
 
 .coacheeIcons{
@@ -183,3 +235,7 @@
 }
 
 /* ---------------------Element ToggleSwitch Coach--------------------- */
+
+.react-switch{
+    border: 1px solid #632467;
+}
