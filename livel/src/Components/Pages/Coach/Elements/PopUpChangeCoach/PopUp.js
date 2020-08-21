@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { AiFillCloseCircle } from "react-icons/ai";
 
@@ -60,9 +60,9 @@ export default function PopUp({functionState}) {
                 <div className="manyCoachs">
                     
                     {
-                    coachArray.map( (coach) => 
+                    coachArray.map( (coach, index) => 
                         // <div className="juninhoAlemao">
-                            <div className="coachOption">
+                            <div key={index} className="coachOption">
                                 <img src={coach.photo} alt="coachs" />
                                 <span>{coach.name}</span>
                             </div>

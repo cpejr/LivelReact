@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { AiFillCloseCircle } from "react-icons/ai";
 
@@ -28,7 +28,7 @@ export default function PopUp({ functionState }) {
         //o objeto metricasAluno tá preenchido
     }
     return (
-        <div className="Modal">
+        <div className="Modal1">
             <div className="ContainerModal">
                 <div
                     className="ClosePopUpRegister"
@@ -40,7 +40,7 @@ export default function PopUp({ functionState }) {
                     <span>Registro do Treino</span>
                 </div>
                 <form className="Form_treino">
-                    <div className="alunoID">
+                    <div className="dadosGerais">
                         <label>AlunoID:</label>
                         <input
                             type="text"
@@ -51,7 +51,7 @@ export default function PopUp({ functionState }) {
                             }
                         ></input>
                     </div>
-                    <div className="div_data">
+                    <div className="dadosGerais">
                         <label>Data:</label>
                         <input
                             type="text"
@@ -62,128 +62,142 @@ export default function PopUp({ functionState }) {
                             }
                         />
                     </div>
-                    <div className="div_peso">
-                        <label>Peso:</label>
-                        <input
-                            type="text"
-                            id="peso"
-                            name="inp_peso"
-                            onChange={(e) =>
-                                (metricasAluno.Peso = e.target.value)
-                            }
-                        />
+
+                    <div className="pesoAltura">
+
+                        <div className="peso">
+                            <label>Peso:</label>
+                            <input
+                                type="text"
+                                id="peso"
+                                name="inp_peso"
+                                onChange={(e) =>
+                                    (metricasAluno.Peso = e.target.value)
+                                }
+                            />
+                        </div>
+                        <div className="altura">
+                            <label>Altura:</label>
+                            <input
+                                type="text"
+                                id="altura"
+                                name="inp_altura"
+                                onChange={(e) =>
+                                    (metricasAluno.Altura = e.target.value)
+                                }
+                            />
+                        </div>
                     </div>
-                    <div className="div_altura">
-                        <label>Altura:</label>
-                        <input
-                            type="text"
-                            id="altura"
-                            name="inp_altura"
-                            onChange={(e) =>
-                                (metricasAluno.Altura = e.target.value)
-                            }
-                        />
+
+                    <div className="exercicios">
+                        <div className="numeroExercicios">
+                            <label>Alongam. Nivel:</label>
+                            <input
+                                type="text"
+                                id="alogamento"
+                                name="inp_along"
+                                onChange={(e) =>
+                                    (metricasAluno.AlongamentoNivel =
+                                        e.target.value)
+                                }
+                            />
+                        </div>
+                        <div className="numeroExercicios">
+                            <label>Abdominais:</label>
+                            <input
+                                type="text"
+                                id="Name"
+                                name="inp_abno"
+                                onChange={(e) =>
+                                    (metricasAluno.Abdominais = e.target.value)
+                                }
+                            />
+                        </div>
+                        <div className="numeroExercicios">
+                            <label>Flexões:</label>
+                            <input
+                                type="text"
+                                id="Name"
+                                name="inp_flex"
+                                onChange={(e) =>
+                                    (metricasAluno.Flexoes = e.target.value)
+                                }
+                            />
+                        </div>
+                        <div className="numeroExercicios">
+                            <label>Barra:</label>
+                            <input
+                                type="text"
+                                id="Name"
+                                name="inp_bar"
+                                onChange={(e) =>
+                                    (metricasAluno.barra = e.target.value)
+                                }
+                            />
+                        </div>
                     </div>
-                    <div className="div_along">
-                        <label>Alongam. Nivel:</label>
-                        <input
-                            type="text"
-                            id="alogamento"
-                            name="inp_along"
-                            onChange={(e) =>
-                                (metricasAluno.AlongamentoNivel =
-                                    e.target.value)
-                            }
-                        />
+                    <div className="medidas">
+                        <div className="medidasLeftSide">
+                            <div className="medidasCorpo">
+                                <label>Pescoço:</label>
+                                <input
+                                    type="text"
+                                    id="Name"
+                                    name="inp_neck"
+                                    onChange={(e) =>
+                                        (metricasAluno.Pescoco = e.target.value)
+                                    }
+                                />
+                            </div>
+                            <div className="medidasCorpo">
+                                <label>Cintura:</label>
+                                <input
+                                    type="text"
+                                    id="Name"
+                                    name="inp_cintura"
+                                    onChange={(e) =>
+                                        (metricasAluno.Cintura = e.target.value)
+                                    }
+                                />
+                            </div>
+                            <div className="medidasCorpo">
+                                <label>Quadril:</label>
+                                <input
+                                    type="text"
+                                    id="Name"
+                                    name="inp_quadril"
+                                    onChange={(e) =>
+                                        (metricasAluno.Quadril = e.target.value)
+                                    }
+                                />
+                            </div>
+                        </div>
+                        <div className="medidasRightSide">
+                            <div className="medidasCorpo">
+                                <label>Biceps:</label>
+                                <input
+                                    type="text"
+                                    id="Name"
+                                    name="inp_biceps"
+                                    onChange={(e) =>
+                                        (metricasAluno.Biceps = e.target.value)
+                                    }
+                                />
+                            </div>
+                            <div className="medidasCorpo">
+                                <label>Coxa:</label>
+                                <input
+                                    type="text"
+                                    id="Name"
+                                    name="inp_coxa"
+                                    onChange={(e) =>
+                                        (metricasAluno.Coxa = e.target.value)
+                                    }
+                                />
+                            </div>
+                        </div>
                     </div>
-                    <div className="div_abno">
-                        <label>Abdominais:</label>
-                        <input
-                            type="text"
-                            id="Name"
-                            name="inp_abno"
-                            onChange={(e) =>
-                                (metricasAluno.Abdominais = e.target.value)
-                            }
-                        />
-                    </div>
-                    <div className="div_flexo">
-                        <label>Flexões:</label>
-                        <input
-                            type="text"
-                            id="Name"
-                            name="inp_flex"
-                            onChange={(e) =>
-                                (metricasAluno.Flexoes = e.target.value)
-                            }
-                        />
-                    </div>
-                    <div className="div_bar">
-                        <label>Barra:</label>
-                        <input
-                            type="text"
-                            id="Name"
-                            name="inp_bar"
-                            onChange={(e) =>
-                                (metricasAluno.barra = e.target.value)
-                            }
-                        />
-                    </div>
-                    <div className="div_neck">
-                        <label>Pescoço:</label>
-                        <input
-                            type="text"
-                            id="Name"
-                            name="inp_neck"
-                            onChange={(e) =>
-                                (metricasAluno.Pescoco = e.target.value)
-                            }
-                        />
-                    </div>
-                    <div className="div_cintura">
-                        <label>Cintura:</label>
-                        <input
-                            type="text"
-                            id="Name"
-                            name="inp_cintura"
-                            onChange={(e) =>
-                                (metricasAluno.Cintura = e.target.value)
-                            }
-                        />
-                    </div>
-                    <div className="div_quadril">
-                        <label>Quadril:</label>
-                        <input
-                            type="text"
-                            id="Name"
-                            name="inp_quadril"
-                            onChange={(e) =>
-                                (metricasAluno.Quadril = e.target.value)
-                            }
-                        />
-                    </div>
-                    <div className="div_biceps">
-                        <label>Biceps:</label>
-                        <input
-                            type="text"
-                            id="Name"
-                            name="inp_biceps"
-                            onChange={(e) =>
-                                (metricasAluno.Biceps = e.target.value)
-                            }
-                        />
-                    </div>
-                    <div className="div_coxa">
-                        <label>Coxa:</label>
-                        <input
-                            type="text"
-                            id="Name"
-                            name="inp_coxa"
-                            onChange={(e) =>
-                                (metricasAluno.Coxa = e.target.value)
-                            }
-                        />
-                    </div>
+                    
                         <button
                             className="button"
                             onClick={(event) => funcao_enviar(event)}

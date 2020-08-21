@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Link, useLocation} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import {useHistory} from 'react-router-dom'
 import {alunoLogin} from '../../../../services/backEnd'
 import { login } from "../../../../services/auth";
@@ -17,7 +17,7 @@ const styles = {
         color: "white"
     },
     inputLabel: {
-      color: "white",
+    color: "white",
     }
 };
 

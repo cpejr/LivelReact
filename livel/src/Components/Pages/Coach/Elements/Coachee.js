@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 // Teste icons
 import { FaArrowsAltH, FaTrashAlt, FaCheck, FaAngleRight } from "react-icons/fa";
 
@@ -65,30 +65,42 @@ function Train_ID2Function(Train_ID,  setIsPopUpRegisterResultVisible){
     }
 }
 
+function return_zIndexes(){
+    let outsideContent = document.getElementsByClassName('swipeable-list-item__content');
+    let insideContent = document.getElementsByClassName('swipeable-list-item__content-left');
+
+    for (let item of outsideContent) {
+        item.style.zIndex=0;
+    }
+
+    for (let item of insideContent) {
+        item.style.zIndex=-1;
+    }
+}
 
 function swipeLeftIcons(setClicked, isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ) {
     const iconsSize = 25;
     
-    function return_zIndexes(){
-        let outsideContent = document.getElementsByClassName('swipeable-list-item__content');
-        let insideContent = document.getElementsByClassName('swipeable-list-item__content-left');
+    // function return_zIndexes(){
+    //     let outsideContent = document.getElementsByClassName('swipeable-list-item__content');
+    //     let insideContent = document.getElementsByClassName('swipeable-list-item__content-left');
 
-        for (let item of outsideContent) {
-            item.style.zIndex=0;
-        }
+    //     for (let item of outsideContent) {
+    //         item.style.zIndex=0;
+    //     }
 
-        for (let item of insideContent) {
-            item.style.zIndex=-1;
-        }
-    }
+    //     for (let item of insideContent) {
+    //         item.style.zIndex=-1;
+    //     }
+    // }
  
     return (
         <div className="swipeLeft" id="swp_left">
             {/* Primeiro ícone - duas setas */}
             <div className="fistIconSwipeLeft" 
                 onClick={ () =>{
-                    setClicked(true);
-                    return_zIndexes();
+                    // setClicked(true);
+                    // return_zIndexes();
                     setIsPopUpChangeCoachVisible(!isPopUpChangeCoachVisible)}}
             >
                 <FaArrowsAltH size={iconsSize} />
@@ -96,7 +108,8 @@ function swipeLeftIcons(setClicked, isPopUpChangeCoachVisible, setIsPopUpChangeC
 
             {/* Segundo ícone - Lixeira */}
             <div className="secondIconSwipeLeft" onClick={() =>{
-                return_zIndexes();
+                // return_zIndexes();
+                // setClicked(true);
                 setIsPopUpAlertDelete(!isPopUpAlertDelete);
             }}>
                 <FaTrashAlt size={iconsSize} />
@@ -105,18 +118,18 @@ function swipeLeftIcons(setClicked, isPopUpChangeCoachVisible, setIsPopUpChangeC
     );
 }
 
-function swipeRightIcons() {
-    const iconsSize = 25;
+// function swipeRightIcons() {
+//     const iconsSize = 25;
 
-    return (
-        <div className="swipeRight">
-            {/* Primeiro ícone - Check */}
-            <div className="fistIconSwipeRigth">
-                <FaCheck size={iconsSize} />
-            </div>
-        </div>
-    );
-}
+//     return (
+//         <div className="swipeRight">
+//             {/* Primeiro ícone - Check */}
+//             <div className="fistIconSwipeRigth">
+//                 <FaCheck size={iconsSize} />
+//             </div>
+//         </div>
+//     );
+// }
 
 function AllCoachees(props) {
 
@@ -124,15 +137,23 @@ function AllCoachees(props) {
 
     const [isPopUpRegisterResultVisible, setIsPopUpRegisterResultVisible] = useState(false);
 
-    const [isPopUpAlertDelete, setIsPopUpAlertDelete]= useState(false);
-
+    const [isPopUpAlertDelete, setIsPopUpAlertDelete] = useState(false);
 
     const [isCheck, setIsCheck] = useState(false);
 
-    function function_check(isCheck){
-        setIsCheck(!isCheck);
-    }
+    const styleCheck = [
+        {
+            margin:'0 10px',
+            color: '#4a1768'
+        },
+        {
+            margin:'0 10px',
+            color: '#bbb'
+        },
+    ];
 
+
+    const [clicked, setClicked] = useState(false);
 
     function swipingLeft(){
         let outsideContent = document.getElementsByClassName('swipeable-list-item__content');
@@ -147,7 +168,6 @@ function AllCoachees(props) {
         }
     }
 
-    const [clicked, setClicked] = useState(false);
 
     return (
         <>
@@ -159,25 +179,16 @@ function AllCoachees(props) {
         <SwipeableListItem
             blockSwipe={false}
             threshold={0.1}
-            /* scrollStartThreshold= {0.2} Acredito que nao ta funnfando
-            swipeStartThreshold= {0.2} */
+            onSwipeEnd={ () => return_zIndexes() }
             swipeLeft={{
                 content: swipeLeftIcons(setClicked, isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ),
                 action: () => !clicked ? swipingLeft() : setClicked(false), // não clicou ? ativa
                 actionAnimation: ActionAnimations["NONE"],
             }}
-            swipeRight={{
-                content: swipeRightIcons(),
-                action: () => function_check(isCheck),
-                actionAnimation: ActionAnimations["RETURN"],
-            }}
-            onSwipeProgress={(progress) =>
-                progress > 50 ? (progress = 50) : progress
-            }
+            // style={isSwipe? styleArrowSwipe[1]: styleArrowSwipe[1]}
         >
 
-            {isCheck &&
-                        <FaCheck size={25} style={{margin:'0 10px'}}/>}
+            <FaCheck size={30} style={isCheck? styleCheck[0]: styleCheck[1]} onClick={() => setIsCheck(!isCheck) }/>
             
             <img
                 src={props.person.TreinoAlunoFoto}
@@ -213,7 +224,7 @@ function AllCoachees(props) {
                             className="coacheeIcons"
                         />
                     )}
-                    <FaAngleRight size={20} color='#ADB4B5'/>
+                    <FaAngleRight size={35} color='#ADB4B5' />
                 </div>
             </div>
             </SwipeableListItem>
