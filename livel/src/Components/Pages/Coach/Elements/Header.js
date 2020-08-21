@@ -1,10 +1,13 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom';
+
 /* import {getCoach} from '../../../../services/auth' */
 
 import '../Coach.css'
 
 
 export default function CoachHeader(props){
+    let history = useHistory()
 
     return (
     < >
@@ -12,7 +15,7 @@ export default function CoachHeader(props){
         
         <div className="HeaderContainer">
             <div className="coachBlock">
-            <img src={props.data.ProfessorFoto} alt="imagem coach" className="imagemHeaderCoach" />
+            <img src={props.data.ProfessorFoto} alt="imagem coach" className="imagemHeaderCoach" onClick={()=>history.push('/coachprofile')} />
 
                 <div className="coachInfo">
                     {(props.position!=null) &&

@@ -6,6 +6,11 @@ import './CoachProfile.css'
 
 import Header from '../../../Header'
 
+import { Link } from 'react-router-dom';
+import{FiChevronLeft} from 'react-icons/fi';
+import { useHistory } from 'react-router-dom';
+
+
 let ALUNO_INFO = {
     rate: 4,
 }
@@ -41,6 +46,11 @@ export default function CoachProfile() {
                     {(virgula===false) && `${ALUNO_INFO.rate}`}
                     
                 </b>
+                <div>
+                        <Link className="buttonCoach"  type="button" to="/coach">
+                            <FiChevronLeft size={60} color="#632467"/>
+                        </Link>
+                    </div>
             </div>
         </div>
     )
