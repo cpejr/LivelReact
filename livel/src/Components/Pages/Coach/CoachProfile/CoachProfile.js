@@ -46,11 +46,13 @@ export default function CoachProfile() {
                     {(virgula===false) && `${ALUNO_INFO.rate}`}
                     
                 </b>
+
                 <div>
                         <Link className="buttonCoach"  type="button" to="/coach">
                             <FiChevronLeft size={60} color="#632467"/>
                         </Link>
                     </div>
+               
             </div>
         </div>
     )
