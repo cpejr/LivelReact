@@ -85,11 +85,12 @@ function HourBox(props) {
                 <div className="isItOnorOff">
 
                 {toggleOn && 
-                <SwipeableList className = "swipeList">
+                <SwipeableList className = "swipeList" >
 
                     {props.time_info.Horario_Treinos.map((person, index) => (
-                            toggleOn &&
-                        <Coachee key={index}  data={person}/>
+                            toggleOn && 
+                        <Coachee key={index}  data={person} />
+                        
                     ))}
                 </SwipeableList>
                 }

@@ -65,42 +65,34 @@ function Train_ID2Function(Train_ID,  setIsPopUpRegisterResultVisible){
     }
 }
 
-function return_zIndexes(){
-    let outsideContent = document.getElementsByClassName('swipeable-list-item__content');
-    let insideContent = document.getElementsByClassName('swipeable-list-item__content-left');
 
-    for (let item of outsideContent) {
-        item.style.zIndex=0;
-    }
-
-    for (let item of insideContent) {
-        item.style.zIndex=-1;
-    }
-}
-
-function swipeLeftIcons(setClicked, isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ) {
+function swipeLeftIcons(isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ) {
     const iconsSize = 25;
     
-    // function return_zIndexes(){
-    //     let outsideContent = document.getElementsByClassName('swipeable-list-item__content');
-    //     let insideContent = document.getElementsByClassName('swipeable-list-item__content-left');
+    function return_zIndexes(){
+        let outsideContent = document.getElementsByClassName('swipeable-list-item__content');
+        let insideContent = document.getElementsByClassName('swipeable-list-item__content-left');
+        let coacheeInfoContent = document.getElementsByClassName('coacheeInfo');
 
-    //     for (let item of outsideContent) {
-    //         item.style.zIndex=0;
-    //     }
+        for (let item of outsideContent) {
+            item.style.zIndex=0;
 
-    //     for (let item of insideContent) {
-    //         item.style.zIndex=-1;
-    //     }
-    // }
+        }
+        
+        for (let item of coacheeInfoContent) {
+            item.style.zIndex = 0;
+        }
+        for (let item of insideContent) {
+            item.style.zIndex=-1;
+        }
+    }
  
     return (
         <div className="swipeLeft" id="swp_left">
             {/* Primeiro ícone - duas setas */}
             <div className="fistIconSwipeLeft" 
                 onClick={ () =>{
-                    // setClicked(true);
-                    // return_zIndexes();
+                    return_zIndexes();
                     setIsPopUpChangeCoachVisible(!isPopUpChangeCoachVisible)}}
             >
                 <FaArrowsAltH size={iconsSize} />
@@ -108,8 +100,7 @@ function swipeLeftIcons(setClicked, isPopUpChangeCoachVisible, setIsPopUpChangeC
 
             {/* Segundo ícone - Lixeira */}
             <div className="secondIconSwipeLeft" onClick={() =>{
-                // return_zIndexes();
-                // setClicked(true);
+                return_zIndexes();
                 setIsPopUpAlertDelete(!isPopUpAlertDelete);
             }}>
                 <FaTrashAlt size={iconsSize} />
@@ -117,19 +108,6 @@ function swipeLeftIcons(setClicked, isPopUpChangeCoachVisible, setIsPopUpChangeC
         </div>
     );
 }
-
-// function swipeRightIcons() {
-//     const iconsSize = 25;
-
-//     return (
-//         <div className="swipeRight">
-//             {/* Primeiro ícone - Check */}
-//             <div className="fistIconSwipeRigth">
-//                 <FaCheck size={iconsSize} />
-//             </div>
-//         </div>
-//     );
-// }
 
 function AllCoachees(props) {
 
@@ -153,12 +131,12 @@ function AllCoachees(props) {
     ];
 
 
-    const [clicked, setClicked] = useState(false);
 
     function swipingLeft(){
+        
         let outsideContent = document.getElementsByClassName('swipeable-list-item__content');
         let insideContent = document.getElementsByClassName('swipeable-list-item__content-left');
-
+        
         for (let item of outsideContent) {
             item.style.zIndex = 0;
         }
@@ -167,7 +145,6 @@ function AllCoachees(props) {
             item.style.zIndex = 1;
         }
     }
-
 
     return (
         <>
@@ -179,13 +156,11 @@ function AllCoachees(props) {
         <SwipeableListItem
             blockSwipe={false}
             threshold={0.1}
-            onSwipeEnd={ () => return_zIndexes() }
             swipeLeft={{
-                content: swipeLeftIcons(setClicked, isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ),
-                action: () => !clicked ? swipingLeft() : setClicked(false), // não clicou ? ativa
+                content: swipeLeftIcons( isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ),
+                action: () => swipingLeft(), 
                 actionAnimation: ActionAnimations["NONE"],
-            }}
-            // style={isSwipe? styleArrowSwipe[1]: styleArrowSwipe[1]}
+            }}   
         >
 
             <FaCheck size={30} style={isCheck? styleCheck[0]: styleCheck[1]} onClick={() => setIsCheck(!isCheck) }/>
@@ -198,7 +173,7 @@ function AllCoachees(props) {
                 onClick={() => Train_ID2Function(props.person.TreinoTipoID,setIsPopUpRegisterResultVisible)}
             />
             
-            <div className="coacheeInfo">
+            <div className="coacheeInfo" >
                 <div className="writtenInfos">
                     <div className="coacheeName">
                         {props.person.TreinoAlunoNome}
@@ -224,7 +199,7 @@ function AllCoachees(props) {
                             className="coacheeIcons"
                         />
                     )}
-                    <FaAngleRight size={35} color='#ADB4B5' />
+                    <FaAngleRight size={35} color='#ADB4B5'/>
                 </div>
             </div>
             </SwipeableListItem>
