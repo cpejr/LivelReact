@@ -16,7 +16,7 @@ export default function CoachHeader(props){
         <div className="HeaderContainer">
             <div className="coachBlock">
             <img src={props.data.ProfessorFoto} alt="imagem coach" className="imagemHeaderCoach" onClick={()=>history.push('/coachprofile')} />
-
+            {/* clique na na imagem do coach leva pra /coachprofile*/}
                 <div className="coachInfo">
                     {(props.position!=null) &&
                         <div className="positionCoach"> Coach</div>

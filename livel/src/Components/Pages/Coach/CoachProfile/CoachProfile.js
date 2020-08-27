@@ -48,6 +48,8 @@ export default function CoachProfile() {
                 </b>
 
                 <div>
+                    {/*seta para voltar para o /coach*/}
+                    
                         <Link className="buttonCoach"  type="button" to="/coach">
                             <FiChevronLeft size={60} color="#632467"/>
                         </Link>
