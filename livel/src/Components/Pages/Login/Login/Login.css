@@ -9,7 +9,7 @@
 
 .LoginTitle{
     color: #ffff;
-    font-size: 120%;
+    font-size: 35px;
     font-family: sans-serif, Univers LT;
     font-stretch: condensed;
     font-weight: bold;
@@ -30,14 +30,14 @@
 
 .matriculaInput label{
     color: #ffff;
-    font-size: 70%;
+    font-size: 20px;
     font-family: sans-serif, Univers LT;
     font-stretch: condensed;
 }
 
 .senhaInput label{
     color: #ffff;
-    font-size: 100%;
+    font-size: 20px;
     font-family: sans-serif, Univers LT;
     font-stretch: condensed;
 }
