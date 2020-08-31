@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 // Teste icons
 import { FaArrowsAltH, FaTrashAlt, FaCheck, FaAngleRight } from "react-icons/fa";
 
@@ -66,17 +66,22 @@ function Train_ID2Function(Train_ID,  setIsPopUpRegisterResultVisible){
 }
 
 
-function swipeLeftIcons(setClicked, isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ) {
+function swipeLeftIcons(isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ) {
     const iconsSize = 25;
     
     function return_zIndexes(){
         let outsideContent = document.getElementsByClassName('swipeable-list-item__content');
         let insideContent = document.getElementsByClassName('swipeable-list-item__content-left');
+        let coacheeInfoContent = document.getElementsByClassName('coacheeInfo');
 
         for (let item of outsideContent) {
             item.style.zIndex=0;
-        }
 
+        }
+        
+        for (let item of coacheeInfoContent) {
+            item.style.zIndex = 0;
+        }
         for (let item of insideContent) {
             item.style.zIndex=-1;
         }
@@ -87,7 +92,6 @@ function swipeLeftIcons(setClicked, isPopUpChangeCoachVisible, setIsPopUpChangeC
             {/* Primeiro ícone - duas setas */}
             <div className="fistIconSwipeLeft" 
                 onClick={ () =>{
-                    setClicked(true);
                     return_zIndexes();
                     setIsPopUpChangeCoachVisible(!isPopUpChangeCoachVisible)}}
             >
@@ -105,39 +109,34 @@ function swipeLeftIcons(setClicked, isPopUpChangeCoachVisible, setIsPopUpChangeC
     );
 }
 
-function swipeRightIcons() {
-    const iconsSize = 25;
-
-    return (
-        <div className="swipeRight">
-            {/* Primeiro ícone - Check */}
-            <div className="fistIconSwipeRigth">
-                <FaCheck size={iconsSize} />
-            </div>
-        </div>
-    );
-}
-
 function AllCoachees(props) {
 
     const [isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible] = useState(false);
 
     const [isPopUpRegisterResultVisible, setIsPopUpRegisterResultVisible] = useState(false);
 
-    const [isPopUpAlertDelete, setIsPopUpAlertDelete]= useState(false);
-
+    const [isPopUpAlertDelete, setIsPopUpAlertDelete] = useState(false);
 
     const [isCheck, setIsCheck] = useState(false);
 
-    function function_check(isCheck){
-        setIsCheck(!isCheck);
-    }
+    const styleCheck = [
+        {
+            margin:'0 10px',
+            color: '#4a1768'
+        },
+        {
+            margin:'0 10px',
+            color: '#bbb'
+        },
+    ];
+
 
 
     function swipingLeft(){
+        
         let outsideContent = document.getElementsByClassName('swipeable-list-item__content');
         let insideContent = document.getElementsByClassName('swipeable-list-item__content-left');
-
+        
         for (let item of outsideContent) {
             item.style.zIndex = 0;
         }
@@ -146,8 +145,6 @@ function AllCoachees(props) {
             item.style.zIndex = 1;
         }
     }
-
-    const [clicked, setClicked] = useState(false);
 
     return (
         <>
@@ -159,25 +156,14 @@ function AllCoachees(props) {
         <SwipeableListItem
             blockSwipe={false}
             threshold={0.1}
-            /* scrollStartThreshold= {0.2} Acredito que nao ta funnfando
-            swipeStartThreshold= {0.2} */
             swipeLeft={{
-                content: swipeLeftIcons(setClicked, isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ),
-                action: () => !clicked ? swipingLeft() : setClicked(false), // não clicou ? ativa
+                content: swipeLeftIcons( isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible, setIsPopUpAlertDelete,isPopUpAlertDelete ),
+                action: () => swipingLeft(), 
                 actionAnimation: ActionAnimations["NONE"],
-            }}
-            swipeRight={{
-                content: swipeRightIcons(),
-                action: () => function_check(isCheck),
-                actionAnimation: ActionAnimations["RETURN"],
-            }}
-            onSwipeProgress={(progress) =>
-                progress > 50 ? (progress = 50) : progress
-            }
+            }}   
         >
 
-            {isCheck &&
-                        <FaCheck size={25} style={{margin:'0 10px'}}/>}
+            <FaCheck size={30} style={isCheck? styleCheck[0]: styleCheck[1]} onClick={() => setIsCheck(!isCheck) }/>
             
             <img
                 src={props.person.TreinoAlunoFoto}
@@ -187,7 +173,7 @@ function AllCoachees(props) {
                 onClick={() => Train_ID2Function(props.person.TreinoTipoID,setIsPopUpRegisterResultVisible)}
             />
             
-            <div className="coacheeInfo">
+            <div className="coacheeInfo" >
                 <div className="writtenInfos">
                     <div className="coacheeName">
                         {props.person.TreinoAlunoNome}
@@ -213,7 +199,7 @@ function AllCoachees(props) {
                             className="coacheeIcons"
                         />
                     )}
-                    <FaAngleRight size={20} color='#ADB4B5'/>
+                    <FaAngleRight size={35} color='#ADB4B5'/>
                 </div>
             </div>
             </SwipeableListItem>

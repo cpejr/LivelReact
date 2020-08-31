@@ -1,7 +1,7 @@
 .Modal{
     width: 100%;
     height: 100%;
-    position: relative;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
@@ -13,7 +13,7 @@
 
 .ContainerModal{
     background-color: rgb(248, 242, 242);
-    position: relative;
+    position: fixed;
     color: #000;
     border: 1px solid #eee;
     width: 85%;
@@ -32,6 +32,8 @@
     position: absolute; 
     top: -2px; 
     right: 0px; 
+
+    cursor: pointer;
 }
 
 .titlePopUpChangeCoach{
@@ -64,7 +66,8 @@
 }
 
 .coachOption img {
-    width: 25px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     border: 3px solid #632467;
     margin-right: 5px;

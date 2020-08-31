@@ -1,2 +1,2 @@
-import PopUp from './PopUp';
-export default PopUpPopUp;
+import PopUpRegisterResult from './PopUp';
+export default PopUpRegisterResult;

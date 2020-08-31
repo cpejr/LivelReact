@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { AiFillCloseCircle } from "react-icons/ai";
 
@@ -28,7 +28,7 @@ export default function PopUp({ functionState }) {
         //o objeto metricasAluno tá preenchido
     }
     return (
-        <div className="Modal">
+        <div className="Modal1">
             <div className="ContainerModal">
                 <div
                     className="ClosePopUpRegister"
@@ -40,7 +40,7 @@ export default function PopUp({ functionState }) {
                     <span>Registro do Treino</span>
                 </div>
                 <form className="Form_treino">
-                    <div className="alunoID">
+                    <div className="dadosGerais">
                         <label>AlunoID:</label>
                         <input
                             type="text"
@@ -51,7 +51,7 @@ export default function PopUp({ functionState }) {
                             }
                         ></input>
                     </div>
-                    <div className="div_data">
+                    <div className="dadosGerais">
                         <label>Data:</label>
                         <input
                             type="text"
@@ -62,7 +62,7 @@ export default function PopUp({ functionState }) {
                             }
                         />
                     </div>
-                    <div className="div_peso">
+                    <div className="peso">
                         <label>Peso:</label>
                         <input
                             type="text"
@@ -73,7 +73,7 @@ export default function PopUp({ functionState }) {
                             }
                         />
                     </div>
-                    <div className="div_altura">
+                    <div className="altura">
                         <label>Altura:</label>
                         <input
                             type="text"
@@ -84,7 +84,7 @@ export default function PopUp({ functionState }) {
                             }
                         />
                     </div>
-                    <div className="div_along">
+                    <div className="numeroExercicios" >
                         <label>Alongam. Nivel:</label>
                         <input
                             type="text"
@@ -96,7 +96,7 @@ export default function PopUp({ functionState }) {
                             }
                         />
                     </div>
-                    <div className="div_abno">
+                    <div className="numeroExercicios" >
                         <label>Abdominais:</label>
                         <input
                             type="text"
@@ -107,7 +107,7 @@ export default function PopUp({ functionState }) {
                             }
                         />
                     </div>
-                    <div className="div_flexo">
+                    <div className="numeroExercicios">
                         <label>Flexões:</label>
                         <input
                             type="text"
@@ -118,7 +118,7 @@ export default function PopUp({ functionState }) {
                             }
                         />
                     </div>
-                    <div className="div_bar">
+                    <div className="numeroExercicios">
                         <label>Barra:</label>
                         <input
                             type="text"
@@ -129,7 +129,7 @@ export default function PopUp({ functionState }) {
                             }
                         />
                     </div>
-                    <div className="div_neck">
+                    <div className="medidasCorpo">
                         <label>Pescoço:</label>
                         <input
                             type="text"
@@ -140,7 +140,7 @@ export default function PopUp({ functionState }) {
                             }
                         />
                     </div>
-                    <div className="div_cintura">
+                    <div className="medidasCorpo">
                         <label>Cintura:</label>
                         <input
                             type="text"
@@ -151,7 +151,7 @@ export default function PopUp({ functionState }) {
                             }
                         />
                     </div>
-                    <div className="div_quadril">
+                    <div className="medidasCorpo">
                         <label>Quadril:</label>
                         <input
                             type="text"
@@ -162,7 +162,7 @@ export default function PopUp({ functionState }) {
                             }
                         />
                     </div>
-                    <div className="div_biceps">
+                    <div className="medidasCorpo">
                         <label>Biceps:</label>
                         <input
                             type="text"
@@ -173,7 +173,7 @@ export default function PopUp({ functionState }) {
                             }
                         />
                     </div>
-                    <div className="div_coxa">
+                    <div className="medidasCorpo">
                         <label>Coxa:</label>
                         <input
                             type="text"
@@ -184,6 +184,7 @@ export default function PopUp({ functionState }) {
                             }
                         />
                     </div>
+
                         <button
                             className="button"
                             onClick={(event) => funcao_enviar(event)}

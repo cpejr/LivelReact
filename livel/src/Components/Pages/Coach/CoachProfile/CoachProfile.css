@@ -25,10 +25,13 @@
 .grade b{
     font-family: 'Bebas Neue';
     margin-bottom: 10%;
-    height: 100%;
     display: flex;
     width: 60%;
     justify-content: center;
     align-items: flex-start;
     font-size: 25vh;
+}
+
+.buttonCoach {
+    margin-top: 20%;
 }
