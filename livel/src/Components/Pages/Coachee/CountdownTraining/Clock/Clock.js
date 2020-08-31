@@ -26,18 +26,18 @@ export default function Clock(props){
     if(leftMin < 0){
         leftMin = 59 + leftMin;
         leftHour--;
-    }
+    }  
 
     let countH = leftHour;
     let countM = leftMin;
-    let countS = leftSec;   
-
+    let countS = leftSec; 
 
     const [hour, setHour] = useState(leftHour);
     const [minute, setMinute] = useState(leftMin);
     const [second, setSecond] = useState(leftSec);
 
     useEffect(() => {
+
         setInterval(() => {
             // Condição de parada da contagem regressiva
             if(countH === 0 && countM === 0 && countS === 0){
@@ -75,7 +75,7 @@ export default function Clock(props){
             }
         
         }, 1000);
-      }, []);
+      }, [ ]);
 
 
     return(

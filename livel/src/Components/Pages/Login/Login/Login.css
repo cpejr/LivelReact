@@ -23,20 +23,37 @@
 .inputsContainer{
     display: flex;
     flex-direction: column;
-    height: 10%;
+    height: 15%;
     background-color: #632467;
     opacity: 0.7;
+    margin-bottom: 25px;
 }
 
-.matriculaInput label{
-    color: #ffff;
-    font-size: 20px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
+.inputsContainer div + div{
+    margin-top: 20px;
 }
 
-.senhaInput label{
-    color: #ffff;
+.matriculaInput{
+    height: 50%;
+    border-bottom: 1px solid white !important;
+    color: white;
+
+}
+.senhaInput{
+    height: 50%;
+    border-bottom: 1px solid white !important;
+}
+
+.MuiInputBase-input{
+    color: #fff !important;
+}
+
+.MuiInput-underline::after{
+    border-bottom-color: #fff !important;
+}
+
+.matriculaInput label, .senhaInput label{
+    color: #ffff !important;
     font-size: 20px;
     font-family: sans-serif, Univers LT;
     font-stretch: condensed;

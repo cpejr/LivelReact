@@ -32,7 +32,7 @@ function Login(props){
 
     let isCoach = props.location.state.isCoach;
 
-    const { classes} = props;
+    // const { classes} = props;
     // const isCoach = data
 
     function handleSubmit(e){
@@ -69,22 +69,22 @@ function Login(props){
             <div className='LoginTitle'>Login</div>
             <div className='inputsContainer'>
                 <TextField  className="matriculaInput" label="matrícula" onChange={(e)=>{setMatricula(e.target.value)}}
-                    InputLabelProps={{
-                        classes: {root: classes.inputLabel, focussed: classes.inputLabel}
-                    }}
-                    InputProps={{
-                        classes: {root: classes.inputStyle, focussed: classes.inputStyle, notchedOutline: classes.inputStyle}
-                    }}
+                    // InputLabelProps={{
+                    //     classes: {root: classes.inputLabel, focussed: classes.inputLabel}
+                    // }}
+                    // InputProps={{
+                    //     classes: {root: classes.inputStyle, focussed: classes.inputStyle, notchedOutline: classes.inputStyle}
+                    // }}
                 />
     
                 <TextField  className="senhaInput" label="senha" onChange={(e)=>{setSenha(e.target.value)}}
                     type="password"
-                    InputLabelProps={{
-                        classes: {root: classes.inputLabel, focussed: classes.inputLabel}
-                    }}
-                    InputProps={{
-                        classes: {root: classes.inputStyle, focussed: classes.inputStyle, notchedOutline: classes.inputStyle}
-                    }}
+                    // InputLabelProps={{
+                    //     classes: {root: classes.inputLabel, focussed: classes.inputLabel}
+                    // }}
+                    // InputProps={{
+                    //     classes: {root: classes.inputStyle, focussed: classes.inputStyle, notchedOutline: classes.inputStyle}
+                    // }}
                 />
             </div>
             <div className='loginClick' onClick={handleSubmit}>ENTRAR</div>

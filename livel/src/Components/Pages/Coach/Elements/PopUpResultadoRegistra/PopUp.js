@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { AiFillCloseCircle } from "react-icons/ai";
 
 // import {FacebookShareButton} from "react-share"; // pro post do facebook
