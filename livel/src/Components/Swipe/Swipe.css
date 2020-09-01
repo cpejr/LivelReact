@@ -1,0 +1,31 @@
+.swipeContainer{
+    height: 50%;
+    width: 100%;
+
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.conteudo{
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.botoes{
+    position: relative;
+    /* height: 55px; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    z-index: 0;
+}
+
+.botoes button{
+    height: 100%;
+}

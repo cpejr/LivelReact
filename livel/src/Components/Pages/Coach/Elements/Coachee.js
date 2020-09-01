@@ -2,6 +2,7 @@ import React, { Component, useState } from "react";
 // Teste icons
 import { FaArrowsAltH, FaTrashAlt, FaCheck, FaAngleRight } from "react-icons/fa";
 
+import Swipe from '../../../Swipe';
 
 import PopUpChangeCoach from './PopUpChangeCoach/PopUp';
 import PopUpRegisterResult from './PopUpResultadoRegistra/PopUp';
@@ -153,7 +154,8 @@ function AllCoachees(props) {
             {isPopUpRegisterResultVisible ? <PopUpRegisterResult functionState = {setIsPopUpRegisterResultVisible}/> : null}
             {isPopUpAlertDelete ? <PopUpAlertDelete functionState = {setIsPopUpAlertDelete}/> : null}
         </div>
-        <SwipeableListItem
+        <Swipe backgroundColor='#E6E6E6'>
+        {/* <SwipeableListItem
             blockSwipe={false}
             threshold={0.1}
             swipeLeft={{
@@ -161,7 +163,7 @@ function AllCoachees(props) {
                 action: () => swipingLeft(), 
                 actionAnimation: ActionAnimations["NONE"],
             }}   
-        >
+        > */}
 
             <FaCheck size={30} style={isCheck? styleCheck[0]: styleCheck[1]} onClick={() => setIsCheck(!isCheck) }/>
             
@@ -202,7 +204,8 @@ function AllCoachees(props) {
                     <FaAngleRight size={35} color='#ADB4B5'/>
                 </div>
             </div>
-            </SwipeableListItem>
+            {/* </SwipeableListItem> */}
+            </Swipe>
         </>
     );
 }
