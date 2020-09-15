@@ -23,53 +23,53 @@ export default function TrainingTypes() {
  
     //FUNÇÃO DEFINE QUAIS IMAGENS DE TROFEU APARECE DE ACORDO COM O NUMERO DE TREINO
     const trophies = ()=>{
-        if (aluno.ALUNO_TREINOS.NumTreinosMes<6 || aluno.ALUNO_TREINOS.NumTreinosMes == null){
-           return{
-               trof12d:'/images/trofeis/trof12trans.png',             
-               trof10d: '/images/trofeis/trof10trans.png',
-               trof8d: '/images/trofeis/trof8trans.png',
-               trof6d: '/images/trofeis/trof6trans.png'
-           }
+        // if (aluno.ALUNO_TREINOS.NumTreinosMes<6 || aluno.ALUNO_TREINOS.NumTreinosMes == null){
+        //    return{
+        //        trof12d:'/images/trofeis/trof12trans.png',             
+        //        trof10d: '/images/trofeis/trof10trans.png',
+        //        trof8d: '/images/trofeis/trof8trans.png',
+        //        trof6d: '/images/trofeis/trof6trans.png'
+        //    }
             
-        }
-        else if (aluno.ALUNO_TREINOS.NumTreinosMes<8){
-            return{
-                trof12d:'/images/trofeis/trof12trans.png',
-                trof10d: '/images/trofeis/trof10trans.png',
-                trof8d: '/images/trofeis/trof8trans.png',
-                trof6d: '/images/trofeis/trof6full.png'
-            }
-        }
-        else if (aluno.ALUNO_TREINOS.NumTreinosMes<10){
-            return{
-                trof12d:'/images/trofeis/trof12trans.png',      
-                trof10d: '/images/trofeis/trof10trans.png',
-                trof8d: '/images/trofeis/trof8full.png',
-                trof6d: '/images/trofeis/trof6full.png'
-            }
-        }
-        else if (aluno.ALUNO_TREINOS.NumTreinosMes<12){
-            return{
-                trof12d:'/images/trofeis/trof12trans.png',
-                trof10d: '/images/trofeis/trof10full.png',
-                trof8d: '/images/trofeis/trof8full.png',
-                trof6d: '/images/trofeis/trof6full.png'
-            }
-            }
-         else if (aluno.ALUNO_TREINOS.NumTreinosMes>=12){
+        // }
+        // else if (aluno.ALUNO_TREINOS.NumTreinosMes<8){
+        //     return{
+        //         trof12d:'/images/trofeis/trof12trans.png',
+        //         trof10d: '/images/trofeis/trof10trans.png',
+        //         trof8d: '/images/trofeis/trof8trans.png',
+        //         trof6d: '/images/trofeis/trof6full.png'
+        //     }
+        // }
+        // else if (aluno.ALUNO_TREINOS.NumTreinosMes<10){
+        //     return{
+        //         trof12d:'/images/trofeis/trof12trans.png',      
+        //         trof10d: '/images/trofeis/trof10trans.png',
+        //         trof8d: '/images/trofeis/trof8full.png',
+        //         trof6d: '/images/trofeis/trof6full.png'
+        //     }
+        // }
+        // else if (aluno.ALUNO_TREINOS.NumTreinosMes<12){
+        //     return{
+        //         trof12d:'/images/trofeis/trof12trans.png',
+        //         trof10d: '/images/trofeis/trof10full.png',
+        //         trof8d: '/images/trofeis/trof8full.png',
+        //         trof6d: '/images/trofeis/trof6full.png'
+        //     }
+        //     }
+        //  else if (aluno.ALUNO_TREINOS.NumTreinosMes>=12){
             return{
                 trof12d:'/images/trofeis/trof12full.png',
                 trof10d: '/images/trofeis/trof10full.png',
                 trof8d: '/images/trofeis/trof8full.png',
                 trof6d: '/images/trofeis/trof6full.png'
                 }
-                }
+                // }
 
     };
 
     return (
         <div style={{ height: "100%" }}>
-            <Header img={ALUNO_INFO.AlunoFoto} name={ALUNO_INFO.AlunoNome} back={true} />
+            <Header img={true} name={true} back={true} />
             <div className="body">
                 <div className="trophies">
                   <div className="sentencealign"> 
@@ -105,7 +105,7 @@ export default function TrainingTypes() {
                 <img src='/images/programa.png' alt="programa" className="programImage"/>
                 </div>
                 <div className="points">
-                    <div>Você possui um total de <b>{aluno.ALUNO_TREINOS.PontosLivel} pontos</b></div>
+                    <div>Você possui um total de <b>{12} pontos</b></div>
                 </div>
             </div>
         </div>

@@ -210,10 +210,10 @@ export default function PopUpPeriodizacao(props) {
                 <AiFillCloseCircle size={32} />
             </div>
             <div className={classes.popUpHeader}>ESTÍMULO DO MÊS</div>
-            {props.Periodizacao === "T" ? (
+            {props.TREINO_SEMANA.Periodizacao === "T" ? (
                 <div className={classes.estimuloDoMesContainer}>
                     <div className={classes.yellowSymbol}>
-                        {props.Periodizacao}
+                        {props.TREINO_SEMANA.Periodizacao}
                     </div>
                     <div className={classes.descriptionText}>
                         <div className={classes.descriptionTitleYellow}>
@@ -233,7 +233,7 @@ export default function PopUpPeriodizacao(props) {
             ) : (
                 <div className={classes.estimuloDoMesContainer}>
                     <div className={classes.orangeSymbol}>
-                        {props.Periodizacao}
+                        {props.TREINO_SEMANA.Periodizacao}
                     </div>
                     <div className={classes.descriptionText}>
                         <div className={classes.descriptionTitleOrange}>
@@ -292,13 +292,13 @@ export default function PopUpPeriodizacao(props) {
 
     return (
         <React.Fragment>
-            {props.Periodizacao === "T" ? (
+            {props.TREINO_SEMANA.Periodizacao === "T" ? (
                 <button
                     type="button"
                     className={classes.yellowPopUpButton}
                     onClick={handleOpen}
                 >
-                    {props.Periodizacao}
+                    {props.TREINO_SEMANA.Periodizacao}
                 </button>
             ) : (
                 <button
@@ -306,7 +306,7 @@ export default function PopUpPeriodizacao(props) {
                     className={classes.orangePopUpButton}
                     onClick={handleOpen}
                 >
-                    {props.Periodizacao}
+                    {props.TREINO_SEMANA.Periodizacao}
                 </button>
             )}
             <button

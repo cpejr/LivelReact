@@ -43,6 +43,9 @@ export default function CountdownTraining(props){
                     <button class="MarkoffButton">
                         <h4 onClick={cancelTraining}>desmarcar</h4>
                     </button>
+                    <button class="MarkoffButton">
+                        <h4 onClick={()=>{history.push('/midTraining')}}>Seguir</h4>
+                    </button>
                 </div>
             </div>
         </div>
