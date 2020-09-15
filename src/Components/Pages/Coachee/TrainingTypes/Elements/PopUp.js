@@ -222,8 +222,8 @@ export default function PopUpPeriodizacao(props) {
                         Maiores cargas
                         <br />
                         Menores repetiçoes (
-                        {props.TREINO_SEMANA.MargemtRepeticaoInferior} a{" "}
-                        {props.TREINO_SEMANA.MargemRepeticaoSuperior})
+                        {1} a{" "}
+                        {3})
                         <br />
                         Maiores Pausas (1' a 2')
                         <br />
@@ -242,8 +242,8 @@ export default function PopUpPeriodizacao(props) {
                         Menores cargas
                         <br />
                         Menores repetiçoes (
-                        {props.TREINO_SEMANA.MargemtRepeticaoInferior} a{" "}
-                        {props.TREINO_SEMANA.MargemtRepeticaoSuperior})
+                        {5} a{" "}
+                        {3})
                         <br />
                         Menores Pausas (0' a 1')
                         <br />
@@ -258,7 +258,7 @@ export default function PopUpPeriodizacao(props) {
             <div className={classes.CadeiaContainer}>
                 <div className={classes.CadeiaRow}>
                     <div className={classes.purpleSymbol}>
-                        {props.TREINO_SEMANA.CadeiaExcentrica}
+                        {3}
                     </div>
                     <div className={classes.descriptionTitlePurple}>
                         EXCÊNTRICA
@@ -275,7 +275,7 @@ export default function PopUpPeriodizacao(props) {
                 </div>
                 <div className={classes.CadeiaRow}>
                     <div className={classes.purpleSymbol}>
-                        {props.TREINO_SEMANA.CadeiaConcentrica}
+                        {4}
                     </div>
                     <div className={classes.descriptionTitlePurple}>
                         CONSCÊNTRICA

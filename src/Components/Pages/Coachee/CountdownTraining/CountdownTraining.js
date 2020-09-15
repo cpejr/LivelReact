@@ -11,17 +11,15 @@ const phrase = "Seu corpo é sua modara. Cuide-se!";
 
 export default function CountdownTraining(props){
 
-    console.log(props)
-
     const history = useHistory()
 
     async function cancelTraining(){
-        try{
-            await treinoCheckOut(props.location.state.treinoId)
+        // try{
+        //     await treinoCheckOut(props.location.state.treinoId)
             history.push('/trainingTypes')
-        }catch(error){
-            alert(error)
-        }
+    //     }catch(error){
+    //         alert(error)
+    //     }
     }
 
 

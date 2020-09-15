@@ -12,34 +12,33 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 
 export default function TimeSchedule(props){
 
-    const [horarios, setHorarios] = useState([])
+    const [horarios, setHorarios] = useState(["14:00", "15:00"])
 
     const history = useHistory()
 
-    useEffect(()=>{
-        async function backRequest(){
-            try {
-                const horarioBack = await treinoHorarios()
-                setHorarios(horarioBack.TREINO_HORARIOS)
-            }
-            catch(error) {
-                alert(error)
-            }
-        }
-        backRequest()
-    }, [])
+    // useEffect(()=>{
+        // async function backRequest(){
+        //     try {
+                // const horarioBack = await treinoHorarios()
+                // setHorarios(["14:00", "15:00"])
+        //     }
+        //     catch(error) {
+        //         alert(error)
+        //     }
+        // }
+        // backRequest()
+    // }, [])
 
     async function handleSchedule(horario){
-        const alunoId = getAluno().ALUNO_INFO.ID_Aluno
-        const trainingType = props.location.state.trainingType
+        // const alunoId = getAluno().ALUNO_INFO.ID_Aluno
+        // const trainingType = props.location.state.trainingType
         try{
-            const treinoId = await treinoRegistra(alunoId, trainingType, horario.ID_Horario)
-            console.log(treinoId)
+            // const treinoId = await treinoRegistra(alunoId, trainingType, horario.ID_Horario)
             history.push({
                 pathname: '/countdownTraining',
                 state: {
                     trainingTime: horario,
-                    treinoId: treinoId
+                    treinoId: 16738
                 }
             })
         }
@@ -52,7 +51,7 @@ export default function TimeSchedule(props){
 
     return(
         <div style={{height: "100%"}} >
-            <Header img="/images/user.jpg" name="Arthur Lima" icons={true} />
+            <Header img={true} name={true} icons={true} />
             <div className="TimeScheduleContainer">
                 <div className="pageTitle">
                 <Link to='/trainingTypes'>

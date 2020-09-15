@@ -90,7 +90,7 @@ export default function MidTraining() {
                     <div className="counting">
                         <div>
                             <Clock
-                                seconds={1}
+                                seconds={10}
                                 active={() => {
                                     if ((active.clock === 'training') && !(active.paused)) { console.log('Clock 1: true'); return true }
                                     else { console.log('Clock 1: false'); return false }
@@ -113,7 +113,7 @@ export default function MidTraining() {
                     </div>
                     <div className="counting">
                         <div>
-                            <Clock seconds={1}
+                            <Clock seconds={5}
                                 active={() => {
                                     if ((active.clock === 'rest') && !(active.paused)) { console.log('Clock 2: true'); return true }
                                     else { console.log('Clock 2: false'); return false }

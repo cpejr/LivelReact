@@ -18,12 +18,12 @@ export default function Header(props){
             <div className="purpleLine"/>
 
             <div className='CoachheaderContent'>
-                <img src={`http://fitgroup.com.br/livel/fotos/${aluno.ALUNO_INFO.AlunoFoto}`} alt="imagem" className="CoachimagemHeader" onClick={()=>history.push('/profile')}/>
+                <img src="/images/user.jpg" alt="imagem" className="CoachimagemHeader" onClick={()=>history.push('/profile')}/>
 
                 {(props.name!=null) &&
                     <div className="nameContainer">
                     <div>COACH</div>
-                    <div className="Coachname" onClick={()=>history.push('/profile')}>{aluno.ALUNO_INFO.AlunoNome}</div>
+                    <div className="Coachname" onClick={()=>history.push('/profile')}>Arthur Lima</div>
                     </div>
                 }
 
@@ -57,10 +57,10 @@ export default function Header(props){
             <div className="orangeLine"/>
 
             <div className='headerContent'>
-                <img src={`http://fitgroup.com.br/livel/fotos/${aluno.ALUNO_INFO.AlunoFoto}`} alt="imagem" className="imagemHeader" onClick={()=>history.push('/profile')}/>
+                <img src="images/user.png" alt="imagem" className="imagemHeader" onClick={()=>history.push('/profile')}/>
 
                 {(props.name!=null) &&
-                    <div className="name" onClick={()=>history.push('/profile')}>{aluno.ALUNO_INFO.AlunoNome}</div>
+                    <div className="name" onClick={()=>history.push('/profile')}>Arthur Lima</div>
                 }
 
                 {(props.level!=null) &&

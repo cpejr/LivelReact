@@ -28,28 +28,28 @@ export default function Body(){
         }
     }
 
-    async function handleSubmit(){
-        try{
-            const alunoId = getAluno().ALUNO_INFO.ID_Aluno
-            if (customComment) {
-                await restricoesRegistra(alunoId, customComment, hurtParts)
-                alert('Enviado com sucesso')
-            }
-            else{
-                await restricoesRegistra(alunoId, -1, hurtParts)
-                alert('Enviado com sucesso')
-            }
-        }
-        catch(error){
-            alert(error)
-        }
-    }
+    // async function handleSubmit(){
+    //     try{
+    //         const alunoId = getAluno().ALUNO_INFO.ID_Aluno
+    //         if (customComment) {
+    //             await restricoesRegistra(alunoId, customComment, hurtParts)
+    //             alert('Enviado com sucesso')
+    //         }
+    //         else{
+    //             await restricoesRegistra(alunoId, -1, hurtParts)
+    //             alert('Enviado com sucesso')
+    //         }
+    //     }
+    //     catch(error){
+    //         alert(error)
+    //     }
+    // }
 
 
     return (
         <div style={{height: '100%'}}>
             <Header name={true} back={true} />
-            <form onSubmit={handleSubmit} className='BodyContainer'>
+            <form onSubmit={()=>{alert("Enviado")}} className='BodyContainer'>
                 <div className='title'>
                     Caso você tenha alguma restrição e/ou dor de movimentos, marque na figura abaixo os locais para que possamos orientar melhor o seu treino:
                 </div>
