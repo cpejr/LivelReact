@@ -210,10 +210,10 @@ export default function PopUpPeriodizacao(props) {
                 <AiFillCloseCircle size={32} />
             </div>
             <div className={classes.popUpHeader}>ESTÍMULO DO MÊS</div>
-            {props.TREINO_SEMANA.Periodizacao === "T" ? (
+            {props.Periodizacao === "T" ? (
                 <div className={classes.estimuloDoMesContainer}>
                     <div className={classes.yellowSymbol}>
-                        {props.TREINO_SEMANA.Periodizacao}
+                        {props.Periodizacao}
                     </div>
                     <div className={classes.descriptionText}>
                         <div className={classes.descriptionTitleYellow}>
@@ -233,7 +233,7 @@ export default function PopUpPeriodizacao(props) {
             ) : (
                 <div className={classes.estimuloDoMesContainer}>
                     <div className={classes.orangeSymbol}>
-                        {props.TREINO_SEMANA.Periodizacao}
+                        {props.Periodizacao}
                     </div>
                     <div className={classes.descriptionText}>
                         <div className={classes.descriptionTitleOrange}>
@@ -292,13 +292,13 @@ export default function PopUpPeriodizacao(props) {
 
     return (
         <React.Fragment>
-            {props.TREINO_SEMANA.Periodizacao === "T" ? (
+            {props.Periodizacao === "T" ? (
                 <button
                     type="button"
                     className={classes.yellowPopUpButton}
                     onClick={handleOpen}
                 >
-                    {props.TREINO_SEMANA.Periodizacao}
+                    {props.Periodizacao}
                 </button>
             ) : (
                 <button
@@ -306,7 +306,7 @@ export default function PopUpPeriodizacao(props) {
                     className={classes.orangePopUpButton}
                     onClick={handleOpen}
                 >
-                    {props.TREINO_SEMANA.Periodizacao}
+                    {props.Periodizacao}
                 </button>
             )}
             <button
@@ -314,14 +314,14 @@ export default function PopUpPeriodizacao(props) {
                 className={classes.purplePopUpButton}
                 onClick={handleOpen}
             >
-                {props.TREINO_SEMANA.CadeiaExcentrica}
+                {props.CadeiaExcentrica}
             </button>
             <button
                 type="button"
                 className={classes.purplePopUpButton}
                 onClick={handleOpen}
             >
-                {props.TREINO_SEMANA.CadeiaConcentrica}
+                {props.CadeiaConcentrica}
             </button>
 
             <Modal open={open} onClose={handleClose}>

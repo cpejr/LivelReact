@@ -12,7 +12,7 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 
 export default function TimeSchedule(props){
 
-    const [horarios, setHorarios] = useState(["14:00", "15:00"])
+    const [horarios, setHorarios] = useState(["14:00:00", "15:00:00"])
 
     const history = useHistory()
 
@@ -64,7 +64,7 @@ export default function TimeSchedule(props){
                 </div>
                 {
                     horarios.map(horario => {
-                        const horarioExibido = horario.Horario.slice(0, -3)
+                        const horarioExibido = horario.slice(0, -3)
                         return(
                             <div className="horario" onClick={()=>{handleSchedule(horario)}}>
                                 <div><b>{horarioExibido}</b></div>

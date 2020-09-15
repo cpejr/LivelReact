@@ -15,7 +15,7 @@ export default function TrainingTypes(props){
     // eslint-disable-next-line no-unused-vars
     // const [aluno, setAluno] = useState(getAluno())
     const [treinoSemana, setTreinoSemana] = useState({
-        periodizacao: 'T'
+        Periodizacao: 'T'
     })
 
     const [currentProgress, setCurrentProgress] = useState({

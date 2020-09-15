@@ -57,7 +57,7 @@ export default function Header(props){
             <div className="orangeLine"/>
 
             <div className='headerContent'>
-                <img src="images/user.png" alt="imagem" className="imagemHeader" onClick={()=>history.push('/profile')}/>
+                <img src="/images/user.png" alt="imagem" className="imagemHeader" onClick={()=>history.push('/profile')}/>
 
                 {(props.name!=null) &&
                     <div className="name" onClick={()=>history.push('/profile')}>Arthur Lima</div>
