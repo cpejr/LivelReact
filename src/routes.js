@@ -1,7 +1,6 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { isAuthenticated } from "./services/auth";
-import { resultadoRegistra } from "./services/backEnd";
 
 
 import TimeSchedule from './Components/Pages/Coachee/TimeSchedule';
@@ -15,7 +14,6 @@ import Rewards from './Components/Pages/Coachee/Rewards'
 import Home from './Components/Pages/Login/Home'
 import Body from './Components/Pages/Coachee/Body'
 import MidTraining from './Components/Pages/Coachee/MidTraining'
-// import ForgetPassword from './Components/Pages/Login/ForgetPassword'
 import Coach from './Components/Pages/Coach'
 import CoachProfile from './Components/Pages/Coach/CoachProfile'
 
@@ -47,37 +45,17 @@ export default function Routes(){
               <Route path="/signup" exact component={SignUp} />
               <Route path="/requestNumber" exact component={RequestNumber} />
               {/* <Route path="/forgetpassword" exact component={ForgetPassword} /> */}
-              <PrivateRoute path="/midTraining" component={MidTraining} />
-              <PrivateRoute path="/trainingTypes" component={TrainingTypes} />
-              <PrivateRoute path="/timeSchedule" component={TimeSchedule} />
-              <PrivateRoute path="/countdownTraining" component={CountdownTraining} /> 
-              <PrivateRoute path="/profile" component={Profile} />
-              <PrivateRoute path="/rewards" component={Rewards} />
-              <PrivateRoute path="/body" component={Body} />
-              <PrivateRoute path="/coach" component={Coach} />
-              <PrivateRoute path="/coachprofile" component={CoachProfile}/>
+              <Route path="/midTraining" component={MidTraining} />
+              <Route path="/trainingTypes" component={TrainingTypes} />
+              <Route path="/timeSchedule" component={TimeSchedule} />
+              <Route path="/countdownTraining" component={CountdownTraining} /> 
+              <Route path="/profile" component={Profile} />
+              <Route path="/rewards" component={Rewards} />
+              <Route path="/body" component={Body} />
+              <Route path="/coach" component={Coach} />
+              <Route path="/coachprofile" component={CoachProfile}/>
 
             </Switch>
         </BrowserRouter>
     )
-}
-
-function PaginaTeste(){
-
-  useEffect(()=>{
-    async function testeBack(){
-      try{
-        const date = new Date()
-        const result =  resultadoRegistra(1, date, 50, 180, 1, 50, 50, 12, 30, 100, 80, 40, 70)
-        console.log(result)
-      }catch(error){
-        alert(error)
-      }
-    }
-    testeBack()
-  }, [])
-
-  return (
-    <div>Pagina de teste</div>
-  )
 }
