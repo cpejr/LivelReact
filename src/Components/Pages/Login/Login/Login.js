@@ -38,25 +38,25 @@ function Login(props){
     function handleSubmit(e){
         e.preventDefault()
         const request = async () => {
+                
+                // alunoLogin(matricula, senha).then(async (result)=>{
+                //     if(result.LOGIN.ID_Aluno > 0 && result.LOGIN.Status === 1){
+                //         await login(result)
 
-                alunoLogin(matricula, senha).then(async (result)=>{
-                    if(result.LOGIN.ID_Aluno > 0 && result.LOGIN.Status === 1){
-                        await login(result)
-
-                        // Validação de coach ou nao 
+                //         // Validação de coach ou nao 
                         isCoach?
                             history.push('/coach')
                             : history.push('/trainingTypes')
-                    }
+                    // }
                         
-                    else{
-                        alert('Dados incorretos')
-                        history.push('/login')
-                    }
-                }).catch(error=>{
-                    alert(error)
-                    history.push('/login')
-                })
+                    // else{
+                    //     alert('Dados incorretos')
+                    //     history.push('/login')
+                    // }
+                // }).catch(error=>{
+                //     alert(error)
+                //     history.push('/login')
+                // })
         }
         request();
     }
