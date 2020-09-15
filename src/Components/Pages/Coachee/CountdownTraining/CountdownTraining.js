@@ -33,7 +33,7 @@ export default function CountdownTraining(props){
                 <div class="MainContentContainer">
                     <div class="CountdownClock">
                         <h4>Seu treino começa em:</h4>
-                        <Clock time={props.location.state.trainingTime.Horario}/>
+                        <Clock time={props.location.state.trainingTime}/>
                     </div>
                     <div class="MotivacionalPhrase">
                         <h4>"{phrase}"</h4> 
