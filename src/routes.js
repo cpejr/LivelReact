@@ -38,8 +38,6 @@ export default function Routes(){
         <BrowserRouter>
             <Switch>
 
-              <Route path="/testando" exact component={PaginaTeste} /> 
-
               <Route path="/" exact component={Home} />
               <Route path="/login" exact component={Login}/>
               <Route path="/signup" exact component={SignUp} />
