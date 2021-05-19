@@ -2,7 +2,7 @@ import React, { Component, useState } from "react";
 import { useSpring } from "react-spring";
 import Coachee from "./Coachee";
 import Switch from "react-switch";
-import { SwipeableList, SwipeableListItem } from '@sandstreamdev/react-swipeable-list';
+import { SwipeableList } from '@sandstreamdev/react-swipeable-list';
 import '@sandstreamdev/react-swipeable-list/dist/styles.css';
 
 

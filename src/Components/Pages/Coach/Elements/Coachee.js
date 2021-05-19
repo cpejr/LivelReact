@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { Component, useState } from "react";
 // Teste icons
 import { FaArrowsAltH, FaTrashAlt, FaCheck, FaAngleRight } from "react-icons/fa";
 

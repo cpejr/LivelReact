@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 import "./ForgetPassword.css";
 
@@ -21,6 +20,11 @@ function ForgetPassword(props) {
   const [matricula, setMatricula] = useState();
   const [email, setEmail] = useState();
   const { classes } = props;
+
+  const send = ()=>{
+    console.log(matricula, email)
+  }
+
 
   return (
     <div className="Container">
@@ -69,9 +73,9 @@ function ForgetPassword(props) {
           />
         </form>
       </div>
-      <Link className="forgetClick" to="/">
+      <div className="forgetClick" onClick={()=>send()}>
         ENVIAR
-      </Link>
+      </div>
     </div>
   );
 }
