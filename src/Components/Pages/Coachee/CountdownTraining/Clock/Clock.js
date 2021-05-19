@@ -44,6 +44,7 @@ export default function Clock(props){
                 setHour(hour => 0);
                 setMinute(minute => 0);
                 setSecond(second => 0);
+                props.onFinish();
             }
 
             // Contagem regressiva

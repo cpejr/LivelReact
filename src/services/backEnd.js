@@ -1,25 +1,41 @@
 import Request from "request-promise";
 
-//////////////////////////////////////////////COACHEE//////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////Login////////////////////////////////////////////////////////////////
 
-export const alunoLogin = (AlunoID, AlunoPwd) => {
-  return { LOGIN: { ID_Aluno: 1, Status: 1 } };
-  // return new Promise((resolve, reject) => {
-  //   Request({
-  //     method: "GET",
-  //     url: `http://fitgroup.com.br/livel/livel_app.php?AuthToken=${process.env.REACT_APP_AUTH_TOKEN}&Metodo=alunoLogin&AlunoID=${AlunoID}&AlunoPwd=${AlunoPwd}`,
-  //     json: true,
-  //     resolveWithFullResponse: true,
-  //   })
-  //     .then((response) => {
-  //       resolve(response.body);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       reject(err);
-  //     });
-  // });
+export const loginRequest = (ID, Pwd) => {
+  return new Promise((resolve, reject) => {
+    // Request({
+    //   method: "GET",
+    //   url: `http://fitgroup.com.br/livel/livel_app.php?AuthToken=${process.env.REACT_APP_AUTH_TOKEN}&Metodo=alunoLogin&AlunoID=${ID}&AlunoPwd=${Pwd}`,
+    //   json: true,
+    //   resolveWithFullResponse: true,
+    // })
+    //   .then((response) => {
+    //     resolve(response.body);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     reject(err);
+    //   });
+    resolve({
+      USER_TYPE: "coachee",
+      LOGIN: { ID_Aluno: 1, Status: 1 },
+      ALUNO_TREINOS: {
+        NumTreinosMes: 7,
+        PontosNext: 12,
+        NumTreinosFaltam: 2,
+        ID_ultimoTreinoTipo: 1,
+      },
+      ALUNO_INFO: {
+        AlunoNome: "Aluísio",
+      },
+    });
+  });
 };
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////COACHEE//////////////////////////////////////////////////////////////
 
 export const getTreinoSemana = () => {
   return new Promise((resolve, reject) => {
@@ -41,19 +57,60 @@ export const getTreinoSemana = () => {
 
 export const treinoHorarios = () => {
   return new Promise((resolve, reject) => {
-    Request({
-      method: "GET",
-      url: `${process.env.REACT_APP_API_URL}/livel_app.php?AuthToken=${process.env.REACT_APP_AUTH_TOKEN}&Metodo=treinoHorarios`,
-      json: true,
-      resolveWithFullResponse: true,
-    })
-      .then((response) => {
-        resolve(response.body);
-      })
-      .catch((err) => {
-        console.log(err);
-        reject(err);
-      });
+    // Request({
+    //   method: "GET",
+    //   url: `${process.env.REACT_APP_API_URL}/livel_app.php?AuthToken=${process.env.REACT_APP_AUTH_TOKEN}&Metodo=treinoHorarios`,
+    //   json: true,
+    //   resolveWithFullResponse: true,
+    // })
+    //   .then((response) => {
+    //     resolve(response.body);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     reject(err);
+    //   });
+
+    resolve({
+      TREINO_HORARIOS: [
+        {
+          Horario: `${new Date().getHours()}:${
+            new Date().getMinutes() + 1 > 10
+              ? new Date().getMinutes() + 1
+              : `0${new Date().getMinutes() + 1}`
+          }:${
+            new Date().getSeconds() > 10
+              ? new Date().getSeconds()
+              : `0${new Date().getSeconds()}`
+          }`,
+          ID_Horario: 1,
+        },
+        {
+          Horario: `${new Date().getHours() + 1}:${
+            new Date().getMinutes() > 10
+              ? new Date().getMinutes()
+              : `0${new Date().getMinutes()}`
+          }:${
+            new Date().getSeconds() > 10
+              ? new Date().getSeconds()
+              : `0${new Date().getSeconds()}`
+          }`,
+          ID_Horario: 1,
+        },
+        {
+          Horario: `${new Date().getHours() + 2}:${
+            new Date().getMinutes() > 10
+              ? new Date().getMinutes()
+              : `0${new Date().getMinutes()}`
+          }:${
+            new Date().getSeconds() > 10
+              ? new Date().getSeconds()
+              : `0${new Date().getSeconds()}`
+          }`,
+          ID_Horario: 1,
+        },
+      ],
+    });
   });
 };
 
@@ -190,24 +247,6 @@ export const resultadoRegistra = (
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////COACH////////////////////////////////////////////////////////////////
-
-export const getCoach = (matricula, pwd) => {
-  return new Promise((resolve, reject) => {
-    Request({
-      method: "GET",
-      url: `http://fitgroup.com.br/livel/livel_app.php?AuthToken=${process.env.REACT_APP_AUTH_TOKEN}&Metodo=professorAutentica&ProfessorLogin=${matricula}&ProfessorPwd=${pwd}`,
-      json: true,
-      resolveWithFullResponse: true,
-    })
-      .then((response) => {
-        resolve(response.body);
-      })
-      .catch((err) => {
-        console.log(err);
-        reject(err);
-      });
-  });
-};
 
 export const getCoachHorarios = (ProfessorID) => {
   return new Promise((resolve, reject) => {

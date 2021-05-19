@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { alunoLogin } from "../../../../services/backEnd";
+import { loginRequest } from "../../../../services/backEnd";
 import { login } from "../../../../services/auth";
 
 import { TextField } from "@material-ui/core";
@@ -20,30 +20,24 @@ const styles = {
   },
 };
 
-// isCoach
-//  true -> Coach
-// false -> Coachee
 
 function Login(props) {
   const [matricula, setMatricula] = useState();
   const [senha, setSenha] = useState();
   const history = useHistory();
 
-  let isCoach = props.location.state.isCoach;
-
   const { classes } = props;
-  // const isCoach = data
 
   function handleSubmit(e) {
     e.preventDefault();
     const request = async () => {
-      alunoLogin(matricula, senha)
+      loginRequest(matricula, senha)
         .then(async (result) => {
           if (result.LOGIN.ID_Aluno > 0 && result.LOGIN.Status === 1) {
-            await login(result);
+            login(result);
 
             // Validação de coach ou nao
-            isCoach ? history.push("/coach") : history.push("/trainingTypes");
+            (result.USER_TYPE==="coach") ? history.push("/coach") : history.push("/trainingTypes");
           } else {
             alert("Dados incorretos");
             history.push("/login");
@@ -60,11 +54,7 @@ function Login(props) {
   return (
     <div className="bodyContainer">
       <img src="/images/Logo_Livel.png" alt="Logo do Livel" className="logo" />
-      {isCoach ? (
-        <h1 className="titleCoachOrCoachee">Olá, Professor</h1>
-      ) : (
-        <h1 className="titleCoachOrCoachee">Olá, Aluno</h1>
-      )}
+        <h1 className="titleCoachOrCoachee">Bora treinar?</h1>
       <div className="LoginTitle">Login</div>
       <div className="inputsContainer">
         <TextField
