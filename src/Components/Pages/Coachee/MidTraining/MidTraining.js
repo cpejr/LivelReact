@@ -14,7 +14,6 @@ export default function MidTraining() {
     clock: "training",
   });
 
-  //ALTERA A PAUSE E O PLAY E QUAL CLOCK DEVE ESTAR RODANDO
   function changeActive(value) {
     if (value === "rest") {
       setActive({
@@ -36,7 +35,6 @@ export default function MidTraining() {
         clock: "rest",
       });
     } else if (value === "paused") {
-      console.log(active);
       setActive({
         paused: !active.paused,
         clock: active.clock,
@@ -44,11 +42,16 @@ export default function MidTraining() {
     }
   }
 
-  //AVALIA TREINO APOS TERMINADO
-  function advance() {
+  function advance(e) {
     try {
+      e.preventDefault();
       const result = treinoAvalia(234, 5);
       console.log(result);
+      setActive({
+        paused: true,
+        clock: active.clock,
+      });
+      setisModalVisible(true);
     } catch (error) {
       alert(error);
     }
@@ -134,10 +137,8 @@ export default function MidTraining() {
         </div>
       </div>
       <div className="footer">
-        <button type="button" className="buttonAdvance" onClick={advance}>
-          <div onClick={() => setisModalVisible(!isModalVisible)}>
+        <button className="buttonAdvance" onClick={(e)=>advance(e)}>
             FINALIZAR
-          </div>
         </button>
       </div>
     </div>

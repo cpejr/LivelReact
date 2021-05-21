@@ -41,6 +41,7 @@
     justify-content: center;
     text-decoration:none;
     border: none;
+    cursor: pointer;
 }
 
 .block {
