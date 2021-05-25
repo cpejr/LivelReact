@@ -47,13 +47,15 @@
     height: 7vh;
     width: 7vh;
     border-radius: 50%;
-    border: 3px solid #632467
+    border: 3px solid #632467;
+    cursor: pointer;
 }
 
 .name{
     color: #EF7D00;
     text-transform: uppercase;
     max-width: 40%;
+    cursor: pointer;
 }
 
 .Coachname{
@@ -64,7 +66,7 @@
     max-width: 60%;
     display: flex;
     margin-top: 1vh;
-
+    cursor: pointer;
 }
 
 .level{

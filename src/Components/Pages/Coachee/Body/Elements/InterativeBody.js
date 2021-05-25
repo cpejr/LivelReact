@@ -145,7 +145,7 @@ export default function InterativeBody(props){
     
     return (
         <div style={{position: 'relative'}}>
-            <img src='/images/body/body.png' alt='body' style={{height: '100%', width: 'auto'}}/>
+            <img src='/images/body/body.png' alt='body' style={{height: '60vh', width: 'auto'}}/>
             {
                 parts.map((part, index)=>{
                     return (

@@ -53,19 +53,20 @@ export default function Header(props) {
               <img
                 src="/images/bodyIcon.png"
                 alt="icone1"
-                style={{ marginRight: "16px" }}
+                style={{ marginRight: "16px", cursor: "pointer" }}
                 onClick={() => history.push("/body")}
               />
               <img
                 src="/images/rewardsIcon.png"
                 alt="icone1"
+                style={{ marginRight: "16px", cursor: "pointer" }}
                 onClick={() => history.push("/rewards")}
               />
             </div>
           )}
 
           {props.back != null && (
-            <IconContext.Provider value={{ size: "3em", color: "#632467" }}>
+            <IconContext.Provider value={{ size: "3em", color: "#632467", cursor: "pointer" }}>
               <IoIosArrowBack onClick={() => history.push("/trainingTypes")} />
             </IconContext.Provider>
           )}
@@ -108,11 +109,12 @@ export default function Header(props) {
               <img
                 src="/images/bodyIcon.png"
                 alt="icone1"
-                style={{ marginRight: "16px" }}
+                style={{ marginRight: "16px", cursor: "pointer" }}
                 onClick={() => history.push("/body")}
               />
               <img
                 src="/images/rewardsIcon.png"
+                style={{ cursor: "pointer" }}
                 alt="icone1"
                 onClick={() => history.push("/rewards")}
               />
@@ -120,7 +122,7 @@ export default function Header(props) {
           )}
 
           {props.back != null && (
-            <IconContext.Provider value={{ size: "3em", color: "#632467" }}>
+            <IconContext.Provider value={{ size: "3em", color: "#632467", cursor: "pointer" }}>
               <IoIosArrowBack onClick={() => history.push("/trainingTypes")} />
             </IconContext.Provider>
           )}
