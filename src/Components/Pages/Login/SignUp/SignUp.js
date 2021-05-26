@@ -29,6 +29,7 @@ const styles = {
     const [Email, setEmail] = useState("") 
     const [Password, setPassword] = useState("")
     const [ConfirmPassword, setConfirmPassword] = useState("") 
+    const [disabled, setDisabled] = useState(false);
     const { classes } = props;
     const [loading, setLoading] = useState(false);
 
@@ -79,7 +80,7 @@ const styles = {
         const isPasswordValid = validateInputs("Password", Password);
         const isConfirmPasswordValid = validateInputs("Password", ConfirmPassword);
     
-        if (!isNomeValid || !isSobrenomeValid || !isEmailValid || !isPasswordValid || !isConfirmPasswordValid) {
+        if (!isNomeValid || !isSobrenomeValid || !isEmailValid || !isPasswordValid || !isConfirmPasswordValid || Password !== ConfirmPassword) {
           if (!isNomeValid) {
             setErrorNome(true);
             setErrorNomeMessage("Campo não pode ser vazio");
@@ -121,6 +122,7 @@ const styles = {
           }
         } else {
           setLoading(true);
+          setDisabled(true);
 
           setErrorNome(false);
           setErrorNomeMessage("");
@@ -139,6 +141,7 @@ const styles = {
           console.log(ConfirmPassword)
           const timer = setTimeout(() => {
               setLoading(false);
+              setDisabled(false);
               history.push('/')
           }, 500);
           
@@ -195,7 +198,7 @@ const styles = {
                 />
                 </form>
                 </div>
-                <div className='forgetClick' onClick={handleSend}>{loading ? <CircularProgress /> : "ENVIAR"}</div>
+                <button className='forgetClick' disabled={disabled} onClick={handleSend}>{loading ? <CircularProgress /> : "ENVIAR"}</button>
             </div>
         )
     }

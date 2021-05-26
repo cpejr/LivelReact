@@ -25,6 +25,7 @@ const styles = {
 function Login(props) {
   const [matricula, setMatricula] = useState("");
   const [senha, setSenha] = useState("");
+  const [disabled, setDisabled] = useState(false);
   const history = useHistory();
   const [loading, setLoading] = useState(false);
 
@@ -72,6 +73,7 @@ function Login(props) {
               }
             } else {
               setLoading(true);
+              setDisabled(true);
     
               setErrorMatricula(false);
               setErrorMatriculaMessage("");
@@ -82,6 +84,7 @@ function Login(props) {
               // Validação de coach ou nao
               const timer = setTimeout(() => {
                 setLoading(false);
+                setDisabled(false);
                 (result.USER_TYPE==="coach") ? history.push("/coach") : history.push("/trainingTypes");
               }, 500);
               
@@ -89,12 +92,14 @@ function Login(props) {
             }
           } else {
             setLoading(false);
+            setDisabled(false);
             alert("Dados incorretos");
             history.push("/login");
           }
         })
         .catch((error) => {
           setLoading(false);
+          setDisabled(false);
           alert(error);
           history.push("/login");
         });
@@ -145,9 +150,9 @@ function Login(props) {
           }}
         />
       </div>
-      <div className="loginClick" onClick={handleSubmit}>
+      <button className="loginClick" disabled={disabled} onClick={handleSubmit}>
         {loading ? <CircularProgress /> : "ENTRAR"}
-      </div>
+      </button>
       <Link className="link" to="/signUp">
         Solicitar número de matrícula
       </Link>

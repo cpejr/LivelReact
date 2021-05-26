@@ -28,6 +28,7 @@ function RequestNumber(props){
     const [Sobrenome, setSobrenome] = useState("") 
     const [CPF, setCPF] = useState("")
     const [Email, setEmail] = useState("") 
+    const [disabled, setDisabled] = useState(false);
     const { classes } = props;
     const [loading, setLoading] = useState(false);
 
@@ -108,6 +109,7 @@ const maskCPF = value => {
           }
         } else {
           setLoading(true);
+          setDisabled(true);
 
           setErrorNome(false);
           setErrorNomeMessage("");
@@ -123,6 +125,7 @@ const maskCPF = value => {
           console.log(Email)
           const timer = setTimeout(() => {
             setLoading(false);
+            setDisabled(false);
             history.push('/')
           }, 500);
         
@@ -172,7 +175,7 @@ const maskCPF = value => {
                 />
                 </form>
                 </div>
-                <button className='forgetClick' onClick={handleSend}>{loading ? <CircularProgress /> : "ENVIAR"}</button>
+                <button className='forgetClick' disabled={disabled} onClick={handleSend}>{loading ? <CircularProgress /> : "ENVIAR"}</button>
             </div>
         )
     }

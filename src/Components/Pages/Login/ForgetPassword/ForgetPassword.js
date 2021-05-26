@@ -20,6 +20,7 @@ const styles = {
 function ForgetPassword(props) {
   const [matricula, setMatricula] = useState("");
   const [email, setEmail] = useState("");
+  const [disabled, setDisabled] = useState(false);
   const { classes } = props;
   const [loading, setLoading] = useState(false);
 
@@ -61,6 +62,7 @@ function ForgetPassword(props) {
       }
     } else {
       setLoading(true);
+      setDisabled(true);
 
       setErrorMatricula(false);
       setErrorMatriculaMessage("");
@@ -69,6 +71,7 @@ function ForgetPassword(props) {
       console.log(matricula, email)
       const timer = setTimeout(() => {
         setLoading(false);
+        setDisabled(false);
       }, 500);
     
       return () => clearTimeout(timer);
@@ -123,9 +126,9 @@ function ForgetPassword(props) {
           />
         </form>
       </div>
-      <div className="forgetClick" onClick={()=>send()}>
+      <button className="forgetClick" disabled={disabled} onClick={()=>send()}>
         {loading ? <CircularProgress /> : "ENVIAR"}
-      </div>
+      </button>
     </div>
   );
 }

@@ -55,6 +55,7 @@
     color: #632467;
     font-weight: bolder;
     cursor: pointer;
+    border: none;
 }
 
 .link{

@@ -25,7 +25,6 @@ export default function Header(props) {
             }
             alt="imagem"
             className="CoachimagemHeader"
-            onClick={() => history.push("/profile")}
           />
 
           {props.name != null && (
@@ -33,7 +32,6 @@ export default function Header(props) {
               <div>COACH</div>
               <div
                 className="Coachname"
-                onClick={() => history.push("/profile")}
               >
                 {aluno.ALUNO_INFO.AlunoNome}
               </div>
