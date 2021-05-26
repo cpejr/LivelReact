@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom'
 
 import './SignUp.css'
 
-import {TextField} from '@material-ui/core';
+import {TextField, CircularProgress} from '@material-ui/core';
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import validateInputs from "../../../../utils/Validate";
@@ -30,6 +30,7 @@ const styles = {
     const [Password, setPassword] = useState("")
     const [ConfirmPassword, setConfirmPassword] = useState("") 
     const { classes } = props;
+    const [loading, setLoading] = useState(false);
 
     //Estados para verificar erros no campo nome
     const [errorNome, setErrorNome] = useState(false);
@@ -111,14 +112,15 @@ const styles = {
             setErrorPasswordMessage("");
           }
 
-          if (!isConfirmPasswordValid) {
+          if (!isConfirmPasswordValid || Password !== ConfirmPassword) {
             setErrorConfirmPassword(true);
-            setErrorConfirmPasswordMessage("Mínimo de 6 caracteres");
+            setErrorConfirmPasswordMessage("Senha precisa ser igual");
           } else {
             setErrorConfirmPassword(false);
             setErrorConfirmPasswordMessage("");
           }
         } else {
+          setLoading(true);
 
           setErrorNome(false);
           setErrorNomeMessage("");
@@ -135,7 +137,12 @@ const styles = {
           console.log(Email)
           console.log(Password)
           console.log(ConfirmPassword)
-          history.push('/')
+          const timer = setTimeout(() => {
+              setLoading(false);
+              history.push('/')
+          }, 500);
+          
+          return () => clearTimeout(timer);
         }
     }
 
@@ -188,7 +195,7 @@ const styles = {
                 />
                 </form>
                 </div>
-                <div className='forgetClick' onClick={handleSend}>ENVIAR</div>
+                <div className='forgetClick' onClick={handleSend}>{loading ? <CircularProgress /> : "ENVIAR"}</div>
             </div>
         )
     }

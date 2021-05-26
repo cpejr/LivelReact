@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./ForgetPassword.css";
 
-import { TextField } from "@material-ui/core";
+import { TextField, CircularProgress } from "@material-ui/core";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import validateInputs from "../../../../utils/Validate";
@@ -21,6 +21,7 @@ function ForgetPassword(props) {
   const [matricula, setMatricula] = useState("");
   const [email, setEmail] = useState("");
   const { classes } = props;
+  const [loading, setLoading] = useState(false);
 
   //Estados para verificar erros no campo matrícula
   const [errorMatricula, setErrorMatricula] = useState(false);
@@ -59,12 +60,18 @@ function ForgetPassword(props) {
         setErrorEmailMessage("");
       }
     } else {
+      setLoading(true);
 
       setErrorMatricula(false);
       setErrorMatriculaMessage("");
       setErrorEmail(false);
       setErrorEmailMessage("");
       console.log(matricula, email)
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 500);
+    
+      return () => clearTimeout(timer);
     }
   }
 
@@ -117,7 +124,7 @@ function ForgetPassword(props) {
         </form>
       </div>
       <div className="forgetClick" onClick={()=>send()}>
-        ENVIAR
+        {loading ? <CircularProgress /> : "ENVIAR"}
       </div>
     </div>
   );

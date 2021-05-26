@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { loginRequest } from "../../../../services/backEnd";
 import { login } from "../../../../services/auth";
 
-import { TextField } from "@material-ui/core";
+import { TextField, CircularProgress } from "@material-ui/core";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import validateInputs from "../../../../utils/Validate";
@@ -26,6 +26,7 @@ function Login(props) {
   const [matricula, setMatricula] = useState("");
   const [senha, setSenha] = useState("");
   const history = useHistory();
+  const [loading, setLoading] = useState(false);
 
   //Estados para verificar erros no campo matrícula
   const [errorMatricula, setErrorMatricula] = useState(false);
@@ -70,6 +71,7 @@ function Login(props) {
                 setErrorSenhaMessage("");
               }
             } else {
+              setLoading(true);
     
               setErrorMatricula(false);
               setErrorMatriculaMessage("");
@@ -78,14 +80,21 @@ function Login(props) {
               login(result);
 
               // Validação de coach ou nao
-              (result.USER_TYPE==="coach") ? history.push("/coach") : history.push("/trainingTypes");
+              const timer = setTimeout(() => {
+                setLoading(false);
+                (result.USER_TYPE==="coach") ? history.push("/coach") : history.push("/trainingTypes");
+              }, 500);
+              
+              return () => clearTimeout(timer);
             }
           } else {
+            setLoading(false);
             alert("Dados incorretos");
             history.push("/login");
           }
         })
         .catch((error) => {
+          setLoading(false);
           alert(error);
           history.push("/login");
         });
@@ -137,7 +146,7 @@ function Login(props) {
         />
       </div>
       <div className="loginClick" onClick={handleSubmit}>
-        ENTRAR
+        {loading ? <CircularProgress /> : "ENTRAR"}
       </div>
       <Link className="link" to="/signUp">
         Solicitar número de matrícula

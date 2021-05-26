@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom'
 
 import './RequestNumber.css'
 
-import {TextField} from '@material-ui/core';
+import {TextField, CircularProgress} from '@material-ui/core';
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import validateInputs from "../../../../utils/Validate";
@@ -29,6 +29,7 @@ function RequestNumber(props){
     const [CPF, setCPF] = useState("")
     const [Email, setEmail] = useState("") 
     const { classes } = props;
+    const [loading, setLoading] = useState(false);
 
     //Estados para verificar erros no campo nome
     const [errorNome, setErrorNome] = useState(false);
@@ -42,6 +43,10 @@ function RequestNumber(props){
     const [errorEmail, setErrorEmail] = useState(false);
     const [errorEmailMessage, setErrorEmailMessage] = useState("");
 
+    //Estados para verificar erros no cpf
+    const [errorCPF, setErrorCPF] = useState(false);
+    const [errorCPFMessage, setErrorCPFMessage] = useState("");
+
     const handleNome = (e) => {
         setNome(e.target.value);
     };
@@ -54,12 +59,22 @@ function RequestNumber(props){
         setEmail(e.target.value);
     };
 
+// 000.000.000-00
+const maskCPF = value => {
+    return value
+      .replace(/\D/g, "")
+      .replace(/(\d{3})(\d)/, "$1.$2")
+      .replace(/(\d{3})(\d)/, "$1.$2")
+      .replace(/(\d{3})(\d{1,2})/, "$1-$2")
+      .replace(/(-\d{2})\d+?$/, "$1");
+  };
+
     function handleSend(){
         const isNomeValid = validateInputs("Name", Nome);
         const isSobrenomeValid = validateInputs("Name", Sobrenome);
         const isEmailValid = validateInputs("Email", Email);
     
-        if (!isNomeValid || !isSobrenomeValid || !isEmailValid) {
+        if (!isNomeValid || !isSobrenomeValid || !isEmailValid || CPF.length !== 14) {
           if (!isNomeValid) {
             setErrorNome(true);
             setErrorNomeMessage("Campo não pode ser vazio");
@@ -83,7 +98,16 @@ function RequestNumber(props){
             setErrorEmail(false);
             setErrorEmailMessage("");
           }
+
+          if (CPF.length !== 14) {
+            setErrorCPF(true);
+            setErrorCPFMessage("CPF inválido");
+          } else {
+            setErrorCPF(false);
+            setErrorCPFMessage("");
+          }
         } else {
+          setLoading(true);
 
           setErrorNome(false);
           setErrorNomeMessage("");
@@ -91,11 +115,18 @@ function RequestNumber(props){
           setErrorSobrenomeMessage("");
           setErrorEmail(false);
           setErrorEmailMessage("");
+          setErrorCPF(false);
+          setErrorCPFMessage("");
           console.log(Nome)
           console.log(Sobrenome)
           console.log(CPF)
           console.log(Email)
-          history.push('/')
+          const timer = setTimeout(() => {
+            setLoading(false);
+            history.push('/')
+          }, 500);
+        
+          return () => clearTimeout(timer);
         }
     }
     
@@ -123,7 +154,7 @@ function RequestNumber(props){
                         classes: {root: classes.inputStyle, focussed: classes.inputStyle, notchedOutline: classes.inputStyle}
                     }}
                 />
-                <TextField label="CPF" onChange={(e)=>{setCPF(e.target.value)}}
+                <TextField label="CPF" error={errorCPF} helperText={errorCPFMessage} value={CPF} onChange={(e) => setCPF(maskCPF(e.target.value))}
                     InputLabelProps={{
                         classes: {root: classes.inputLabel, focussed: classes.inputLabel}
                     }}
@@ -141,7 +172,7 @@ function RequestNumber(props){
                 />
                 </form>
                 </div>
-                <button className='forgetClick' onClick={handleSend}>ENVIAR</button>
+                <button className='forgetClick' onClick={handleSend}>{loading ? <CircularProgress /> : "ENVIAR"}</button>
             </div>
         )
     }
