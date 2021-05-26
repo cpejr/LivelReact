@@ -29,7 +29,8 @@ export default function Body() {
     }
   }
 
-  function handleSubmit() {
+  function handleSubmit(e) {
+		e.preventDefault();
     if (hurtParts.length === 0) {
       message.error("Escolha pelo menos uma parte do corpo dolorida", 2);
     } else {
