@@ -1,3 +1,5 @@
+
+
 .HeaderContainer{
     height: 15%
 }
@@ -31,7 +33,8 @@
     height: 7vh;
     width: 7vh;
     border-radius: 50%;
-    border: 3px solid #EF7D00
+    border: 3px solid #EF7D00;
+    cursor: pointer;
 }
 
 .nameContainer{

@@ -34,7 +34,7 @@ export default function Body() {
     if (hurtParts.length === 0) {
       message.error("Escolha pelo menos uma parte do corpo dolorida", 2);
     } else {
-      message.loading("Processando...", 2).then(async () => {
+      message.loading("Processando...", 1.3).then(async () => {
         const hide = message.loading("Enviando...");
         try {
           const alunoId = getAluno().ALUNO_INFO.ID_Aluno;

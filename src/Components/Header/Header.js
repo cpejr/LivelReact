@@ -66,8 +66,8 @@ export default function Header(props) {
           )}
 
           {props.back != null && (
-            <IconContext.Provider value={{ size: "3em", color: "#632467", cursor: "pointer" }}>
-              <IoIosArrowBack onClick={() => history.push("/trainingTypes")} />
+            <IconContext.Provider value={{ size: "3em", color: "#632467"}}>
+              <IoIosArrowBack style={{cursor: "pointer"}} onClick={() => history.push("/trainingTypes")} />
             </IconContext.Provider>
           )}
         </div>
@@ -122,8 +122,8 @@ export default function Header(props) {
           )}
 
           {props.back != null && (
-            <IconContext.Provider value={{ size: "3em", color: "#632467", cursor: "pointer" }}>
-              <IoIosArrowBack onClick={() => history.push("/trainingTypes")} />
+            <IconContext.Provider value={{ size: "3em", color: "#632467"}}>
+              <IoIosArrowBack style={{cursor: "pointer"}} onClick={() => history.push("/trainingTypes")} />
             </IconContext.Provider>
           )}
         </div>

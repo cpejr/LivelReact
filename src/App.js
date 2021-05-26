@@ -2,9 +2,16 @@ import React from 'react';
 import Routes from './routes'
 import './generals.css'
 
+import { ConfigProvider } from "antd";
+import ptBR from "antd/lib/locale/pt_BR";
+
+import 'antd/dist/antd.css';
+
 function App() {
   return (
-    <Routes/>
+    <ConfigProvider locale={ptBR}>
+      <Routes/>
+    </ConfigProvider>
   );
 }
 
