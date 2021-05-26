@@ -13,7 +13,7 @@ import Rewards from "./Components/Pages/Coachee/Rewards";
 import Home from "./Components/Pages/Login/Home";
 import Body from "./Components/Pages/Coachee/Body";
 import MidTraining from "./Components/Pages/Coachee/MidTraining";
-// import ForgetPassword from "./Components/Pages/Login/ForgetPassword"
+import ForgetPassword from "./Components/Pages/Login/ForgetPassword"
 import Coach from "./Components/Pages/Coach";
 import CoachProfile from "./Components/Pages/Coach/CoachProfile";
 
@@ -39,7 +39,7 @@ export default function Routes() {
         <Route path="/login" exact component={Login} />
         <Route path="/signup" exact component={SignUp} />
         <Route path="/requestNumber" exact component={RequestNumber} />
-        {/* <Route path="/forgetpassword" exact component={ForgetPassword} /> */}
+        <Route path="/forgetpassword" exact component={ForgetPassword} />
         <PrivateRoute path="/midTraining" component={MidTraining} />
         <PrivateRoute path="/trainingTypes" component={TrainingTypes} />
         <PrivateRoute path="/timeSchedule" component={TimeSchedule} />

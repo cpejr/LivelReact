@@ -7,6 +7,7 @@ import { login } from "../../../../services/auth";
 import { TextField } from "@material-ui/core";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
+import validateInputs from "../../../../utils/Validate";
 
 import "./Login.css";
 
@@ -22,22 +23,63 @@ const styles = {
 
 
 function Login(props) {
-  const [matricula, setMatricula] = useState();
-  const [senha, setSenha] = useState();
+  const [matricula, setMatricula] = useState("");
+  const [senha, setSenha] = useState("");
   const history = useHistory();
+
+  //Estados para verificar erros no campo matrícula
+  const [errorMatricula, setErrorMatricula] = useState(false);
+  const [errorMatriculaMessage, setErrorMatriculaMessage] = useState("");
+
+  //Estados para verificar erros no campo senha
+  const [errorSenha, setErrorSenha] = useState(false);
+  const [errorSenhaMessage, setErrorSenhaMessage] = useState("");
+
+  const handleMatricula = (e) => {
+    setMatricula(e.target.value);
+  };
+
+  const handleSenha = (e) => {
+    setSenha(e.target.value);
+  };
 
   const { classes } = props;
 
   function handleSubmit(e) {
     e.preventDefault();
+    const isMatriculaValid = validateInputs("Name", matricula);
+    const isSenhaValid = validateInputs("Password", senha);
     const request = async () => {
       loginRequest(matricula, senha)
         .then(async (result) => {
           if (result.LOGIN.ID_Aluno > 0 && result.LOGIN.Status === 1) {
-            login(result);
+            if (!isMatriculaValid || !isSenhaValid) {
+              if (!isMatriculaValid) {
+                setErrorMatricula(true);
+                setErrorMatriculaMessage("Campo não pode ser vazio");
+              } else {
+                setErrorMatricula(false);
+                setErrorMatriculaMessage("");
+              }
+    
+              if (!isSenhaValid) {
+                setErrorSenha(true);
+                setErrorSenhaMessage("Mínimo de 6 caracteres");
+              } else {
+                setErrorSenha(false);
+                setErrorSenhaMessage("");
+              }
+            } else {
+    
+              setErrorMatricula(false);
+              setErrorMatriculaMessage("");
+              setErrorSenha(false);
+              setErrorSenhaMessage("");
+              login(result);
 
-            // Validação de coach ou nao
-            (result.USER_TYPE==="coach") ? history.push("/coach") : history.push("/trainingTypes");
+              // Validação de coach ou nao
+              (result.USER_TYPE==="coach") ? history.push("/coach") : history.push("/trainingTypes");
+            }
           } else {
             alert("Dados incorretos");
             history.push("/login");
@@ -59,10 +101,10 @@ function Login(props) {
       <div className="inputsContainer">
         <TextField
           className="matriculaInput"
-          label="matrícula"
-          onChange={(e) => {
-            setMatricula(e.target.value);
-          }}
+          label="Matrícula"
+          error={errorMatricula} 
+          helperText={errorMatriculaMessage}
+          onChange={(e) => handleMatricula(e)}
           InputLabelProps={{
             classes: { root: classes.inputLabel, focussed: classes.inputLabel },
           }}
@@ -77,10 +119,10 @@ function Login(props) {
 
         <TextField
           className="senhaInput"
-          label="senha"
-          onChange={(e) => {
-            setSenha(e.target.value);
-          }}
+          label="Senha"
+          error={errorSenha} 
+          helperText={errorSenhaMessage}
+          onChange={(e) => handleSenha(e)}
           type="password"
           InputLabelProps={{
             classes: { root: classes.inputLabel, focussed: classes.inputLabel },

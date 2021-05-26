@@ -54,6 +54,7 @@
     font-stretch: condensed;
     color: #632467;
     font-weight: bolder;
+    cursor: pointer;
 }
 
 .link{
