@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./TimeSchedule.css";
 import { treinoHorarios, treinoRegistra } from "../../../../services/backEnd";
 import { getAluno } from "../../../../services/auth";
@@ -54,11 +54,12 @@ export default function TimeSchedule(props) {
       <Header img="/images/user.jpg" name="Arthur Lima" icons={true} />
       <div className="TimeScheduleContainer">
         <div className="pageTitle">
-          <Link to="/trainingTypes">
-            <IconContext.Provider value={{ size: "1.8em", color: "#632467" }}>
-              <MdKeyboardArrowLeft />
-            </IconContext.Provider>
-          </Link>
+          <IconContext.Provider value={{ size: "1.8em", color: "#632467" }}>
+            <MdKeyboardArrowLeft
+              style={{ cursor: "pointer" }}
+              onClick={() => history.push("/trainingTypes")}
+            />
+          </IconContext.Provider>
 
           <div>MARQUE SEU HORÁRIO</div>
         </div>

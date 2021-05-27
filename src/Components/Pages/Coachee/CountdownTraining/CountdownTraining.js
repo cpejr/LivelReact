@@ -13,12 +13,12 @@ export default function CountdownTraining(props) {
   const history = useHistory();
 
   async function cancelTraining() {
-    try {
-      await treinoCheckOut(props.location.state.treinoId);
-      history.push("/trainingTypes");
-    } catch (error) {
-      alert(error);
-    }
+    history.push("/trainingTypes");
+    // try {
+    //   await treinoCheckOut(props.location.state.treinoId);
+    // } catch (error) {
+    //   alert(error);
+    // }
   }
 
   const startTraining = () => {
@@ -35,7 +35,10 @@ export default function CountdownTraining(props) {
         <div class="MainContentContainer">
           <div class="CountdownClock">
             <h4>Seu treino começa em:</h4>
-            <Clock time={props.location.state.trainingTime.Horario} onFinish={startTraining}/>
+            <Clock
+              time={props.location.state.trainingTime.Horario}
+              onFinish={startTraining}
+            />
           </div>
           <div class="MotivacionalPhrase">
             <h4>"{phrase}"</h4>
@@ -43,7 +46,7 @@ export default function CountdownTraining(props) {
         </div>
         <div class="ButtonContainer">
           <button class="MarkoffButton">
-            <h4 onClick={cancelTraining}>desmarcar</h4>
+            <h4 onClick={cancelTraining}>DESMARCAR</h4>
           </button>
         </div>
       </div>
