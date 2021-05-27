@@ -13,6 +13,7 @@ import InterativeBody from "./Elements/InterativeBody";
 export default function Body() {
   const [hurtParts, setHurtParts] = useState([]);
   const [customComment, setCustomComment] = useState();
+  const [available, setAvailable] = useState(true);
 
   function handleSelect(part) {
     //Checa se já esta selecionado ou não (-1 significa que não está selecionado)
@@ -31,6 +32,7 @@ export default function Body() {
 
   function handleSubmit(e) {
 		e.preventDefault();
+    setAvailable(false);
     if (hurtParts.length === 0) {
       message.error("Escolha pelo menos uma parte do corpo dolorida", 2);
     } else {
@@ -53,13 +55,14 @@ export default function Body() {
           message.error("Erro ao enviar");
         }
       });
+      setAvailable(true);
     }
   }
 
   return (
     <div style={{ height: "100%" }}>
       <Header name={true} back={true} />
-      <form onSubmit={handleSubmit} className="BodyContainer">
+      <form className="BodyContainer">
         <div className="title">
           Caso você tenha alguma restrição e/ou dor de movimentos, marque na
           figura abaixo os locais para que possamos orientar melhor o seu
@@ -84,9 +87,12 @@ export default function Body() {
             onChange={(e) => setCustomComment(e.target.value)}
           />
         </div>
-        <button className="button" type="submit">
-          ENVIAR
-        </button>
+        {
+          available &&
+          <button className="button" onClick={handleSubmit}>
+            ENVIAR
+          </button>
+        }
       </form>
     </div>
   );

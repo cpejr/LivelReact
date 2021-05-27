@@ -1,17 +1,23 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import "./Profile.css";
 
 import Header from "../../../Header";
-import ExitButton from "./Elements/ExitButton";
 import Choice from "./Elements/Choice";
 import Results from "./Elements/Results";
 import CurrentMonthResult from "./Elements/CurrentMonth";
 import LastMonthResult from "./Elements/LastMonth";
+import { logout } from "../../../../services/auth";
 
 export default function Profile() {
   const [active, setActive] = useState("RESULTADO");
+  const history = useHistory();
+
+  const handleLogout = () => {
+    logout();
+    history.push("/");
+  };
 
   return (
     <div className="profile">
@@ -24,10 +30,10 @@ export default function Profile() {
         {active === "CurrentMonth" && <CurrentMonthResult />}
       </div>
 
-      <div className="exitButton">
-        <Link type="button" to="/trainingTypes">
-          <ExitButton />
-        </Link>
+      <div className="footerprofile">
+        <div className="exitButtonContainer" onClick={handleLogout}>
+          SAIR
+        </div>
       </div>
     </div>
   );
