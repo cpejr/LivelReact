@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { treinoCheckOut } from "../../../../services/backEnd";
 import "./CountdownTraining.css";
@@ -36,7 +36,7 @@ export default function CountdownTraining(props) {
           <div class="CountdownClock">
             <h4>Seu treino começa em:</h4>
             <Clock
-              time={props.location.state.trainingTime.Horario}
+              startTime={props.location.state.trainingTime.Horario}
               onFinish={startTraining}
             />
           </div>

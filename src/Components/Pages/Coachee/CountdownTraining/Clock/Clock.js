@@ -1,83 +1,36 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
+import moment from "moment";
 import "./Clock.css";
+import Timer from "react-compound-timer";
 
-export default function Clock(props) {
-  const recivedHour = parseInt(props.time.slice(0, 2));
-  const recivedMin = parseInt(props.time.slice(3, 5));
-  const recivedSec = parseInt(props.time.slice(6, 8));
-
-  // Horário atual
-  let currentSec = new Date().getSeconds();
-  let currentMin = new Date().getMinutes();
-  let currentHour = new Date().getHours();
-
-  // Tempo restante para o treino
-  let leftSec = recivedSec - currentSec;
-  let leftMin = recivedMin - currentMin;
-  let leftHour = recivedHour - currentHour;
-
-  // Correção de valores do tempo
-  if (leftSec < 0) {
-    leftSec = 59 + leftSec;
-    leftMin--;
-  }
-
-  if (leftMin < 0) {
-    leftMin = 59 + leftMin;
-    leftHour--;
-  }
-
-  let countH = leftHour;
-  let countM = leftMin;
-  let countS = leftSec;
-
-  const [hour, setHour] = useState(leftHour);
-  const [minute, setMinute] = useState(leftMin);
-  const [second, setSecond] = useState(leftSec);
-
-  useEffect(() => {
-    setInterval(() => {
-      // Condição de parada da contagem regressiva
-      if (countH === 0 && countM === 0 && countS === 0) {
-        setHour((hour) => 0);
-        setMinute((minute) => 0);
-        setSecond((second) => 0);
-        props.onFinish();
-      }
-
-      // Contagem regressiva
-      else if (countS > 0) {
-        countS--;
-        setSecond((second) => second - 1);
-      } else {
-        countS = 59;
-        setSecond((second) => 59);
-        if (countM > 0) {
-          countM--;
-          setMinute((minute) => minute - 1);
-        } else {
-          countM = 59;
-          setMinute((minute) => 59);
-          if (hour > 0) {
-            countH--;
-            setHour((hour) => hour - 1);
-          }
-          // Ativação da condição de parada
-          else {
-            countH = 0;
-            countM = 0;
-            countS = 0;
-          }
-        }
-      }
-    }, 1000);
-  }, []);
-
+export default function Clock({ startTime, onFinish }) {
+  const initialTime = moment(startTime, "h:mm:ss");
+  initialTime.subtract(moment().valueOf(), "millisecond");
   return (
-    <div className="clockCountdownTraining">
-      {hour < 10 ? `0${hour}` : hour}:{minute < 10 ? `0${minute}` : minute}:
-      {second < 10 ? `0${second}` : second}
-    </div>
+    <Timer
+      initialTime={initialTime.valueOf()}
+      direction="backward"
+      checkpoints={[
+        {
+          time: 2000,
+          callback: () => {
+            const time = moment(startTime, "h:mm:ss");
+            time.subtract(moment().valueOf(), "millisecond");
+            if (time.valueOf() > 0) onFinish();
+          },
+        },
+      ]}
+    >
+      {() => (
+        <React.Fragment>
+          <div className="clockCountdownTraining">
+            <Timer.Hours />:
+            <Timer.Minutes />:
+            <Timer.Seconds />
+          </div>
+        </React.Fragment>
+      )}
+    </Timer>
   );
 }

@@ -27,6 +27,10 @@ export default function TimeSchedule(props) {
   }, []);
 
   async function handleSchedule(horario) {
+    console.log(
+      "🚀 ~ file: TimeSchedule.js ~ line 30 ~ handleSchedule ~ horario",
+      horario
+    );
     try {
       const alunoId = getAluno().ALUNO_INFO.ID_Aluno;
       const trainingType = props.location.state.trainingType;
