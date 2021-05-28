@@ -1,63 +1,64 @@
-.bodyContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: #632467;
-    height: 100%;
+.bodyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #632467;
+  height: 100%;
 }
 
-.LoginTitle{
-    color: #ffff;
-    font-size: 120%;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    font-weight: bold;
+.LoginTitle {
+  color: #ffff;
+  font-size: 120%;
+  font-family: sans-serif, Univers LT;
+  font-stretch: condensed;
+  font-weight: bold;
 }
 
-.titleCoachOrCoachee{
-    margin: 0;
-    color: #fff;
+.titleCoachOrCoachee {
+  margin: 0;
+  color: #fff;
 }
 
-.inputsContainer{
-    display: flex;
-    flex-direction: column;
-    height: 10%;
-    background-color: #632467;
-    opacity: 0.7;
+.inputsContainer {
+  display: flex;
+  flex-direction: column;
+  height: 10%;
+  background-color: #632467;
+  opacity: 0.7;
 }
 
-.matriculaInput label{
-    color: #ffff;
-    font-size: 70%;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
+.matriculaInput label {
+  color: #ffff;
+  font-size: 70%;
+  font-family: sans-serif, Univers LT;
+  font-stretch: condensed;
 }
 
-.senhaInput label{
-    color: #ffff;
-    font-size: 100%;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
+.senhaInput label {
+  color: #ffff;
+  font-size: 100%;
+  font-family: sans-serif, Univers LT;
+  font-stretch: condensed;
 }
 
-.loginClick{
-    margin-top: 20px;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    background-color: #e7db18;
-    border-radius: 10px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    color: #632467;
-    font-weight: bolder;
+.loginClick {
+  margin-top: 40px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #e7db18;
+  border-radius: 10px;
+  font-family: sans-serif, Univers LT;
+  font-stretch: condensed;
+  color: #632467;
+  font-weight: bolder;
+  cursor: pointer;
+  border: none;
 }
 
-.link{
-    COLOR: WHITE;
-    opacity: 0.6
+.link {
+  color: WHITE;
+  opacity: 0.6;
 }
-

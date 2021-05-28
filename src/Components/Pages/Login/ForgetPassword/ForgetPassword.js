@@ -2,9 +2,10 @@ import React, { useState } from "react";
 
 import "./ForgetPassword.css";
 
-import { TextField } from "@material-ui/core";
+import { TextField, CircularProgress } from "@material-ui/core";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
+import validateInputs from "../../../../utils/Validate";
 
 const styles = {
   inputStyle: {
@@ -17,12 +18,64 @@ const styles = {
 };
 
 function ForgetPassword(props) {
-  const [matricula, setMatricula] = useState();
-  const [email, setEmail] = useState();
+  const [matricula, setMatricula] = useState("");
+  const [email, setEmail] = useState("");
+  const [disabled, setDisabled] = useState(false);
   const { classes } = props;
+  const [loading, setLoading] = useState(false);
+
+  //Estados para verificar erros no campo matrícula
+  const [errorMatricula, setErrorMatricula] = useState(false);
+  const [errorMatriculaMessage, setErrorMatriculaMessage] = useState("");
+
+  //Estados para verificar erros no campo email
+  const [errorEmail, setErrorEmail] = useState(false);
+  const [errorEmailMessage, setErrorEmailMessage] = useState("");
+
+  const handleMatricula = (e) => {
+    setMatricula(e.target.value);
+  };
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
 
   const send = ()=>{
-    console.log(matricula, email)
+    const isMatriculaValid = validateInputs("Name", matricula);
+    const isEmailValid = validateInputs("Email", email);
+
+    if (!isMatriculaValid || !isEmailValid) {
+      if (!isMatriculaValid) {
+        setErrorMatricula(true);
+        setErrorMatriculaMessage("Campo não pode ser vazio");
+      } else {
+        setErrorMatricula(false);
+        setErrorMatriculaMessage("");
+      }
+
+      if (!isEmailValid) {
+        setErrorEmail(true);
+        setErrorEmailMessage("E-mail inválido");
+      } else {
+        setErrorEmail(false);
+        setErrorEmailMessage("");
+      }
+    } else {
+      setLoading(true);
+      setDisabled(true);
+
+      setErrorMatricula(false);
+      setErrorMatriculaMessage("");
+      setErrorEmail(false);
+      setErrorEmailMessage("");
+      console.log(matricula, email)
+      const timer = setTimeout(() => {
+        setLoading(false);
+        setDisabled(false);
+      }, 500);
+    
+      return () => clearTimeout(timer);
+    }
   }
 
 
@@ -34,9 +87,9 @@ function ForgetPassword(props) {
         <form>
           <TextField
             label="Matrícula"
-            onChange={(e) => {
-              setMatricula(e.target.value);
-            }}
+            error={errorMatricula} 
+            helperText={errorMatriculaMessage}
+            onChange={(e) => handleMatricula(e)}
             InputLabelProps={{
               classes: {
                 root: classes.inputLabel,
@@ -54,9 +107,9 @@ function ForgetPassword(props) {
 
           <TextField
             label="E-mail"
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
+            error={errorEmail} 
+            helperText={errorEmailMessage}
+            onChange={(e) => handleEmail(e)}
             InputLabelProps={{
               classes: {
                 root: classes.inputLabel,
@@ -73,9 +126,9 @@ function ForgetPassword(props) {
           />
         </form>
       </div>
-      <div className="forgetClick" onClick={()=>send()}>
-        ENVIAR
-      </div>
+      <button className="forgetClick" disabled={disabled} onClick={()=>send()}>
+        {loading ? <CircularProgress /> : "ENVIAR"}
+      </button>
     </div>
   );
 }

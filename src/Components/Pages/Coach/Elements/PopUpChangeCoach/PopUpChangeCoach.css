@@ -1,5 +1,5 @@
 .Modal{
-    width: 100%;
+    width: 90%;
     height: 100%;
     position: fixed;
     top: 0;
@@ -16,7 +16,7 @@
     position: fixed;
     color: #000;
     border: 1px solid #eee;
-    width: 85%;
+    width: 90%;
     height: 55%;
     display: flex;
     justify-content: space-evenly;
