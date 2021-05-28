@@ -98,9 +98,9 @@
 }  */
 
 /* Container pai do SwipeLeft */
-/*  .swipeable-list-item__content-left{
-    z-index: 10 !important;
-} */
+.swipeable-list-item__content-left{
+    z-index: 0 !important;
+}
  
 .swipeLeft{
     z-index: 10;
@@ -123,6 +123,7 @@
     color: #fff;
     padding: 10px 20px;
     z-index: 10;
+    cursor: pointer;
 }
 
 .secondIconSwipeLeft{
@@ -130,6 +131,7 @@
     color: #4a1768;
     padding: 10px 20px;
     z-index: 10;
+    cursor: pointer;
 }
 
 
