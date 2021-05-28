@@ -40,10 +40,11 @@ export const loginRequest = (ID, Pwd) => {
 export const getTreinoSemana = () => {
   return new Promise((resolve, reject) => {
     resolve({
-      Periodização: "M",
+      Periodizacao: "M",
       MargemtRepeticaoInferior: 10,
       MargemRepeticaoSuperior: 20,
       CadeiaExcentrica: 10,
+      CadeiaConcentrica: 10,
       ID_Semana: 1,
     });
     // Request({
