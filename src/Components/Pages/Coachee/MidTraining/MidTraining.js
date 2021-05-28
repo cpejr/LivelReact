@@ -6,6 +6,7 @@ import "./MidTraining.css";
 import Clock from "./Elements/Clock/Clock";
 import Header from "../../../Header";
 import FinalizeModal from "./Elements/FinalizeModal";
+import { message } from "antd";
 
 const exerciseTime = 10;
 const pauseTime = 10;
@@ -52,14 +53,14 @@ export default function MidTraining() {
     try {
       e.preventDefault();
       const result = treinoAvalia(234, 5);
-      console.log(result);
       setActive({
         paused: true,
         clock: active.clock,
       });
       setisModalVisible(true);
     } catch (error) {
-      alert(error);
+      message.error("Algo deu errado, tente novamente", 2);
+      console.error(error);
     }
   }
 

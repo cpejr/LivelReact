@@ -8,6 +8,7 @@ import Header from "../../../Header";
 
 import { IconContext } from "react-icons";
 import { MdKeyboardArrowLeft } from "react-icons/md";
+import { message } from "antd";
 
 export default function TimeSchedule(props) {
   const [horarios, setHorarios] = useState([]);
@@ -20,17 +21,14 @@ export default function TimeSchedule(props) {
         const horarioBack = await treinoHorarios();
         setHorarios(horarioBack.TREINO_HORARIOS);
       } catch (error) {
-        alert(error);
+        message.error("Algo deu errado, tente novamente", 2);
+        console.error(error);
       }
     }
     backRequest();
   }, []);
 
   async function handleSchedule(horario) {
-    console.log(
-      "🚀 ~ file: TimeSchedule.js ~ line 30 ~ handleSchedule ~ horario",
-      horario
-    );
     try {
       const alunoId = getAluno().ALUNO_INFO.ID_Aluno;
       const trainingType = props.location.state.trainingType;
@@ -47,8 +45,8 @@ export default function TimeSchedule(props) {
         },
       });
     } catch (error) {
-      console.warn(error);
-      alert("Houve um erro ao marcar seu horário, tente novamente");
+      message.error("Algo deu errado, tente novamente", 2);
+      console.error(error);
       history.push("/trainingTypes");
     }
   }

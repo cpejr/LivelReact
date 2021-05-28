@@ -20,7 +20,8 @@ export default function CountdownTraining(props) {
     // try {
     //   await treinoCheckOut(props.location.state.treinoId);
     // } catch (error) {
-    //   alert(error);
+    //   message.error("Erro ao cancelar o treino, tente novamente, 2);
+    //   console.error(error);
     // }
   }
 

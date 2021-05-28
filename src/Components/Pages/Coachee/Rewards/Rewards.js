@@ -103,7 +103,7 @@ export default function TrainingTypes() {
         </div>
         <div className="points">
           <div>
-            Você possui um total de{" "}
+            Você possui um total de
             <b>{aluno.ALUNO_TREINOS.PontosNext} pontos</b>
           </div>
         </div>

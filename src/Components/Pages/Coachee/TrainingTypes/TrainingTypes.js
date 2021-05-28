@@ -7,6 +7,7 @@ import "./TrainingTypes.css";
 
 import Header from "../../../Header";
 import PopUp from "./Elements/PopUp";
+import { message } from "antd";
 
 var meses = [
   "Janeiro",
@@ -56,11 +57,12 @@ export default function TrainingTypes() {
         if (result.ID_Semana > 0) {
           setTreinoSemana(result);
         } else {
-          alert("Erro nos treinos da semana");
+          message.error("Não foram encontrados treinos da semana", 2);
         }
       })
       .catch((erro) => {
-        console.log(erro);
+        message.error("Erro ao requisitar treinos da semana", 2);
+        console.error(erro);
       });
 
     if (!aluno.ALUNO_TREINOS?.NumTreinosMes) {

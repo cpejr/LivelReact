@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 
 import "./Login.css";
+import { message } from "antd";
 
 const styles = {
   inputStyle: {
@@ -19,7 +20,6 @@ const styles = {
     color: "white",
   },
 };
-
 
 function Login(props) {
   const [matricula, setMatricula] = useState();
@@ -37,15 +37,18 @@ function Login(props) {
             login(result);
 
             // Validação de coach ou nao
-            (result.USER_TYPE==="coach") ? history.push("/coach") : history.push("/trainingTypes");
+            result.USER_TYPE === "coach"
+              ? history.push("/coach")
+              : history.push("/trainingTypes");
           } else {
-            alert("Dados incorretos");
+            message.error("Dados incorretos", 2);
             history.push("/login");
           }
         })
         .catch((error) => {
-          alert(error);
-          history.push("/login");
+          message.error("Algo deu errado, tente novamente", 2);
+          console.error(error);
+          history.push("/");
         });
     };
     request();
@@ -54,7 +57,7 @@ function Login(props) {
   return (
     <div className="bodyContainer">
       <img src="/images/Logo_Livel.png" alt="Logo do Livel" className="logo" />
-        <h1 className="titleCoachOrCoachee">Bora treinar?</h1>
+      <h1 className="titleCoachOrCoachee">Bora treinar?</h1>
       <div className="LoginTitle">Login</div>
       <div className="inputsContainer">
         <TextField
