@@ -39,19 +39,26 @@ export const loginRequest = (ID, Pwd) => {
 
 export const getTreinoSemana = () => {
   return new Promise((resolve, reject) => {
-    Request({
-      method: "GET",
-      url: `${process.env.REACT_APP_API_URL}/livel_app.php?AuthToken=${process.env.REACT_APP_AUTH_TOKEN}&Metodo=treinoSemana`,
-      json: true,
-      resolveWithFullResponse: true,
-    })
-      .then((response) => {
-        resolve(response.body.TREINO_SEMANA);
-      })
-      .catch((err) => {
-        console.log(err);
-        reject(err);
-      });
+    resolve({
+      Periodização: "M",
+      MargemtRepeticaoInferior: 10,
+      MargemRepeticaoSuperior: 20,
+      CadeiaExcentrica: 10,
+      ID_Semana: 1,
+    });
+    // Request({
+    //   method: "GET",
+    //   url: `${process.env.REACT_APP_API_URL}/livel_app.php?AuthToken=${process.env.REACT_APP_AUTH_TOKEN}&Metodo=treinoSemana`,
+    //   json: true,
+    //   resolveWithFullResponse: true,
+    // })
+    //   .then((response) => {
+    //     resolve(response.body.TREINO_SEMANA);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     reject(err);
+    //   });
   });
 };
 

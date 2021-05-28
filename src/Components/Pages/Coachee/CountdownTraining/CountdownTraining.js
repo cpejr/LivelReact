@@ -5,6 +5,7 @@ import "./CountdownTraining.css";
 
 import Header from "../../../Header";
 import Clock from "./Clock";
+import { message } from "antd";
 
 const trainingType = "Treino superior";
 const phrase = "Seu corpo é sua modara. Cuide-se!";
@@ -13,7 +14,9 @@ export default function CountdownTraining(props) {
   const history = useHistory();
 
   async function cancelTraining() {
-    history.push("/trainingTypes");
+    message.loading("Cancelando treino", 1).then(() => {
+      history.push("/trainingTypes");
+    });
     // try {
     //   await treinoCheckOut(props.location.state.treinoId);
     // } catch (error) {

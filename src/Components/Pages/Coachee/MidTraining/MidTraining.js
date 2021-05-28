@@ -1,10 +1,15 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { treinoAvalia } from "../../../../services/backEnd";
 
 import "./MidTraining.css";
 import Clock from "./Elements/Clock/Clock";
 import Header from "../../../Header";
-import PopUp from "./Elements/PopUp/PopUp";
+import FinalizeModal from "./Elements/FinalizeModal";
+
+const exerciseTime = 10;
+const pauseTime = 10;
+const series = 5;
 
 export default function MidTraining() {
   const [isModalVisible, setisModalVisible] = useState(false);
@@ -13,6 +18,7 @@ export default function MidTraining() {
     paused: true,
     clock: "training",
   });
+  const history = useHistory();
 
   function changeActive(value) {
     if (value === "rest") {
@@ -57,33 +63,31 @@ export default function MidTraining() {
     }
   }
 
+  const rateTraining = (grade) => {
+    history.push("/trainingTypes");
+  };
+
   return (
     <div style={{ height: "100%" }}>
-      <div className="PopUp">{isModalVisible ? <PopUp /> : null}</div>
+      <FinalizeModal show={isModalVisible} onFinalize={rateTraining} />
       <Header img={true} name={true} icons={true} />
       <div className="info">
-        <div className="titlee">TREINO INFERIOR</div>
-        <div className="timeinfo">
-          <div className="finalization">Finalização:</div>
-          <div className="time1">15:30:</div> <div className="time2">59</div>
-        </div>
+        <div className="titlee">TREINO</div>
       </div>
       <div className="bodyy">
         <div className="block">
           <div className="boxbody">
             <div className="boxtitle">Atividade</div>
-            <div className="countinginfo">5 min</div>
+            <div className="countinginfo">{exerciseTime} seg</div>
           </div>
           <div className="counting">
             <div>
               <Clock
-                seconds={10}
+                seconds={exerciseTime}
                 active={() => {
                   if (active.clock === "training" && !active.paused) {
-                    console.log("Clock 1: true");
                     return true;
                   } else {
-                    console.log("Clock 1: false");
                     return false;
                   }
                 }}
@@ -97,13 +101,13 @@ export default function MidTraining() {
           <div className="boxbody">
             <div className="boxtitle">Pausa</div>
             <div id="seg" className="countinginfo">
-              10 seg
+              {pauseTime} seg
             </div>
           </div>
           <div className="counting">
             <div>
               <Clock
-                seconds={10}
+                seconds={pauseTime}
                 active={() => {
                   if (active.clock === "rest" && !active.paused) {
                     return true;
@@ -120,7 +124,7 @@ export default function MidTraining() {
         <div className="block">
           <div className="boxbody">
             <div className="boxtitle">Serie</div>
-            <div className="countinginfo">5 x</div>
+            <div className="countinginfo">{series} x</div>
           </div>
           <div className="counting">
             <div>{serie}</div>
@@ -128,6 +132,7 @@ export default function MidTraining() {
         </div>
         <div className="playButton">
           <button
+            style={{ cursor: "pointer" }}
             onClick={() => {
               changeActive("paused");
             }}
@@ -137,8 +142,8 @@ export default function MidTraining() {
         </div>
       </div>
       <div className="footer">
-        <button className="buttonAdvance" onClick={(e)=>advance(e)}>
-            FINALIZAR
+        <button className="buttonAdvance" onClick={(e) => advance(e)}>
+          FINALIZAR
         </button>
       </div>
     </div>
