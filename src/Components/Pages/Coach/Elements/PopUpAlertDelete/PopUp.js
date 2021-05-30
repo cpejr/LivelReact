@@ -7,6 +7,8 @@ import {FaExclamationTriangle} from 'react-icons/fa'
 
 import "./PopUpAlertDelete.css";
 
+import { message } from 'antd';
+
 export default function PopUp({functionState}) {
 
     return (
@@ -23,7 +25,7 @@ export default function PopUp({functionState}) {
                 <div className="text">Tem certeza que deseja apagar o aluno?</div>
 
                 <div className="buttons">
-                    <button className="button" onClick={() => functionState(false)}>Sim</button>
+                    <button className="button" onClick={() => {functionState(false); message.success("Usuário deletado com sucesso", 2);}}>Sim</button>
                     <button className="button" onClick={() => functionState(false)}>Não</button>
                 </div>
 
