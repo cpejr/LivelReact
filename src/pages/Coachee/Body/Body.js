@@ -70,8 +70,12 @@ export default function Body() {
         </div>
         <div className="BodyInput">
           <div className="HurtList">
-            {hurtParts.map((value) => {
-              return <li style={{ marginBottom: "5px" }}>{value}</li>;
+            {hurtParts.map((value, index) => {
+              return (
+                <li key={index} style={{ marginBottom: "5px" }}>
+                  {value}
+                </li>
+              );
             })}
           </div>
           <div className="Body">

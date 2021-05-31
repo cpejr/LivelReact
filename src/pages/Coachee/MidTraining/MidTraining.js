@@ -52,7 +52,7 @@ export default function MidTraining() {
   function advance(e) {
     try {
       e.preventDefault();
-      const result = treinoAvalia(234, 5);
+      treinoAvalia(234, 5);
       setActive({
         paused: true,
         clock: active.clock,
@@ -64,7 +64,7 @@ export default function MidTraining() {
     }
   }
 
-  const rateTraining = (grade) => {
+  const rateTraining = () => {
     history.push("/trainingTypes");
   };
 

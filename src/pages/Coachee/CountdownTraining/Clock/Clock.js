@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
+import React from "react";
 import moment from "moment";
 import "./Clock.css";
 import Timer from "react-compound-timer";

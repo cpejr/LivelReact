@@ -110,9 +110,12 @@ class MonthlyResultImages extends Component {
                 alt="bodyResults"
                 className="BodyResultClass"
               />
-              {bodySubtitles.map((part) => {
+              {bodySubtitles.map((part, index) => {
                 return (
-                  <div style={descriptionStyle(part.bottom, part.left)}>
+                  <div
+                    key={index}
+                    style={descriptionStyle(part.bottom, part.left)}
+                  >
                     <span className="valueSubtitles">{part.value}</span>
                     <p className="bodyPart">{part.description}</p>
                   </div>
@@ -124,9 +127,9 @@ class MonthlyResultImages extends Component {
         <div className="mainData">
           <div className="leftSide">
             <ul className="list">
-              {listaLeft.map((left) => {
+              {listaLeft.map((left, index) => {
                 return (
-                  <li className="icons">
+                  <li key={index} className="icons">
                     <img className="iconList" alt="iconlist" src={left.img} />
                     <span className="valueStyled">{left.value}</span>
                   </li>
@@ -152,9 +155,9 @@ class MonthlyResultImages extends Component {
 
             <div className="rightSide">
               <ul className="list">
-                {listaRight.map((right) => {
+                {listaRight.map((right, index) => {
                   return (
-                    <li className="icons">
+                    <li key={index} className="icons">
                       <img
                         className="iconList"
                         alt="iconList"
@@ -174,7 +177,7 @@ class MonthlyResultImages extends Component {
   }
 }
 
-export default function CurrentMonthResult(props) {
+export default function CurrentMonthResult() {
   return (
     <div className="BodyResultContainer">
       <MonthlyResultImages />

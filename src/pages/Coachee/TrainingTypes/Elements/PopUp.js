@@ -57,7 +57,7 @@ export default function PopUpPeriodizacao({ TREINO_SEMANA }) {
             Menores repetiçoes ({TREINO_SEMANA.MargemtRepeticaoInferior} a{" "}
             {TREINO_SEMANA.MargemRepeticaoSuperior})
             <br />
-            Maiores Pausas (1' a 2')
+            Maiores Pausas (1&apos; a 2&apos;)
             <br />
             Cadeia Excêntrica
           </div>
@@ -74,7 +74,7 @@ export default function PopUpPeriodizacao({ TREINO_SEMANA }) {
             Menores repetiçoes ({TREINO_SEMANA.MargemtRepeticaoInferior} a{" "}
             {TREINO_SEMANA.MargemtRepeticaoSuperior})
             <br />
-            Menores Pausas (0' a 1')
+            Menores Pausas (0&apos; a 1&apos;)
             <br />
             Cadeia Concêntrica
           </div>

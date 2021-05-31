@@ -138,7 +138,7 @@ export class LastMonth extends React.Component {
   }
 }
 
-export default function Results(props) {
+export default function Results() {
   return (
     <div className="ResultsContainer">
       <div className="resultsRow">

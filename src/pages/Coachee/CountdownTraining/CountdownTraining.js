@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
-import { treinoCheckOut } from "../../../services/backEnd";
 import "./CountdownTraining.css";
 
 import Header from "../../../components/Header";
@@ -32,24 +31,24 @@ export default function CountdownTraining(props) {
   return (
     <div style={{ height: "100%" }}>
       <Header img={true} name={true} icons={true} />
-      <div class="CountdownTrainingContainer">
-        <div class="DisplayTrainingType">
+      <div className="CountdownTrainingContainer">
+        <div className="DisplayTrainingType">
           <h3>{trainingType}</h3>
         </div>
-        <div class="MainContentContainer">
-          <div class="CountdownClock">
+        <div className="MainContentContainer">
+          <div className="CountdownClock">
             <h4>Seu treino começa em:</h4>
             <Clock
               startTime={props.location.state.trainingTime.Horario}
               onFinish={startTraining}
             />
           </div>
-          <div class="MotivacionalPhrase">
-            <h4>"{phrase}"</h4>
+          <div className="MotivacionalPhrase">
+            <h4>&quot{phrase}&quot</h4>
           </div>
         </div>
-        <div class="ButtonContainer">
-          <button class="MarkoffButton">
+        <div className="ButtonContainer">
+          <button className="MarkoffButton">
             <h4 onClick={cancelTraining}>DESMARCAR</h4>
           </button>
         </div>

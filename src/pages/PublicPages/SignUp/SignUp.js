@@ -140,11 +140,6 @@ function SignUp(props) {
       setErrorPasswordMessage("");
       setErrorConfirmPassword(false);
       setErrorConfirmPasswordMessage("");
-      console.log(Nome);
-      console.log(Sobrenome);
-      console.log(Email);
-      console.log(Password);
-      console.log(ConfirmPassword);
       const timer = setTimeout(() => {
         setLoading(false);
         setDisabled(false);

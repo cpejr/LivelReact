@@ -66,10 +66,11 @@ export default function TimeSchedule(props) {
           <div>MARQUE SEU HORÁRIO</div>
         </div>
         {horarios &&
-          horarios.map((horario) => {
+          horarios.map((horario, index) => {
             const horarioExibido = horario.Horario.slice(0, -3);
             return (
               <div
+                key={index}
                 className="horario"
                 onClick={() => {
                   handleSchedule(horario);

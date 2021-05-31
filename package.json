@@ -32,6 +32,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "lint": "eslint . --ext .js --fix",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -50,5 +51,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-plugin-react": "^7.24.0"
   }
 }
