@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "module": "commonJS",
+      "target": "es6",
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true,
+      "baseUrl": "./",
+    },
+    "exclude": ["node_modules"]
+  }

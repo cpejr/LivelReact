@@ -2,12 +2,10 @@ import React from 'react'
 
 import './Coach.css'
 
-// import {getCoach} from '../../../services/auth'
+// import {getCoach} from 'src/services/auth'
 
-import HeaderCoach from './Elements/Header';
-import HourBox from './Elements/HourBox';
-
-
+import HeaderCoach from './Elements/Header'
+import HourBox from './Elements/HourBox'
 
 const PROFESSOR_HORARIOS = {
     ProfessorID: 12,
@@ -28,7 +26,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 1,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Joana'
+                    TreinoAlunoNome: 'Joana',
                 },
                 {
                     TreinoID: 13,
@@ -39,7 +37,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 2,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Batata'
+                    TreinoAlunoNome: 'Batata',
                 },
                 {
                     TreinoID: 14,
@@ -50,7 +48,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 3,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Maria'
+                    TreinoAlunoNome: 'Maria',
                 },
                 {
                     TreinoID: 15,
@@ -61,9 +59,9 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 2,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Arthur'
+                    TreinoAlunoNome: 'Arthur',
                 },
-            ]
+            ],
         },
         {
             HorarioID: 13,
@@ -79,7 +77,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 3,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Gabriel'
+                    TreinoAlunoNome: 'Gabriel',
                 },
                 {
                     TreinoID: 3,
@@ -90,7 +88,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 2,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Paloma'
+                    TreinoAlunoNome: 'Paloma',
                 },
                 {
                     TreinoID: 5,
@@ -101,9 +99,9 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 1,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Diogo'
+                    TreinoAlunoNome: 'Diogo',
                 },
-            ]
+            ],
         },
         {
             HorarioID: 123,
@@ -119,7 +117,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 1,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Joana'
+                    TreinoAlunoNome: 'Joana',
                 },
                 {
                     TreinoID: 13,
@@ -130,7 +128,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 2,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Batata'
+                    TreinoAlunoNome: 'Batata',
                 },
                 {
                     TreinoID: 14,
@@ -141,7 +139,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 3,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Maria'
+                    TreinoAlunoNome: 'Maria',
                 },
                 {
                     TreinoID: 15,
@@ -152,9 +150,9 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 2,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Arthur'
+                    TreinoAlunoNome: 'Arthur',
                 },
-            ]
+            ],
         },
         {
             HorarioID: 123,
@@ -170,7 +168,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 1,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Joana'
+                    TreinoAlunoNome: 'Joana',
                 },
                 {
                     TreinoID: 13,
@@ -181,7 +179,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 2,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Batata'
+                    TreinoAlunoNome: 'Batata',
                 },
                 {
                     TreinoID: 14,
@@ -192,7 +190,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 3,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Maria'
+                    TreinoAlunoNome: 'Maria',
                 },
                 {
                     TreinoID: 15,
@@ -203,9 +201,9 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 2,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Arthur'
+                    TreinoAlunoNome: 'Arthur',
                 },
-            ]
+            ],
         },
         {
             HorarioID: 123,
@@ -221,7 +219,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 1,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Joana'
+                    TreinoAlunoNome: 'Joana',
                 },
                 {
                     TreinoID: 13,
@@ -232,7 +230,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 2,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Batata'
+                    TreinoAlunoNome: 'Batata',
                 },
                 {
                     TreinoID: 14,
@@ -243,7 +241,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 3,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Maria'
+                    TreinoAlunoNome: 'Maria',
                 },
                 {
                     TreinoID: 15,
@@ -254,9 +252,9 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 2,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Arthur'
+                    TreinoAlunoNome: 'Arthur',
                 },
-            ]
+            ],
         },
         {
             HorarioID: 123,
@@ -272,7 +270,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 1,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Joana'
+                    TreinoAlunoNome: 'Joana',
                 },
                 {
                     TreinoID: 13,
@@ -283,7 +281,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 2,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Batata'
+                    TreinoAlunoNome: 'Batata',
                 },
                 {
                     TreinoID: 14,
@@ -294,7 +292,7 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 3,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Maria'
+                    TreinoAlunoNome: 'Maria',
                 },
                 {
                     TreinoID: 15,
@@ -305,29 +303,30 @@ const PROFESSOR_HORARIOS = {
                     TreinoTipoID: 2,
                     TreinoTipoDescricao: 'blablabla',
                     TreinoConcluido: 0,
-                    TreinoAlunoNome: 'Arthur'
+                    TreinoAlunoNome: 'Arthur',
                 },
-            ]
-        }
-    ]
+            ],
+        },
+    ],
 }
 
-export default function Coach(){
-    return(
-    < >
-    <div className="completeBody">
-        
-        <div className="headerContainer">
-            <HeaderCoach img={true} name={true} position={true} data={PROFESSOR_HORARIOS} />
-            
-        </div>
+export default function Coach() {
+    return (
+        <>
+            <div className="completeBody">
+                <div className="headerContainer">
+                    <HeaderCoach
+                        img={true}
+                        name={true}
+                        position={true}
+                        data={PROFESSOR_HORARIOS}
+                    />
+                </div>
 
-        <HourBox data={PROFESSOR_HORARIOS} /> 
-    
- 
-        {/* <Coachee active={active} setActive={setActive} /> */}
-    </div>
-    </>
+                <HourBox data={PROFESSOR_HORARIOS} />
+
+                {/* <Coachee active={active} setActive={setActive} /> */}
+            </div>
+        </>
     )
-
 }
