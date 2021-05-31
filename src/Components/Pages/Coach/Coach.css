@@ -98,12 +98,31 @@
 }  */
 
 /* Container pai do SwipeLeft */
-.swipeable-list-item__content-left{
+/* .swipeable-list-item__content-left{
     z-index: 0 !important;
+} */
+.swipeable-list-item__content-left{
+z-index: 3 !important;
+} 
+
+.swipeable-list-item__content-left--return{
+z-index: -1 !important;
+}
+
+.swipeable-list-item{
+z-index: 5 !important;
+}
+
+.swipeable-list{
+z-index: 5 !important;
+}
+
+.isItOnorOff{
+z-index: 5 !important;
 }
  
 .swipeLeft{
-    z-index: 10;
+    z-index: 4;
     display: flex;
     justify-content: space-evenly;
 }
@@ -122,7 +141,7 @@
     background: #4a1768;
     color: #fff;
     padding: 10px 20px;
-    z-index: 10;
+    z-index: 4;
     cursor: pointer;
 }
 
@@ -130,7 +149,7 @@
     background: #e0dbe2;
     color: #4a1768;
     padding: 10px 20px;
-    z-index: 10;
+    z-index: 4;
     cursor: pointer;
 }
 

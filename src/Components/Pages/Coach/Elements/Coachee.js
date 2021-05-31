@@ -99,7 +99,6 @@ function swipeLeftIcons(
       <div
         className="fistIconSwipeLeft"
         onClick={() => {
-          return_zIndexes();
           setIsPopUpChangeCoachVisible(!isPopUpChangeCoachVisible);
         }}
       >
@@ -109,7 +108,6 @@ function swipeLeftIcons(
       <div
         className="secondIconSwipeLeft"
         onClick={() => {
-          return_zIndexes();
           setIsPopUpAlertDelete(!isPopUpAlertDelete);
         }}
       >
@@ -183,7 +181,6 @@ function AllCoachees(props) {
             setIsPopUpAlertDelete,
             isPopUpAlertDelete
           ),
-          action: () => swipingLeft(),
           actionAnimation: ActionAnimations["NONE"],
         }}
       >
