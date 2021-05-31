@@ -2,19 +2,19 @@ import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { isAuthenticated } from "./services/auth";
 
+import Login from "./pages/PublicPages/Login";
+import SignUp from "./pages/PublicPages/SignUp";
+import ForgetPassword from "./pages/PublicPages/ForgetPassword/index";
+import Home from "./pages/PublicPages/Home";
+import RequestNumber from "./pages/PublicPages/RequestNumber";
 import TimeSchedule from "./pages/Coachee/TimeSchedule";
 import TrainingTypes from "./pages/Coachee/TrainingTypes";
 import CountdownTraining from "./pages/Coachee/CountdownTraining";
+import Coach from "./pages/Coach";
 import Profile from "./pages/Coachee/Profile";
-import SignUp from "./pages/Login/SignUp";
-import Login from "./pages/Login/Login";
-import RequestNumber from "./pages/Login/RequestNumber";
 import Rewards from "./pages/Coachee/Rewards";
-import Home from "./pages/Login/Home";
 import Body from "./pages/Coachee/Body";
 import MidTraining from "./pages/Coachee/MidTraining";
-import ForgetPassword from "./pages/Login/ForgetPassword/index";
-import Coach from "./pages/Coach";
 import CoachProfile from "./pages/Coach/CoachProfile/index";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (

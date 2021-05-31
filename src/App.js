@@ -1,6 +1,6 @@
 import React from "react";
 import Routes from "./routes";
-import "./generals.css";
+import "./global.css";
 
 import { ConfigProvider } from "antd";
 import ptBR from "antd/lib/locale/pt_BR";
