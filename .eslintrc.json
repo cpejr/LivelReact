@@ -8,6 +8,7 @@
         "plugin:react/recommended"
     ],
     "parserOptions": {
+        "project": "./jsconfig.json",
         "ecmaFeatures": {
             "jsx": true
         },
@@ -17,9 +18,12 @@
     "rules": {
         "no-console": 1,
         "react/prop-types": 0,
-        "react/react-in-jsx-scope": "off" 
+        "react/react-in-jsx-scope": "off",
+        "no-unused-vars": 1,
+        "react-hooks/exhaustive-deps": 0
     },
     "plugins": [
-        "react"
+        "react",
+        "react-hooks"
     ]
 }
