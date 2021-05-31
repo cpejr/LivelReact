@@ -4,7 +4,7 @@ import ReactStars from 'react-stars'
 
 import './CoachProfile.css'
 
-import Header from 'src/components/Header'
+import Header from 'src/Components/Header'
 
 import { Link } from 'react-router-dom'
 import { FiChevronLeft } from 'react-icons/fi'

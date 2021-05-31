@@ -2,7 +2,7 @@ import React from 'react'
 import { getAluno } from 'src/services/auth'
 import './Rewards.css'
 
-import Header from 'src/components/Header'
+import Header from 'src/Components/Header'
 
 export default function TrainingTypes() {
     const aluno = getAluno()

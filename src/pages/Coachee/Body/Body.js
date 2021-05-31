@@ -6,7 +6,7 @@ import { message } from 'antd'
 
 import './Body.css'
 
-import Header from 'src/components/Header'
+import Header from 'src/Components/Header'
 
 import InterativeBody from './Elements/InterativeBody'
 

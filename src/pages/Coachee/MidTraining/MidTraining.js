@@ -4,7 +4,7 @@ import { treinoAvalia } from 'src/services/backEnd'
 
 import './MidTraining.css'
 import Clock from './Elements/Clock/Clock'
-import Header from 'src/components/Header'
+import Header from 'src/Components/Header'
 import FinalizeModal from './Elements/FinalizeModal'
 import { message } from 'antd'
 

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 
 import './Profile.css'
 
-import Header from 'src/components/Header'
+import Header from 'src/Components/Header'
 import Choice from './Elements/Choice'
 import Results from './Elements/Results'
 import CurrentMonthResult from './Elements/CurrentMonth'

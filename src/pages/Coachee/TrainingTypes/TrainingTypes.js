@@ -5,7 +5,7 @@ import { getAluno } from 'src/services/auth'
 
 import './TrainingTypes.css'
 
-import Header from 'src/components/Header'
+import Header from 'src/Components/Header'
 import PopUp from './Elements/PopUp'
 import { message } from 'antd'
 
