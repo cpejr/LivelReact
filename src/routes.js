@@ -2,20 +2,20 @@ import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { isAuthenticated } from "./services/auth";
 
-import TimeSchedule from "./Components/Pages/Coachee/TimeSchedule";
-import TrainingTypes from "./Components/Pages/Coachee/TrainingTypes";
-import CountdownTraining from "./Components/Pages/Coachee/CountdownTraining";
-import Profile from "./Components/Pages/Coachee/Profile";
-import SignUp from "./Components/Pages/Login/SignUp";
-import Login from "./Components/Pages/Login/Login";
-import RequestNumber from "./Components/Pages/Login/RequestNumber";
-import Rewards from "./Components/Pages/Coachee/Rewards";
-import Home from "./Components/Pages/Login/Home";
-import Body from "./Components/Pages/Coachee/Body";
-import MidTraining from "./Components/Pages/Coachee/MidTraining";
-import ForgetPassword from "./Components/Pages/Login/ForgetPassword";
-import Coach from "./Components/Pages/Coach";
-import CoachProfile from "./Components/Pages/Coach/CoachProfile";
+import TimeSchedule from "./pages/Coachee/TimeSchedule";
+import TrainingTypes from "./pages/Coachee/TrainingTypes";
+import CountdownTraining from "./pages/Coachee/CountdownTraining";
+import Profile from "./pages/Coachee/Profile";
+import SignUp from "./pages/Login/SignUp";
+import Login from "./pages/Login/Login";
+import RequestNumber from "./pages/Login/RequestNumber";
+import Rewards from "./pages/Coachee/Rewards";
+import Home from "./pages/Login/Home";
+import Body from "./pages/Coachee/Body";
+import MidTraining from "./pages/Coachee/MidTraining";
+import ForgetPassword from "./pages/Login/ForgetPassword/index";
+import Coach from "./pages/Coach";
+import CoachProfile from "./pages/Coach/CoachProfile/index";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route

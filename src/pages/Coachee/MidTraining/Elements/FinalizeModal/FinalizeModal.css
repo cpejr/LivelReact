@@ -1,0 +1,132 @@
+.Modal {
+  width: 50%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ContainerModal {
+  background-color: #fff;
+  color: #000;
+  width: 85%;
+  height: 55%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.congratulations {
+  max-width: 500px;
+  font-family: Arial;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 25%;
+  margin-top: 10px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px grey;
+  color: #0ecb8c;
+  font-weight: bold;
+}
+
+.congratulations h1 {
+  color: #0ecb8c;
+}
+
+.congratulations h3 {
+  color: #0ecb8c;
+}
+
+.avaliation {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.avaliation a {
+  font-weight: bold;
+  color: #632467;
+  font-size: 3vh;
+  font-family: Arial;
+}
+
+.avaliationTitle {
+  font-weight: bold;
+  color: #632467;
+  font-size: 1.5rem;
+  font-family: Arial;
+  margin-top: 20px;
+}
+
+.stars {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.stars button {
+  margin: 10px;
+  border: 0;
+  background-color: #fff;
+  width: 15%;
+}
+
+.img img {
+  height: auto;
+  max-width: 100%;
+}
+
+.fbimg {
+  background-color: #fff;
+  border: none;
+}
+.fbimg:active {
+  border: none;
+  margin: none;
+}
+.fbimg img {
+  width: 30vh;
+  max-width: 100%;
+  height: 30%;
+}
+
+.buttons {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.sendbutton {
+  margin: 10px;
+  width: 200px;
+  height: 40px;
+  background-color: #e7db18;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-family: sans-serif, Univers LT;
+  font-stretch: condensed;
+  font-weight: bold;
+  color: #632467;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}

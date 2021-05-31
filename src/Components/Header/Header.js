@@ -30,11 +30,7 @@ export default function Header(props) {
           {props.name != null && (
             <div className="nameContainer">
               <div>COACH</div>
-              <div
-                className="Coachname"
-              >
-                {aluno.ALUNO_INFO.AlunoNome}
-              </div>
+              <div className="Coachname">{aluno.ALUNO_INFO.AlunoNome}</div>
             </div>
           )}
 
@@ -64,8 +60,11 @@ export default function Header(props) {
           )}
 
           {props.back != null && (
-            <IconContext.Provider value={{ size: "3em", color: "#632467"}}>
-              <IoIosArrowBack style={{cursor: "pointer"}} onClick={() => history.push("/trainingTypes")} />
+            <IconContext.Provider value={{ size: "3em", color: "#632467" }}>
+              <IoIosArrowBack
+                style={{ cursor: "pointer" }}
+                onClick={() => history.push("/trainingTypes")}
+              />
             </IconContext.Provider>
           )}
         </div>
@@ -120,8 +119,11 @@ export default function Header(props) {
           )}
 
           {props.back != null && (
-            <IconContext.Provider value={{ size: "3em", color: "#632467"}}>
-              <IoIosArrowBack style={{cursor: "pointer"}} onClick={() => history.push("/trainingTypes")} />
+            <IconContext.Provider value={{ size: "3em", color: "#632467" }}>
+              <IoIosArrowBack
+                style={{ cursor: "pointer" }}
+                onClick={() => history.push("/trainingTypes")}
+              />
             </IconContext.Provider>
           )}
         </div>

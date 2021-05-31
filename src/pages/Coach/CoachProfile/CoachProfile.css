@@ -1,0 +1,36 @@
+.grade{
+    color: #632467;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.titleStars{
+    font-size: 28px;
+    font-style: italic;
+}
+
+.starsrate {    
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 20%;
+    margin-top: 10px;
+}
+
+.grade b{
+    font-family: 'Bebas Neue';
+    margin-bottom: 10%;
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 25vh;
+}
+
+.buttonCoach {
+    margin-top: 20%;
+}

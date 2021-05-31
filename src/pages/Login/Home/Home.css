@@ -1,0 +1,60 @@
+.livelIcon img {
+  height: 80.78px;
+  width: 110.45px;
+  margin-top: 60px;
+  opacity: 1;
+}
+
+.background-Img {
+  text-align: center;
+
+  color: white;
+  background-image: url("../../../assets/FundoIndex.png");
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.purple-opacity {
+  height: 100%;
+  background-color: rgba(99, 36, 103, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.buttonLogin {
+  width: 200px;
+  height: 8%;
+  background-color: #e7db18;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: sans-serif, Univers LT;
+  font-stretch: condensed;
+  font-weight: bold;
+  color: #632467;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.buttonOthers {
+  width: 15%;
+  height: 4%;
+  background-color: #e7db18;
+  border-radius: 10px;
+  font-size: 10px;
+  font-family: sans-serif, Univers LT;
+  font-stretch: condensed;
+  font-weight: bold;
+  color: #632467;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
