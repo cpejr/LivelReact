@@ -1,67 +1,60 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState } from 'react'
 // Teste icons
-import {
-  FaArrowsAltH,
-  FaTrashAlt,
-  FaCheck,
-  FaAngleRight,
-} from "react-icons/fa";
+import { FaArrowsAltH, FaTrashAlt, FaCheck, FaAngleRight } from 'react-icons/fa'
 
-import PopUpChangeCoach from "./PopUpChangeCoach/PopUp";
-import PopUpRegisterResult from "./PopUpResultadoRegistra/PopUp";
-import PopUpAlertDelete from "./PopUpAlertDelete/PopUp";
+import PopUpChangeCoach from './PopUpChangeCoach/PopUp'
+import PopUpRegisterResult from './PopUpResultadoRegistra/PopUp'
+import PopUpAlertDelete from './PopUpAlertDelete/PopUp'
 
 //  Teste
 import {
   SwipeableListItem,
   ActionAnimations,
-} from "@sandstreamdev/react-swipeable-list";
-import "@sandstreamdev/react-swipeable-list/dist/styles.css";
+} from '@sandstreamdev/react-swipeable-list'
+import '@sandstreamdev/react-swipeable-list/dist/styles.css'
 
 class LivelOne extends Component {
   render() {
     return (
       <>
         <div className="livelOneStyled">
-          <div className="livelStyled"> Livel</div>{" "}
+          <div className="livelStyled"> Livel</div>{' '}
           <div className="OneStyled"> ONE</div>
         </div>
       </>
-    );
+    )
   }
 }
 
-const Restricao = "/images/Coach/restricao2.svg";
+const Restricao = '/images/Coach/restricao2.svg'
 
-const Aerobico = "/images/Coach/aerobico.png";
+const Aerobico = '/images/Coach/aerobico.png'
 
 function Train_ID2Style(Train_ID) {
   if (Train_ID === 1) {
-    return { color: "#FF0000", borderColor: "#FF0000" };
+    return { color: '#FF0000', borderColor: '#FF0000' }
   } else if (Train_ID === 2) {
-    return { color: "#ADB4B5", borderColor: "#ADB4B5" };
+    return { color: '#ADB4B5', borderColor: '#ADB4B5' }
   } else if (Train_ID === 3) {
-    return { color: "#61A64C", borderColor: "#61A64C" };
+    return { color: '#61A64C', borderColor: '#61A64C' }
   }
 }
 
 function Train_ID2Name(Train_ID) {
   if (Train_ID === 1) {
-    return "Superior";
+    return 'Superior'
   } else if (Train_ID === 2) {
-    return "Inferior";
+    return 'Inferior'
   } else if (Train_ID === 3) {
-    return "Resutado";
-  } else {
-    return "Ferrou";
+    return 'Resutado'
   }
 }
 
 function Train_ID2Function(Train_ID, setIsPopUpRegisterResultVisible) {
   if (Train_ID === 3) {
-    setIsPopUpRegisterResultVisible(true);
+    setIsPopUpRegisterResultVisible(true)
   } else {
-    return "Ferrou";
+    return 'Ferrou'
   }
 }
 
@@ -71,26 +64,26 @@ function swipeLeftIcons(
   setIsPopUpAlertDelete,
   isPopUpAlertDelete
 ) {
-  const iconsSize = 25;
+  const iconsSize = 25
 
   function return_zIndexes() {
     let outsideContent = document.getElementsByClassName(
-      "swipeable-list-item__content"
-    );
+      'swipeable-list-item__content'
+    )
     let insideContent = document.getElementsByClassName(
-      "swipeable-list-item__content-left"
-    );
-    let coacheeInfoContent = document.getElementsByClassName("coacheeInfo");
+      'swipeable-list-item__content-left'
+    )
+    let coacheeInfoContent = document.getElementsByClassName('coacheeInfo')
 
     for (let item of outsideContent) {
-      item.style.zIndex = 0;
+      item.style.zIndex = 0
     }
 
     for (let item of coacheeInfoContent) {
-      item.style.zIndex = 0;
+      item.style.zIndex = 0
     }
     for (let item of insideContent) {
-      item.style.zIndex = -1;
+      item.style.zIndex = -1
     }
   }
 
@@ -99,7 +92,7 @@ function swipeLeftIcons(
       <div
         className="fistIconSwipeLeft"
         onClick={() => {
-          setIsPopUpChangeCoachVisible(!isPopUpChangeCoachVisible);
+          setIsPopUpChangeCoachVisible(!isPopUpChangeCoachVisible)
         }}
       >
         <FaArrowsAltH size={iconsSize} />
@@ -107,70 +100,51 @@ function swipeLeftIcons(
 
       <div
         className="secondIconSwipeLeft"
-        onClick={() => {
-          setIsPopUpAlertDelete(!isPopUpAlertDelete);
-        }}
+        onClick={() => setIsPopUpAlertDelete(!isPopUpAlertDelete)}
       >
         <FaTrashAlt size={iconsSize} />
       </div>
     </div>
-  );
+  )
 }
 
 function AllCoachees(props) {
   const [isPopUpChangeCoachVisible, setIsPopUpChangeCoachVisible] =
-    useState(false);
+    useState(false)
 
   const [isPopUpRegisterResultVisible, setIsPopUpRegisterResultVisible] =
-    useState(false);
+    useState(false)
 
-  const [isPopUpAlertDelete, setIsPopUpAlertDelete] = useState(false);
+  const [isPopUpAlertDelete, setIsPopUpAlertDelete] = useState(false)
 
-  const [isCheck, setIsCheck] = useState(false);
+  const [isCheck, setIsCheck] = useState(false)
 
   const styleCheck = [
     {
-      margin: "0 10px",
-      color: "#4a1768",
+      margin: '0 10px',
+      color: '#4a1768',
+      cursor: 'pointer',
     },
     {
-      margin: "0 10px",
-      color: "#bbb",
+      margin: '0 10px',
+      color: '#bbb',
+      cursor: 'pointer',
     },
-  ];
-
-  function swipingLeft() {
-    let outsideContent = document.getElementsByClassName(
-      "swipeable-list-item__content"
-    );
-    let insideContent = document.getElementsByClassName(
-      "swipeable-list-item__content-left"
-    );
-
-    for (let item of outsideContent) {
-      item.style.zIndex = 0;
-    }
-
-    for (let item of insideContent) {
-      item.style.zIndex = 1;
-    }
-  }
+  ]
 
   return (
     <>
-      <div className="PopUp">
-        {isPopUpChangeCoachVisible ? (
-          <PopUpChangeCoach functionState={setIsPopUpChangeCoachVisible} />
-        ) : null}
-        {isPopUpRegisterResultVisible ? (
-          <PopUpRegisterResult
-            functionState={setIsPopUpRegisterResultVisible}
-          />
-        ) : null}
-        {isPopUpAlertDelete ? (
-          <PopUpAlertDelete functionState={setIsPopUpAlertDelete} />
-        ) : null}
-      </div>
+      <PopUpChangeCoach
+        show={isPopUpChangeCoachVisible}
+        setShow={setIsPopUpChangeCoachVisible}
+      />
+      {isPopUpRegisterResultVisible ? (
+        <PopUpRegisterResult functionState={setIsPopUpRegisterResultVisible} />
+      ) : null}
+      <PopUpAlertDelete
+        show={isPopUpAlertDelete}
+        setShow={setIsPopUpAlertDelete}
+      />
       <SwipeableListItem
         blockSwipe={false}
         threshold={0.1}
@@ -181,13 +155,14 @@ function AllCoachees(props) {
             setIsPopUpAlertDelete,
             isPopUpAlertDelete
           ),
-          actionAnimation: ActionAnimations["NONE"],
+          actionAnimation: ActionAnimations['NONE'],
+          action: () => console.info('swipe action triggered'),
         }}
       >
         <FaCheck
+          onClick={() => setIsCheck(!isCheck)}
           size={30}
           style={isCheck ? styleCheck[0] : styleCheck[1]}
-          onClick={() => setIsCheck(!isCheck)}
         />
 
         <img
@@ -235,13 +210,13 @@ function AllCoachees(props) {
         </div>
       </SwipeableListItem>
     </>
-  );
+  )
 }
 
-export default function Coachee(props) {
+export default function Coachee({ data }) {
   return (
     <>
-      <AllCoachees person={props.data} />
+      <AllCoachees person={data} />
     </>
-  );
+  )
 }

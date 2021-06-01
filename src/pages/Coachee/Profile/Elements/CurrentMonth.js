@@ -1,108 +1,107 @@
-import React, { Component } from "react";
-import "../Profile.css";
+import React, { Component } from 'react'
+import '../Profile.css'
 
-let peso = "80 kg";
-let gordura = "15.5 %";
-let alongamento = "média";
-let altura = "1,79 m";
-let corrida = "2 km";
-let abdominal = "30";
-let flexao = "20";
-let barra = "5";
+let peso = '80 kg'
+let gordura = '15.5 %'
+let alongamento = 'média'
+let altura = '1,79 m'
+let corrida = '2 km'
+let abdominal = '30'
+let flexao = '20'
+let barra = '5'
 
-let tempoCorrida = "10`";
-let tempoAbdominal = "1`";
-let tempoFlexao = "1`";
+let tempoCorrida = '10`'
+let tempoAbdominal = '1`'
+let tempoFlexao = '1`'
 
-let score = "55";
+let score = '55'
 
 const biceps = {
-  value: "30 cm",
-  description: "bíceps",
-  bottom: "72%",
-  left: "81%",
-};
+  value: '30 cm',
+  description: 'bíceps',
+  bottom: '72%',
+  left: '81%',
+}
 const coxa = {
-  value: "30 cm",
-  description: "coxa",
-  left: "0%",
-  bottom: "32%",
-};
+  value: '30 cm',
+  description: 'coxa',
+  left: '0%',
+  bottom: '32%',
+}
 const cintura = {
-  value: "30 cm",
-  description: "cintura",
-  bottom: "57%",
-  left: "0%",
-};
+  value: '30 cm',
+  description: 'cintura',
+  bottom: '57%',
+  left: '0%',
+}
 const pescoco = {
-  value: "30 cm",
-  description: "pescoço",
-  left: "0%",
-  bottom: "80%",
-};
+  value: '30 cm',
+  description: 'pescoço',
+  left: '0%',
+  bottom: '80%',
+}
 const quadril = {
-  value: "30 cm",
-  description: "quadril",
-  left: "81%",
-  bottom: "48%",
-};
+  value: '30 cm',
+  description: 'quadril',
+  left: '81%',
+  bottom: '48%',
+}
 
 function descriptionStyle(style_bottom, style_left) {
   return {
     bottom: style_bottom,
     left: style_left,
-    width: "60px",
-    position: "absolute",
-    fontSize: "9px",
-    fontFamily: "sans-serif, Univers LT",
-    fontStretch: "condensed",
-    color: "#676767",
-    fontWeight: "bold",
-  };
+    width: '60px',
+    position: 'absolute',
+    fontSize: '9px',
+    fontFamily: 'sans-serif, Univers LT',
+    fontStretch: 'condensed',
+    color: '#676767',
+    fontWeight: 'bold',
+  }
 }
 
-const bodySubtitles = [quadril, coxa, cintura, pescoco, biceps];
+const bodySubtitles = [quadril, coxa, cintura, pescoco, biceps]
 
-const BodyResult = { img: "/images/profile/body.png" };
+const BodyResult = { img: '/images/profile/body.png' }
 
 const Abdominais = {
-  img: "/images/profile/abdominais.png",
+  img: '/images/profile/abdominais.png',
   value: abdominal,
-  time: "(" + tempoAbdominal + ")",
-};
+  time: '(' + tempoAbdominal + ')',
+}
 const Alongamento = {
-  img: "/images/profile/alongamento.png",
+  img: '/images/profile/alongamento.png',
   value: alongamento,
-};
-const Altura = { img: "/images/profile/altura.png", value: altura };
-const Barra = { img: "/images/profile/barra.png", value: barra };
+}
+const Altura = { img: '/images/profile/altura.png', value: altura }
+const Barra = { img: '/images/profile/barra.png', value: barra }
 const Corrida = {
-  img: "/images/profile/corrida.png",
+  img: '/images/profile/corrida.png',
   value: corrida,
-  time: "(" + tempoCorrida + ")",
-};
-const Peso = { img: "/images/profile/peso.png", value: peso };
+  time: '(' + tempoCorrida + ')',
+}
+const Peso = { img: '/images/profile/peso.png', value: peso }
 const Flexao = {
-  img: "/images/profile/flexoes.png",
+  img: '/images/profile/flexoes.png',
   value: flexao,
-  time: "(" + tempoFlexao + ")",
-};
+  time: '(' + tempoFlexao + ')',
+}
 const Gordura = {
-  img: "/images/profile/porcentagemGordura.png",
+  img: '/images/profile/porcentagemGordura.png',
   value: gordura,
-};
-const LittlePurple = { img: "/images/profile/purpleline.png" };
+}
+const LittlePurple = { img: '/images/profile/purpleline.png' }
 
-const BigPurple = { img: "/images/profile/purpleL.png" };
+const BigPurple = { img: '/images/profile/purpleL.png' }
 
-const listaLeft = [Peso, Gordura, Alongamento, Altura];
-const listaRight = [Corrida, Abdominais, Flexao, Barra];
+const listaLeft = [Peso, Gordura, Alongamento, Altura]
+const listaRight = [Corrida, Abdominais, Flexao, Barra]
 
 class MonthlyResultImages extends Component {
   render() {
     return (
       <>
-        {/* parte de cima */}
         <div className="bodyData">
           <div className="bodyAlign">
             <div className="responsiveBody">
@@ -120,12 +119,11 @@ class MonthlyResultImages extends Component {
                     <span className="valueSubtitles">{part.value}</span>
                     <p className="bodyPart">{part.description}</p>
                   </div>
-                );
+                )
               })}
             </div>
           </div>
         </div>
-        {/* parte de baixo */}
         <div className="mainData">
           <div className="leftSide">
             <ul className="list">
@@ -135,7 +133,7 @@ class MonthlyResultImages extends Component {
                     <img className="iconList" alt="iconlist" src={left.img} />
                     <span className="valueStyled">{left.value}</span>
                   </li>
-                );
+                )
               })}
             </ul>
           </div>
@@ -153,7 +151,6 @@ class MonthlyResultImages extends Component {
                 src={BigPurple.img}
               />
               <strong className="purpleScore">Score total: {score}</strong>
-              {/* <div className="purpleScoreAmount"></div> */}
             </div>
 
             <div className="rightSide">
@@ -169,14 +166,14 @@ class MonthlyResultImages extends Component {
                       <span className="valueStyled">{right.value}</span>
                       <span className="timeSubtitles">{right.time}</span>
                     </li>
-                  );
+                  )
                 })}
               </ul>
             </div>
           </div>
         </div>
       </>
-    );
+    )
   }
 }
 
@@ -185,5 +182,5 @@ export default function CurrentMonthResult() {
     <div className="BodyResultContainer">
       <MonthlyResultImages />
     </div>
-  );
+  )
 }

@@ -1,76 +1,61 @@
-import React from "react";
-import { AiFillCloseCircle } from "react-icons/ai";
+import React from 'react'
 
-// import {FacebookShareButton} from "react-share"; // pro post do facebook
+import { Modal } from 'react-bootstrap'
 
-import "./PopUpChangeCoach.css";
+import './PopUpChangeCoach.css'
 
+export default function PopUp({ show, setShow }) {
+  let coachArray = [
+    {
+      name: 'Juninho Alemão',
+      photo: '/images/Coach/coach.jpg',
+    },
+    {
+      name: 'Juninho Alemão',
+      photo: '/images/Coach/coach.jpg',
+    },
+    {
+      name: 'Juninho Alemão',
+      photo: '/images/Coach/coach.jpg',
+    },
+    {
+      name: 'Juninho Alemão',
+      photo: '/images/Coach/coach.jpg',
+    },
+    {
+      name: 'Juninho Alemão',
+      photo: '/images/Coach/coach.jpg',
+    },
+    {
+      name: 'Juninho Alemão',
+      photo: '/images/Coach/coach.jpg',
+    },
+    {
+      name: 'Juninho Alemão',
+      photo: '/images/Coach/coach.jpg',
+    },
+    {
+      name: 'Juninho Alemão',
+      photo: '/images/Coach/coach.jpg',
+    },
+  ]
 
-export default function PopUp({functionState}) {
-
-    let coachArray = [
-        {
-            name: 'Juninho Alemão',
-            photo: '/images/Coach/coach.jpg',
-        },
-        {
-            name: 'Juninho Alemão',
-            photo: '/images/Coach/coach.jpg',
-        },
-        {
-            name: 'Juninho Alemão',
-            photo: '/images/Coach/coach.jpg',
-        },
-        {
-            name: 'Juninho Alemão',
-            photo: '/images/Coach/coach.jpg',
-        },
-        {
-            name: 'Juninho Alemão',
-            photo: '/images/Coach/coach.jpg',
-        },
-        {
-            name: 'Juninho Alemão',
-            photo: '/images/Coach/coach.jpg',
-        },
-        {
-            name: 'Juninho Alemão',
-            photo: '/images/Coach/coach.jpg',
-        },
-        {
-            name: 'Juninho Alemão',
-            photo: '/images/Coach/coach.jpg',
-        },
-        
-    ]
-
-    return (
-        <div className="Modal">
-            <div className="ContainerModal">
-                <div className="ClosePopUp"
-                    onClick={() => functionState(false)}
-                >
-                    <AiFillCloseCircle size={35} />
-                </div>
-                <div className="titlePopUpChangeCoach">
-                    <span>Selecione o coach para transferir o treino:</span>
-                </div>
-
-                <div className="manyCoachs">
-                    
-                    {
-                    coachArray.map( (coach, index) => 
-                        // <div className="juninhoAlemao">
-                            <div key={index} className="coachOption">
-                                <img src={coach.photo} alt="coachs" />
-                                <span>{coach.name}</span>
-                            </div>
-                        // </div>
-                    )
-                    }
-                </div>
-
-            </div>
+  return (
+    <Modal show={show} centered={true} onHide={() => setShow(false)}>
+      <Modal.Body className="ContainerModal">
+        <div className="titlePopUpChangeCoach">
+          <span>Selecione o coach para transferir o treino:</span>
         </div>
-    );
+
+        <div className="manyCoachs">
+          {coachArray.map((coach, index) => (
+            <div key={index} className="coachOption">
+              <img src={coach.photo} alt="coachs" />
+              <span>{coach.name}</span>
+            </div>
+          ))}
+        </div>
+      </Modal.Body>
+    </Modal>
+  )
 }

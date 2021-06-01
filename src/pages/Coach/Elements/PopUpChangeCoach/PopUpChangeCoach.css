@@ -1,83 +1,59 @@
-.Modal{
-    width: 90%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    background-color: rgba(0,0,0,0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.ContainerModal {
+  color: #000;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
 }
 
-.ContainerModal{
-    background-color: rgb(248, 242, 242);
-    position: fixed;
-    color: #000;
-    border: 1px solid #eee;
-    width: 90%;
-    height: 55%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    box-sizing: border-box;
-    
+.ClosePopUp {
+  color: #632467;
+  border-radius: 50%;
+  position: absolute;
+  top: -2px;
+  right: 0px;
+
+  cursor: pointer;
 }
 
-.ClosePopUp{
-    color: #632467; 
-    border-radius: 50%;
-    position: absolute; 
-    top: -2px; 
-    right: 0px; 
-
-    cursor: pointer;
+.titlePopUpChangeCoach {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.titlePopUpChangeCoach{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.titlePopUpChangeCoach span {
+  font-size: 22px;
+  font-weight: 700;
+  color: #632467;
+  margin: 0 15px;
 }
 
-.titlePopUpChangeCoach span{
-    font-size: 22px;
-    font-weight: 700;
-    color: #632467;
-    margin: 0 15px;
+.manyCoachs {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  column-gap: 10%;
+  row-gap: 15px;
+  padding: 10px;
+  margin-left: 20px;
 }
 
-.manyCoachs{
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-    column-gap: 10%;
-    row-gap: 15px;
-    padding: 10px;
-    margin-left: 20px;
-}
-
-.coachOption{
-    display: flex;
-    align-items: center;
-
+.coachOption {
+  display: flex;
+  align-items: center;
 }
 
 .coachOption img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 3px solid #632467;
-    margin-right: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #632467;
+  margin-right: 5px;
 }
 
 .coachOption span {
-    font-size: 13px;
-    font-weight: 800;
-    color: #632467;
+  font-size: 13px;
+  font-weight: 800;
+  color: #632467;
 }
-
-
-
