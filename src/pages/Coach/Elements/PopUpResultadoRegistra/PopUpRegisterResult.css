@@ -1,128 +1,107 @@
-.Modal1{
-    width: 100%;
-    min-height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.ContainerModalResult {
+  color: rgb(0, 0, 0);
+  min-height: 90vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  position: relative;
 }
 
-.Modal1 .ContainerModal{
-    position: fixed;
-    background-color: rgb(248, 242, 242);
-    color: rgb(0, 0, 0);
-    border: 1px solid #eee;
-    border-radius: 15px;
-    width: 85%;
-    /* min-width: fit-content; */
-    height: 88%;
-    min-height: fit-content;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    padding:10px
+.ContainerModalResult .ClosePopUpRegister {
+  color: #632467;
+  border-radius: 50%;
+  position: absolute;
+  top: -2px !important;
+  right: 0px !important;
+  background-color: white;
+  top: -2px;
+  right: 0px;
+
+  cursor: pointer;
 }
 
-.Modal1 .ContainerModal .ClosePopUpRegister {
-    color: #632467; 
-    border-radius: 50%;
-    position: absolute; 
-    top: -2px !important; 
-    right: 0px!important; 
-    background-color: white;
-    top: -2px; 
-    right: 0px;
-
-    cursor: pointer;
+.ContainerModalResult .titleResultadoRegitra {
+  font-family: sans-serif;
+  font-size: 30px;
+  text-align: center;
 }
 
-.Modal1 .ContainerModal .titleResultadoRegitra {
-    font-family: sans-serif;
-    font-size: 30px;
+.ContainerModalResult .Form_treino {
+  text-align: center;
 }
 
-.Modal1 .ContainerModal .Form_treino {
-    text-align: center;
+.ContainerModalResult .Form_treino div {
+  display: flex;
+  justify-content: flex-end;
+  /* margin: 3px; */
+}
+.ContainerModalResult .Form_treino div input {
+  border: 1px solid;
+  border-radius: 4px;
+  margin-left: 9px;
 }
 
-.Modal1 .ContainerModal .Form_treino div{
-    display: flex;
-    justify-content:flex-end;
-    /* margin: 3px; */
-}
-.Modal1 .ContainerModal .Form_treino div input {
-    border: 1px solid ;
-    border-radius: 4px;
-    margin-left: 9px;
+.ContainerModalResult .button {
+  font-family: sans-serif;
+  font: bolder;
 }
 
-.Modal1 .ContainerModal .button{
-    font-family: sans-serif;
-    font:bolder;
+.Form_treino {
+  padding: 0 20px;
+  width: 85%;
+  height: 80%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.titleResultadoRegitra{
-    margin-top: -20px;
-    margin-bottom: 20px;
+.Form_treino div {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.Form_treino{
-    padding: 0 20px;
-    width: 85%;
-    height: 80%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: -40px;
+.Form_treino div + div {
+  margin-top: 10px;
 }
 
-.Form_treino div{
-    width:100%;
-    display: flex;
-    justify-content: flex-end;
+.Form_treino div input {
+  width: 70%;
 }
 
-.Form_treino div + div{
-    margin-top: 10px;
+.dadosGerais {
+  display: flex;
+  justify-content: flex-end !important;
 }
 
-.Form_treino div input{
-    width:70%;
+.numeroExercicios,
+.medidasCorpo,
+.peso,
+.altura {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end !important;
 }
 
-.dadosGerais{
-    display: flex;
-    justify-content: flex-end !important;
+.button {
+  width: 80%;
+  height: auto;
+  font-size: 16px;
+  font-weight: 700;
+  outline: none;
 }
 
-.numeroExercicios, .medidasCorpo, .peso, .altura{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end !important;
+.button:hover {
+  opacity: 0.8;
 }
 
-.button{
-    width: 80%;
-    height: auto;
-    font-size: 16px;
-    font-weight: 700;
-    outline: none;
-}
-
-.button:hover{
-    opacity: 0.8;
-}
-
-input{
-    height: 1.65em;
-    /* width: 100%; */
-    outline: none;
-    border: none;
+input {
+  height: 1.65em;
+  /* width: 100%; */
+  outline: none;
+  border: none;
 }

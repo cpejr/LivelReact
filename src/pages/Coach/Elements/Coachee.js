@@ -53,8 +53,6 @@ function Train_ID2Name(Train_ID) {
 function Train_ID2Function(Train_ID, setIsPopUpRegisterResultVisible) {
   if (Train_ID === 3) {
     setIsPopUpRegisterResultVisible(true)
-  } else {
-    return 'Ferrou'
   }
 }
 
@@ -140,9 +138,12 @@ function AllCoachees(props) {
         show={isPopUpChangeCoachVisible}
         setShow={setIsPopUpChangeCoachVisible}
       />
-      {isPopUpRegisterResultVisible ? (
-        <PopUpRegisterResult functionState={setIsPopUpRegisterResultVisible} />
-      ) : null}
+
+      <PopUpRegisterResult
+        show={isPopUpRegisterResultVisible}
+        setShow={setIsPopUpRegisterResultVisible}
+        aluno={props.person}
+      />
       <PopUpAlertDelete
         show={isPopUpAlertDelete}
         setShow={setIsPopUpAlertDelete}
