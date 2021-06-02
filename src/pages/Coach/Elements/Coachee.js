@@ -58,12 +58,12 @@ function Train_ID2Function(Train_ID, setIsPopUpRegisterResultVisible) {
   }
 }
 
-function swipeLeftIcons(
+function SwipeLeftIcons({
   isPopUpChangeCoachVisible,
   setIsPopUpChangeCoachVisible,
   setIsPopUpAlertDelete,
-  isPopUpAlertDelete
-) {
+  isPopUpAlertDelete,
+}) {
   const iconsSize = 25
 
   function return_zIndexes() {
@@ -124,11 +124,13 @@ function AllCoachees(props) {
       margin: '0 10px',
       color: '#4a1768',
       cursor: 'pointer',
+      zIndex: 5,
     },
     {
       margin: '0 10px',
       color: '#bbb',
       cursor: 'pointer',
+      zIndex: 5,
     },
   ]
 
@@ -149,11 +151,13 @@ function AllCoachees(props) {
         blockSwipe={false}
         threshold={0.1}
         swipeLeft={{
-          content: swipeLeftIcons(
-            isPopUpChangeCoachVisible,
-            setIsPopUpChangeCoachVisible,
-            setIsPopUpAlertDelete,
-            isPopUpAlertDelete
+          content: (
+            <SwipeLeftIcons
+              isPopUpChangeCoachVisible={isPopUpChangeCoachVisible}
+              setIsPopUpChangeCoachVisible={setIsPopUpChangeCoachVisible}
+              setIsPopUpAlertDelete={setIsPopUpAlertDelete}
+              isPopUpAlertDelete={isPopUpAlertDelete}
+            />
           ),
           actionAnimation: ActionAnimations['NONE'],
           action: () => console.info('swipe action triggered'),

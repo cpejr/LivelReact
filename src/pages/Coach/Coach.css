@@ -1,94 +1,96 @@
-.completeBody{
-    background-color: #E6E6E6;
-    background-image: linear-gradient( #F2F2F2,#E6E6E6); /* Standard syntax (must be last) */
-    min-height: 100vh; 
-    height:fit-content;
-    width: 100%;
+.completeBody {
+  background-color: #e6e6e6;
+  background-image: linear-gradient(
+    #f2f2f2,
+    #e6e6e6
+  ); /* Standard syntax (must be last) */
+  min-height: 100vh;
+  height: fit-content;
+  width: 100%;
 }
 /* ---------------------Element Header Coach--------------------- */
 
-.headerContainer{
-    background-color: #E6E6E6;
-    height: 13vh;
+.headerContainer {
+  background-color: #e6e6e6;
+  height: 13vh;
 }
 
-.eachContainer{
-    margin-bottom: 10px;
+.eachContainer {
+  margin-bottom: 10px;
 }
 
-.coachBlock{
-    display: flex;
+.coachBlock {
+  display: flex;
 }
-.purpleLine{
-    background-color: #632467;
-    height: 10px;
-}
-
-.coachInfo{
-    color: #632467;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    color: #632467;
-    margin-top: 20px;
+.purpleLine {
+  background-color: #632467;
+  height: 10px;
 }
 
-.positionCoach{
-    font-size: 14px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    font-style: italic;
+.coachInfo {
+  color: #632467;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #632467;
+  margin-top: 20px;
 }
 
-.nameCoach{
-    font-size: 16px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    font-style: italic;
-    font-weight: bold;
-    text-transform: uppercase;
+.positionCoach {
+  font-size: 14px;
+  font-family: sans-serif, Univers LT;
+  font-stretch: condensed;
+  font-style: italic;
 }
 
-.imagemHeaderCoach{
-    height: 7vh;
-    width: 7vh;
-    border-radius: 50%;
-    border: 3px solid #632467;
-    margin-top: 10px;
-    margin-left: 5vw;
-    margin-right: 1vw;
+.nameCoach {
+  font-size: 16px;
+  font-family: sans-serif, Univers LT;
+  font-stretch: condensed;
+  font-style: italic;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.imagemHeaderCoach {
+  height: 7vh;
+  width: 7vh;
+  border-radius: 50%;
+  border: 3px solid #632467;
+  margin-top: 10px;
+  margin-left: 5vw;
+  margin-right: 1vw;
 }
 
 /* ---------------------Element HourBox Coach--------------------- */
-.eachContainer{
-    margin-bottom:2vw;
+.eachContainer {
+  margin-bottom: 2vw;
 }
-.HourBoxIsOn{
-    width: 100%;
-    background-color: #ffffff;
-}
-
-.HourBoxIsOff{
-    width: 100%;
-    background-color: #FF7878;
+.HourBoxIsOn {
+  width: 100%;
+  background-color: #ffffff;
 }
 
-.HourAndToggle{
-    height: 60px;
-    display: flex;
-    align-items: center;
-    margin-left: 6vw; 
-
+.HourBoxIsOff {
+  width: 100%;
+  background-color: #ff7878;
 }
 
-.whatTimeIsIt{
-    margin-left:4vw;/* No telefone é 4 e no PC é 1 */
+.HourAndToggle {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  margin-left: 6vw;
+}
 
-    font-size: 25px;
-    font-family: sans-serif, Bebas Neue;
-    font-weight: bolder;
-    font-stretch: extra-condensed;
-    letter-spacing: 0.05mm;
+.whatTimeIsIt {
+  margin-left: 4vw; /* No telefone é 4 e no PC é 1 */
+
+  font-size: 25px;
+  font-family: sans-serif, Bebas Neue;
+  font-weight: bolder;
+  font-stretch: extra-condensed;
+  letter-spacing: 0.05mm;
 }
 /* ---------------------Element Coachee Coach--------------------- */
 
@@ -101,162 +103,165 @@
 /* .swipeable-list-item__content-left{
     z-index: 0 !important;
 } */
-.swipeable-list-item__content-left{
-z-index: 3 !important;
-} 
-
-.swipeable-list-item__content-left--return{
-z-index: -1 !important;
+.swipeable-list-item__content-left {
+  right: 0px;
+  width: 60% !important;
+  z-index: 3 !important;
 }
 
-.swipeable-list-item{
-z-index: 5 !important;
+.swipeable-list-item__content-left--return {
+  right: 0px;
+  width: 60% !important;
+  z-index: -1 !important;
 }
 
-.swipeable-list{
-z-index: 5 !important;
+.swipeable-list-item {
+  z-index: 5 !important;
 }
 
-.isItOnorOff{
-z-index: 5 !important;
-}
- 
-.swipeLeft{
-    z-index: 4;
-    display: flex;
-    justify-content: space-evenly;
+.swipeable-list {
+  z-index: 5 !important;
 }
 
-.fistIconSwipeRigth{
-    background: #4a1768;
-    color: #fff;
-    padding: 10px 20px;
+.isItOnorOff {
+  z-index: 5 !important;
 }
 
-.swipeRight{
-    display: flex;
-    justify-content: center;
-}
-.fistIconSwipeLeft{
-    background: #4a1768;
-    color: #fff;
-    padding: 10px 20px;
-    z-index: 4;
-    cursor: pointer;
+.swipeLeft {
+  z-index: 4;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.secondIconSwipeLeft{
-    background: #e0dbe2;
-    color: #4a1768;
-    padding: 10px 20px;
-    z-index: 4;
-    cursor: pointer;
+.fistIconSwipeRigth {
+  background: #4a1768;
+  color: #fff;
+  padding: 10px 20px;
 }
 
+.swipeRight {
+  display: flex;
+  justify-content: center;
+}
+.fistIconSwipeLeft {
+  background: #4a1768;
+  color: #fff;
+  padding: 10px 20px;
+  z-index: 4;
+  cursor: pointer;
+}
 
-.coacheeInfo{
-    margin: 0px;
-    padding: 0px;
-    z-index: 15;
-    flex:1;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 100%;
-/* 
+.secondIconSwipeLeft {
+  background: #e0dbe2;
+  color: #4a1768;
+  padding: 10px 20px;
+  z-index: 4;
+  cursor: pointer;
+}
+
+.coacheeInfo {
+  margin: 0px;
+  padding: 0px;
+  z-index: 15;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+  /* 
     border-top:0.1mm solid #707070;
     border-top-width: 100%; */
 }
 
-.fotoCoachee{
-    height: 6vh;
-    width: 6vh;
-    border-radius: 50%;
-    border: 3px solid #632467;
-    margin:4px;
+.fotoCoachee {
+  height: 6vh;
+  width: 6vh;
+  border-radius: 50%;
+  border: 3px solid #632467;
+  margin: 4px;
 }
 
-.coacheeContainer{
-    box-sizing: border-box;
+.coacheeContainer {
+  box-sizing: border-box;
 
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding-left: 5vw;
-    
-    border-top: solid 0.1mm rgba(4,1,3,0.2);
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 5vw;
+
+  border-top: solid 0.1mm rgba(4, 1, 3, 0.2);
 }
 
-.writtenInfos{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 80%;
-    height: 40%;
-    margin: auto;
-    margin-left: 10px;
+.writtenInfos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  height: 40%;
+  margin: auto;
+  margin-left: 10px;
 }
 
-.coacheeName{
-    font-size: 12px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    color:#231F20;
-    font-weight: bold;
-    text-transform: uppercase;
+.coacheeName {
+  font-size: 12px;
+  font-family: sans-serif, Univers LT;
+  font-stretch: condensed;
+  color: #231f20;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-.coacheeExercise{
-    font-size: 11px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    font-weight: bold;
-    color: #632467;
+.coacheeExercise {
+  font-size: 11px;
+  font-family: sans-serif, Univers LT;
+  font-stretch: condensed;
+  font-weight: bold;
+  color: #632467;
 }
 
-.coachee_icons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-right: 10px;
-    align-items: center;
-    font-weight:bolder;
-    font-size: large;
-    color: #ADB4B5;
+.coachee_icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-right: 10px;
+  align-items: center;
+  font-weight: bolder;
+  font-size: large;
+  color: #adb4b5;
 }
 
-.coacheeIcons{
-    size: 6mm;
-    height: 6mm;
-    margin-left: 10px;
+.coacheeIcons {
+  size: 6mm;
+  height: 6mm;
+  margin-left: 10px;
 }
 
-.livelOneStyled{
-    display: block;
-    line-height: 2mm;
+.livelOneStyled {
+  display: block;
+  line-height: 2mm;
 }
 
-.livelStyled{
-    font-size: 8px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    font-weight: 800;
-    color:#36AAFF;
+.livelStyled {
+  font-size: 8px;
+  font-family: sans-serif, Univers LT;
+  font-stretch: condensed;
+  font-weight: 800;
+  color: #36aaff;
 }
 
-.OneStyled{
-    font-size: 9px;
-    font-family: sans-serif, Univers LT;
-    font-stretch: condensed;
-    font-weight: 900;
-    color:#36AAFF;
+.OneStyled {
+  font-size: 9px;
+  font-family: sans-serif, Univers LT;
+  font-stretch: condensed;
+  font-weight: 900;
+  color: #36aaff;
 }
 
 /* ---------------------Element ToggleSwitch Coach--------------------- */
 
-.react-switch{
-    border: 1px solid #632467;
+.react-switch {
+  border: 1px solid #632467;
 }
