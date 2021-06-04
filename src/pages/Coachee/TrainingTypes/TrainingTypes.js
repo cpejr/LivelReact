@@ -5,7 +5,7 @@ import { getAluno } from 'src/services/auth'
 
 import './TrainingTypes.css'
 
-import Header from 'src/Components/Header'
+import Header from 'src/components/Header'
 import PopUp from './Elements/PopUp'
 import { message } from 'antd'
 
@@ -143,16 +143,14 @@ export default function TrainingTypes() {
               backgroundImage: `url(/images/circle/${aluno.ALUNO_TREINOS?.NumTreinosMes}-12.png)`,
             }}
           >
-            <div style={{ fontSize: '100%' }}>você treinou</div>
+            <span>Você treinou</span>
             <div className="circleContent">
-              <div style={{ fontSize: '500%' }}>
-                <b>
-                  {aluno.ALUNO_TREINOS?.NumTreinosMes
-                    ? aluno.ALUNO_TREINOS?.NumTreinosMes
-                    : 0}
-                </b>
-              </div>
-              <div style={{ fontSize: '200%' }}>x</div>
+              <b>
+                {aluno.ALUNO_TREINOS?.NumTreinosMes
+                  ? aluno.ALUNO_TREINOS?.NumTreinosMes
+                  : 0}
+              </b>
+              <span>x</span>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import './CountdownTraining.css'
 
-import Header from 'src/Components/Header'
+import Header from 'src/components/Header'
 import Clock from './Clock'
 import { message } from 'antd'
 

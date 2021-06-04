@@ -19,7 +19,7 @@ export const loginRequest = (ID, Pwd) => {
     //     reject(err);
     //   });
     resolve({
-      USER_TYPE: 'coach',
+      USER_TYPE: 'coachee',
       LOGIN: { ID_Aluno: 1, Status: 1 },
       ALUNO_TREINOS: {
         NumTreinosMes: 7,
@@ -28,7 +28,7 @@ export const loginRequest = (ID, Pwd) => {
         ID_ultimoTreinoTipo: 1,
       },
       ALUNO_INFO: {
-        AlunoNome: 'Aluísio',
+        AlunoNome: 'Aluízio',
       },
     })
   })

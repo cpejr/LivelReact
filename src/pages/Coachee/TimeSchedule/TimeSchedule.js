@@ -4,7 +4,7 @@ import './TimeSchedule.css'
 import { treinoHorarios, treinoRegistra } from 'src/services/backEnd'
 import { getAluno } from 'src/services/auth'
 
-import Header from 'src/Components/Header'
+import Header from 'src/components/Header'
 
 import { IconContext } from 'react-icons'
 import { MdKeyboardArrowLeft } from 'react-icons/md'
