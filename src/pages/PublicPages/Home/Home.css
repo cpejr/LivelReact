@@ -7,9 +7,8 @@
 
 .background-Img {
   text-align: center;
-
   color: white;
-  background-image: url('src/assets/FundoIndex.png');
+  background-image: url('../.././../assets/FundoIndex.png');
   opacity: 1;
   height: 100%;
   width: 100%;

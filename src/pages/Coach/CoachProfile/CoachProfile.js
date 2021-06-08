@@ -40,7 +40,7 @@ export default function CoachProfile() {
           <ReactStars
             count={5}
             value={ALUNO_INFO.rate}
-            size={64}
+            size={50}
             color2={'#ffd700'}
             edit={false}
           />
